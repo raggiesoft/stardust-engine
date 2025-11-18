@@ -5,11 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo htmlspecialchars($pageTitle ?? 'The Stardust Engine'); ?></title>
 
-    <meta name="description" content="Explore Telsus Minor, a sci-fi universe where the reality of a phantom saboteur named Knox is a family fighting a corrupt corporation.">
+    <meta name="description" content="Explore Telsus Minor, a sci-fi universe where the reality of a phantom saboteur named Knox is a family fighting a corrupt corporation." />
+
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="<?php echo htmlspecialchars($ogUrl ?? 'https://thestardustengine.com'); ?>" />
+    <meta property="og:title" content="<?php echo htmlspecialchars($ogTitle ?? $pageTitle); ?>" />
+    <meta property="og:description" content="<?php echo htmlspecialchars($ogDescription); ?>" />
+    <meta property="og:image" content="<?php echo htmlspecialchars($ogImage); ?>" />
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="<?php echo htmlspecialchars($ogTitle ?? $pageTitle); ?>" />
+    <meta name="twitter:description" content="<?php echo htmlspecialchars($ogDescription); ?>" />
+    <meta name="twitter:image" content="<?php echo htmlspecialchars($ogImage); ?>" />
 
     <script src="https://kit.fontawesome.com/ec060982d4.js" crossorigin="anonymous"></script>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
 
     <?php
         $themeName = preg_replace('/[^a-zA-Z0-9_-]/', '', $currentPageTheme ?? 'stardust-engine');

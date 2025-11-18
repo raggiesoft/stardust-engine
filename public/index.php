@@ -18,6 +18,16 @@ $currentSidebar = ROOT_PATH . '/includes/components/sidebars/sidebar-default.php
 $showSidebar = true; // Default to showing sidebar
 // --------------------
 
+
+// --- OG META DEFAULTS ---
+// These are the fallbacks if a specific page doesn't define its own.
+$ogTitle = $siteName;
+$ogDescription = "Explore the musical universe of The Stardust Engine, a family of CPI alumni who fought their label and won their freedom.";
+// Default to the new nebula logo
+$ogImage = "https://assets.raggiesoft.com/stardust-engine/images/stardust-engine-logo.jpg"; 
+$ogUrl = "https://thestardustengine.com" . $request_uri;
+// --------------------
+
 $view_to_load = null;
 $params = [];
 
@@ -86,6 +96,25 @@ switch ($request_uri) {
     case '/discography/1987-electric-color':
         $view_to_load = 'pages/discography/1987-electric-color';
         $pageTitle = 'Electric Color (1987) - ' . $siteName;
+        // --- NEW: Set OG Tags for this Album ---
+        $ogTitle = 'Electric Color (1987) - The Stardust Engine';
+        $ogDescription = "The debut album from The Stardust Engine. Featuring the hits 'Electric Color' and 'Break the Walls'. Listen and download now.";
+        $ogImage = "https://assets.raggiesoft.com/stardust-engine/music/1987-electric-color/album-art.jpg";
+        // --------------------------------------
+        $showSidebar = true; 
+        $currentSidebar = ROOT_PATH . '/includes/components/sidebars/sidebar-discography.php';
+        break;
+
+    case '/albums/1989-neon-hearts':
+        $view_to_load = 'pages/discography/1989-neon-hearts'; // (When you create this file)
+        $pageTitle = 'Neon Hearts (1989) - ' . $siteName;
+        
+        // --- OG META OVERRIDES ---
+        $ogTitle = 'Neon Hearts (1989) - The Stardust Engine';
+        $ogDescription = "The 'panic' album. Featuring 'Neon Hearts' and the fan-favorite 'Not Your Doll'.";
+        $ogImage = "https://assets.raggiesoft.com/stardust-engine/music/1989-neon-hearts/album-art.jpg";
+        // -------------------------
+
         $showSidebar = true; 
         $currentSidebar = ROOT_PATH . '/includes/components/sidebars/sidebar-discography.php';
         break;
