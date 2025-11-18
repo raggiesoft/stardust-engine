@@ -92,7 +92,7 @@ switch ($request_uri) {
     
     // --- THE CRUCIBLE FIX IS HERE ---
     case '/albums/live-at-the-crucible':
-        $view_to_load = 'pages/discography/album-live-crucible';
+        $view_to_load = 'pages/discography/2016-live-crucible';
         $pageTitle = 'Live at The Crucible (2016) - ' . $siteName;
         $showSidebar = true; 
         $currentSidebar = ROOT_PATH . '/includes/components/sidebars/sidebar-discography.php';
