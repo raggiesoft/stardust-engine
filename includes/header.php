@@ -28,7 +28,7 @@
       <nav class="navbar navbar-expand-md bg-body-tertiary border-bottom">
         <div class="container-lg">
 
-          <a class="navbar-brand fw-bold text-uppercase" href="/" aria-label="Stardust Engine Home">The Stardust Engine</a>
+          <a class="navbar-brand fw-bold text-uppercase" href="/" aria-label="Stardust Engine Home"><img src="https://assets.raggiesoft.com/stardust-engine/images/stardust-engine-logo.jpg" class="me-2" alt="The Stardust Engine Logo" style="height: 40px;">The Stardust Engine</a>
 
           <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
             <!-- Animated Icon -->
