@@ -60,7 +60,7 @@
         <div class="col">
             <?php $props = [
                 'title' => 'The Warehouse Tapes (1995)',
-                'imgSrc' => 'https://assets.raggiesoft.com/stardust-engine/music/1995-warehouse-tapes/album-art.jpg',
+                'imgSrc' => 'https://assets.raggiesoft.com/stardust-engine/music/1995-the-warehouse-tapes/album-art.jpg',
                 'description' => "The 'bat signal' EP. Recorded in their Blacksburg warehouse, this was a raw, unpolished, mail-order-only release.",
                 'buttonProps' => ['text' => 'View Tracklist', 'href' => '/albums/warehouse-tapes', 'variant' => 'axiom']
             ]; include ROOT_PATH . '/includes/components/card.php'; ?>
