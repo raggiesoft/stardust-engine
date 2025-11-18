@@ -5,23 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo htmlspecialchars($pageTitle ?? 'The Stardust Engine'); ?></title>
 
-    <meta name="description" content="Explore Telsus Minor, a sci-fi universe where the reality of a phantom saboteur named Knox is a family fighting a corrupt corporation." />
+    <meta name="description" content="<?php echo htmlspecialchars($ogDescription ?? 'Explore Telsus Minor, a sci-fi universe where the reality of a phantom saboteur named Knox is a family fighting a corrupt corporation.'); ?>">
 
-    <!-- Open Graph / Social Media Meta Tags -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="<?php echo htmlspecialchars($ogUrl ?? 'https://thestardustengine.com'); ?>" />
-    <meta property="og:title" content="<?php echo htmlspecialchars($ogTitle ?? $pageTitle); ?>" />
-    <meta property="og:description" content="<?php echo htmlspecialchars($ogDescription); ?>" />
-    <meta property="og:image" content="<?php echo htmlspecialchars($ogImage); ?>" />
-    <!-- Twitter Card data -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="<?php echo htmlspecialchars($ogTitle ?? $pageTitle); ?>" />
-    <meta name="twitter:description" content="<?php echo htmlspecialchars($ogDescription); ?>" />
-    <meta name="twitter:image" content="<?php echo htmlspecialchars($ogImage); ?>" />
+    <link rel="icon" href="https://assets.raggiesoft.com/stardust-engine/images/stardust-engine-logo.jpg" type="image/jpeg">
+    <link rel="apple-touch-icon" href="https://assets.raggiesoft.com/stardust-engine/images/stardust-engine-logo.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="<?php echo htmlspecialchars($ogUrl ?? 'https://thestardustengine.com'); ?>">
+    <meta property="og:title" content="<?php echo htmlspecialchars($ogTitle ?? $pageTitle); ?>">
+    <meta property="og:description" content="<?php echo htmlspecialchars($ogDescription ?? 'A musical universe forged in the fires of CPI.'); ?>">
+    <meta property="og:image" content="<?php echo htmlspecialchars($ogImage ?? 'https://assets.raggiesoft.com/stardust-engine/images/stardust-engine-logo.jpg'); ?>">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="<?php echo htmlspecialchars($ogTitle ?? $pageTitle); ?>">
+    <meta name="twitter:description" content="<?php echo htmlspecialchars($ogDescription ?? 'A musical universe forged in the fires of CPI.'); ?>">
+    <meta name="twitter:image" content="<?php echo htmlspecialchars($ogImage ?? 'https://assets.raggiesoft.com/stardust-engine/images/stardust-engine-logo.jpg'); ?>">
 
     <script src="https://kit.fontawesome.com/ec060982d4.js" crossorigin="anonymous"></script>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
     <?php
         $themeName = preg_replace('/[^a-zA-Z0-9_-]/', '', $currentPageTheme ?? 'stardust-engine');
@@ -29,7 +30,7 @@
     ?>
     <link rel="stylesheet" href="<?php echo htmlspecialchars($themeFilePath); ?>" />
 
-    <link rel="stylesheet" href="https://assets.raggiesoft.com/common/css/bootstrap-overrides.css" />
+    <link rel="stylesheet" href="https://assets.raggiesoft.com/common/css/bootstrap-overrides.css?v=2" />
 
 </head>
 <body class="d-flex flex-column min-vh-100">
@@ -40,23 +41,24 @@
       <nav class="navbar navbar-expand-md bg-body-tertiary border-bottom">
         <div class="container-lg">
 
-          <a class="navbar-brand fw-bold text-uppercase" href="/" aria-label="Stardust Engine Home"><img src="https://assets.raggiesoft.com/stardust-engine/images/stardust-engine-logo.jpg" class="me-2" alt="The Stardust Engine Logo" style="height: 40px;">The Stardust Engine</a>
+          <a class="navbar-brand fw-bold text-uppercase" href="/" aria-label="Stardust Engine Home">
+              <img src="https://assets.raggiesoft.com/stardust-engine/images/stardust-engine-logo.jpg" class="me-2" alt="The Stardust Engine Logo" style="height: 40px;">
+              The Stardust Engine
+          </a>
 
           <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
-            <!-- Animated Icon -->
             <span class="hamburger-bar"></span>
             <span class="hamburger-bar"></span>
             <span class="hamburger-bar"></span>
-            <!-- End Animated Icon -->
-          </button>
+            </button>
 
           <div class="collapse navbar-collapse" id="mainNavbar">
             <?php
-              // $currentHeaderMenu path is set by elara.php
+              // $currentHeaderMenu path is set by index.php
               if (isset($currentHeaderMenu) && file_exists($currentHeaderMenu)) {
-                  include $currentHeaderMenu; // This file should contain the <ul>...</ul> structure
+                  include $currentHeaderMenu; 
               } else {
-                  // Fallback or error message if file is missing
+                  // Fallback
                   echo '<ul class="navbar-nav ms-auto mb-2 mb-md-0"><li class="nav-item"><span class="nav-link text-danger">Error: Menu definition not found.</span></li></ul>';
               }
             ?>
