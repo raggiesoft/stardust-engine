@@ -10,7 +10,7 @@ $albums = [
         'year' => 1987,
         'img_src' => 'https://assets.raggiesoft.com/stardust-engine/music/1987-electric-color/album-art.jpg',
         'description' => 'The synth-rock debut that peaked at #2 on the Billboard Hot 100.',
-        'link' => '/discography/electric-color',
+        'link' => '/discography/1987-electric-color',
         'btn_class' => 'btn-primary'
     ],
     [
@@ -18,15 +18,15 @@ $albums = [
         'year' => 1989,
         'img_src' => 'https://assets.raggiesoft.com/stardust-engine/music/1989-neon-hearts/album-art.jpg',
         'description' => 'The band\'s sophomore effort.',
-        'link' => '#', // Link to be updated when page exists
-        'btn_class' => 'btn-warning text-dark'
+        'link' => '/discography/1989-neon-hearts',
+        'btn_class' => 'btn-primary'
     ],
     [
         'title' => 'Live at The Crucible',
         'year' => 2016,
         'img_src' => 'https://assets.raggiesoft.com/stardust-engine/music/2016-live-at-the-crucible/album-art.jpg',
         'description' => 'The "Anvil Edition" homecoming. The only official release of "Ignition."',
-        'link' => '/discography/live-at-the-crucible',
+        'link' => '/discography/2016-live-at-the-crucible',
         'btn_class' => 'btn-primary'
     ],
    /*// --- Un-commented and added ---

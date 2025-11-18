@@ -24,7 +24,7 @@
                 'title' => 'Electric Color (1987)',
                 'imgSrc' => 'https://assets.raggiesoft.com/stardust-engine/music/1987-electric-color/album-art.jpg',
                 'description' => "The debut album. Famously stalled at #2 on the charts. Defined by the studio's 'malicious compliance' tracks.",
-                'buttonProps' => ['text' => 'View Tracklist', 'href' => '/albums/electric-color', 'variant' => 'pact']
+                'buttonProps' => ['text' => 'View Tracklist', 'href' => '/discography/1987-electric-color', 'variant' => 'pact']
             ]; include ROOT_PATH . '/includes/components/card.php'; ?>
         </div>
 
@@ -33,7 +33,7 @@
                 'title' => 'Neon Hearts (1989)',
                 'imgSrc' => 'https://assets.raggiesoft.com/stardust-engine/music/1989-neon-hearts/album-art.jpg',
                 'description' => "The 'panic' album. Apex, terrified by the 'Like a Prayer' controversy, demanded a safe, polished sound.",
-                'buttonProps' => ['text' => 'View Tracklist', 'href' => '/albums/neon-hearts', 'variant' => 'pact']
+                'buttonProps' => ['text' => 'View Tracklist', 'href' => '/discography/1989-neon-hearts', 'variant' => 'pact']
             ]; include ROOT_PATH . '/includes/components/card.php'; ?>
         </div>
 
@@ -42,7 +42,7 @@
                 'title' => 'Live in Chicago (1990)',
                 'imgSrc' => 'https://assets.raggiesoft.com/stardust-engine/music/1990-live-in-chicago/album-art.jpg',
                 'description' => "The 26-minute 'stop-gap' EP. A studio-mandated setlist that excluded all fan-favorite rock anthems.",
-                'buttonProps' => ['text' => 'View Tracklist', 'href' => '/albums/live-in-chicago', 'variant' => 'pact']
+                'buttonProps' => ['text' => 'View Tracklist', 'href' => '/discography/1990-live-in-chicago', 'variant' => 'pact']
             ]; include ROOT_PATH . '/includes/components/card.php'; ?>
         </div>
 
@@ -77,7 +77,7 @@
                 'title' => 'The Warehouse Tapes (1995)',
                 'imgSrc' => 'https://assets.raggiesoft.com/stardust-engine/music/1995-the-warehouse-tapes/album-art.jpg',
                 'description' => "The 'bat signal' EP. Recorded in their Blacksburg warehouse, this was a raw, unpolished, mail-order-only release.",
-                'buttonProps' => ['text' => 'View Tracklist', 'href' => '/albums/warehouse-tapes', 'variant' => 'axiom']
+                'buttonProps' => ['text' => 'View Tracklist', 'href' => '/discography/1995-the-warehouse-tapes', 'variant' => 'axiom']
             ]; include ROOT_PATH . '/includes/components/card.php'; ?>
         </div>
 
@@ -87,7 +87,7 @@
                 'imgSrc' => 'https://assets.raggiesoft.com/stardust-engine/music/1997-hard-reset/album-art.jpg',
                 'fallbackText' => 'Hard Reset', 'variant' => 'axiom',
                 'description' => "Their official comeback. A high-stakes financial gamble, this was their first professional CD release on their own label.",
-                'buttonProps' => ['text' => 'View Tracklist', 'href' => '/albums/hard-reset', 'variant' => 'axiom']
+                'buttonProps' => ['text' => 'View Tracklist', 'href' => '/discography/1997-hard-reset', 'variant' => 'axiom']
             ]; include ROOT_PATH . '/includes/components/card.php'; ?>
         </div>
 
@@ -97,7 +97,7 @@
                 'imgSrc' => 'https://assets.raggiesoft.com/stardust-engine/music/2000-signal-noise/album-art.jpg',
                 'fallbackText' => 'Signal & Noise', 'variant' => 'axiom',
                 'description' => "The confident, polished follow-up to their comeback. Their third independent studio album.",
-                'buttonProps' => ['text' => 'View Tracklist', 'href' => '/albums/signal-noise', 'variant' => 'axiom']
+                'buttonProps' => ['text' => 'View Tracklist', 'href' => '/discography/2000-signal-noise', 'variant' => 'axiom']
             ]; include ROOT_PATH . '/includes/components/card.php'; ?>
         </div>
 
@@ -107,7 +107,7 @@
                 'imgSrc' => 'https://assets.raggiesoft.com/stardust-engine/music/2004-long-way-home/album-art.jpg',
                 'fallbackText' => 'The Long Way Home', 'variant' => 'axiom',
                 'description' => "The band's third independent studio album, marking the end of their 'Freedom' era before the hiatus.",
-                'buttonProps' => ['text' => 'View Tracklist', 'href' => '/albums/long-way-home', 'variant' => 'axiom']
+                'buttonProps' => ['text' => 'View Tracklist', 'href' => '/discography/2004-long-way-home', 'variant' => 'axiom']
             ]; include ROOT_PATH . '/includes/components/card.php'; ?>
         </div>
 
@@ -116,7 +116,7 @@
                 'title' => 'Live in Norfolk (2005)',
                 'imgSrc' => 'https://assets.raggiesoft.com/stardust-engine/music/2005-live-in-norfolk/album-art.jpg',
                 'description' => "The live album from 'The Long Way Home Tour.' A professional recording from The Scope, released just before the band's burnout.",
-                'buttonProps' => ['text' => 'View Tracklist', 'href' => '/albums/live-in-norfolk', 'variant' => 'axiom']
+                'buttonProps' => ['text' => 'View Tracklist', 'href' => '/discography/2005-live-in-norfolk', 'variant' => 'axiom']
             ]; include ROOT_PATH . '/includes/components/card.php'; ?>
         </div>
 
@@ -126,7 +126,7 @@
                 'imgSrc' => 'https://assets.raggiesoft.com/stardust-engine/music/2007-lost-sounds/album-art.jpg',
                 'fallbackText' => 'Lost Sounds', 'variant' => 'neutral',
                 'description' => "A 'gift' to the fans during the hiatus. A compilation of polished demos like 'The Promise' and 'Atmosphere'.",
-                'buttonProps' => ['text' => 'View Tracklist', 'href' => '/albums/lost-sounds', 'variant' => 'neutral']
+                'buttonProps' => ['text' => 'View Tracklist', 'href' => '/discography/2007-lost-sounds', 'variant' => 'neutral']
             ]; include ROOT_PATH . '/includes/components/card.php'; ?>
         </div>
 
@@ -135,7 +135,7 @@
                 'title' => 'Electric Color (20th Anniv.)',
                 'imgSrc' => 'https://assets.raggiesoft.com/stardust-engine/music/1987-electric-color/album-art.jpg',
                 'description' => "A deluxe reissue of their debut, now featuring the band's own liner notes about the 'cold war' with Apex.",
-                'buttonProps' => ['text' => 'View Tracklist', 'href' => '/albums/electric-color-20th', 'variant' => 'neutral']
+                'buttonProps' => ['text' => 'View Tracklist', 'href' => '/discography/2007-electric-color-20th', 'variant' => 'neutral']
             ]; include ROOT_PATH . '/includes/components/card.php'; ?>
         </div>
         
@@ -145,7 +145,7 @@
                 'imgSrc' => 'https://assets.raggiesoft.com/stardust-engine/music/2015-re-ignition/album-art.jpg',
                 'fallbackText' => 'Re-Ignition', 'variant' => 'axiom',
                 'description' => "The triumphant reunion album. Recorded after the 'Burnout Hiatus,' this re-energized the band and kicked off the Homecoming era.",
-                'buttonProps' => ['text' => 'View Tracklist', 'href' => '/albums/re-ignition', 'variant' => 'axiom']
+                'buttonProps' => ['text' => 'View Tracklist', 'href' => '/discography/2015-re-ignition', 'variant' => 'axiom']
             ]; include ROOT_PATH . '/includes/components/card.php'; ?>
         </div>
         
