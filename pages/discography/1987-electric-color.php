@@ -34,6 +34,10 @@ $album_path_web = '/stardust-engine/music/1987-electric-color';
     <hr class="border-secondary opacity-25 mb-5">
 
     <!-- Tracklist & Downloads -->
+    <!-- 
+      This component reads the album's JSON from the CDN and
+      automatically builds the download table and buttons.
+    -->
     <?php include ROOT_PATH . '/includes/components/_tracklist-downloader.php'; ?>
 
     <!-- Liner Notes (Lore) -->
