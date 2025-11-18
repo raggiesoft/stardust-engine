@@ -45,7 +45,7 @@ $album_path_web = '/stardust-engine/music/1990-live-in-chicago';
       This component reads the album's JSON from the CDN and
       automatically builds the download table and buttons.
     -->
-    <?php include ROOT_PATH . '/includes/components/tracklist-downloader.php'; ?>
+    <?php include ROOT_PATH . '/includes/components/_tracklist-downloader.php'; ?>
 
     <!-- Tracklist & Lore Section -->
     <h2 class="display-6 fw-bold text-uppercase mb-4">Tracklist & Liner Notes</h2>

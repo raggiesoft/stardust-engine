@@ -38,7 +38,7 @@ $album_path_web = '/stardust-engine/music/1995-the-warehouse-tapes';
       This component reads the album's JSON from the CDN and
       automatically builds the download table and buttons.
     -->
-    <?php include ROOT_PATH . '/includes/components/tracklist-downloader.php'; ?>
+    <?php include ROOT_PATH . '/includes/components/_tracklist-downloader.php'; ?>
 
     <h2 class="display-6 fw-bold text-uppercase mb-4">Tracklist & Liner Notes</h2>
 
