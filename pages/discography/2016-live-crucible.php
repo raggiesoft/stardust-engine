@@ -12,7 +12,7 @@ $pageTitle = "Live at The Crucible (2016) - The Stardust Engine";
     <!-- Album Header -->
     <div class="row align-items-center mb-5">
         <div class="col-md-5 text-center text-md-start">
-            <img src="https://assets.raggiesoft.com/stardust-engine/images/albums/album-art-live-crucible.jpg" 
+            <img src="https://assets.raggiesoft.com/stardust-engine/music/2016-live-crucible/album-art.jpg" 
                  alt="Live at The Crucible Album Art" 
                  class="img-fluid shadow-lg rounded border border-4 border-warning">
         </div>
