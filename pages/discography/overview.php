@@ -46,6 +46,21 @@
             ]; include ROOT_PATH . '/includes/components/card.php'; ?>
         </div>
 
+        <div class="col">
+            <?php $props = [
+                'title' => 'Friction (Canceled, 1992)',
+                'imgSrc' => 'https://assets.raggiesoft.com/stardust-engine/music/1992-friction/album-art.jpg',
+                'fallbackText' => 'Friction [CANCELED]', // Uses fallback, no 'imgSrc'
+                'variant' => 'pact', // Matches the Apex Era theme
+                'description' => "The infamous third album, canceled during pre-production after a catastrophic dispute with the label. This event ended the 'cold war' and ultimately freed the band from their contract.",
+                'buttonProps' => [
+                    'text' => 'Read The Story', 
+                    'href' => '/story/the-friction-catastrophe', // Links to the lore page
+                    'variant' => 'pact'
+                ]
+            ]; include ROOT_PATH . '/includes/components/card.php'; ?>
+        </div>
+
     </div> <h2 class="display-5 fw-bold text-primary text-uppercase border-bottom border-primary pb-3 mb-4">
         1995-2016: The Engine Room "Freedom" Era
     </h2>
