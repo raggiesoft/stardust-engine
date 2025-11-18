@@ -24,7 +24,7 @@ $albums = [
     [
         'title' => 'Live at The Crucible',
         'year' => 2016,
-        'img_src' => 'https://assets.raggiesoft.com/stardust-engine/music/2016-live-crucible/album-art.jpg',
+        'img_src' => 'https://assets.raggiesoft.com/stardust-engine/music/2016-live-at-the-crucible/album-art.jpg',
         'description' => 'The "Anvil Edition" homecoming. The only official release of "Ignition."',
         'link' => '/discography/live-at-the-crucible',
         'btn_class' => 'btn-primary'
