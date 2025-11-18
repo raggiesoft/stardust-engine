@@ -83,15 +83,15 @@ switch ($request_uri) {
         $showSidebar = false; // Full width for grid
         break;
 
-    case '/albums/electric-color':
-        $view_to_load = 'pages/discography/album-electric-color';
+    case '/discography/1987-electric-color':
+        $view_to_load = 'pages/discography/1987-electric-color';
         $pageTitle = 'Electric Color (1987) - ' . $siteName;
         $showSidebar = true; 
         $currentSidebar = ROOT_PATH . '/includes/components/sidebars/sidebar-discography.php';
         break;
     
     // --- THE CRUCIBLE FIX IS HERE ---
-    case '/albums/live-at-the-crucible':
+    case '/discography/2016-live-at-the-crucible':
         $view_to_load = 'pages/discography/2016-live-crucible';
         $pageTitle = 'Live at The Crucible (2016) - ' . $siteName;
         $showSidebar = true; 

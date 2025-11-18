@@ -133,11 +133,11 @@
             <div class="card h-100 shadow-lg border-5 border-warning" style="--bs-border-opacity: .75; box-shadow: 0 0 30px rgba(5, 217, 232, 0.4) !important;">
                 <?php $props = [
                     'title' => 'Live at The Crucible (2016)',
-                    'imgSrc' => 'https://assets.raggiesoft.com/stardust-engine/images/albums/live-at-crucible-cover.jpg',
+                    'imgSrc' => 'https://assets.raggiesoft.com/stardust-engine/music/2016-live-at-the-crucible/album-art.jpg',
                     'description' => "<strong>The band's magnum opus.</strong> This was their first show on home turf since they were college kids, marking an emotional homecoming and the finale of their reunion tour. It is their best-selling album to date.",
                     'buttonProps' => [
                         'text' => 'Enter The Crucible', 
-                        'href' => '/albums/live-at-crucible', 
+                        'href' => '/discography/2016-live-at-the-crucible', 
                         'variant' => 'warning' // This maps to our theme's Cyan
                     ]
                 ]; include ROOT_PATH . '/includes/components/card.php'; ?>
