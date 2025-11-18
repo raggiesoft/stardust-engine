@@ -11,11 +11,11 @@ $pageTitle = "Live at The Crucible (2016) - The Stardust Engine";
     
     <!-- Album Header -->
     <div class="row align-items-center mb-5">
-        <div class="col-md-5 text-center text-md-start">
-            <img src="https://assets.raggiesoft.com/stardust-engine/music/2016-live-at-the-crucible/album-art.jpg" 
-                 alt="Live at The Crucible Album Art" 
-                 class="img-fluid shadow-lg rounded border border-4 border-warning">
-        </div>
+        <<?php $props = [
+            'path' => $album_path_web, 
+            'alt' => 'Live at The Crucible Album Art',
+            'variant' => 'warning' // or 'axiom'
+        ]; include ROOT_PATH . '/includes/components/_album-art-header.php'; ?>
         <div class="col-md-7">
             <h1 class="display-3 fw-bold text-uppercase text-primary mb-0" style="font-family: 'Impact', sans-serif;">
                 Live at The Crucible
