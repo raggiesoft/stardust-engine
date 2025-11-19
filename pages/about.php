@@ -14,19 +14,19 @@
         </p>
         <ul class="list-unstyled mb-4">
             <li class="mb-3">
-                <strong class="h5 d-block mb-1"><i class="fa-solid fa-user-astronaut text-primary me-3"></i>The Director:</strong>
+                <strong class="h5 d-block mb-1"><i class="fa-duotone fa-user-astronaut text-primary me-3"></i>The Director:</strong>
                 <p class="text-body-secondary ps-3">Michael Ragsdale</p>
             </li>
             <li class="mb-3">
-                <strong class="h5 d-block mb-1"><i class="fa-solid fa-brain-circuit text-primary me-3"></i>Lyrics & Lore:</strong>
+                <strong class="h5 d-block mb-1"><i class="fa-duotone fa-brain-circuit text-primary me-3"></i>Lyrics & Lore:</strong>
                 <p class="text-body-secondary ps-3">Google Gemini</p>
             </li>
             <li class="mb-3">
-                <strong class="h5 d-block mb-1"><i class="fa-solid fa-record-vinyl text-primary me-3"></i>Music & Vocals:</strong>
+                <strong class="h5 d-block mb-1"><i class="fa-duotone fa-record-vinyl text-primary me-3"></i>Music & Vocals:</strong>
                 <p class="text-body-secondary ps-3">Suno AI</p>
             </li>
             <li class="mb-3">
-                <strong class="h5 d-block mb-1"><i class="fa-solid fa-palette text-primary me-3"></i>Album Art:</strong>
+                <strong class="h5 d-block mb-1"><i class="fa-duotone fa-palette text-primary me-3"></i>Album Art:</strong>
                 <p class="text-body-secondary ps-3">DALL-E 3</p>
             </li>
         </ul>

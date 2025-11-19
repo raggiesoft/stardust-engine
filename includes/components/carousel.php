@@ -71,7 +71,7 @@ $albums = [
                     </h5>
                     <p class="fs-5"><?php echo htmlspecialchars($album['description']); ?></p>
                     <a href="<?php echo htmlspecialchars($album['link']); ?>" class="btn <?php echo $album['btn_class']; ?>">
-                        <i class="fa-solid fa-circle-info me-2"></i> View Details
+                        <i class="fa-duotone fa-circle-info me-2"></i> View Details
                     </a>
                 </div>
             </div>

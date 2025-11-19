@@ -57,7 +57,7 @@ $url_7z_wav = $base_web_path . '/archives/' . $archive_base_name . '-wav.7z';
 <!-- === Full Album Download Section === -->
 <div class="card border-secondary mb-4 bg-transparent">
     <div class="card-header bg-body-tertiary border-secondary d-flex justify-content-between align-items-center">
-        <h5 class="mb-0 text-uppercase"><i class="fa-solid fa-download me-2"></i>Download Full Album</h5>
+        <h5 class="mb-0 text-uppercase"><i class="fa-duotone fa-download me-2"></i>Download Full Album</h5>
         <span class="badge bg-secondary">License: CC BY-SA 4.0</span>
     </div>
     <div class="card-body">
@@ -67,13 +67,13 @@ $url_7z_wav = $base_web_path . '/archives/' . $archive_base_name . '-wav.7z';
         </p>
         <div class="d-flex gap-2 flex-wrap">
             <a href="<?php echo $url_zip_mp3; ?>" class="btn btn-outline-primary">
-                <i class="fa-solid fa-file-zipper me-2"></i>MP3 (ZIP)
+                <i class="fa-duotone fa-file-zipper me-2"></i>MP3 (ZIP)
             </a>
             <a href="<?php echo $url_zip_ogg; ?>" class="btn btn-outline-success">
-                <i class="fa-solid fa-file-zipper me-2"></i>OGG (ZIP)
+                <i class="fa-duotone fa-file-zipper me-2"></i>OGG (ZIP)
             </a>
             <a href="<?php echo $url_7z_wav; ?>" class="btn btn-outline-warning">
-                <i class="fa-solid fa-file-zipper me-2"></i>WAV (7z)
+                <i class="fa-duotone fa-file-zipper me-2"></i>WAV (7z)
             </a>
         </div>
     </div>
@@ -81,7 +81,7 @@ $url_7z_wav = $base_web_path . '/archives/' . $archive_base_name . '-wav.7z';
 
 <!-- === Streaming Coming Soon Notice === -->
 <div class="alert alert-info border-info mb-5 d-flex align-items-center" role="alert">
-    <i class="fa-solid fa-circle-info fs-4 me-3"></i>
+    <i class="fa-duotone fa-circle-info fs-4 me-3"></i>
     <div>
         <strong>Streaming Player Coming Soon!</strong><br>
         We are currently building a custom audio player for the site. In the meantime, please download the files above to listen.

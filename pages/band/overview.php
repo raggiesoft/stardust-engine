@@ -49,7 +49,7 @@
                             'text' => 'Read Ryan\'s Full Bio', 
                             'href' => '/band/ryan-oconnell', 
                             'variant' => 'neutral', 
-                            'icon' => 'fa-solid fa-arrow-right',
+                            'icon' => 'fa-duotone fa-arrow-right',
                             'iconPosition' => 'after'
                         ]; include ROOT_PATH . '/includes/components/button.php'; ?>
                     </div>
@@ -78,7 +78,7 @@
                             'text' => 'Read Cassidy\'s Full Bio', 
                             'href' => '/band/cassidy-oconnell', 
                             'variant' => 'neutral', 
-                            'icon' => 'fa-solid fa-arrow-right',
+                            'icon' => 'fa-duotone fa-arrow-right',
                             'iconPosition' => 'after'
                         ]; include ROOT_PATH . '/includes/components/button.php'; ?>
                     </div>
@@ -107,7 +107,7 @@
                             'text' => 'Read Holly\'s Full Bio', 
                             'href' => '/band/holly-oconnell', 
                             'variant' => 'neutral', 
-                            'icon' => 'fa-solid fa-arrow-right',
+                            'icon' => 'fa-duotone fa-arrow-right',
                             'iconPosition' => 'after'
                         ]; include ROOT_PATH . '/includes/components/button.php'; ?>
                     </div>
@@ -136,7 +136,7 @@
                             'text' => 'Read Evan\'s Full Bio', 
                             'href' => '/band/evan-wright', 
                             'variant' => 'neutral', 
-                            'icon' => 'fa-solid fa-arrow-right',
+                            'icon' => 'fa-duotone fa-arrow-right',
                             'iconPosition' => 'after'
                         ]; include ROOT_PATH . '/includes/components/button.php'; ?>
                     </div>
@@ -165,7 +165,7 @@
                             'text' => 'Read Tyler\'s Full Bio', 
                             'href' => '/band/tyler-wright', 
                             'variant' => 'neutral', 
-                            'icon' => 'fa-solid fa-arrow-right',
+                            'icon' => 'fa-duotone fa-arrow-right',
                             'iconPosition' => 'after'
                         ]; include ROOT_PATH . '/includes/components/button.php'; ?>
                     </div>

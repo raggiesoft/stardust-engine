@@ -62,7 +62,7 @@ $pageTitle = "Holly O'Connell - The Stardust Engine";
                         'text' => 'Back to The Band', 
                         'href' => '/band', 
                         'variant' => 'neutral', 
-                        'icon' => 'fa-solid fa-users'
+                        'icon' => 'fa-duotone fa-users'
                     ]
                 ]; include ROOT_PATH . '/includes/components/card.php'; ?>
             </div>

@@ -75,7 +75,7 @@
                 <div class="col-md-6">
                     <div class="card h-100 bg-transparent border-primary">
                         <div class="card-body">
-                            <h4 class="card-title text-primary"><i class="fa-solid fa-gavel me-2"></i>The Whistleblower</h4>
+                            <h4 class="card-title text-primary"><i class="fa-duotone fa-gavel me-2"></i>The Whistleblower</h4>
                             <p class="card-text text-muted">
                                 The photographer, Kevin—famous for shooting the <strong>Homestead Catalog</strong>—was horrified. He went to the LAPD as a whistleblower, turning the case into a criminal investigation.
                             </p>
@@ -85,7 +85,7 @@
                 <div class="col-md-6">
                     <div class="card h-100 bg-transparent border-warning">
                         <div class="card-body">
-                            <h4 class="card-title text-warning"><i class="fa-solid fa-file-contract me-2"></i>Holly the Shark</h4>
+                            <h4 class="card-title text-warning"><i class="fa-duotone fa-file-contract me-2"></i>Holly the Shark</h4>
                             <p class="card-text text-muted">
                                 Holly O'Connell, then a 2L law student, secured the altered clipboard (Exhibit A) and the <strong>Live in Chicago</strong> tape (Exhibit B). Caught between a criminal case and a civil nuke, Apex Records immediately voided the band's contract and signed over the masters to their first two albums.
                             </p>
@@ -95,7 +95,7 @@
             </div>
 
             <div class="alert alert-dark border-primary mt-5" role="alert">
-                <h4 class="alert-heading text-primary"><i class="fa-solid fa-flag me-2"></i>The Rebirth</h4>
+                <h4 class="alert-heading text-primary"><i class="fa-duotone fa-flag me-2"></i>The Rebirth</h4>
                 <p>
                     <strong>Friction</strong> was permanently canceled. The band was free. Holly O'Connell founded <strong>Engine Room Records, LLC</strong>, and the band, fueled by the trauma, retreated to their Blacksburg warehouse to record their true debut: 1995's <strong>The Warehouse Tapes.</strong>
                 </p>

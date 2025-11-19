@@ -57,9 +57,9 @@ $isContact = ($request_uri === '/contact');
       RaggieSoft
     </a>
     <ul class="dropdown-menu dropdown-menu-end">
-      <li><a class="dropdown-item" href="https://raggiesoft.com/">RaggieSoft.com <i class="fa-solid fa-arrow-up-right-from-square ms-2"></i></a></li>
-      <li><a class="dropdown-item" href="https://raggiesoftknox.com/">RaggieSoft Knox <i class="fa-solid fa-arrow-up-right-from-square ms-2"></i></a></li>
-      <li><a class="dropdown-item" href="https://michaelpragsdale.com/">MichaelPRagsdale.com <i class="fa-solid fa-arrow-up-right-from-square ms-2"></i></a></li>
+      <li><a class="dropdown-item" href="https://raggiesoft.com/">RaggieSoft.com <i class="fa-duotone fa-arrow-up-right-from-square ms-2"></i></a></li>
+      <li><a class="dropdown-item" href="https://raggiesoftknox.com/">RaggieSoft Knox <i class="fa-duotone fa-arrow-up-right-from-square ms-2"></i></a></li>
+      <li><a class="dropdown-item" href="https://michaelpragsdale.com/">MichaelPRagsdale.com <i class="fa-duotone fa-arrow-up-right-from-square ms-2"></i></a></li>
     </ul>
   </li>
 

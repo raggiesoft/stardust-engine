@@ -2,7 +2,7 @@
 <!-- A reusable disclaimer for all "Live" album pages -->
 
 <div class="alert alert-dark border-secondary mt-5" role="alert">
-    <h4 class="alert-heading text-warning"><i class="fa-solid fa-circle-info me-2"></i>A Note on "Live" Recordings</h4>
+    <h4 class="alert-heading text-warning"><i class="fa-duotone fa-circle-info me-2"></i>A Note on "Live" Recordings</h4>
     
     <div class="row">
         <div class="col-md-6 mb-3 mb-md-0">

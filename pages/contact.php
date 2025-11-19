@@ -17,19 +17,19 @@
                 </p>
                 <ul class="list-group list-group-flush bg-transparent mb-4">
                     <li class="list-group-item bg-transparent text-muted border-secondary px-0">
-                        <i class="fa-solid fa-user-astronaut text-primary me-3"></i>
+                        <i class="fa-duotone fa-user-astronaut text-primary me-3"></i>
                         <strong>The Director:</strong> Michael Ragsdale
                     </li>
                     <li class="list-group-item bg-transparent text-muted border-secondary px-0">
-                        <i class="fa-solid fa-brain-circuit text-primary me-3"></i>
+                        <i class="fa-duotone fa-brain-circuit text-primary me-3"></i>
                         <strong>Lyrics & Lore:</strong> Google Gemini
                     </li>
                     <li class="list-group-item bg-transparent text-muted border-secondary px-0">
-                        <i class="fa-solid fa-record-vinyl text-primary me-3"></i>
+                        <i class="fa-duotone fa-record-vinyl text-primary me-3"></i>
                         <strong>Music & Vocals:</strong> Suno AI
                     </li>
                     <li class="list-group-item bg-transparent text-muted border-secondary px-0">
-                        <i class="fa-solid fa-palette text-primary me-3"></i>
+                        <i class="fa-duotone fa-palette text-primary me-3"></i>
                         <strong>Album Art:</strong> DALL-E 3
                     </li>
                 </ul>
@@ -95,7 +95,7 @@
 
                 <!-- Submit Button -->
                 <button type="submit" class="btn btn-primary w-100 btn-lg shadow-lg">
-                    <i class="fa-solid fa-paper-plane me-2"></i>
+                    <i class="fa-duotone fa-paper-plane me-2"></i>
                     Send Message
                 </button>
             </form>

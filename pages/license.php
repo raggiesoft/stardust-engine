@@ -27,7 +27,7 @@
       </section>
       
       <div class="alert alert-dark border-secondary mt-4" role="alert">
-        <h4 class="alert-heading text-warning"><i class="fa-solid fa-circle-info me-2"></i>In Plain English</h4>
+        <h4 class="alert-heading text-warning"><i class="fa-duotone fa-circle-info me-2"></i>In Plain English</h4>
         <p>
             You are free to use, share, and adapt the narrative, lyrics, and art for any purpose (even commercially), as long as you give appropriate credit and license your new creations under the same terms.
         </p>

@@ -17,7 +17,7 @@
             <i class="fa-brands fa-github"></i>
           </a>
           <a href="https://michaelpragsdale.com" aria-label="Michael Ragsdale's Portfolio" target="_blank" rel="noopener noreferrer" class="link-secondary fs-4">
-            <i class="fa-solid fa-briefcase"></i>
+            <i class="fa-duotone fa-briefcase"></i>
           </a>
         </div>
       </div>

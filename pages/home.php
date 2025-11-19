@@ -21,7 +21,7 @@
         <div class="row justify-content-center">
             <div class="col-lg-10">
                 <div class="alert alert-warning bg-warning-subtle border-warning-subtle" role="alert">
-                    <h4 class="alert-heading fw-bold"><i class="fa-solid fa-circle-info me-2"></i>Welcome to the Project! (Start Here)</h4>
+                    <h4 class="alert-heading fw-bold"><i class="fa-duotone fa-circle-info me-2"></i>Welcome to the Project! (Start Here)</h4>
                     <p>
                         <strong>This is a real AI art project AND a fictional narrative, presented as one experience.</strong> 
                         By continuing, you understand that this is a "dual-world" website.
@@ -79,7 +79,7 @@
         <div class="col-lg-4">
             <div class="card h-100">
                 <div class="card-body d-flex flex-column">
-                    <h3 class="fw-bold text-glow-primary"><i class="fa-solid fa-users me-2"></i>The Band</h3>
+                    <h3 class="fw-bold text-glow-primary"><i class="fa-duotone fa-users me-2"></i>The Band</h3>
                     <p class="fs-5">
                         Meet the five family members who started it all: Cassidy, Ryan, Holly, Evan, and Tyler.
                     </p>
@@ -91,7 +91,7 @@
         <div class="col-lg-4">
             <div class="card h-100">
                 <div class="card-body d-flex flex-column">
-                    <h3 class="fw-bold text-glow-primary"><i class="fa-solid fa-book-atlas me-2"></i>The Lore</h3>
+                    <h3 class="fw-bold text-glow-primary"><i class="fa-duotone fa-book-atlas me-2"></i>The Lore</h3>
                     <p class="fs-5">
                         Learn about the "Friction" scandal, the "Cold War" with Apex Records, and the birth of Engine Room Records.
                     </p>
@@ -103,7 +103,7 @@
         <div class="col-lg-4">
             <div class="card h-100">
                 <div class="card-body d-flex flex-column">
-                    <h3 class="fw-bold text-glow-primary"><i class="fa-solid fa-record-vinyl me-2"></i>The Music</h3>
+                    <h3 class="fw-bold text-glow-primary"><i class="fa-duotone fa-record-vinyl me-2"></i>The Music</h3>
                     <p class="fs-5">
                         Explore the full discography, from the polished 80s pop to the raw, independent rock of their rebirth.
                     </p>
