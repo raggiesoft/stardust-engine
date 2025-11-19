@@ -1,5 +1,5 @@
 <?php
-// RaggieSoft Elara v2 - Smart Router
+// RaggieSoft Elara v2.1 - Smart Router with Directory Indexing
 define('ROOT_PATH', dirname(__DIR__));
 $request_uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
@@ -14,9 +14,8 @@ $defaults = [
     'view' => 'errors/404',
     'title' => $siteName,
     'theme' => 'stardust-engine',
-    'sidebar' => 'sidebar-default', // Component name (without path)
+    'sidebar' => 'sidebar-default',
     'showSidebar' => true,
-    // OG Defaults
     'ogTitle' => $siteName,
     'ogDescription' => "Explore the musical universe of The Stardust Engine, a family of CPI alumni who fought their label and won their freedom.",
     'ogImage' => "https://assets.raggiesoft.com/stardust-engine/images/stardust-engine-logo.jpg",
@@ -24,29 +23,17 @@ $defaults = [
 ];
 
 // --- 2. ROUTE CONFIGURATION (Overrides) ---
-// Define ONLY pages that need special handling (Custom OG tags, Themes, or Titles)
-// If a page is standard, the Auto-Discovery (Step 3) will handle it!
 $routes = [
     '/' => [
         'view' => 'pages/home',
         'showSidebar' => false
     ],
-    '/band' => [
-        'view' => 'pages/band/overview',
-        'title' => 'The Band - ' . $siteName,
-        'showSidebar' => false
-    ],
-    '/contact' => [
-        'view' => 'pages/contact',
-        'title' => 'Contact Us - ' . $siteName,
-        'showSidebar' => false
-    ],
     
     // --- Special Theme Page ---
     '/discography/2016-live-at-the-crucible' => [
-        'view' => 'pages/discography/live-crucible',
+        'view' => 'pages/discography/2016-live-crucible',
         'title' => 'Live at The Crucible (2016) - ' . $siteName,
-        'theme' => 'crucible', // <--- Custom Theme Override
+        'theme' => 'crucible',
         'ogTitle' => 'Live at The Crucible - The Stardust Engine',
         'ogDescription' => 'The 2016 Homecoming Reunion. The only official release of "Ignition".',
         'ogImage' => 'https://assets.raggiesoft.com/stardust-engine/music/album-art-live-crucible.jpg'
@@ -54,7 +41,7 @@ $routes = [
 
     // --- Album with Custom OG Tags ---
     '/discography/1987-electric-color' => [
-        'view' => 'pages/discography/1987-electric-color', // Standardized filename
+        'view' => 'pages/discography/1987-electric-color',
         'title' => 'Electric Color (1987) - ' . $siteName,
         'ogTitle' => 'Electric Color (1987) - The Stardust Engine',
         'ogDescription' => "The debut album. Featuring 'Electric Color' and 'Break the Walls'. Listen and download now.",
@@ -83,17 +70,23 @@ $routes = [
 // A. Check for Explicit Configuration
 $pageConfig = $routes[$request_uri] ?? [];
 
-// B. Auto-Discovery (If no explicit view set)
+// B. Auto-Discovery Logic
 if (!isset($pageConfig['view'])) {
-    // Try to map URI directly to a file in /pages/
-    // e.g., /about -> pages/about.php
-    // e.g., /band/ryan-oconnell -> pages/band/ryan-oconnell.php
-    
     $potentialPath = 'pages' . $request_uri;
     
-    // Check if file exists (append .php)
+    // 1. Check for Direct File Match (e.g., /about -> pages/about.php)
     if (file_exists(ROOT_PATH . '/' . $potentialPath . '.php')) {
         $pageConfig['view'] = $potentialPath;
+    } 
+    // 2. Check for Directory Index (e.g., /discography -> pages/discography/overview.php)
+    elseif (is_dir(ROOT_PATH . '/' . $potentialPath) && file_exists(ROOT_PATH . '/' . $potentialPath . '/overview.php')) {
+        $pageConfig['view'] = $potentialPath . '/overview';
+        
+        // Special Case: Disable sidebar for these overview pages unless overridden
+        // (Matches your old logic where /discography and /band were full width)
+        if (!isset($pageConfig['showSidebar'])) {
+            $pageConfig['showSidebar'] = false; 
+        }
     }
 }
 
@@ -105,26 +98,32 @@ if (isset($pageConfig['view'])) {
         if (str_starts_with($request_uri, '/discography') || str_starts_with($request_uri, '/albums')) {
             $pageConfig['sidebar'] = 'sidebar-discography';
         } elseif (str_starts_with($request_uri, '/story') || str_starts_with($request_uri, '/history')) {
-            $pageConfig['sidebar'] = 'sidebar-stories'; // Or sidebar-history if you renamed it
+            $pageConfig['sidebar'] = 'sidebar-stories';
         } elseif (str_starts_with($request_uri, '/band')) {
-            $pageConfig['showSidebar'] = false; // Band bios are usually full width
+             // The /band root is caught by the Directory Index logic above, 
+             // so this only applies to sub-pages like /band/ryan-oconnell
+            $pageConfig['showSidebar'] = false; 
         }
     }
 
-    // Auto-Title Logic (e.g., "ryan-oconnell" -> "Ryan Oconnell")
+    // Auto-Title Logic
     if (!isset($pageConfig['title'])) {
         $slug = basename($request_uri);
-        $prettySlug = ucwords(str_replace('-', ' ', $slug));
+        // Handle index pages better (don't title it "Discography Overview")
+        if ($slug === 'discography' || $slug === 'band') {
+             $prettySlug = ucwords($slug);
+        } else {
+             $prettySlug = ucwords(str_replace('-', ' ', $slug));
+        }
         $pageConfig['title'] = $prettySlug . ' - ' . $siteName;
     }
 }
 
 // --- 4. MERGE & RENDER ---
 
-// Merge calculated config with defaults
 $config = array_merge($defaults, $pageConfig);
 
-// Extract variables for use in templates ($pageTitle, $ogImage, etc.)
+// Extract variables
 $pageTitle = $config['title'];
 $currentPageTheme = $config['theme'];
 $showSidebar = $config['showSidebar'];
@@ -157,7 +156,6 @@ if ($showSidebar && file_exists($currentSidebar)) {
 if (file_exists(ROOT_PATH . '/' . $config['view'] . '.php')) {
     require_once ROOT_PATH . '/' . $config['view'] . '.php';
 } else {
-    // Fallback 404 if the view file is missing (even if route was defined)
     http_response_code(404);
     require_once ROOT_PATH . '/errors/404.php';
 }

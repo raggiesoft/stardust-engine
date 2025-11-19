@@ -1,6 +1,7 @@
 <?php
 // Page data
 $pageTitle = "Live at The Crucible (2016) - The Stardust Engine";
+$album_path_web = '/stardust-engine/music/2016-live-at-the-crucible';
 ?>
 
 <div class="container py-5">
