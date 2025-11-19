@@ -10,8 +10,9 @@ $album_path_web = '/stardust-engine/music/1995-the-warehouse-tapes';
         <?php $props = [
             'path' => $album_path_web, 
             'alt' => 'The Warehouse Tapes Album Art',
-            'variant' => 'warning' // or 'axiom'
+            'variant' => 'axiom' // Orange for Freedom/Warehouse era
         ]; include ROOT_PATH . '/includes/components/_album-art-header.php'; ?>
+        
         <div class="col-md-7">
             <h1 class="display-3 fw-bold text-uppercase text-primary mb-0" style="font-family: 'Impact', sans-serif;">
                 The Warehouse Tapes
@@ -20,91 +21,101 @@ $album_path_web = '/stardust-engine/music/1995-the-warehouse-tapes';
                 The 1995 "Bat Signal"
             </p>
             <p class="lead text-secondary">
-                The band's first independent release. Recorded in their Blacksburg warehouse ("The Fortress") and funded entirely by the "Forger Nation War Chest," this EP was the band's rebirth.
+                Released in 1995 during the band's "Wilderness Era," this EP was the official rebirth of The Stardust Engine.
             </p>
             <p class="text-muted">
-                Released in 1995, right in the middle of the Grunge era, this album was a defiant "Sonic Orphan." While the rest of the world went lo-fi and flannel, The Stardust Engine unleashed the polished, authentic 80s arena rock sound they had been suppressed from making for a decade.
+                Recorded in their Blacksburg warehouse ("The Fortress") and funded entirely by the "Forger Nation War Chest," this album was a complete rejection of their polished Apex past. Fueled by the "ocean of rage" from the 1994 <em>Friction</em> trial, the band finally unleashed their true identity.
             </p>
             <p class="small text-muted fst-italic">
-                *Originally sold as a mail-order cassette and CD via TheStardustEngine.com.
+                *Originally sold as a mail-order only Cassette and CD via TheStardustEngine.com.
             </p>
         </div>
     </div>
 
     <hr class="border-secondary opacity-25 mb-5">
 
-    <!-- Tracklist & Downloads -->
-    <!-- 
-      This component reads the album's JSON from the CDN and
-      automatically builds the download table and buttons.
-    -->
-    <?php include ROOT_PATH . '/includes/components/_tracklist-downloader.php'; ?>
+    <?php //include ROOT_PATH . '/includes/components/_tracklist-downloader.php'; ?>
 
-    <h2 class="display-6 fw-bold text-uppercase mb-4">Tracklist & Liner Notes</h2>
+    <div class="mt-5">
+        <h3 class="h4 fw-bold text-uppercase text-muted mb-4 border-bottom pb-2">Liner Notes & Lore</h3>
 
-    <div class="list-group list-group-flush bg-transparent">
-        
-        <div class="list-group-item bg-transparent border-secondary text-muted py-3">
-            <div class="d-flex w-100 justify-content-between align-items-center">
-                <h5 class="mb-1 text-primary fw-bold">1. Static</h5>
-                <span class="badge bg-secondary">The Opener</span>
-            </div>
-            <p class="mb-1 small">
-                "I am the static! I am the noise!" The opening statement of the Freedom Era. A direct rejection of the "hollow sound" Apex forced them to make.
-            </p>
+        <div class="d-flex align-items-center mb-3">
+            <i class="fa-duotone fa-cassette-tape fs-3 text-secondary me-3"></i>
+            <h4 class="h5 fw-bold text-secondary mb-0 text-uppercase">Side A: The Engine (Rage & Redemption)</h4>
         </div>
 
-        <div class="list-group-item bg-transparent border-secondary text-muted py-3">
-            <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1">2. Garbage</h5>
+        <div class="list-group list-group-flush bg-transparent mb-5">
+            
+            <div class="list-group-item bg-transparent border-secondary text-muted py-3">
+                <div class="d-flex w-100 justify-content-between align-items-center mb-1">
+                    <strong class="text-primary fs-5">1. Static</strong>
+                    <span class="badge bg-secondary">The Statement</span>
+                </div>
+                <p class="mb-0">
+                    "I am the static! I am the noise!" The declaration of the Freedom Era. A direct rejection of the "hollow sound" Apex forced them to make.
+                </p>
             </div>
-            <p class="mb-1 small">
-                Ryan's raw, unfiltered rage track. It retells the infamous "dirty mirror" incident from the 1992 <em>Friction</em> photo shoot ("It was just dust! It was just a lie!").
-            </p>
+
+            <div class="list-group-item bg-transparent border-secondary text-muted py-3">
+                <div class="mb-1"><strong class="fs-5">2. Garbage</strong></div>
+                <p class="mb-0">
+                    Ryan's raw, "jangle rock" rage track. It retells the infamous "dirty mirror" incident from the 1992 <em>Friction</em> photo shoot ("It was just dust! It was just a lie!"), channeling his anger at the executive who humiliated him.
+                </p>
+            </div>
+
+            <div class="list-group-item bg-transparent border-secondary text-muted py-3">
+                <div class="d-flex w-100 justify-content-between align-items-center mb-1">
+                    <strong class="text-warning fs-5">3. Not Your Saint</strong>
+                    <span class="badge bg-warning text-dark">Cassidy's Rage</span>
+                </div>
+                <p class="mb-0">
+                    After the "Tabloid Hell" of the trial, the media tried to paint Cassidy as a "Victim-Saint." This fierce, "Pat Benatar-style" arena anthem is her rejection of that narrative: "I am not your victim / I am not your saint."
+                </p>
+            </div>
+
+            <div class="list-group-item bg-transparent border-secondary text-muted py-3">
+                <div class="d-flex w-100 justify-content-between align-items-center mb-1">
+                    <strong class="text-primary fs-5">4. Atmosphere (Warehouse Demo)</strong>
+                    <span class="badge bg-secondary">The Lost Gem</span>
+                </div>
+                <p class="mb-0">
+                    The only surviving track from the canceled 1992 <em>Friction</em> sessions. The band wrote it about a literal space shuttle re-entry ("Here comes the friction / Feel the fire"), but the "rogue" label executive misinterpreted it as a sexual metaphor.
+                </p>
+            </div>
+
+            <div class="list-group-item bg-transparent border-secondary text-muted py-3">
+                <div class="d-flex w-100 justify-content-between align-items-center mb-1">
+                    <strong class="text-warning fs-5">5. The Fortress</strong>
+                    <span class="badge bg-warning text-dark">Side A Finale</span>
+                </div>
+                <p class="mb-0">
+                    The epic closer of Side A. An arena-rock tribute to the "Ironheads" and CPI alumni who funded their freedom. "You built a place to hide from the storm / You are the shield!"
+                </p>
+            </div>
+
         </div>
 
-        <div class="list-group-item bg-transparent border-secondary text-muted py-3">
-            <div class="d-flex w-100 justify-content-between align-items-center">
-                <h5 class="mb-1 text-warning fw-bold">3. Not Your Saint</h5>
-                <span class="badge bg-warning text-dark">Cassidy's Rage</span>
-            </div>
-            <p class="mb-1 small">
-                Cassidy rejecting the "Victim-Saint" narrative the media painted of her during the 1994 trial. A fierce, female-led hard rock anthem where she declares, "I am not your victim / I am not your saint."
-            </p>
+        <div class="d-flex align-items-center mb-3">
+            <i class="fa-duotone fa-cassette-tape fs-3 text-warning me-3"></i>
+            <h4 class="h5 fw-bold text-warning mb-0 text-uppercase">Side B: The Stardust (Ad Astra)</h4>
         </div>
 
-        <div class="list-group-item bg-transparent border-secondary text-muted py-3">
-            <div class="d-flex w-100 justify-content-between align-items-center">
-                <h5 class="mb-1">4. Atmosphere (Warehouse Demo)</h5>
-                <span class="badge bg-secondary text-light">The Lost Gem</span>
-            </div>
-            <p class="mb-1 small">
-                The only surviving track from the canceled <em>Friction</em> sessions (1992). The band wrote it about a literal space shuttle re-entry ("Here comes the friction / Feel the fire"), but the label executive misinterpreted it as a sexual metaphor.
-            </p>
-        </div>
+        <div class="list-group list-group-flush bg-transparent">
 
-        <div class="list-group-item bg-transparent border-secondary text-muted py-3">
-            <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1">5. The Fortress</h5>
+            <div class="list-group-item bg-transparent border-secondary py-5" style="background: rgba(5, 217, 232, 0.05);">
+                <div class="d-flex w-100 justify-content-between align-items-center mb-3">
+                    <strong class="text-glow-warning display-5 fw-bold">6. Escape Velocity (Ad Astra)</strong>
+                    <span class="badge bg-info text-dark">The Masterpiece</span>
+                </div>
+                <p class="lead text-body mb-3">
+                    The 4-part prog-rock epic that consumes the entirety of Side B.
+                </p>
+                <p class="text-muted mb-0">
+                    Channeling the band's love for <strong>Prism</strong> and <strong>Origin</strong> (specifically their epic <em>The Feast</em>), this 12-minute suite details Cassidy's psychological journey from the "Cage" of the trial to the "Cosmos" of freedom. It is the band's most complex instrumentation to date, featuring the movements: <strong>I. The Cage</strong>, <strong>II. Ignition</strong>, <strong>III. The Cosmos</strong>, and <strong>IV. Re-entry</strong>.
+                </p>
             </div>
-            <p class="mb-1 small">
-                An arena-rock tribute to the "Ironheads" and CPI alumni who funded their freedom. "You built a place to hide from the storm / You are the shield!"
-            </p>
-        </div>
 
-        <div class="list-group-item bg-transparent border-secondary py-4" style="background: rgba(5, 217, 232, 0.05);">
-            <div class="d-flex w-100 justify-content-between align-items-center">
-                <h5 class="mb-1 text-glow-warning display-6 fw-bold">6. Escape Velocity (Ad Astra)</h5>
-                <span class="badge bg-warning text-dark">The Epic</span>
-            </div>
-            <p class="mb-1 fs-5 text-body">
-                The 4-part prog-rock masterpiece that took up the entire Side B.
-            </p>
-            <p class="small text-muted">
-                This 12-minute epic details Cassidy's psychological journey from the "Cage" of the trial to the "Cosmos" of freedom. It features the band's most complex instrumentation, channeling their love for Rush and Genesis.
-            </p>
         </div>
-
     </div>
 
 </div>

@@ -31,7 +31,7 @@
 <h6 class="pt-3 pb-2 mb-3 border-bottom mt-4">Engine Room "Freedom" Era</h6>
 <ul class="nav flex-column mb-2">
    <li class="nav-item">
-    <a class="nav-link link-secondary" href="/discography/1995-warehouse-tapes">
+    <a class="nav-link link-secondary" href="/discography/1995-the-warehouse-tapes">
         <i class="fa-duotone fa-box-archive me-2"></i>The Warehouse Tapes (1995)
     </a>
    </li>
