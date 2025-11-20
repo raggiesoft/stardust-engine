@@ -9,7 +9,7 @@ $albums = [
         'title' => 'Electric Color',
         'year' => 1987,
         'img_src' => 'https://assets.raggiesoft.com/stardust-engine/music/1987-electric-color/album-art.jpg',
-        'description' => 'The synth-rock debut that peaked at #2 on the Billboard Hot 100.',
+        'description' => 'The synth-rock debut that peaked at #2.',
         'link' => '/discography/1987-electric-color',
         'btn_class' => 'btn-primary'
     ],

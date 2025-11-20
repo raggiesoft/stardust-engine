@@ -30,7 +30,7 @@
                     </li>
                     <li class="list-group-item bg-transparent text-muted border-secondary px-0">
                         <i class="fa-duotone fa-palette text-primary me-3"></i>
-                        <strong>Album Art:</strong> DALL-E 3
+                        <strong>Album Art:</strong> DALL-E
                     </li>
                 </ul>
                 <p class="text-muted">
