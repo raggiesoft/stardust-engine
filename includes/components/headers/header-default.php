@@ -42,8 +42,8 @@ $isContact = ($request_uri === '/contact');
       The Lore
     </a>
     <ul class="dropdown-menu dropdown-menu-end">
-      <li><a class="dropdown-item <?php echo ($request_uri === '/story/the-friction-catastrophe') ? 'active' : ''; ?>" href="/story/the-friction-catastrophe">The Friction Catastrophe</a></li>
-      <li><a class="dropdown-item <?php echo ($request_uri === '/story/cpi') ? 'active' : ''; ?>" href="/story/cpi">About CPI & The Forgers</a></li>
+      <li><a class="dropdown-item <?php echo ($request_uri === '/story/friction') ? 'active' : ''; ?>" href="/story/the-friction-catastrophe">The Friction Catastrophe</a></li>
+      <li><a class="dropdown-item <?php echo ($request_uri === '/story/cpi/') ? 'active' : ''; ?>" href="/story/cpi">About CPI & The Forgers</a></li>
     </ul>
   </li>
 

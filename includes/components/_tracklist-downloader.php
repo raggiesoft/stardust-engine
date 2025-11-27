@@ -1,13 +1,12 @@
 <?php
 // --- Component: _tracklist-downloader.php ---
-// Reads album JSON from CDN and builds a tracklist with license-gated download links.
+// Reads album JSON from CDN, builds a unified tracklist, and fetches lyrics on demand.
 
-// --- 1. Load JSON Data from CDN ---
+// 1. Load JSON Data
 $base_web_path = 'https://assets.raggiesoft.com' . $album_path_web;
 $tracks_json_url = $base_web_path . '/tracks.json';
 $album_json_url = $base_web_path . '/album.json';
 
-// Fetch JSON content
 $tracks_json_content = @file_get_contents($tracks_json_url);
 $album_json_content = @file_get_contents($album_json_url);
 
@@ -20,14 +19,13 @@ $tracks_data = json_decode($tracks_json_content, true);
 $album_data = json_decode($album_json_content, true);
 $tracks = $tracks_data['tracks'];
 
-// --- 2. Helper Functions ---
+// 2. Helper Functions
 if (!function_exists('get_web_safe_title')) {
     function get_web_safe_title($title) {
         $title = strtolower($title);
         $title = preg_replace('/[^\w\s-]/', '', $title);
         $title = preg_replace('/[\s_]+/', '-', $title);
-        $title = preg_replace('/-+/', '-', $title);
-        return $title;
+        return preg_replace('/-+/', '-', $title);
     }
 }
 
@@ -38,26 +36,20 @@ if (!function_exists('get_archive_name')) {
     }
 }
 
-// --- 3. Build Archive URLs ---
+// 3. Archive URLs
 $archive_base_name = get_archive_name($album_data['albumName'], $album_data['narrativeReleaseDate']);
 $url_zip_mp3 = $base_web_path . '/archives/' . $archive_base_name . '-mp3.zip';
 $url_zip_ogg = $base_web_path . '/archives/' . $archive_base_name . '-ogg.zip';
 $url_7z_wav = $base_web_path . '/archives/' . $archive_base_name . '-wav.7z';
 ?>
 
-<!-- === Full Album Download Section === -->
-<div class="card border-secondary mb-4 bg-transparent">
+<div class="card border-secondary mb-5 bg-transparent">
     <div class="card-header bg-body-tertiary border-secondary d-flex justify-content-between align-items-center">
-        <h5 class="mb-0 text-uppercase"><i class="fa-solid fa-download me-2"></i>Download Full Album</h5>
-        <span class="badge bg-secondary">License: CC BY-SA 4.0</span>
+        <h5 class="mb-0 text-uppercase"><i class="fa-duotone fa-compact-disc me-2"></i>Full Album Archives</h5>
+        <span class="badge bg-secondary">CC BY-SA 4.0</span>
     </div>
     <div class="card-body">
-        <p class="card-text small text-muted mb-3">
-            Includes high-quality audio, album art, and liner notes. 
-            <strong>WAV</strong> archives use 7-Zip (.7z) for maximum compression.
-        </p>
         <div class="d-flex gap-2 flex-wrap">
-            <!-- Added 'license-gate' class to all download buttons -->
             <a href="<?php echo $url_zip_mp3; ?>" class="btn btn-outline-primary license-gate">
                 <i class="fa-solid fa-file-zipper me-2"></i>MP3 (ZIP)
             </a>
@@ -71,124 +63,193 @@ $url_7z_wav = $base_web_path . '/archives/' . $archive_base_name . '-wav.7z';
     </div>
 </div>
 
-<!-- === Streaming Coming Soon Notice === -->
-<div class="alert alert-info border-info mb-5 d-flex align-items-center" role="alert">
-    <i class="fa-solid fa-circle-info fs-4 me-3"></i>
-    <div>
-        <strong>Streaming Player Coming Soon!</strong><br>
-        We are currently building a custom audio player for the site. In the meantime, please download the files above to listen.
-    </div>
-</div>
+<h3 class="h4 fw-bold text-uppercase text-muted mb-4 border-bottom pb-2">
+    <i class="fa-duotone fa-list-music me-2"></i>Tracklist & Lyrics
+</h3>
 
-<!-- Tracklist Table (Download Only) -->
-<div class="table-responsive">
-    <table class="table table-borderless table-hover fs-5 align-middle">
-        <thead>
-            <tr class="text-secondary text-uppercase small">
-                <th style="width: 50px;">#</th>
-                <th>Title</th>
-                <th class="text-end">Single Track Download</th>
-            </tr>
-        </thead>
-        <tbody class="border-top border-secondary">
-
-            <?php foreach ($tracks as $index => $track): ?>
-                <?php
-                    $track_num_padded = str_pad($track['track'], 2, '0', STR_PAD_LEFT);
-                    $web_safe_title = get_web_safe_title($track['title']);
-                    $output_base_name = $track['disc'] . '-' . $track_num_padded . '-' . $web_safe_title;
-
-                    $wav_url = $base_web_path . '/wav/' . $track['fileName'];
-                    $mp3_url = $base_web_path . '/mp3/' . $output_base_name . '.mp3';
-                    $ogg_url = $base_web_path . '/ogg/' . $output_base_name . '.ogg';
-                ?>
-                <tr>
-                    <td class="text-muted fw-bold"><?php echo $track['track']; ?>.</td>
-                    <td>
-                        <strong class="text-primary"><?php echo htmlspecialchars($track['title']); ?></strong>
-                    </td>
-                    <td class="text-end">
-                        <div class="btn-group" role="group" aria-label="Download options">
-                            <!-- Added 'license-gate' class here too -->
-                            <a href="<?php echo $mp3_url; ?>" class="btn btn-outline-secondary btn-sm license-gate" download>MP3</a>
-                            <a href="<?php echo $ogg_url; ?>" class="btn btn-outline-secondary btn-sm license-gate" download>OGG</a>
-                            <a href="<?php echo $wav_url; ?>" class="btn btn-outline-secondary btn-sm license-gate" download>WAV</a>
+<div class="list-group list-group-flush bg-transparent">
+    <?php foreach ($tracks as $index => $track): ?>
+        <?php
+            // Calculate Paths
+            $track_num_padded = str_pad($track['track'], 2, '0', STR_PAD_LEFT);
+            $web_safe_title = get_web_safe_title($track['title']);
+            
+            // Standard Naming: 01-01-song-title
+            $base_name = $track['disc'] . '-' . $track_num_padded . '-' . $web_safe_title;
+            
+            $wav_url = $base_web_path . '/wav/' . $track['fileName']; 
+            $mp3_url = $base_web_path . '/mp3/' . $base_name . '.mp3';
+            $lyrics_url = $base_web_path . '/lyrics/' . $base_name . '.md';
+        ?>
+        
+        <div class="list-group-item bg-transparent border-secondary text-muted py-3">
+            <div class="row align-items-center">
+                <div class="col-md-6 mb-2 mb-md-0">
+                    <div class="d-flex align-items-center">
+                        <span class="text-secondary fw-bold me-3" style="width: 25px;"><?php echo $track['track']; ?>.</span>
+                        <div>
+                            <strong class="text-body d-block fs-5"><?php echo htmlspecialchars($track['title']); ?></strong>
                         </div>
-                    </td>
-                </tr>
-            <?php endforeach; ?>
+                    </div>
+                </div>
 
-        </tbody>
-    </table>
+                <div class="col-md-6 text-end">
+                    <div class="btn-group" role="group">
+                        <button type="button" 
+                                class="btn btn-sm btn-outline-info btn-view-lyrics"
+                                data-title="<?php echo htmlspecialchars($track['title']); ?>"
+                                data-url="<?php echo $lyrics_url; ?>">
+                            <i class="fa-duotone fa-book-open me-2"></i>Lyrics & Lore
+                        </button>
+
+                        <div class="btn-group" role="group">
+                            <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown">
+                                <i class="fa-duotone fa-download me-1"></i> Download
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end bg-dark border-secondary">
+                                <li>
+                                    <a class="dropdown-item text-light license-gate" href="<?php echo $mp3_url; ?>">
+                                        <i class="fa-duotone fa-file-audio me-2 text-primary"></i>MP3 (High Quality)
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item text-light license-gate" href="<?php echo $base_web_path . '/ogg/' . $base_name . '.ogg'; ?>">
+                                        <i class="fa-duotone fa-file-audio me-2 text-success"></i>OGG (Open Source)
+                                    </a>
+                                </li>
+                                <li><hr class="dropdown-divider border-secondary"></li>
+                                <li>
+                                    <a class="dropdown-item text-light license-gate" href="<?php echo $wav_url; ?>">
+                                        <i class="fa-duotone fa-file-waveform me-2 text-warning"></i>WAV (Master)
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <?php endforeach; ?>
 </div>
 
-
-<!-- === LICENSE AGREEMENT MODAL === -->
-<div class="modal fade" id="licenseModal" tabindex="-1" aria-labelledby="licenseModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content border-secondary bg-body-tertiary">
-      <div class="modal-header border-secondary">
-        <h5 class="modal-title text-warning" id="licenseModalLabel">
-            <i class="fa-brands fa-creative-commons me-2"></i>License Agreement
+<div class="modal fade" id="lyricsModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+    <div class="modal-content shadow-lg">
+      <div class="modal-header">
+        <h5 class="modal-title">
+            <i class="fa-duotone fa-music me-2 text-primary"></i>
+            <span id="lyricsModalTitle" class="text-glow-primary">Track Title</span>
         </h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body text-body">
-        <p>You are about to download material protected by the <strong>Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)</strong> license.</p>
-        
-        <p class="small text-muted">By downloading, you agree to the following terms:</p>
-        <ul class="small text-muted">
-            <li class="mb-2"><strong>Attribution:</strong> You must give appropriate credit to <em>The Stardust Engine</em> and <em>Michael Ragsdale</em>, provide a link to the license, and indicate if changes were made.</li>
-            <li class="mb-2"><strong>ShareAlike:</strong> If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.</li>
-        </ul>
-        
-        <div class="alert alert-dark border-secondary py-2 px-3 d-flex align-items-center">
-            <i class="fa-solid fa-shield-halved text-primary me-3"></i>
-            <small class="mb-0">We share this music freely because we believe in art, not gates. Please respect the creators.</small>
+      <div class="modal-body">
+        <div id="lyricsContent" class="font-monospace small text-body opacity-75">
+            <div class="text-center py-5">
+                <div class="spinner-border text-primary" role="status"></div>
+                <p class="mt-2">Accessing Archives...</p>
+            </div>
         </div>
       </div>
-      <div class="modal-footer border-secondary">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-        <button type="button" class="btn btn-primary" id="btn-agree-license">
-            <i class="fa-solid fa-check me-2"></i>I Agree & Download
-        </button>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close Archive</button>
       </div>
     </div>
   </div>
 </div>
 
-<!-- === LICENSE LOGIC SCRIPT === -->
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-    const licenseModal = new bootstrap.Modal(document.getElementById('licenseModal'));
-    const agreeBtn = document.getElementById('btn-agree-license');
-    let pendingLink = null; // To remember which button was clicked
+    const lyricsModal = new bootstrap.Modal(document.getElementById('lyricsModal'));
+    const titleEl = document.getElementById('lyricsModalTitle');
+    const contentEl = document.getElementById('lyricsContent');
 
-    // 1. Intercept all download clicks
-    document.querySelectorAll('.license-gate').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            // Check if user has already agreed in this browser
-            const hasAccepted = localStorage.getItem('rs_license_accepted_cc_bysa_4');
+    document.querySelectorAll('.btn-view-lyrics').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const title = btn.getAttribute('data-title');
+            const url = btn.getAttribute('data-url');
+
+            // 1. Reset
+            titleEl.textContent = title;
+            contentEl.innerHTML = `
+                <div class="text-center py-5">
+                    <div class="spinner-border text-primary" role="status"></div>
+                    <p class="mt-2 font-monospace">Retrieving data from the Vault...</p>
+                </div>`;
             
-            if (!hasAccepted) {
-                e.preventDefault(); // STOP the download
-                pendingLink = btn.href; // Remember where they wanted to go
-                licenseModal.show(); // Show the rules
-            }
-            // If accepted, do nothing (let the link work normally)
-        });
-    });
+            lyricsModal.show();
 
-    // 2. Handle "I Agree" Click
-    agreeBtn.addEventListener('click', () => {
-        // Save consent forever (or until cache clear)
-        localStorage.setItem('rs_license_accepted_cc_bysa_4', 'true');
-        licenseModal.hide();
-        
-        // Proceed to the download
-        if (pendingLink) {
-            window.location.href = pendingLink;
-        }
+            // 2. Fetch with Cache Busting
+            fetch(url + "?v=" + Date.now())
+                .then(response => {
+                    if (!response.ok) throw new Error("Lore file not found.");
+                    return response.text();
+                })
+                .then(text => {
+                    // 3. The Semantic Block Parser
+                    // Sanitize basic HTML first
+                    let safeText = text.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
+                    // Split into blocks by double newlines
+                    let blocks = safeText.split(/\n\s*\n/);
+
+                    let htmlOutput = blocks.map(block => {
+                        let lines = block.trim().split(/\n/);
+                        if (lines.length === 0) return '';
+
+                        let headerHtml = '';
+                        let contentLines = lines;
+                        let firstLine = lines[0].trim();
+
+                        // -- CHECK 1: MAJOR HEADERS (**LORE NOTE:** / **LYRICS:**) --
+                        if (firstLine.match(/^\*\*[A-Z ]+:\*\*$/)) {
+                            let cleanHeader = firstLine.replace(/\*\*/g, '');
+                            // <h4> for Main Sections
+                            headerHtml = `<h4 class="text-warning fw-bold border-bottom border-secondary pb-2 mb-3 mt-2">${cleanHeader}</h4>`;
+                            contentLines = lines.slice(1);
+                        }
+                        // -- CHECK 2: SECTION HEADERS ([Chorus], (Verse 1)) --
+                        else if (firstLine.match(/^[\(\[].*?[\)\]]$/)) {
+                            // <h5> for Song Sections
+                            headerHtml = `<h5 class="text-info fw-bold text-uppercase mb-2 mt-2">${firstLine}</h5>`;
+                            contentLines = lines.slice(1);
+                        }
+
+                        // Process body lines (Bold **text** processing happens here)
+                        let processedBody = contentLines.map(line => {
+                            // Use 'text-body' on bold items to respect theme
+                            return line.replace(/\*\*(.*?)\*\*/g, '<strong class="text-body fw-bold">$1</strong>');
+                        });
+
+                        if (contentLines.length === 0) {
+                            return `<div class="mb-4">${headerHtml}</div>`;
+                        }
+
+                        let bodyHtml = processedBody.join('<br>');
+
+                        return `
+                            <div class="lyrics-block mb-4">
+                                ${headerHtml}
+                                <div style="line-height: 1.6;">
+                                    ${bodyHtml}
+                                </div>
+                            </div>`;
+                    }).join('');
+
+                    contentEl.innerHTML = `<div class="p-3">${htmlOutput}</div>`;
+                })
+                .catch(err => {
+                    contentEl.innerHTML = `
+                        <div class="alert alert-warning border-warning m-3">
+                            <div class="d-flex">
+                                <div class="me-3"><i class="fa-duotone fa-triangle-exclamation fs-1"></i></div>
+                                <div>
+                                    <strong>Data Corrupted.</strong><br>
+                                    Unable to retrieve lyrics for this track. The file may be missing from the archive.
+                                </div>
+                            </div>
+                        </div>`;
+                });
+        });
     });
 });
 </script>

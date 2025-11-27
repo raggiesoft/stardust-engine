@@ -17,7 +17,7 @@
     </a>
   </li>
   <li class="nav-item">
-    <a class="nav-link link-secondary" href="/story/the-friction-catastrophe">
+    <a class="nav-link link-secondary" href="/story/">
       <i class="fa-duotone fa-book-atlas me-2"></i>The Lore
     </a>
   </li>

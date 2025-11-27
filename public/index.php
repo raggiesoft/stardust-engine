@@ -1,5 +1,8 @@
 <?php
-// RaggieSoft Elara v2.1 - Smart Router with Directory Indexing
+ob_start(); // Buffer output so we can handle Redirects (like 1992-friction.php)
+// RaggieSoft Elara Router v2.9 (Sidebar Map & Overrides)
+// A lightweight, file-based router for narrative websites.
+
 define('ROOT_PATH', dirname(__DIR__));
 $request_uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
@@ -9,63 +12,61 @@ if (strlen($request_uri) > 1) {
 }
 
 // --- 1. GLOBAL DEFAULTS ---
-$siteName = 'The Stardust Engine';
+$siteName = 'The Stardust Engine'; 
+$projectSlug = 'stardust-engine'; 
+$cdnBaseUrl = 'https://assets.raggiesoft.com';
+$defaultTheme = 'stardust-engine'; 
+
 $defaults = [
     'view' => 'errors/404',
-    'title' => $siteName,
-    'theme' => 'stardust-engine',
+    'title' => $siteName, 
+    'theme' => $defaultTheme,
+    'showSidebar' => false, // Default to full width
     'sidebar' => 'sidebar-default',
-    'showSidebar' => true,
     'ogTitle' => $siteName,
-    'ogDescription' => "Explore the musical universe of The Stardust Engine, a family of CPI alumni who fought their label and won their freedom.",
-    'ogImage' => "https://assets.raggiesoft.com/stardust-engine/images/stardust-engine-logo.jpg",
-    'ogUrl' => "https://thestardustengine.com" . $request_uri
+    'ogDescription' => "A RaggieSoft Narrative Project.",
+    'ogImage' => $cdnBaseUrl . "/images/default-og.jpg",
+    'ogUrl' => "https://your-domain.com" . $request_uri
 ];
 
-// --- 2. ROUTE CONFIGURATION (Overrides) ---
+// --- 2. ROUTE CONFIGURATION ---
+// Use this for specific overrides (Theme, Meta, or Forcing Sidebars on Index pages)
 $routes = [
-    '/' => [
-        'view' => 'pages/home',
-        'showSidebar' => false
-    ],
     
-    // --- Special Theme Page ---
+    // Theme Override: Crucible
     '/discography/2016-live-at-the-crucible' => [
-        'view' => 'pages/discography/2016-live-crucible',
-        'title' => 'Live at The Crucible (2016) - ' . $siteName,
         'theme' => 'crucible',
         'ogTitle' => 'Live at The Crucible - The Stardust Engine',
-        'ogDescription' => 'The 2016 Homecoming Reunion. The only official release of "Ignition".',
+        'ogDescription' => 'The 2016 Homecoming Reunion.',
         'ogImage' => 'https://assets.raggiesoft.com/stardust-engine/music/album-art-live-crucible.jpg'
     ],
-
-    // --- Album with Custom OG Tags ---
+    
+    // Custom OG Tags
     '/discography/1987-electric-color' => [
-        'view' => 'pages/discography/1987-electric-color',
-        'title' => 'Electric Color (1987) - ' . $siteName,
         'ogTitle' => 'Electric Color (1987) - The Stardust Engine',
-        'ogDescription' => "The debut album. Featuring 'Electric Color' and 'Break the Walls'. Listen and download now.",
         'ogImage' => "https://assets.raggiesoft.com/stardust-engine/music/1987-electric-color/album-art.jpg"
     ],
     
     '/discography/1989-neon-hearts' => [
-        'view' => 'pages/discography/1989-neon-hearts',
-        'title' => 'Neon Hearts (1989) - ' . $siteName,
         'ogTitle' => 'Neon Hearts (1989) - The Stardust Engine',
-        'ogDescription' => "The 'panic' album. Featuring 'Neon Hearts' and the fan-favorite 'Not Your Doll'.",
         'ogImage' => "https://assets.raggiesoft.com/stardust-engine/music/1989-neon-hearts/album-art.jpg"
     ],
     
     '/discography/1995-the-warehouse-tapes' => [
-        'view' => 'pages/discography/1995-the-warehouse-tapes',
-        'title' => 'The Warehouse Tapes (1995) - ' . $siteName,
         'ogTitle' => 'The Warehouse Tapes (1995) - The Stardust Engine',
-        'ogDescription' => "The 1995 'Bat Signal' EP. Recorded in The Fortress, this album marks the band's rebirth.",
         'ogImage' => "https://assets.raggiesoft.com/stardust-engine/music/1995-the-warehouse-tapes/album-art.jpg"
-    ]
+    ],
+
+    // FORCE SIDEBAR ON OVERVIEW PAGES
+    // Since '/story/friction' loads an overview.php, the router tries to hide
+    // the sidebar by default. We use this override to force it back on.
+    '/story/friction' => [
+        'showSidebar' => true,
+        'sidebar' => 'sidebar-discography'
+    ],
 ];
 
-// --- 3. THE SMART ROUTER LOGIC ---
+// --- 3. SMART ROUTER LOGIC ---
 
 // A. Check for Explicit Configuration
 $pageConfig = $routes[$request_uri] ?? [];
@@ -74,53 +75,95 @@ $pageConfig = $routes[$request_uri] ?? [];
 if (!isset($pageConfig['view'])) {
     $potentialPath = 'pages' . $request_uri;
     
-    // 1. Check for Direct File Match (e.g., /about -> pages/about.php)
+    // 1. Direct File Match
     if (file_exists(ROOT_PATH . '/' . $potentialPath . '.php')) {
         $pageConfig['view'] = $potentialPath;
     } 
-    // 2. Check for Directory Index (e.g., /discography -> pages/discography/overview.php)
-    elseif (is_dir(ROOT_PATH . '/' . $potentialPath) && file_exists(ROOT_PATH . '/' . $potentialPath . '/overview.php')) {
-        $pageConfig['view'] = $potentialPath . '/overview';
-        
-        // Special Case: Disable sidebar for these overview pages unless overridden
-        // (Matches your old logic where /discography and /band were full width)
-        if (!isset($pageConfig['showSidebar'])) {
-            $pageConfig['showSidebar'] = false; 
+    // 2. Directory Index Logic
+    elseif (is_dir(ROOT_PATH . '/' . $potentialPath)) {
+        if (file_exists(ROOT_PATH . '/' . $potentialPath . '/overview.php')) {
+            $pageConfig['view'] = $potentialPath . '/overview';
+            $isIndexPage = true;
+        } elseif (file_exists(ROOT_PATH . '/' . $potentialPath . '/home.php')) {
+            $pageConfig['view'] = $potentialPath . '/home';
+            $isIndexPage = true;
         }
     }
 }
 
-// C. Apply Section Intelligence (Auto-Sidebars & Titles)
+// C. Apply Section Intelligence
 if (isset($pageConfig['view'])) {
     
-    // Auto-Sidebar Logic based on URL start
-    if (!isset($pageConfig['sidebar']) && !isset($pageConfig['showSidebar'])) {
-        if (str_starts_with($request_uri, '/discography') || str_starts_with($request_uri, '/albums')) {
-            $pageConfig['sidebar'] = 'sidebar-discography';
-        } elseif (str_starts_with($request_uri, '/story') || str_starts_with($request_uri, '/history')) {
-            $pageConfig['sidebar'] = 'sidebar-stories';
-        } elseif (str_starts_with($request_uri, '/band')) {
-             // The /band root is caught by the Directory Index logic above, 
-             // so this only applies to sub-pages like /band/ryan-oconnell
-            $pageConfig['showSidebar'] = false; 
+    // 1. Sidebar Mapping Configuration
+    // ORDER MATTERS: Deepest/Longest paths must come FIRST.
+    $sidebarMap = [
+        '/story/friction' => 'sidebar-discography', // Specific Deep Link
+        '/discography'    => 'sidebar-discography', // Generic Roots...
+        '/albums'         => 'sidebar-discography',
+        '/story'          => 'sidebar-stories',
+        '/history'        => 'sidebar-stories',
+        '/band'           => 'sidebar-band'
+    ];
+
+    // 2. Auto-Sidebar SELECTION
+    if (!isset($pageConfig['sidebar'])) {
+        foreach ($sidebarMap as $urlStart => $sidebarFile) {
+            // str_starts_with handles the sub-pages automatically
+            if (str_starts_with($request_uri, $urlStart)) {
+                $pageConfig['sidebar'] = $sidebarFile;
+                break; 
+            }
         }
     }
 
-    // Auto-Title Logic
-    if (!isset($pageConfig['title'])) {
-        $slug = basename($request_uri);
-        // Handle index pages better (don't title it "Discography Overview")
-        if ($slug === 'discography' || $slug === 'band') {
-             $prettySlug = ucwords($slug);
-        } else {
-             $prettySlug = ucwords(str_replace('-', ' ', $slug));
+    // 3. Auto-Sidebar VISIBILITY
+    if (!isset($pageConfig['showSidebar'])) {
+        // Rule 1: If a sidebar was selected...
+        if (isset($pageConfig['sidebar']) && $pageConfig['sidebar'] !== 'sidebar-default') {
+             $pageConfig['showSidebar'] = true;
+             
+             // Rule 2: HIDE on Section Roots (The default behavior)
+             // If the URL matches the map key exactly (e.g. '/band'), hide it.
+             // Note: '/story/friction' bypasses this because of the Manual Override in $routes above!
+             if (array_key_exists($request_uri, $sidebarMap)) {
+                 $pageConfig['showSidebar'] = false;
+             }
+        } 
+        // Rule 3: Hide on generic index pages
+        elseif (isset($isIndexPage) && $isIndexPage) {
+            $pageConfig['showSidebar'] = false;
         }
-        $pageConfig['title'] = $prettySlug . ' - ' . $siteName;
+    }
+
+    // 4. Auto-Title Logic (H1 Detection)
+    if (!isset($pageConfig['title'])) {
+        $titleFound = false;
+        $viewPath = ROOT_PATH . '/' . $pageConfig['view'] . '.php';
+        
+        if (file_exists($viewPath)) {
+            $content = file_get_contents($viewPath);
+            if (preg_match('/<h1[^>]*>(.*?)<\/h1>/si', $content, $matches)) {
+                $h1Text = trim(strip_tags($matches[1])); 
+                if (!str_contains($h1Text, '<?')) {
+                    $pageConfig['title'] = $h1Text . ' - ' . $siteName;
+                    $titleFound = true;
+                }
+            }
+        }
+
+        if (!$titleFound) {
+            $slug = basename($request_uri);
+            if ($slug === '' || $slug === 'index.php') {
+                $prettySlug = 'Home';
+            } else {
+                $prettySlug = ucwords(str_replace('-', ' ', $slug));
+            }
+            $pageConfig['title'] = $prettySlug . ' - ' . $siteName;
+        }
     }
 }
 
 // --- 4. MERGE & RENDER ---
-
 $config = array_merge($defaults, $pageConfig);
 
 // Extract variables
@@ -136,13 +179,12 @@ $ogUrl = $config['ogUrl'];
 $currentHeaderMenu = ROOT_PATH . '/includes/components/headers/header-default.php';
 $currentSidebar = ROOT_PATH . '/includes/components/sidebars/' . $config['sidebar'] . '.php';
 
-// Render Header
 require_once ROOT_PATH . '/includes/header.php';
 
-// Render Layout
 echo '<div class="container-fluid flex-grow-1 d-flex">';
 echo '  <div class="row flex-grow-1">';
 
+// Only render sidebar if showSidebar is true AND the file exists
 if ($showSidebar && file_exists($currentSidebar)) {
     echo '    <aside class="col-md-3 col-lg-2 d-none d-md-block bg-body-tertiary border-end p-3">';
     require_once $currentSidebar;
@@ -152,7 +194,6 @@ if ($showSidebar && file_exists($currentSidebar)) {
     echo '    <main id="main-content" class="col-12 p-0">'; 
 }
 
-// Render View
 if (file_exists(ROOT_PATH . '/' . $config['view'] . '.php')) {
     require_once ROOT_PATH . '/' . $config['view'] . '.php';
 } else {
@@ -164,6 +205,6 @@ echo '    </main>';
 echo '  </div>'; 
 echo '</div>'; 
 
-// Render Footer
 require_once ROOT_PATH . '/includes/footer.php';
+ob_end_flush(); // Flush buffer
 ?>

@@ -26,6 +26,11 @@
      <i class="fa-duotone fa-ticket me-2"></i>Live in Chicago (1990)
     </a>
    </li>
+    <li class="nav-item">
+      <a class="nav-link link-cancelled" href="/discography/1992-friction">
+          <i class="fa-duotone fa-burst me-2"></i>Friction (1992) (Cancelled)
+      </a>
+    </li>
 </ul>
 
 <h6 class="pt-3 pb-2 mb-3 border-bottom mt-4">Engine Room "Freedom" Era</h6>

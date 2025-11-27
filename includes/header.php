@@ -28,9 +28,9 @@
         $themeName = preg_replace('/[^a-zA-Z0-9_-]/', '', $currentPageTheme ?? 'stardust-engine');
         $themeFilePath = "https://assets.raggiesoft.com/stardust-engine/css/theme-" . $themeName . ".css";
     ?>
-    <link rel="stylesheet" href="<?php echo htmlspecialchars($themeFilePath); ?>" />
+    <link rel="stylesheet" href="<?php echo htmlspecialchars($themeFilePath); ?>?v=<?php echo time(); ?>" />
 
-    <link rel="stylesheet" href="https://assets.raggiesoft.com/common/css/bootstrap-overrides.css?v=2" />
+    <link rel="stylesheet" href="https://assets.raggiesoft.com/common/css/bootstrap-overrides.css" />
 
 </head>
 <body class="d-flex flex-column min-vh-100">

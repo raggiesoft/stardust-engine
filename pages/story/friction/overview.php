@@ -1,3 +1,8 @@
+<?php
+// Page data
+$pageTitle = "The Friction Catastrophe - The Stardust Engine Lore";
+?>
+
 <div class="container py-5">
     
     <div class="text-center mb-5">
@@ -10,7 +15,7 @@
         </p>
     </div>
 
-    <div classs="row justify-content-center">
+    <div class="row justify-content-center">
         <div class="col-lg-10 mx-auto">
             
             <h2 class="h3 fw-bold border-bottom border-secondary pb-2 mb-3">
@@ -33,6 +38,32 @@
             <p class="mb-4">
                 They enthusiastically recorded a demo for <strong>"Atmosphere,"</strong> with lyrics about "burning up with our desire" and "breaking through this atmosphere"—all metaphors for space flight. Julian, in his "depraved" mindset, heard these lyrics as sexual metaphors for his *Sanctuary* knockoff and greenlit the track, convinced the "married couple" was playing along.
             </p>
+
+            <div class="card border-danger mb-5 shadow-sm">
+                <div class="card-body">
+                    <div class="row align-items-center">
+                        <div class="col-md-8">
+                            <h4 class="h5 fw-bold text-danger mb-2">
+                                <i class="fa-duotone fa-file-circle-xmark me-2"></i>The Title Track That Killed The Deal
+                            </h4>
+                            <p class="card-text text-muted small mb-0">
+                                While "Atmosphere" was a misunderstanding, the title track "Friction" was a demand. 
+                                Read the disturbing history of the song the band refused to record.
+                            </p>
+                        </div>
+                        <div class="col-md-4 text-end">
+                            <?php $props = [
+                                'text' => 'Read The Deep Dive', 
+                                'href' => '/story/friction/the-lost-title-track', 
+                                'variant' => 'neutral', // Or 'pact' for red?
+                                'size' => 'small',
+                                'icon' => 'fa-duotone fa-arrow-right',
+                                'iconPosition' => 'after'
+                            ]; include ROOT_PATH . '/includes/components/button.php'; ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <h2 class="h3 fw-bold border-bottom border-secondary pb-2 mb-3 mt-5">
                 3. The Photo Shoot (September 1992)

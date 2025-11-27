@@ -55,7 +55,7 @@
                 'description' => "The infamous third album, canceled during pre-production after a catastrophic dispute with the label. This event ended the 'cold war' and ultimately freed the band from their contract.",
                 'buttonProps' => [
                     'text' => 'Read The Story', 
-                    'href' => '/story/the-friction-catastrophe', // Links to the lore page
+                    'href' => '/discography/1992-friction', // Links to the lore page (we're intentionally going to the 301 Redirect page)
                     'variant' => 'pact'
                 ]
             ]; include ROOT_PATH . '/includes/components/card.php'; ?>

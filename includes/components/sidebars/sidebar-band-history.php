@@ -3,6 +3,11 @@
 </h5>
 <ul class="nav flex-column">
   <li class="nav-item">
+    <a class="nav-link link-secondary" href="/band">
+      <i class="fa-duotone fa-chevron-up me-2"></i>Go Up
+    </a>
+  </li>
+  <li class="nav-item">
     <a class="nav-link link-secondary" href="#origins">
       <i class="fa-duotone fa-graduation-cap me-2"></i>Origins (CPI)
     </a>
