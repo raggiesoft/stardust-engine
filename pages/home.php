@@ -95,7 +95,7 @@
                     <p class="fs-5">
                         Learn about the "Friction" scandal, the "Cold War" with Apex Records, and the birth of Engine Room Records.
                     </p>
-                    <a href="/story/the-friction-catastrophe" class="btn btn-primary mt-auto">Read the History</a>
+                    <a href="/story" class="btn btn-primary mt-auto">Read the History</a>
                 </div>
             </div>
         </div>
