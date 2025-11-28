@@ -90,6 +90,50 @@ document.addEventListener('DOMContentLoaded', () => {
             currentPosition = 0;
         }
     });
+    const loader = document.getElementById('page-loader');
+
+    // Handle all link clicks
+    document.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            const target = this.getAttribute('target');
+
+            // Logic: Only show loader if...
+            // 1. Link exists
+            // 2. Not opening in a new tab (_blank)
+            // 3. Not a hash link (#section) on the SAME page
+            // 4. Not a "javascript:" link
+            // 5. Not a download/mailto link
+            
+            if (href && 
+                target !== '_blank' && 
+                !href.startsWith('#') && 
+                !href.startsWith('javascript:') && 
+                !href.startsWith('mailto:') &&
+                !href.startsWith('tel:') &&
+                !this.hasAttribute('download')) {
+                
+                // If it's a hash link to a DIFFERENT page, we still show loader
+                // If it's a pure anchor on CURRENT page, ignore it
+                const currentUrl = window.location.pathname;
+                if (href.startsWith('#') || (href.includes(currentUrl) && href.includes('#'))) {
+                    // It's a local scroll, do nothing
+                    return;
+                }
+
+                // Show the loader immediately
+                loader.classList.add('active');
+            }
+        });
+    });
+
+    // SAFETY NET: Hide loader if the user hits the "Back" button
+    // Browsers often cache the "loading" state when going back.
+    window.addEventListener('pageshow', function(event) {
+        if (event.persisted) {
+            loader.classList.remove('active');
+        }
+    });
 });
 </script>
 </body>

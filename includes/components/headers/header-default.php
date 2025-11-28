@@ -11,18 +11,22 @@ $isDiscography = (str_starts_with($request_uri, '/discography') || $request_uri 
 $isBand = (str_starts_with($request_uri, '/band'));
 $isLore = (str_starts_with($request_uri, '/story'));
 $isContact = ($request_uri === '/contact');
+$isRadio = ($request_uri === '/radio');
 ?>
 
 <ul class="navbar-nav ms-auto mb-2 mb-md-0">
   
   <li class="nav-item">
-    <a class="nav-link <?php echo $isHome ? 'active' : ''; ?>" href="/">Home</a>
+    <a class="nav-link <?php echo $isHome ? 'active' : ''; ?>" href="/"><i class="fa-duotone fa-house me-2" aria-hidden="true"></i>Home</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link <?php echo $isRadio ? 'active' : ''; ?>" href="/radio"><i class="fa-duotone fa-radio me-2" aria-hidden="true"></i>Radio</a>
   </li>
 
   <!-- Discography Dropdown -->
   <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle <?php echo $isDiscography ? 'active' : ''; ?>" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-        Discography
+        <i class="fa-duotone fa-list-music me-2" aria-hidden="true"></i>Discography
       </a>
       <ul class="dropdown-menu dropdown-menu-end scrollable-menu" style="max-height: 500px; overflow-y: auto;">
           <li>
@@ -47,42 +51,44 @@ $isContact = ($request_uri === '/contact');
 
   <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle <?php echo $isBand ? 'active' : ''; ?>" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-      The Band
+      <i class="fa-duotone fa-music-magnifying-glass me-2" aria-hidden="true"></i>The Band
     </a>
     <ul class="dropdown-menu dropdown-menu-end">
-      <li><a class="dropdown-item" href="/band">Overview</a></li>
+      <li><a class="dropdown-item" href="/band"><i class="fa-duotone fa-users me-2" aria-hidden="true"></i>Overview</a></li>
       <li><hr class="dropdown-divider"></li>
-      <li><a class="dropdown-item" href="/band/ryan-oconnell">Ryan O'Connell</a></li>
-      <li><a class="dropdown-item" href="/band/cassidy-oconnell">Cassidy O'Connell</a></li>
-      <li><a class="dropdown-item" href="/band/holly-oconnell">Holly O'Connell</a></li>
-      <li><a class="dropdown-item" href="/band/evan-wright">Evan Wright</a></li>
-      <li><a class="dropdown-item" href="/band/tyler-wright">Tyler Wright</a></li>
+      <li><a class="dropdown-item" href="/band/ryan-oconnell"><i class="fa-duotone fa-person me-2" aria-hidden="true"></i>Ryan O'Connell</a></li>
+      <li><a class="dropdown-item" href="/band/cassidy-oconnell"><i class="fa-duotone fa-person-dress me-2" aria-hidden="true"></i>Cassidy O'Connell</a></li>
+      <li><a class="dropdown-item" href="/band/holly-oconnell"><i class="fa-duotone fa-person-dress me-2" aria-hidden="true"></i>Holly O'Connell</a></li>
+      <li><a class="dropdown-item" href="/band/evan-wright"><i class="fa-duotone fa-person me-2" aria-hidden="true"></i>Evan Wright</a></li>
+      <li><a class="dropdown-item" href="/band/tyler-wright"><i class="fa-duotone fa-person me-2" aria-hidden="true"></i>Tyler Wright</a></li>
     </ul>
   </li>
 
   <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle <?php echo $isLore ? 'active' : ''; ?>" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-      The Lore
+      <i class="fa-duotone fa-book-atlas me-2" aria-hidden="true"></i>The Lore
     </a>
     <ul class="dropdown-menu dropdown-menu-end">
-      <li><a class="dropdown-item" href="/story/overview">Full History</a></li>
+      <li><a class="dropdown-item" href="/story/overview"><i class="fa-duotone fa-book-open me-2" aria-hidden="true"></i>Full History</a></li>
       <li><hr class="dropdown-divider"></li>
-      <li><a class="dropdown-item" href="/story/friction">The Friction Catastrophe</a></li>
-      <li><a class="dropdown-item" href="/story/cpi">CPI & The Forgers</a></li>
+      <li><a class="dropdown-item" href="/story/friction"><i class="fa-duotone fa-fire me-2" aria-hidden="true"></i>The Friction Catastrophe</a></li>
+      <li><a class="dropdown-item" href="/story/cpi"><i class="fa-duotone fa-users-gear me-2" aria-hidden="true"></i>CPI & The Forgers</a></li>
     </ul>
   </li>
 
   <li class="nav-item">
-    <a class="nav-link <?php echo $isContact ? 'active' : ''; ?>" href="/contact">Contact</a>
+    <a class="nav-link <?php echo $isContact ? 'active' : ''; ?>" href="/contact"><i class="fa-duotone fa-envelope me-2" aria-hidden="true"></i>Contact</a>
   </li>
 
   <!-- RaggieSoft Network Dropdown -->
   <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle text-secondary" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-        RaggieSoft
+        <i class="fa-duotone fa-network-wired me-2" aria-hidden="true"></i>RaggieSoft
       </a>
       <ul class="dropdown-menu dropdown-menu-end">
-          <?php foreach ($raggiesoftSites as $key => $site): ?>
+        <li><a class="dropdown-item" href="/about"><i class="fa-duotone fa-info-circle me-2 text-muted"></i>About This Project</a></li>
+        <li><hr class="dropdown-divider"></li>  
+        <?php foreach ($raggiesoftSites as $key => $site): ?>
               <li>
                   <a class="dropdown-item d-flex align-items-center justify-content-between" href="<?php echo $site['url']; ?>" target="_blank">
                       <span>

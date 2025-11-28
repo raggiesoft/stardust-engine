@@ -7,18 +7,23 @@
 
     <meta name="description" content="<?php echo htmlspecialchars($ogDescription ?? 'Explore Telsus Minor, a sci-fi universe where the reality of a phantom saboteur named Knox is a family fighting a corrupt corporation.'); ?>">
 
-    <link rel="icon" href="https://assets.raggiesoft.com/stardust-engine/images/stardust-engine-logo.jpg" type="image/jpeg">
-    <link rel="apple-touch-icon" href="https://assets.raggiesoft.com/stardust-engine/images/stardust-engine-logo.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <link rel="icon" href="https://assets.raggiesoft.com/stardust-engine/images/stardust-engine-logo.png" type="image/png">
+    <link rel="apple-touch-icon" href="https://assets.raggiesoft.com/stardust-engine/images/stardust-engine-logo.png">
+
     <meta property="og:type" content="website">
     <meta property="og:url" content="<?php echo htmlspecialchars($ogUrl ?? 'https://thestardustengine.com'); ?>">
     <meta property="og:title" content="<?php echo htmlspecialchars($ogTitle ?? $pageTitle); ?>">
     <meta property="og:description" content="<?php echo htmlspecialchars($ogDescription ?? 'A musical universe forged in the fires of CPI.'); ?>">
-    <meta property="og:image" content="<?php echo htmlspecialchars($ogImage ?? 'https://assets.raggiesoft.com/stardust-engine/images/stardust-engine-logo.jpg'); ?>">
+    <meta property="og:image" content="<?php echo htmlspecialchars($ogImage ?? 'https://assets.raggiesoft.com/stardust-engine/images/stardust-engine-logo-social.jpg'); ?>">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="<?php echo htmlspecialchars($ogTitle ?? $pageTitle); ?>">
     <meta name="twitter:description" content="<?php echo htmlspecialchars($ogDescription ?? 'A musical universe forged in the fires of CPI.'); ?>">
-    <meta name="twitter:image" content="<?php echo htmlspecialchars($ogImage ?? 'https://assets.raggiesoft.com/stardust-engine/images/stardust-engine-logo.jpg'); ?>">
+    <meta name="twitter:image" content="<?php echo htmlspecialchars($ogImage ?? 'https://assets.raggiesoft.com/stardust-engine/images/stardust-engine-logo-social.jpg'); ?>">
 
     <script src="https://kit.fontawesome.com/ec060982d4.js" crossorigin="anonymous"></script>
 
@@ -41,9 +46,12 @@
       <nav class="navbar navbar-expand-md bg-body-tertiary border-bottom">
         <div class="container-lg">
 
-          <a class="navbar-brand fw-bold text-uppercase" href="/" aria-label="Stardust Engine Home">
-              <img src="https://assets.raggiesoft.com/stardust-engine/images/stardust-engine-logo.jpg" class="me-2" alt="The Stardust Engine Logo" style="height: 40px;">
-              The Stardust Engine
+          <a class="navbar-brand text-uppercase" href="/" aria-label="Stardust Engine Home" 
+             style="font-family: 'Audiowide', sans-serif; letter-spacing: 1px; font-size: 1.25rem;">
+              <img src="https://assets.raggiesoft.com/stardust-engine/images/stardust-engine-logo.png" 
+                   class="me-2" 
+                   alt="The Stardust Engine Logo" 
+                   style="height: 40px; margin-top: -4px;"><span class="d-none d-md-inline">The </span>Stardust Engine
           </a>
 
           <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">

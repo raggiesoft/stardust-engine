@@ -22,6 +22,15 @@ $albums = [
         'btn_class' => 'btn-primary'
     ],
     [
+        'title' => 'Live in Chicago',
+        'year' => 1990,
+        'img_src' => 'https://assets.raggiesoft.com/stardust-engine/music/1990-live-in-chicago/album-art.jpg',
+        'description' => 'Released in 1990 to capitalize on the Neon Hearts tour, this live EP is a snapshot of the band at the height of their "cold war" with Apex Records.',
+        'link' => '/discography/1990-live-in-chicago',
+        'btn_class' => 'btn-primary'
+    ],
+    /*
+    [
         'title' => 'Live at The Crucible',
         'year' => 2016,
         'img_src' => 'https://assets.raggiesoft.com/stardust-engine/music/2016-live-at-the-crucible/album-art.jpg',
@@ -29,7 +38,7 @@ $albums = [
         'link' => '/discography/2016-live-at-the-crucible',
         'btn_class' => 'btn-primary'
     ],
-   /*// --- Un-commented and added ---
+   // --- Un-commented and added ---
     [
         'title' => 'The Eleventh Child',
         'year' => 2023,
@@ -60,10 +69,13 @@ $albums = [
     <div class="carousel-inner">
         <?php foreach ($albums as $index => $album): ?>
             <div class="carousel-item <?php echo ($index === 0) ? 'active' : ''; ?>">
-                <img src="<?php echo htmlspecialchars($album['img_src']); ?>" 
-                     class="d-block w-100" 
-                     alt="<?php echo htmlspecialchars($album['title']); ?> album art"
-                     onerror="this.onerror=null; this.src='https.placehold.co/1200x800/050508/FF2A6D?text=Image+Not+Found';">
+                
+                <a href="<?php echo htmlspecialchars($album['link']); ?>" class="text-decoration-none">
+                    <img src="<?php echo htmlspecialchars($album['img_src']); ?>" 
+                         class="d-block w-100" 
+                         alt="<?php echo htmlspecialchars($album['title']); ?> album art"
+                         onerror="this.onerror=null; this.src='https.placehold.co/1200x800/050508/FF2A6D?text=Image+Not+Found';">
+                </a>
                 
                 <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 p-3 rounded">
                     <h5 class="display-6 fw-bold text-glow-primary">
@@ -71,7 +83,7 @@ $albums = [
                     </h5>
                     <p class="fs-5"><?php echo htmlspecialchars($album['description']); ?></p>
                     <a href="<?php echo htmlspecialchars($album['link']); ?>" class="btn <?php echo $album['btn_class']; ?>">
-                        <i class="fa-duotone fa-circle-info me-2"></i> View Details
+                        <i class="fa-duotone fa-circle-info me-2" aria-hidden="true"></i> View Details
                     </a>
                 </div>
             </div>

@@ -1,12 +1,12 @@
 <div class="container py-5">
-    <h1 class="display-5 fw-bold border-bottom pb-2 mb-4"> About This Project</h1>
+    <h1 class="display-5 fw-bold border-bottom pb-2 mb-4" style="font-family: 'Audiowide', cursive;"> About This Project</h1>
 
     <div class="fs-5">
         <p class="lead mb-4">
             This website is a "dual-world" experience: it is both a real-world AI art project and the in-universe home of a fictional 1980s band, The Stardust Engine.
         </p>
 
-        <h2 class="h3 fw-bold pt-4 mb-3 text-primary">
+        <h2 class="h3 fw-bold pt-4 mb-3 text-primary" style="font-family: 'Audiowide', cursive;">
             The "Real World" (Meta)
         </h2>
         <p class="mb-4 text-body-secondary">
@@ -31,7 +31,7 @@
             </li>
         </ul>
 
-        <h2 class="h3 fw-bold pt-4 mb-3 text-primary">
+        <h2 class="h3 fw-bold pt-4 mb-3 text-primary" style="font-family: 'Audiowide', cursive;">
             The "In-Universe" (Narrative)
         </h2>
         <p class="mb-4 text-body-secondary">

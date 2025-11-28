@@ -2,49 +2,74 @@
 // /pages/home.php
 // This view is loaded with p-0 on main, so we use container-fluid for a full-width hero
 ?>
+<div class="border-bottom border-primary border-opacity-50" style="
+    position: relative;
+    background-image: linear-gradient(rgba(13, 6, 26, 0.7), rgba(13, 6, 26, 0.7)), 
+                      url('https://assets.raggiesoft.com/stardust-engine/images/stardust-engine-hero.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+">
 
-<!-- Hero Section -->
-<div class="container-fluid text-center bg-body-tertiary border-bottom border-primary py-5">
-    <div class="container py-5">
-        <h1 class="display-2 fw-bold text-uppercase text-glow-primary">
-            The Stardust Engine
-        </h1>
-        <p class="lead fs-3" style="font-family: var(--bs-body-font-family);">
-            A musical universe forged in the fires of CPI.
-        </p>
+    <div class="container-fluid text-center pt-5 pb-2">
+        <div class="container pt-5 pb-1">
+            
+            <h1 class="display-2 text-uppercase text-glow-primary" 
+                style="font-family: 'Audiowide', sans-serif; letter-spacing: 2px;">
+                The Stardust Engine
+            </h1>
+            
+            <p class="lead fs-3 text-uppercase text-white" 
+               style="font-family: 'Exo 2', sans-serif; font-weight: 300; letter-spacing: 4px; text-shadow: 0 2px 4px rgba(0,0,0,0.8);">
+                A musical universe forged in the fires of CPI.
+            </p>
+            
+        </div>
     </div>
-</div>
 
-<!-- === NEW: Welcome & Project Disclaimer === -->
-<div class="container-fluid bg-dark py-5 border-bottom border-secondary">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-10">
-                <div class="alert alert-warning bg-warning-subtle border-warning-subtle" role="alert">
-                    <h4 class="alert-heading fw-bold"><i class="fa-duotone fa-circle-info me-2"></i>Welcome to the Project! (Start Here)</h4>
-                    <p>
-                        <strong>This is a real AI art project AND a fictional narrative, presented as one experience.</strong> 
-                        By continuing, you understand that this is a "dual-world" website.
-                    </p>
-                    <hr>
-                    <div class="row">
-                        <div class="col-md-6 mb-3 mb-md-0">
-                            <strong>The "Real World" (Meta):</strong>
-                            <p class="mb-0 small">
-                                This is a portfolio piece by Michael Ragsdale. All music, art, and lore are co-created in collaboration with generative AI tools (Gemini, Suno, and DALL-E 3).
-                            </p>
-                        </div>
-                        <div class="col-md-6 border-start-md border-warning">
-                            <strong>The "In-Universe" (Narrative):</strong>
-                            <p class="mb-0 small">
-                                This is the official archive of the fictional band "The Stardust Engine"—a family of CPI alumni who fought their label and won their freedom.
-                            </p>
+    <div class="container-fluid py-5 border-bottom border-secondary border-opacity-50">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    
+                    <div class="alert border-warning-subtle" role="alert" 
+                         style="background-color: rgba(255, 243, 205, 0.85); color: #664d03;">
+                        
+                        <h4 class="alert-heading fw-bold" style="font-family: 'Audiowide'">
+                            <i class="fa-duotone fa-circle-info me-2" aria-hidden="true"></i>Welcome to the Project! (Start Here)
+                        </h4>
+                        <p>
+                            <strong>This is a real AI art project AND a fictional narrative, presented as one experience.</strong> 
+                            By continuing, you understand that this is a "dual-world" website.
+                        </p>
+                        <hr class="border-warning-subtle opacity-50">
+                        
+                        <div class="row">
+                            <div class="col-md-6 mb-3 mb-md-0">
+                                <strong style="font-family: 'Audiowide'">
+                                    <i class="fa-duotone fa-brackets-curly me-2 text-warning" aria-hidden="true" aria-hidden="true"></i>The "Real World" (Meta):
+                                </strong>
+                                <p class="mb-0 small">
+                                    This is a portfolio piece by Michael Ragsdale. All music, art, and lore are co-created in collaboration with generative AI tools (Gemini, Suno, and DALL-E 3).
+                                </p>
+                            </div>
+                            <div class="col-md-6 border-start-md border-warning border-opacity-50">
+                                <strong style="font-family: 'Audiowide'">
+                                    <i class="fa-duotone fa-book-sparkles me-2 text-warning" aria-hidden="true"></i>The "In-Universe" (Narrative):
+                                </strong>
+                                <p class="mb-0 small">
+                                    This is the official archive of the fictional band "The Stardust Engine"—a family of CPI alumni who fought their label and won their freedom.
+                                </p>
+                            </div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
     </div>
+
 </div>
 <!-- === End New Section === -->
 
@@ -79,7 +104,7 @@
         <div class="col-lg-4">
             <div class="card h-100">
                 <div class="card-body d-flex flex-column">
-                    <h3 class="fw-bold text-glow-primary"><i class="fa-duotone fa-users me-2"></i>The Band</h3>
+                    <h3 class="fw-bold text-glow-primary"><i class="fa-duotone fa-users me-2" aria-hidden="true"></i>The Band</h3>
                     <p class="fs-5">
                         Meet the five family members who started it all: Cassidy, Ryan, Holly, Evan, and Tyler.
                     </p>
@@ -91,7 +116,7 @@
         <div class="col-lg-4">
             <div class="card h-100">
                 <div class="card-body d-flex flex-column">
-                    <h3 class="fw-bold text-glow-primary"><i class="fa-duotone fa-book-atlas me-2"></i>The Lore</h3>
+                    <h3 class="fw-bold text-glow-primary"><i class="fa-duotone fa-book-atlas me-2" aria-hidden="true"></i>The Lore</h3>
                     <p class="fs-5">
                         Learn about the "Friction" scandal, the "Cold War" with Apex Records, and the birth of Engine Room Records.
                     </p>
@@ -103,7 +128,7 @@
         <div class="col-lg-4">
             <div class="card h-100">
                 <div class="card-body d-flex flex-column">
-                    <h3 class="fw-bold text-glow-primary"><i class="fa-duotone fa-record-vinyl me-2"></i>The Music</h3>
+                    <h3 class="fw-bold text-glow-primary"><i class="fa-duotone fa-record-vinyl me-2" aria-hidden="true"></i>The Music</h3>
                     <p class="fs-5">
                         Explore the full discography, from the polished 80s pop to the raw, independent rock of their rebirth.
                     </p>
