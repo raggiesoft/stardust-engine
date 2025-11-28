@@ -93,5 +93,5 @@ A custom Bash "Factory" script handles all media generation to ensure consistenc
 
 This project operates under a dual-license model:
 
-- **Source Code:** [MIT License](https://www.google.com/search?q=LICENSE "null")
-- **Creative Content:** [CC BY-SA 4.0](
+- **Source Code:** [MIT License]
+- **Creative Content:** [CC BY-SA 4.0]
