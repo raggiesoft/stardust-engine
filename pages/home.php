@@ -33,8 +33,7 @@
             <div class="row justify-content-center">
                 <div class="col-lg-10">
                     
-                    <div class="alert border-warning-subtle" role="alert" 
-                         style="background-color: rgba(255, 243, 205, 0.85); color: #664d03;">
+                    <div class="alert border-warning-subtle bg-hud-blue" role="alert">
                         
                         <h4 class="alert-heading fw-bold" style="font-family: 'Audiowide'">
                             <i class="fa-duotone fa-circle-info me-2" aria-hidden="true"></i>Welcome to the Project! (Start Here)
@@ -48,7 +47,7 @@
                         <div class="row">
                             <div class="col-md-6 mb-3 mb-md-0">
                                 <strong style="font-family: 'Audiowide'">
-                                    <i class="fa-duotone fa-brackets-curly me-2 text-warning" aria-hidden="true" aria-hidden="true"></i>The "Real World" (Meta):
+                                    <i class="fa-duotone fa-brackets-curly me-2" aria-hidden="true" aria-hidden="true"></i>The "Real World" (Meta):
                                 </strong>
                                 <p class="mb-0 small">
                                     This is a portfolio piece by Michael Ragsdale. All music, art, and lore are co-created in collaboration with generative AI tools (Gemini, Suno, and DALL-E 3).
@@ -56,7 +55,7 @@
                             </div>
                             <div class="col-md-6 border-start-md border-warning border-opacity-50">
                                 <strong style="font-family: 'Audiowide'">
-                                    <i class="fa-duotone fa-book-sparkles me-2 text-warning" aria-hidden="true"></i>The "In-Universe" (Narrative):
+                                    <i class="fa-duotone fa-book-sparkles me-2" aria-hidden="true"></i>The "In-Universe" (Narrative):
                                 </strong>
                                 <p class="mb-0 small">
                                     This is the official archive of the fictional band "The Stardust Engine"—a family of CPI alumni who fought their label and won their freedom.
