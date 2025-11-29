@@ -29,10 +29,12 @@
     <meta property="og:image" content="<?php echo htmlspecialchars($ogImage ?? 'https://assets.raggiesoft.com/stardust-engine/images/stardust-engine-logo-social.jpg'); ?>">
     <meta name="twitter:card" content="summary_large_image">
 
-    <!-- =================================================================== -->
-    <!-- DYNAMIC BOOTSTRAP LOADER                                            -->
-    <!-- =================================================================== -->
+    
     <?php
+        // ===================================================================
+        // DYNAMIC BOOTSTRAP LOADER                                           
+        // ===================================================================
+        
         // 1. Identify the Site (Fallback to projectSlug if not manually set)
         $bootstrapSite = $currentSite ?? ($projectSlug ?? null);
 
