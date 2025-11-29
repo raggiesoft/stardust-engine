@@ -23,32 +23,36 @@
       </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" xintegrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-  <div class="modal fade" id="konamiModal" tabindex="-1" aria-hidden="true">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+<div class="modal fade" id="konamiModal" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content bg-dark text-light border-warning shadow-lg">
+    <div class="modal-content bg-dark text-light shadow-lg" style="border: 2px solid #7000FF;">
       <div class="modal-header border-secondary">
-        <h5 class="modal-title text-warning">
-            <i class="fa-duotone fa-user-secret me-2"></i>System Override: Access Granted
+        <h5 class="modal-title" style="color: #FFD700;">
+            <i class="fa-duotone fa-stars me-2"></i>Hidden Signal Detected
         </h5>
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body text-center">
-        <div class="mb-3">
-            <i class="fa-duotone fa-fingerprint fa-3x text-success"></i>
-        </div>
-        <p class="lead">Developer authentication recognized.</p>
-        <p class="small text-muted mb-4">Decrypting secure archives for <strong>Project: KNOX</strong>...</p>
+      <div class="modal-body text-center p-4">
         
-        <div class="d-grid gap-3">
-            <a href="/discography/knox-soundtrack" class="btn btn-outline-warning">
-                <i class="fa-duotone fa-compact-disc me-2"></i>Unlock "Knox" Soundtrack
-            </a>
-            
-            <a href="https://lore.raggiesoftknox.com" target="_blank" class="btn btn-outline-info">
-                <i class="fa-duotone fa-database me-2"></i>Access Lore Bible (Classified)
+        <img src="https://assets.raggiesoft.com/stardust-engine/music/1995-ad-astra-single/album-art.jpg" 
+             class="img-fluid rounded shadow-lg mb-4 border border-secondary" 
+             alt="Ad Astra Single Art"
+             style="max-height: 300px;">
+        
+        <h4 class="fw-bold text-white text-uppercase" style="font-family: 'Audiowide';">Ad Astra (The Single)</h4>
+        <p class="text-muted mb-4">
+            You have unlocked the 1995 Promo CD.<br>
+            <span class="small text-info">"A map for the lost."</span>
+        </p>
+        
+        <div class="d-grid">
+            <a href="/discography/1995-the-warehouse-tapes/ad-astra" class="btn btn-primary btn-lg" style="background-color: #7000FF; border-color: #7000FF;">
+                <i class="fa-duotone fa-rocket-launch me-2"></i>Launch Mission
             </a>
         </div>
+
       </div>
     </div>
   </div>
@@ -69,7 +73,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.addEventListener('keydown', (e) => {
         // Check if the key pressed matches the next key in the sequence
-        // (Using toLowerCase() for letters to ensure caps lock doesn't break it)
         const key = e.key.length === 1 ? e.key.toLowerCase() : e.key;
         const requiredKey = konamiCode[currentPosition].length === 1 ? konamiCode[currentPosition].toLowerCase() : konamiCode[currentPosition];
 
@@ -90,50 +93,25 @@ document.addEventListener('DOMContentLoaded', () => {
             currentPosition = 0;
         }
     });
+
+    // Page Loader Logic (Existing)
     const loader = document.getElementById('page-loader');
-
-    // Handle all link clicks
-    document.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', function(e) {
-            const href = this.getAttribute('href');
-            const target = this.getAttribute('target');
-
-            // Logic: Only show loader if...
-            // 1. Link exists
-            // 2. Not opening in a new tab (_blank)
-            // 3. Not a hash link (#section) on the SAME page
-            // 4. Not a "javascript:" link
-            // 5. Not a download/mailto link
-            
-            if (href && 
-                target !== '_blank' && 
-                !href.startsWith('#') && 
-                !href.startsWith('javascript:') && 
-                !href.startsWith('mailto:') &&
-                !href.startsWith('tel:') &&
-                !this.hasAttribute('download')) {
-                
-                // If it's a hash link to a DIFFERENT page, we still show loader
-                // If it's a pure anchor on CURRENT page, ignore it
-                const currentUrl = window.location.pathname;
-                if (href.startsWith('#') || (href.includes(currentUrl) && href.includes('#'))) {
-                    // It's a local scroll, do nothing
-                    return;
+    if(loader) {
+        document.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                const target = this.getAttribute('target');
+                if (href && target !== '_blank' && !href.startsWith('#') && !href.startsWith('javascript:') && !href.startsWith('mailto:') && !href.startsWith('tel:') && !this.hasAttribute('download')) {
+                    const currentUrl = window.location.pathname;
+                    if (href.startsWith('#') || (href.includes(currentUrl) && href.includes('#'))) return;
+                    loader.classList.add('active');
                 }
-
-                // Show the loader immediately
-                loader.classList.add('active');
-            }
+            });
         });
-    });
-
-    // SAFETY NET: Hide loader if the user hits the "Back" button
-    // Browsers often cache the "loading" state when going back.
-    window.addEventListener('pageshow', function(event) {
-        if (event.persisted) {
-            loader.classList.remove('active');
-        }
-    });
+        window.addEventListener('pageshow', function(event) {
+            if (event.persisted) loader.classList.remove('active');
+        });
+    }
 });
 </script>
 </body>

@@ -47,7 +47,7 @@ $pageTitle = "Cassidy O'Connell - The Stardust Engine";
 
         <!-- Stats Card -->
         <div class="col-lg-4">
-            <div class="sticky-top" style="top: 8rem;">
+            <div style="top: 8rem;">
                 <?php $props = [
                     'title' => 'Cassidy O\'Connell',
                     'imgSrc' => 'https://assets.raggiesoft.com/stardust-engine/images/band-members/cassidy.jpg',

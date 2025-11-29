@@ -39,7 +39,7 @@ $pageTitle = "Tyler Wright - The Stardust Engine";
 
         <!-- Stats Card -->
         <div class="col-lg-4">
-            <div class="sticky-top" style="top: 8rem;">
+            <div style="top: 8rem;">
                 <?php $props = [
                     'title' => 'Tyler Wright',
                     'imgSrc' => 'https://assets.raggiesoft.com/stardust-engine/images/band-members/tyler.jpg',

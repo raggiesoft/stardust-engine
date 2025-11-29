@@ -1,16 +1,13 @@
 <?php
 /**
  * COMPONENT: _tracklist-downloader.php
- * VERSION: 6.0 (Modular / DRY Edition)
- * * PURPOSE:
+ * VERSION: 7.0 (v12 JSON Logic Update)
+ * PURPOSE:
  * 1. Reads album metadata (tracks.json, album.json) from the CDN.
  * 2. Builds the Master Playlist array for the JavaScript player.
  * 3. Renders the visual tracklist (HTML).
  * 4. Includes the shared "Sticky Player" UI component.
  * 5. Initializes the shared "Stardust Player" JavaScript engine.
- * * DEPENDENCIES:
- * - includes/components/audio-player/sticky-player.php (The UI)
- * - assets/stardust-engine/js/stardust-player.js (The Logic)
  */
 
 // ==============================================================================
@@ -19,8 +16,10 @@
 
 // Construct CDN URLs dynamically based on the parent page's configuration
 $base_web_path = 'https://assets.raggiesoft.com' . $album_path_web;
-$tracks_json_url = $base_web_path . '/tracks.json';
-$album_json_url = $base_web_path . '/album.json';
+
+// Cache Busting for JSON to prevent stale data issues
+$tracks_json_url = $base_web_path . '/tracks.json?v=' . time();
+$album_json_url = $base_web_path . '/album.json?v=' . time();
 
 // Fetch JSON content (using @ to suppress PHP warnings)
 $tracks_json_content = @file_get_contents($tracks_json_url);
@@ -62,7 +61,7 @@ if (!function_exists('get_archive_name')) {
 // ==============================================================================
 
 $archive_base_name = get_archive_name($album_data['albumName'], $album_data['narrativeReleaseDate']);
-$album_art_url = "https://assets.raggiesoft.com" . $album_path_web . "/album-art.jpg";
+$album_art_url = "https://assets.raggiesoft.com" . $album_path_web . "/album-art.jpg?v=" . time();
 $js_playlist = []; // The Master Array for JS
 
 ?>
@@ -94,15 +93,18 @@ $js_playlist = []; // The Master Array for JS
 <div class="list-group list-group-flush bg-transparent mb-5">
     <?php foreach ($raw_tracks as $index => $track): ?>
         <?php
-            // --- A. Calculate Paths ---
-            $track_num_padded = str_pad($track['track'], 2, '0', STR_PAD_LEFT);
-            $web_safe_title = get_web_safe_title($track['title']);
-            $base_name = $track['disc'] . '-' . $track_num_padded . '-' . $web_safe_title;
+            // --- UPDATED V12 LOGIC ---
+            // We no longer calculate slugs. We trust the 'fileName' field from JSON.
+            // This field typically looks like: "1-01-static" (no extension)
             
-            $wav_url = $base_web_path . '/wav/' . $track['fileName']; 
-            $mp3_url = $base_web_path . '/mp3/' . $base_name . '.mp3';
-            $ogg_url = $base_web_path . '/ogg/' . $base_name . '.ogg';
-            $lyrics_url = $base_web_path . '/lyrics/' . $base_name . '.md';
+            $base_name = $track['fileName'];
+            $version_string = "?v=" . time(); // Force fresh load for audio/lyrics
+            
+            // Build URLs
+            $wav_url = $base_web_path . '/wav/' . $base_name . '.wav'; 
+            $mp3_url = $base_web_path . '/mp3/' . $base_name . '.mp3' . $version_string;
+            $ogg_url = $base_web_path . '/ogg/' . $base_name . '.ogg' . $version_string;
+            $lyrics_url = $base_web_path . '/lyrics/' . $base_name . '.md' . $version_string;
 
             // --- B. Build JS Playlist Item ---
             $js_playlist[] = [

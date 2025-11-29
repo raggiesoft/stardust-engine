@@ -1,6 +1,6 @@
 <?php
 ob_start(); 
-// RaggieSoft Elara Router v3.3 (Final SEO Defaults)
+// RaggieSoft Elara Router v3.4 (Ad Astra Patch)
 
 define('ROOT_PATH', dirname(__DIR__));
 $request_uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
@@ -21,16 +21,8 @@ $defaults = [
     'theme' => $defaultTheme,
     'showSidebar' => false, 
     'sidebar' => 'sidebar-default',
-    
-    // UPDATED: Optimized for SEO & Character Counts
-    // Title (43 chars): Matches the "30-60" sweet spot
     'ogTitle' => 'The Stardust Engine - Official Band Archive',
-    
-    // Description (139 chars): Matches the "55-200" sweet spot
-    // Blends the "Narrative" hook with the "Meta" reality.
     'ogDescription' => "The official archive of the fictional 80s band 'The Stardust Engine.' A narrative universe and AI art project forged in the fires of CPI.",
-    
-    // Asset Defaults
     'ogImage' => $cdnBaseUrl . "/stardust-engine/images/stardust-engine-logo-social.jpg",
     'ogUrl' => "https://thestardustengine.com" . $request_uri
 ];
@@ -57,6 +49,17 @@ $routes = [
         'ogTitle' => 'The Warehouse Tapes (1995) - The Stardust Engine',
         'ogDescription' => 'The \'bat signal\' to the fans. Recorded in \'The Fortress\' and funded by the Forger Nation, this raw EP marks the band\'s independent rebirth.',
     ],
+    
+    // --- SPECIAL ROUTE: AD ASTRA (Manual Override for Assets) ---
+    '/discography/1995-the-warehouse-tapes/ad-astra' => [
+        'title' => 'Escape Velocity (Ad Astra) - The Stardust Engine',
+        'theme' => 'ad-astra',
+        'ogTitle' => 'Escape Velocity (Ad Astra) - The Stardust Engine',
+        'ogDescription' => 'The 15-minute progressive rock suite that defined the band\'s freedom. The magnum opus of the Freedom Era.',
+        // MANUAL FIX: Point to the specific Single folder, not the URL slug
+        'ogImage' => 'https://assets.raggiesoft.com/stardust-engine/music/1995-ad-astra-single/social-preview.jpg'
+    ],
+
     '/discography/1997-hard-reset' => [
         'ogTitle' => 'Hard Reset (1997) - The Stardust Engine',
         'ogDescription' => 'The high-stakes commercial comeback. Their first professional release on Engine Room Records, proving they could survive—and thrive—without a label.',
@@ -181,6 +184,7 @@ if (str_starts_with($request_uri, '/discography/') && $request_uri !== '/discogr
     
     $albumSlug = basename($request_uri); 
     
+    // Only apply auto-logic if NOT explicitly set in routes above
     if (!isset($pageConfig['ogImage'])) {
         $pageConfig['ogImage'] = "https://assets.raggiesoft.com/stardust-engine/music/" . $albumSlug . "/social-preview.jpg";
     }

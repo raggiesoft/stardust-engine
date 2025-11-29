@@ -48,7 +48,7 @@ $pageTitle = "Holly O'Connell - The Stardust Engine";
 
         <!-- Stats Card -->
         <div class="col-lg-4">
-            <div class="sticky-top" style="top: 8rem;">
+            <div style="top: 8rem;">
                 <?php $props = [
                     'title' => 'Holly O\'Connell',
                     'imgSrc' => 'https://assets.raggiesoft.com/stardust-engine/images/band-members/holly.jpg',

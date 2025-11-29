@@ -2,43 +2,38 @@
 // Page data
 $pageTitle = "Live at The Crucible (2016) - The Stardust Engine";
 $album_path_web = '/stardust-engine/music/2016-live-at-the-crucible';
+$pageTheme = 'crucible'; // Triggers the Maroon/Orange "Ironhead" theme
 ?>
 
 <div class="container py-5">
-    <?php
-        // Include the reusable live album disclaimer
-        include ROOT_PATH . '/includes/components/_disclaimer-live-album.php';
-    ?>
+    <?php include ROOT_PATH . '/includes/components/_disclaimer-live-album.php'; ?>
     
-    <!-- Album Header -->
     <div class="row align-items-center mb-5">
-        <<?php $props = [
+        <?php $props = [
             'path' => $album_path_web, 
             'alt' => 'Live at The Crucible Album Art',
-            'variant' => 'warning' // or 'axiom'
+            'variant' => 'warning' 
         ]; include ROOT_PATH . '/includes/components/_album-art-header.php'; ?>
+        
         <div class="col-md-7">
             <h1 class="display-3 fw-bold text-uppercase text-primary mb-0" style="font-family: 'Impact', sans-serif;">
                 Live at The Crucible
             </h1>
             <p class="h4 text-warning fw-bold mb-3">
-                The 2016 Homecoming Reunion
+                The 2016 Homecoming Finale
             </p>
             <p class="lead text-secondary">
-                This is the band's magnum opus. Recorded live at their alma mater, this album is the definitive "Freedom Era" recording, 
-                capturing the emotional finale of their reunion tour in front of 60,000 "Ironheads".
+                Recorded live before 66,000 "Ironheads" at their alma mater's stadium. This isn't just a concert; it's a victory lap.
             </p>
             <p class="text-muted">
-                It is their best-selling album, and its 2023 Dolby Atmos remaster 
-                became the new standard for audiophile immersion.
+                Featuring the <strong>CPI Marching Forgers</strong> (the university marching band), this album captures the band at their absolute peak. It includes the "Sacred Anthem" ("Ignition") finally performed on home turf, and the legendary 13-minute performance of "Ad Astra."
             </p>
         </div>
     </div>
 
     <hr class="border-secondary opacity-25 mb-5">
 
-    <!-- Setlist -->
-    <h2 class="display-5 fw-bold text-uppercase border-bottom pb-2 mb-4">Setlist</h2>
+    <h2 class="display-5 fw-bold text-uppercase border-bottom pb-2 mb-4">The Setlist</h2>
     
     <table class="table table-borderless table-hover fs-5 align-middle">
         <thead>
@@ -50,16 +45,18 @@ $album_path_web = '/stardust-engine/music/2016-live-at-the-crucible';
         </thead>
         <tbody class="border-top border-secondary">
 
-            <!-- SET 1 -->
             <tr class="table-group-divider">
-                <td colspan="3" class="text-warning fw-bold small text-uppercase pt-4 pb-2">Set 1: The Homecoming</td>
+                <td colspan="3" class="text-warning fw-bold small text-uppercase pt-4 pb-2">
+                    <i class="fa-duotone fa-fire me-2"></i>Set 1: The Homecoming
+                </td>
             </tr>
 
             <tr>
                 <td class="text-muted fw-bold">1.</td>
                 <td>
                     <strong class="text-primary">Ignition (The Forger's Call)</strong>
-                    <small class="d-block text-muted">The sacred CPI entrance anthem. The "Enter Sandman" moment.</small>
+                    <span class="badge bg-warning text-dark ms-2">feat. CPI Marching Band</span>
+                    <small class="d-block text-muted">The sacred entrance anthem. The stadium registers on the Richter scale.</small>
                 </td>
                 <td class="text-end text-muted">7:05</td>
             </tr>
@@ -67,64 +64,87 @@ $album_path_web = '/stardust-engine/music/2016-live-at-the-crucible';
             <tr>
                 <td class="text-muted fw-bold">2.</td>
                 <td>
-                    <strong class="text-primary">The Stardust Engine</strong>
-                    <small class="d-block text-muted">The song that should have been a #1 hit.</small>
+                    <strong class="text-primary">Re-Ignition</strong>
+                    <small class="d-block text-muted">The 2015 reunion single. The "Engine" is back online.</small>
                 </td>
-                <td class="text-end text-muted">5:12</td>
-            </tr>
-
-            <!-- SET 2 / GAP SONGS -->
-            <tr class="table-group-divider">
-                <td colspan="3" class="text-warning fw-bold small text-uppercase pt-4 pb-2">Set 2: The Freedom Era</td>
+                <td class="text-end text-muted">4:45</td>
             </tr>
 
             <tr>
                 <td class="text-muted fw-bold">3.</td>
                 <td>
+                    <strong class="text-primary">The Stardust Engine</strong>
+                    <small class="d-block text-muted">The "Lost #1." Performed with the original 1987 synth patch.</small>
+                </td>
+                <td class="text-end text-muted">5:12</td>
+            </tr>
+
+            <tr class="table-group-divider">
+                <td colspan="3" class="text-warning fw-bold small text-uppercase pt-4 pb-2">
+                    <i class="fa-duotone fa-dove me-2"></i>Set 2: The Freedom Era
+                </td>
+            </tr>
+
+            <tr>
+                <td class="text-muted fw-bold">4.</td>
+                <td>
                     <strong class="text-primary">Hard Reset</strong>
-                    <small class="d-block text-muted">From the 1997 comeback album.</small>
+                    <small class="d-block text-muted">The song that launched their independent label.</small>
                 </td>
                 <td class="text-end text-muted">4:55</td>
             </tr>
             
             <tr>
-                <td class="text-muted fw-bold">4.</td>
+                <td class="text-muted fw-bold">5.</td>
                 <td>
                     <strong class="text-primary">Garbage</strong>
-                    <small class="d-block text-muted">Ryan's "malicious compliance" track from The Warehouse Tapes.</small>
+                    <small class="d-block text-muted">Ryan's "Jangle-Rage" anthem. Dedicated to "Julian."</small>
                 </td>
                 <td class="text-end text-muted">3:15</td>
             </tr>
 
             <tr>
-                <td class="text-muted fw-bold">5.</td>
+                <td class="text-muted fw-bold">6.</td>
                 <td>
                     <strong class="text-primary">Not Your Saint</strong>
-                    <small class="d-block text-muted">Cassidy's "rage" track from The Warehouse Tapes.</small>
+                    <small class="d-block text-muted">Cassidy's arena-rock rejection of the "Victim" narrative.</small>
                 </td>
                 <td class="text-end text-muted">4:20</td>
             </tr>
-            
+
             <tr class="table-group-divider">
-                <td colspan="3" class="text-center text-muted fst-italic py-4">
-                    ...
-                    <br>
-                    <small>(Full setlist in development)</small>
+                <td colspan="3" class="text-center py-3">
+                    <i class="fa-duotone fa-stars text-info fs-4"></i>
                 </td>
             </tr>
-            
-            <!-- ENCORE -->
+
+            <tr class="bg-dark bg-opacity-25 border-start border-4 border-info">
+                <td class="text-info fw-bold">7.</td>
+                <td>
+                    <strong class="text-info">Escape Velocity (Ad Astra)</strong>
+                    <span class="badge bg-info text-dark ms-2">Full Suite</span>
+                    <small class="d-block text-light opacity-75">
+                        The Magnum Opus. The stadium goes dark. 60,000 lights.
+                        <br>
+                        <em>I. The Cage / II. Ignition / III. The Cosmos / IV. Re-entry</em>
+                    </small>
+                </td>
+                <td class="text-end text-info fw-bold">13:10</td>
+            </tr>
+
             <tr class="table-group-divider">
-                <td colspan="3" class="text-warning fw-bold small text-uppercase pt-4 pb-2">Encore</td>
+                <td colspan="3" class="text-warning fw-bold small text-uppercase pt-4 pb-2">
+                    <i class="fa-duotone fa-flag-checkered me-2"></i>Encore
+                </td>
             </tr>
 
             <tr>
-                <td class="text-muted fw-bold">X.</td>
+                <td class="text-muted fw-bold">8.</td>
                 <td>
                     <strong class="text-primary">Electric Color (The Crucible Suite)</strong>
-                    <small class="d-block text-muted">The 5:24 rock anthem finale, played as they always intended.</small>
+                    <small class="d-block text-muted">The 1987 hit, extended into a 10-minute stadium singalong.</small>
                 </td>
-                <td class="text-end text-muted">5:24</td>
+                <td class="text-end text-muted">10:24</td>
             </tr>
 
         </tbody>

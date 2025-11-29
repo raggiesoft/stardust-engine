@@ -34,7 +34,7 @@ $album_path_web = '/stardust-engine/music/1995-the-warehouse-tapes';
 
     <hr class="border-secondary opacity-25 mb-5">
 
-    <?php //include ROOT_PATH . '/includes/components/_tracklist-downloader.php'; ?>
+    <?php include ROOT_PATH . '/includes/components/_tracklist-downloader.php'; ?>
 
     <div class="mt-5">
         <h3 class="h4 fw-bold text-uppercase text-muted mb-4 border-bottom pb-2">Liner Notes & Lore</h3>
@@ -102,17 +102,37 @@ $album_path_web = '/stardust-engine/music/1995-the-warehouse-tapes';
 
         <div class="list-group list-group-flush bg-transparent">
 
-            <div class="list-group-item bg-transparent border-secondary py-5" style="background: rgba(5, 217, 232, 0.05);">
-                <div class="d-flex w-100 justify-content-between align-items-center mb-3">
-                    <strong class="text-glow-warning display-5 fw-bold">6. Escape Velocity (Ad Astra)</strong>
+            <div class="list-group-item bg-transparent border-secondary py-5 position-relative overflow-hidden" style="background: rgba(112, 0, 255, 0.1); border-left: 4px solid #7000FF !important;">
+                
+                <div style="position: absolute; top: 0; right: 0; opacity: 0.1; font-size: 10rem; line-height: 0.8;">
+                    <i class="fa-duotone fa-stars"></i>
+                </div>
+
+                <div class="d-flex w-100 justify-content-between align-items-center mb-3 position-relative">
+                    <strong class="text-glow-primary display-6 fw-bold" style="color: #E0E0FF;">
+                        6. Escape Velocity (Ad Astra)
+                    </strong>
                     <span class="badge bg-info text-dark">The Masterpiece</span>
                 </div>
-                <p class="lead text-body mb-3">
-                    The 4-part prog-rock epic that consumes the entirety of Side B.
+                
+                <p class="lead text-light mb-4 position-relative">
+                    The 15-minute progressive rock epic that consumes the entirety of Side B.
                 </p>
-                <p class="text-muted mb-0">
-                    Channeling the band's love for <strong>Prism</strong> and <strong>Origin</strong> (specifically their epic <em>The Feast</em>), this 12-minute suite details Cassidy's psychological journey from the "Cage" of the trial to the "Cosmos" of freedom. It is the band's most complex instrumentation to date, featuring the movements: <strong>I. The Cage</strong>, <strong>II. Ignition</strong>, <strong>III. The Cosmos</strong>, and <strong>IV. Re-entry</strong>.
+                
+                <p class="text-muted mb-4 position-relative">
+                    Channeling the band's love for prog rock, this suite details Cassidy's psychological journey from the "Cage" of the trial to the "Cosmos" of freedom. It is the band's most complex work, featuring the movements: <strong>I. The Cage</strong>, <strong>II. Ignition</strong>, <strong>III. The Cosmos</strong>, and <strong>IV. Re-entry</strong>.
                 </p>
+
+                <div class="position-relative">
+                    <?php $props = [
+                        'text' => 'Enter The Suite (Deep Dive)', 
+                        'href' => '/discography/1995-the-warehouse-tapes/ad-astra', 
+                        'variant' => 'pact', // Uses Primary color (Violet/Blue in standard theme, or Pact color)
+                        'icon' => 'fa-duotone fa-rocket-launch',
+                        'iconPosition' => 'after'
+                    ]; include ROOT_PATH . '/includes/components/button.php'; ?>
+                </div>
+
             </div>
 
         </div>
