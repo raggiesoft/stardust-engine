@@ -21,6 +21,14 @@ $pageTitle = "Cassidy O'Connell - The Stardust Engine";
             <p class="fs-5 text-muted">
                 The classical heart of the band, Cassidy (Age 20 in 1987) is the voice of its most emotional synth-pop anthems. Her musical sophistication provides the complex melodies and atmospheric pads that balance Ryan's raw guitar.
             </p>
+            
+            <div class="alert alert-dark border-primary bg-opacity-10 d-flex align-items-center" role="alert">
+                <i class="fa-duotone fa-stars text-primary fs-2 me-3"></i>
+                <div class="small text-muted">
+                    <strong>Archivist Note:</strong> While the industry tried to drag them into the dirt, Cassidy refused to look down. Her eyes were always cast <strong class="text-info text-uppercase">Up</strong>. Always <strong class="text-info text-uppercase">Up</strong>.
+                </div>
+            </div>
+
             <p class="text-muted">
                 She is the creative core, but also the emotional core. While the studio tried to pit her "Stardust" persona against Ryan's "Engine", the band's reality was the opposite. Her greatest anthems were often written while cuddled up with Holly and Ryan, the three of them sharing a single bed in a cramped motel room.
             </p>

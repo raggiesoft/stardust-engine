@@ -21,6 +21,14 @@ $pageTitle = "Ryan O'Connell - The Stardust Engine";
             <p class="fs-5 text-muted">
                 As the oldest sibling (Age 23 in 1987), Ryan is the band's protective "Engine" and the voice of its raw rock energy. He famously delayed his own college entry so the entire "family" (his siblings and cousins) could enter CPI's Class of '89 together.
             </p>
+            
+            <div class="alert alert-dark border-warning bg-opacity-10 d-flex align-items-center" role="alert">
+                <i class="fa-duotone fa-engine-warning text-warning fs-2 me-3"></i>
+                <div class="small text-muted">
+                    <strong>Archivist Note:</strong> Ryan hated the polish of the studio. He famously told producers that to find the real sound—the engine's hum—you couldn't float on the surface. You had to go <strong class="text-warning text-uppercase">Down</strong>. Deep <strong class="text-warning text-uppercase">Down</strong>.
+                </div>
+            </div>
+
             <p class="text-muted">
                 His entire tenure at Apex Records was defined by conflict. The label, wanting a clean pop sound, branded him "The Engine"—a nickname he hated. The label actively suppressed his heavier, industrial-inspired guitar work. This led to his famous "malicious compliance" tracks, where he would hide angsty, anti-corporate lyrics inside "safe" pop-rock wrappers.
             </p>

@@ -39,20 +39,26 @@
         // 2. Identify the Theme
         $bootstrapTheme = $currentPageTheme ?? null;
 
+        // --- FIX: NORMALIZE DEFAULT THEME ---
+        // If the theme name is identical to the site name (e.g., 'stardust-engine'),
+        // we treat this as the "Default" state to trigger Case B.
+        if ($bootstrapTheme === $bootstrapSite) {
+            $bootstrapTheme = null;
+        }
+
         // 3. Construct the URL based on Context
         if (empty($bootstrapSite)) {
             // CASE A: No Site Defined -> Global/Common Bootstrap
-            // URL: .../common/css/bootstrap.css
             $bootstrapUrl = "https://assets.raggiesoft.com/common/css/bootstrap.css";
         
         } elseif (empty($bootstrapTheme)) {
-            // CASE B: Site Defined, No Theme -> Site Default
-            // URL: .../{site}/css/bootstrap-{site}-default.css
+            // CASE B: Site Defined, Default Theme -> Use "-default.css"
+            // Result: bootstrap-stardust-engine-default.css
             $bootstrapUrl = "https://assets.raggiesoft.com/{$bootstrapSite}/css/bootstrap-{$bootstrapSite}-default.css";
         
         } else {
-            // CASE C: Site & Theme Defined -> Specific Themed Bootstrap
-            // URL: .../{site}/css/bootstrap-{site}-{theme}.css
+            // CASE C: Site & Specific Theme Defined -> Use "-{theme}.css"
+            // Result: bootstrap-stardust-engine-ad-astra.css
             $bootstrapUrl = "https://assets.raggiesoft.com/{$bootstrapSite}/css/bootstrap-{$bootstrapSite}-{$bootstrapTheme}.css";
         }
     ?>
@@ -67,7 +73,7 @@
     <a href="#main-content" class="visually-hidden-focusable">Skip to Main Content</a>
 
     <header class="sticky-top shadow-sm">
-      <nav class="navbar navbar-expand-md bg-body-tertiary border-bottom">
+      <nav class="navbar navbar-expand-md border-bottom">
         <div class="container-lg">
 
           <a class="navbar-brand text-uppercase" href="/" aria-label="Stardust Engine Home" 

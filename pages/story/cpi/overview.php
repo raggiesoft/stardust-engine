@@ -28,7 +28,7 @@ $pageTitle = "About CPI & The Forgers - The Stardust Engine";
     </div>
 
     <!-- Section 1: The Forger Identity -->
-    <div classs="row justify-content-center">
+    <div class="row justify-content-center">
         <div class="col-lg-10 mx-auto">
             
             <h2 class="h3 fw-bold border-bottom border-secondary pb-2 mb-3">
@@ -55,10 +55,18 @@ $pageTitle = "About CPI & The Forgers - The Stardust Engine";
                 The Sacred Anthem: "Ignition"
             </h2>
             <p class="fs-5 text-muted mb-4">
-                In 1986, while still students, the band wrote and donated the industrial-rock anthem <strong>"Ignition (The Forger's Call)"</strong> to the university. This song was adopted by the football team as their sacred entrance music, creating an "Enter Sandman-style" tradition where the entire stadium erupts as the team takes the field.
+                In 1986, while still students, the band wrote and donated the industrial-rock anthem <strong>"Ignition (The Forger's Call)"</strong> to the university. 
             </p>
+            
+            <div class="alert alert-dark border-secondary bg-opacity-10 d-flex align-items-center mb-4" role="alert">
+                <i class="fa-duotone fa-drum text-secondary fs-2 me-3"></i>
+                <div class="small text-muted">
+                    <strong>The Marching Drill:</strong> The song was designed for the marching band. The bridge features a relentless, shifting cadence that the student section mimics: they sway <strong class="text-primary">Left</strong>, then <strong class="text-primary">Right</strong>, then <strong class="text-primary">Left</strong>, then <strong class="text-primary">Right</strong>, shaking the entire stadium to its foundations.
+                </div>
+            </div>
+
             <p class="text-muted mb-4">
-                This act cemented the band's status as legends on campus, long before they had a record deal. Their identity was forged not by a label, but by the "Ironheads" themselves.
+                This song was adopted by the football team as their sacred entrance music, creating an "Enter Sandman-style" tradition where the entire stadium erupts as the team takes the field. This act cemented the band's status as legends on campus, long before they had a record deal.
             </p>
 
             <h2 class="h3 fw-bold border-bottom border-secondary pb-2 mb-3 mt-5">

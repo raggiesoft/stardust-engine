@@ -1,3 +1,8 @@
+<?php
+// /pages/about.php
+$pageTitle = "About This Project - The Stardust Engine";
+?>
+
 <div class="container py-5">
     <h1 class="display-5 fw-bold border-bottom pb-2 mb-4" style="font-family: 'Audiowide', cursive;"> About This Project</h1>
 
@@ -30,6 +35,13 @@
                 <p class="text-body-secondary ps-3">DALL-E 3</p>
             </li>
         </ul>
+        
+        <div class="alert alert-primary border-glow bg-opacity-10" role="alert">
+             <i class="fa-duotone fa-gamepad-modern me-2"></i>
+             <span class="small">
+                 To unlock the full experience, one must look <strong class="text-uppercase">B</strong>eyond <strong class="text-uppercase">A</strong>lgorithms.
+             </span>
+        </div>
 
         <h2 class="h3 fw-bold pt-4 mb-3 text-primary" style="font-family: 'Audiowide', cursive;">
             The "In-Universe" (Narrative)

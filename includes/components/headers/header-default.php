@@ -36,11 +36,11 @@ $isRadio = ($request_uri === '/radio');
           </li>
           <?php foreach ($discographyMenu as $eraName => $albums): ?>
               <li><hr class="dropdown-divider"></li>
-              <li><h6 class="dropdown-header text-uppercase text-muted fw-bold ps-3"><?php echo $eraName; ?></h6></li>
+              <li><h6 class="dropdown-header text-uppercase fw-bold ps-3"><?php echo $eraName; ?></h6></li>
               <?php foreach ($albums as $album): ?>
                   <li>
                       <a class="dropdown-item d-flex align-items-center justify-content-between" href="<?php echo $album['url']; ?>">
-                          <span><?php echo $album['title']; ?> <small class="text-muted ms-1">(<?php echo $album['year']; ?>)</small></span>
+                          <span><?php echo $album['title']; ?> <small class="ms-1">(<?php echo $album['year']; ?>)</small></span>
                           <?php if (isset($album['extra'])) echo $album['extra']; ?>
                       </a>
                   </li>
