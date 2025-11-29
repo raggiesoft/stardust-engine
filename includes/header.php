@@ -1,3 +1,7 @@
+<?php
+// includes/header.php
+// Universal RaggieSoft Header v4.0 (Dynamic Bootstrap Injection)
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,35 +11,55 @@
 
     <meta name="description" content="<?php echo htmlspecialchars($ogDescription ?? 'Explore Telsus Minor, a sci-fi universe where the reality of a phantom saboteur named Knox is a family fighting a corrupt corporation.'); ?>">
 
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
+    <!-- Icons -->
     <link rel="icon" href="https://assets.raggiesoft.com/stardust-engine/images/stardust-engine-logo.png" type="image/png">
     <link rel="apple-touch-icon" href="https://assets.raggiesoft.com/stardust-engine/images/stardust-engine-logo.png">
+    <script src="https://kit.fontawesome.com/ec060982d4.js" crossorigin="anonymous"></script>
 
+    <!-- Metadata (OG/Twitter) -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="<?php echo htmlspecialchars($ogUrl ?? 'https://thestardustengine.com'); ?>">
     <meta property="og:title" content="<?php echo htmlspecialchars($ogTitle ?? $pageTitle); ?>">
     <meta property="og:description" content="<?php echo htmlspecialchars($ogDescription ?? 'A musical universe forged in the fires of CPI.'); ?>">
     <meta property="og:image" content="<?php echo htmlspecialchars($ogImage ?? 'https://assets.raggiesoft.com/stardust-engine/images/stardust-engine-logo-social.jpg'); ?>">
-
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="<?php echo htmlspecialchars($ogTitle ?? $pageTitle); ?>">
-    <meta name="twitter:description" content="<?php echo htmlspecialchars($ogDescription ?? 'A musical universe forged in the fires of CPI.'); ?>">
-    <meta name="twitter:image" content="<?php echo htmlspecialchars($ogImage ?? 'https://assets.raggiesoft.com/stardust-engine/images/stardust-engine-logo-social.jpg'); ?>">
 
-    <script src="https://kit.fontawesome.com/ec060982d4.js" crossorigin="anonymous"></script>
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-
+    <!-- =================================================================== -->
+    <!-- DYNAMIC BOOTSTRAP LOADER                                            -->
+    <!-- =================================================================== -->
     <?php
-        $themeName = preg_replace('/[^a-zA-Z0-9_-]/', '', $currentPageTheme ?? 'stardust-engine');
-        $themeFilePath = "https://assets.raggiesoft.com/stardust-engine/css/theme-" . $themeName . ".css";
-    ?>
-    <link rel="stylesheet" href="<?php echo htmlspecialchars($themeFilePath); ?>?v=<?php echo time(); ?>" />
+        // 1. Identify the Site (Fallback to projectSlug if not manually set)
+        $bootstrapSite = $currentSite ?? ($projectSlug ?? null);
 
-    <link rel="stylesheet" href="https://assets.raggiesoft.com/common/css/bootstrap-overrides.css" />
+        // 2. Identify the Theme
+        $bootstrapTheme = $currentPageTheme ?? null;
+
+        // 3. Construct the URL based on Context
+        if (empty($bootstrapSite)) {
+            // CASE A: No Site Defined -> Global/Common Bootstrap
+            // URL: .../common/css/bootstrap.css
+            $bootstrapUrl = "https://assets.raggiesoft.com/common/css/bootstrap.css";
+        
+        } elseif (empty($bootstrapTheme)) {
+            // CASE B: Site Defined, No Theme -> Site Default
+            // URL: .../{site}/css/bootstrap-{site}-default.css
+            $bootstrapUrl = "https://assets.raggiesoft.com/{$bootstrapSite}/css/bootstrap-{$bootstrapSite}-default.css";
+        
+        } else {
+            // CASE C: Site & Theme Defined -> Specific Themed Bootstrap
+            // URL: .../{site}/css/bootstrap-{site}-{theme}.css
+            $bootstrapUrl = "https://assets.raggiesoft.com/{$bootstrapSite}/css/bootstrap-{$bootstrapSite}-{$bootstrapTheme}.css";
+        }
+    ?>
+    <!-- Load Bootstrap -->
+    <link href="<?php echo $bootstrapUrl; ?>?v=<?php echo time(); ?>" rel="stylesheet">
+
+   
 
 </head>
 <body class="d-flex flex-column min-vh-100">
@@ -62,11 +86,9 @@
 
           <div class="collapse navbar-collapse" id="mainNavbar">
             <?php
-              // $currentHeaderMenu path is set by index.php
               if (isset($currentHeaderMenu) && file_exists($currentHeaderMenu)) {
                   include $currentHeaderMenu; 
               } else {
-                  // Fallback
                   echo '<ul class="navbar-nav ms-auto mb-2 mb-md-0"><li class="nav-item"><span class="nav-link text-danger">Error: Menu definition not found.</span></li></ul>';
               }
             ?>

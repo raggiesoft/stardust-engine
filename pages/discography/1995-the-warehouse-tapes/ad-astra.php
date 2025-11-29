@@ -1,71 +1,13 @@
 <?php
 // Page data
-$pageTitle = "Escape Velocity (Ad Astra) - The Stardust Engine";
+$pageTitle = "Ad Astra - The Stardust Engine";
 $pageTheme = "ad-astra"; 
 
 // Pointing to the Single folder
 $album_path_web = '/stardust-engine/music/1995-ad-astra-single';
 ?>
 
-<style>
-    /* --- STARFIELD BACKGROUND --- */
-    @keyframes move-twink-back { from {background-position:0 0;} to {background-position:-10000px 5000px;} }
-    .starfield-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; display: block; z-index: -1; background: #050508 url('https://assets.raggiesoft.com/common/patterns/stars-transparent.png') repeat top center; }
-    .starfield-twinkling{ background: transparent url('https://assets.raggiesoft.com/common/patterns/twinkling.png') repeat top center; z-index: -1; position: absolute; top: 0; left: 0; width: 100%; height: 100%; animation: move-twink-back 200s linear infinite; opacity: 0.3; }
-    
-    /* --- CSS FIX: GLASS CONTAINER --- */
-    /* Applied to the main container to let it scroll */
-    .glass-container {
-        position: relative;
-        background: rgba(5, 5, 8, 0.85); 
-    }
-    .glass-container::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        z-index: -1;
-        backdrop-filter: blur(10px); 
-    }
 
-    /* --- CSS FIX: GLASS CARD --- */
-    /* Applied to the tracklist card so it doesn't trap the fixed player */
-    .glass-card {
-        position: relative;
-        background: rgba(5, 5, 8, 0.85);
-        border: 1px solid var(--bs-secondary-border-subtle);
-        overflow: visible; /* Critical: Allows fixed children to escape */
-    }
-    .glass-card::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        z-index: -1; /* Puts the blur behind the content */
-        backdrop-filter: blur(10px);
-        border-radius: var(--bs-card-border-radius);
-    }
-
-    /* TERMINAL STYLE */
-    .terminal-card {
-        background-color: rgba(10, 20, 10, 0.95); 
-        border: 1px solid #00FF41; 
-        font-family: 'Courier New', Courier, monospace;
-        color: #00FF41;
-        box-shadow: 0 0 15px rgba(0, 255, 65, 0.15);
-        font-size: 0.9rem;
-        line-height: 1.4;
-    }
-    .terminal-header {
-        border-bottom: 1px solid #00FF41;
-        padding-bottom: 10px;
-        margin-bottom: 15px;
-        font-weight: bold;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-    }
-    
-    .timestamp-link { cursor: pointer; transition: all 0.2s ease; text-decoration: none; }
-    .timestamp-link:hover { color: var(--color-astra-cyan) !important; text-shadow: 0 0 8px var(--color-astra-cyan); }
-</style>
 
 <div class="starfield-container"><div class="starfield-twinkling"></div></div>
 
@@ -97,7 +39,7 @@ $album_path_web = '/stardust-engine/music/1995-ad-astra-single';
             <div class="card border-primary shadow-lg h-100" style="background: rgba(10, 5, 20, 0.7); backdrop-filter: blur(20px);">
                 <div class="card-body p-5 text-center d-flex flex-column justify-content-center">
                     
-                    <p class="lead text-light mb-4">
+                    <p class="lead text-white mb-4">
                         The 15-minute progressive rock suite that defined the band's freedom.
                         <br><span class="text-info small fst-italic">"The moment the 'Engine' ignited and the 'Stardust' took over."</span>
                     </p>
@@ -108,7 +50,7 @@ $album_path_web = '/stardust-engine/music/1995-ad-astra-single';
                         <i class="fa-duotone fa-rocket-launch me-2"></i> Launch Mission (15:33)
                     </button>
                     
-                    <div class="small text-muted">
+                    <div class="small text-white">
                         <i class="fa-duotone fa-compact-disc me-2"></i>Full Single &bull; 4 Tracks
                     </div>
                 </div>
@@ -166,14 +108,14 @@ $album_path_web = '/stardust-engine/music/1995-ad-astra-single';
                 <h3 class="h4 text-primary fw-bold text-uppercase border-bottom border-primary pb-2 mb-4">
                     Mission Log
                 </h3>
-                <p class="text-muted">
+                <p class="text-white">
                     Written in the aftermath of the 1994 <em>Friction</em> trial, this suite is Cassidy O'Connell's autobiographical journey from trauma to transcendence.
                 </p>
                 
                 <div class="alert alert-dark border-warning mt-4 bg-opacity-50">
                     <i class="fa-duotone fa-microchip text-warning me-2"></i>
                     <strong class="text-warning">Production Note:</strong>
-                    <p class="small text-muted mb-0 mt-1">
+                    <p class="small text-white mb-0 mt-1">
                         The "mechanical cutoff" sound between Part II and Part III is Ryan O'Connell physically pulling the plug on his guitar amplifier to simulate a rocket's Main Engine Cutoff (MECO).
                     </p>
                 </div>
@@ -191,13 +133,14 @@ $album_path_web = '/stardust-engine/music/1995-ad-astra-single';
         </div>
 
         <div class="col-lg-8">
+            
             <div class="card border-secondary bg-transparent mb-4" style="border-left-width: 4px !important;">
                 <div class="card-body">
                     <div class="d-flex align-items-center mb-2" onclick="seekTo(0)" role="button">
                         <span class="badge bg-secondary me-3"><i class="fa-duotone fa-play me-1"></i>00:00</span>
                         <h4 class="text-secondary text-uppercase fw-bold mb-0 timestamp-link">Part I: The Cage</h4>
                     </div>
-                    <div class="ps-5"><p class="font-monospace text-light opacity-75 mb-0 small">The walls are cold, the air is thin...</p></div>
+                    <div class="ps-5"><p class="font-monospace text-white opacity-75 mb-0 small">The walls are cold, the air is thin...</p></div>
                 </div>
             </div>
 
@@ -207,7 +150,7 @@ $album_path_web = '/stardust-engine/music/1995-ad-astra-single';
                         <span class="badge bg-warning text-dark me-3"><i class="fa-duotone fa-play me-1"></i>03:00</span>
                         <h4 class="text-warning text-uppercase fw-bold mb-0 timestamp-link">Part II: Ignition</h4>
                     </div>
-                    <div class="ps-5"><p class="font-monospace text-light opacity-75 mb-0 small">The sequencer starts. The Engine roars.</p></div>
+                    <div class="ps-5"><p class="font-monospace text-white opacity-75 mb-0 small">The sequencer starts. The Engine roars.</p></div>
                 </div>
             </div>
 
@@ -217,7 +160,7 @@ $album_path_web = '/stardust-engine/music/1995-ad-astra-single';
                         <span class="badge bg-primary me-3"><i class="fa-duotone fa-play me-1"></i>07:20</span>
                         <h4 class="text-primary text-uppercase fw-bold mb-0 timestamp-link">Part III: The Cosmos</h4>
                     </div>
-                    <div class="ps-5"><p class="font-monospace text-light opacity-75 mb-0 small">I'm floating now, the engine's off...</p></div>
+                    <div class="ps-5"><p class="font-monospace text-white opacity-75 mb-0 small">I'm floating now, the engine's off...</p></div>
                 </div>
             </div>
 
@@ -227,7 +170,7 @@ $album_path_web = '/stardust-engine/music/1995-ad-astra-single';
                         <span class="badge bg-success me-3"><i class="fa-duotone fa-play me-1"></i>11:55</span>
                         <h4 class="text-success text-uppercase fw-bold mb-0 timestamp-link">Part IV: Re-entry</h4>
                     </div>
-                    <div class="ps-5"><p class="font-monospace text-light opacity-75 mb-0 small">The walls are gone, the air is clear...</p></div>
+                    <div class="ps-5"><p class="font-monospace text-white opacity-75 mb-0 small">The walls are gone, the air is clear...</p></div>
                 </div>
             </div>
 
@@ -236,8 +179,10 @@ $album_path_web = '/stardust-engine/music/1995-ad-astra-single';
 </div>
 
 <script>
+    // Wait for DOM
     document.addEventListener('DOMContentLoaded', () => {
-        // Find index of Full Suite (Case Insensitive)
+        
+        // 1. Find the index of "Full Suite" in the playlist
         let suiteIndex = 0;
         if(typeof window.STARDUST_PLAYLIST !== 'undefined') {
             window.STARDUST_PLAYLIST.forEach((track, index) => {
@@ -247,6 +192,7 @@ $album_path_web = '/stardust-engine/music/1995-ad-astra-single';
             });
         }
 
+        // 2. Bind the big Launch button
         const launchBtn = document.getElementById('btn-launch-mission');
         if(launchBtn) {
             launchBtn.onclick = () => {
@@ -254,9 +200,12 @@ $album_path_web = '/stardust-engine/music/1995-ad-astra-single';
             };
         }
 
+        // 3. Global Seek Helper for timestamps
         window.seekTo = function(seconds) {
             if (typeof window.STARDUST_PLAYLIST === 'undefined') return;
             const audio = document.getElementById('main-audio-element');
+            
+            // Check if we are currently playing the suite
             const suiteSrc = window.STARDUST_PLAYLIST[suiteIndex].src;
             const currentSrc = audio.getAttribute('src');
 
