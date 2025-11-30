@@ -1,6 +1,6 @@
 <div id="sticky-audio-player" 
-     class="fixed-bottom bg-dark border-top border-primary p-3 shadow-lg d-none" 
-     style="z-index: 1050;" 
+     class="fixed-bottom border-top border-primary p-3 shadow-lg d-none" 
+     style="z-index: 1050; background-color: #050508 !important; color: #E0E0FF !important;" 
      data-bs-theme="dark">
      
     <div class="container">
@@ -71,3 +71,15 @@
     </div>
   </div>
 </div>
+
+<script>
+    // DOM FIX: Move player and modal to <body>
+    // This breaks them out of the .glass-card container on ad-astra.php,
+    // ensuring 'fixed-bottom' relates to the viewport, not the card.
+    (function() {
+        const player = document.getElementById('sticky-audio-player');
+        const modal = document.getElementById('lyricsModal');
+        if (player) document.body.appendChild(player);
+        if (modal) document.body.appendChild(modal);
+    })();
+</script>
