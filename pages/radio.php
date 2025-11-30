@@ -96,7 +96,7 @@ if (!empty($discographyLibrary)) {
 
                     // Path Construction
                     $src_url = "{$cdn_base}/{$album_data['slug']}/ogg/{$filename_stem}.ogg";
-                    $lore_url = "{$cdn_base}/{$album_data['slug']}/lore/{$filename_stem}.md";
+                    $lore_url = "{$cdn_base}/{$album_data['slug']}/lyrics/{$filename_stem}.md";
 
                     $master_playlist[] = [
                         'title' => $title,
