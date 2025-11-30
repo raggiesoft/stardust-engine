@@ -1,6 +1,6 @@
 <?php
 // includes/header.php
-// Universal RaggieSoft Header v8.0 (Telemetry, Asset Merge, & Jump Drive Transitions)
+// Universal RaggieSoft Header v8.2 (Stability Patch & Theme Fixes)
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -104,7 +104,10 @@
             ['file' => 'extras.css',           'source' => 'theme',  'name' => 'Visual FX Engine'],
             ['file' => 'bootstrap-header.css', 'source' => 'common', 'name' => 'Nav Systems'],
             ['file' => 'bootstrap-footer.css', 'source' => 'common', 'name' => 'Player Interface'],
-            ['file' => 'safety-net.css',       'source' => 'theme',  'name' => 'Safety Overrides']
+            ['file' => 'safety-net.css',       'source' => 'theme',  'name' => 'Safety Overrides'],
+            
+            // NEW: Global Network Overrides (Loads Last)
+            ['file' => 'raggiesoft-extras.css','source' => 'common', 'name' => 'Global Patches']
         ];
 
         foreach ($css_modules as $m) {
@@ -121,7 +124,6 @@
             'System Logo' => 'https://assets.raggiesoft.com/stardust-engine/images/stardust-engine-logo.png'
         ];
 
-        // MERGE LOGIC: If the parent page defined specific assets, add them now.
         if (isset($customPageAssets) && is_array($customPageAssets)) {
             $critical_images = array_merge($critical_images, $customPageAssets);
         }
@@ -140,6 +142,7 @@
             const queue = <?php echo json_encode($load_queue); ?>;
             let loadedCount = 0;
             const total = queue.length;
+            let isFinished = false;
             
             const progressBar = document.getElementById('telemetry-fill');
             const statusText = document.getElementById('telemetry-text');
@@ -147,90 +150,94 @@
             const overlay = document.getElementById('stardust-telemetry-overlay');
             const siteContent = document.getElementById('main-site-wrapper');
 
-            // --- FEATURE: JUMP DRIVE (Exit Transition) ---
-            // Intercept clicks to internal links to show the loader immediately
+            // --- JUMP DRIVE (Link Interceptor) ---
             document.body.addEventListener('click', function(e) {
                 const link = e.target.closest('a');
                 if (!link) return;
-
                 const href = link.getAttribute('href');
                 const target = link.getAttribute('target');
-
-                // Logic: Must be internal, not an anchor link, not a new tab
+                
+                // Safety: Don't trigger on current page links (Prevents "Fake Reload" loop)
+                const currentPath = window.location.pathname;
+                
                 if (href && 
                     !href.startsWith('#') && 
                     !href.startsWith('mailto:') && 
                     !href.startsWith('tel:') && 
                     target !== '_blank' && 
-                    (href.startsWith('/') || href.includes(window.location.hostname))
+                    (href.startsWith('/') || href.includes(window.location.hostname)) &&
+                    href !== currentPath && // Fix: Don't animate if staying on page
+                    href !== window.location.href
                    ) {
-                    // Don't prevent default. Let the browser navigate.
-                    // Just bring the curtain down while it waits for the server.
                     overlay.style.display = 'flex';
-                    
-                    // Force browser reflow to ensure transition plays
                     void overlay.offsetWidth; 
-                    
                     overlay.style.opacity = '1';
                     siteContent.style.opacity = '0';
                     statusText.innerHTML = "CALCULATING JUMP VECTORS<span class='cursor'>_</span>";
                     detailText.innerText = "TARGET LOCKED: " + href;
                     progressBar.style.width = '100%';
-                    progressBar.style.backgroundColor = '#7000FF'; // Reset to violet
+                    progressBar.style.backgroundColor = '#7000FF'; 
                 }
             });
 
             // --- LOADER LOGIC ---
             function itemLoaded(item) {
+                if (isFinished) return;
                 loadedCount++;
                 const percent = (loadedCount / total) * 100;
-                
-                // Update UI
                 progressBar.style.width = percent + '%';
-                // Random "tech" jargon for flavor
+                
                 const verbs = ["ACQUIRING", "PARSING", "DECRYPTING", "BUFFERING"];
                 const randomVerb = verbs[Math.floor(Math.random() * verbs.length)];
-                
                 statusText.innerHTML = randomVerb + " DATA STREAM<span class='cursor'>_</span>";
-                detailText.innerText = "VERIFIED: " + item.name; 
+                detailText.innerText = "VERIFIED: " + (item.name || 'Asset'); 
 
-                if (loadedCount === total) {
+                if (loadedCount >= total) {
                     finishLoading();
                 }
             }
 
             function finishLoading() {
+                if (isFinished) return;
+                isFinished = true;
+                
                 statusText.innerHTML = "SYSTEM ONLINE<span class='cursor'>_</span>";
                 detailText.innerText = "Connection Established.";
-                progressBar.style.backgroundColor = "#00FF9D"; // Turn Green
+                progressBar.style.width = '100%';
+                progressBar.style.backgroundColor = "#00FF9D"; 
                 progressBar.style.boxShadow = "0 0 15px #00FF9D";
 
                 setTimeout(() => {
                     overlay.style.opacity = '0';
                     siteContent.style.opacity = '1';
                     document.body.style.overflow = 'auto'; 
-                    
-                    // We don't remove() the overlay anymore, we just hide it
-                    // so we can bring it back for the "Exit Transition"
                     setTimeout(() => { overlay.style.display = 'none'; }, 500);
                 }, 400);
             }
 
-            // Start Processing Queue
+            // --- SAFETY TIMEOUT (3 Seconds) ---
+            setTimeout(() => {
+                if (!isFinished) {
+                    console.warn("Telemetry timeout. Forcing system start.");
+                    finishLoading();
+                }
+            }, 3000);
+
+            // --- QUEUE PROCESSOR ---
             queue.forEach(item => {
                 if (item.type === 'css') {
                     const link = document.createElement('link');
                     link.rel = 'stylesheet';
-                    link.href = item.url;
                     link.onload = () => itemLoaded(item);
                     link.onerror = () => itemLoaded(item); 
+                    link.href = item.url;
                     document.head.appendChild(link);
                 } 
                 else if (item.type === 'image') {
                     const img = new Image();
-                    img.src = item.url;
                     img.onload = () => itemLoaded(item);
                     img.onerror = () => itemLoaded(item);
+                    img.src = item.url;
                 }
             });
         });

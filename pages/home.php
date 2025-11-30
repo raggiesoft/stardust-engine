@@ -40,7 +40,7 @@
                         </h4>
                         <p>
                             <strong>This is a real AI art project AND a fictional narrative, presented as one experience.</strong> 
-                            By continuing, you understand that this is a "dual-world" website.
+                            By continuing, you understand that this is a "dual-world" website. We welcome you to <a href="/about">learn more about the project</a>.
                         </p>
                         <hr class="border-warning-subtle opacity-50">
                         

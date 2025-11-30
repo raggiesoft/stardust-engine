@@ -1,53 +1,135 @@
 <?php
-// /pages/about.php
-$pageTitle = "About This Project - The Stardust Engine";
+// pages/about.php
+// "Mission Profile" - Explaining the Meta & The Lore
+
+$pageTitle = "Mission Profile - The Stardust Engine";
+$pageTheme = "ad-astra"; 
+
+// ASSET MERGE
+$customPageAssets = [
+    'Starfield Texture' => 'https://assets.raggiesoft.com/common/patterns/stars-transparent.png'
+];
+
 ?>
 
-<div class="container py-5">
-    <h1 class="display-5 fw-bold border-bottom pb-2 mb-4" style="font-family: 'Audiowide', cursive;"> About This Project</h1>
+<div class="starfield-container"><div class="starfield-twinkling"></div></div>
 
-    <div class="fs-5">
-        <p class="lead mb-4">
-            This website is a "dual-world" experience: it is both a real-world AI art project and the in-universe home of a fictional 1980s band, The Stardust Engine.
-        </p>
-
-        <h2 class="h3 fw-bold pt-4 mb-3 text-primary" style="font-family: 'Audiowide', cursive;">
-            The "Real World" (Meta)
-        </h2>
-        <p class="mb-4 text-body-secondary">
-            This project is a portfolio piece by Michael Ragsdale, created in collaboration with a team of generative AI tools.
-        </p>
-        <ul class="list-unstyled mb-4">
-            <li class="mb-3">
-                <strong class="h5 d-block mb-1"><i class="fa-duotone fa-user-astronaut text-primary me-3"></i>The Director:</strong>
-                <p class="text-body-secondary ps-3">Michael Ragsdale</p>
-            </li>
-            <li class="mb-3">
-                <strong class="h5 d-block mb-1"><i class="fa-duotone fa-brain-circuit text-primary me-3"></i>Lyrics & Lore:</strong>
-                <p class="text-body-secondary ps-3">Google Gemini</p>
-            </li>
-            <li class="mb-3">
-                <strong class="h5 d-block mb-1"><i class="fa-duotone fa-record-vinyl text-primary me-3"></i>Music & Vocals:</strong>
-                <p class="text-body-secondary ps-3">Suno AI</p>
-            </li>
-            <li class="mb-3">
-                <strong class="h5 d-block mb-1"><i class="fa-duotone fa-palette text-primary me-3"></i>Album Art:</strong>
-                <p class="text-body-secondary ps-3">DALL-E 3</p>
-            </li>
-        </ul>
-        
-        <div class="alert alert-primary border-glow bg-opacity-10" role="alert">
-             <i class="fa-duotone fa-gamepad-modern me-2"></i>
-             <span class="small">
-                 To unlock the full experience, one must look <strong class="text-uppercase">B</strong>eyond <strong class="text-uppercase">A</strong>lgorithms.
-             </span>
-        </div>
-
-        <h2 class="h3 fw-bold pt-4 mb-3 text-primary" style="font-family: 'Audiowide', cursive;">
-            The "In-Universe" (Narrative)
-        </h2>
-        <p class="mb-4 text-body-secondary">
-            This website is the official archive of The Stardust Engine, a fictional family band from the 1980s. The narrative follows their "cold war" with their label, Apex Records, their subsequent "Friction" scandal, and their rebirth as independent artists on their own label, Engine Room Records, LLC.
+<div class="container py-5 glass-container">
+    
+    <div class="text-center mb-5">
+        <h1 class="display-3 fw-bold text-uppercase text-glow-primary" style="font-family: 'Audiowide', cursive;">
+            Mission Profile
+        </h1>
+        <p class="lead text-light mx-auto" style="max-width: 800px;">
+            <strong class="text-info">The Stardust Engine</strong> is a "Dual-Layer" reality: 
+            part technical experiment, part narrative art project.
         </p>
     </div>
+
+    <div class="row g-5 mb-5">
+        
+        <div class="col-lg-6">
+            <div class="card glass-card h-100 border-secondary">
+                <div class="card-header bg-transparent border-secondary text-warning fw-bold text-uppercase py-3">
+                    <i class="fa-duotone fa-planet-ringed me-2"></i> Layer 1: The Universe
+                </div>
+                <div class="card-body text-light">
+                    <h3 class="h4 text-light mb-3" style="font-family: 'Audiowide', cursive;">In-Universe Archive</h3>
+                    <p>
+                        You are currently viewing the official data archive of <strong>The Stardust Engine</strong>, a synth-rock band originating from the Class of '89 at CPI.
+                    </p>
+                    <p>
+                        The narrative follows their struggle against the corporate monolith <strong>Apex Records</strong>, their retreat to the "Fortress," and their eventual broadcast from <strong>Port Telsus</strong>, a space station orbiting Telsus Minor.
+                    </p>
+                    <a href="/band/overview" class="btn btn-sm btn-outline-warning mt-2">
+                        <i class="fa-duotone fa-book-open me-2"></i>Read the History
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-6">
+            <div class="card glass-card h-100 border-info shadow-glow">
+                <div class="card-header bg-transparent border-info text-info fw-bold text-uppercase py-3">
+                    <i class="fa-duotone fa-code-branch me-2"></i> Layer 2: The Project
+                </div>
+                <div class="card-body text-light">
+                    <h3 class="h4 text-light mb-3" style="font-family: 'Audiowide', cursive;">AI Collaboration</h3>
+                    <p>
+                        In reality, this entire universe—the music, the art, the code, and the history—was generated in 2025 as a collaboration between a human director and a suite of generative AI tools.
+                    </p>
+                    <p>
+                        It serves as a portfolio piece demonstrating how AI can be used not just to generate assets, but to build cohesive, emotionally resonant worlds.
+                    </p>
+                    <a href="/contact" class="btn btn-sm btn-outline-info mt-2">
+                        <i class="fa-duotone fa-id-card me-2"></i>Contact the Director
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="mb-5">
+        <h2 class="display-6 fw-bold text-uppercase text-light border-bottom border-secondary pb-3 mb-4">
+            <i class="fa-duotone fa-users-viewfinder me-3 text-secondary"></i>Crew Manifest
+        </h2>
+
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+            
+            <div class="col">
+                <div class="card glass-card h-100 text-center p-4 border-info border-opacity-50">
+                    <div class="mb-3">
+                        <i class="fa-duotone fa-user-astronaut fa-5x text-info"></i>
+                    </div>
+                    <h4 class="h5 text-light fw-bold">Michael Ragsdale</h4>
+                    <div class="badge bg-info text-dark mb-2">FLIGHT DIRECTOR</div>
+                    <p class="small mb-0">
+                        Concept, Direction, Coding, & Curation. The human element that guides the machine.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card glass-card h-100 text-center p-4 border-secondary">
+                    <div class="mb-3">
+                        <i class="fa-duotone fa-brain-circuit fa-5x text-primary"></i>
+                    </div>
+                    <h4 class="h5 text-light fw-bold">Google Gemini</h4>
+                    <div class="badge bg-primary mb-2">NAV COMPUTER</div>
+                    <p class="small mb-0">
+                        Lore Generation, Character Backstories, Lyrics, and Code Assistance.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card glass-card h-100 text-center p-4 border-secondary">
+                    <div class="mb-3">
+                        <i class="fa-duotone fa-waveform-lines fa-5x text-warning"></i>
+                    </div>
+                    <h4 class="h5 text-light fw-bold">Suno AI</h4>
+                    <div class="badge bg-warning text-dark mb-2">ENGINE CORE</div>
+                    <p class="small mb-0">
+                        Audio Synthesis, Composition, and Vocal Performance.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card glass-card h-100 text-center p-4 border-secondary">
+                    <div class="mb-3">
+                        <i class="fa-duotone fa-palette fa-5x text-danger"></i>
+                    </div>
+                    <h4 class="h5 text-light fw-bold">DALL-E 3</h4>
+                    <div class="badge bg-danger mb-2">VISUAL SENSORS</div>
+                    <p class="small mb-0">
+                        Album Art, Photography, and Atmospheric Visuals.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
 </div>

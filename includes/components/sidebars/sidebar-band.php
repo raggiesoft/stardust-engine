@@ -38,19 +38,24 @@
     <i class="fa-duotone fa-book-open me-2"></i>History & Lore
 </h6>
 <ul class="nav flex-column mb-2">
-   <li class="nav-item">
+  <li class="nav-item">
     <a class="nav-link link-secondary" href="/band/history">
-        <i class="fa-duotone fa-timeline me-2"></i>Full Timeline
+      <i class="fa-duotone fa-timeline me-2"></i>Full Timeline
     </a>
-   </li>
-   <li class="nav-item">
-    <a class="nav-link link-secondary" href="/story/cpi">
-        <i class="fa-duotone fa-school me-2"></i>CPI & The Forgers
-    </a>
-   </li>
-   <li class="nav-item">
+  </li>
+  <li class="nav-item">
+  <a class="nav-link link-secondary" href="/story/cpi">
+    <i class="fa-duotone fa-school me-2"></i>CPI & The Forgers
+  </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link link-secondary" href="/story/crash-of-90">
+      <i class="fa-duotone fa-car-crash me-2"></i>The Crash of '90
+    </a> 
+  </li>
+  <li class="nav-item">
     <a class="nav-link link-secondary" href="/story/friction">
-        <i class="fa-duotone fa-burst me-2"></i>The Friction Scandal
+      <i class="fa-duotone fa-burst me-2"></i>The Friction Scandal
     </a>
-   </li>
+  </li>
 </ul>

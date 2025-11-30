@@ -6,7 +6,6 @@ $pageTitle = "Evan Wright - The Stardust Engine";
 <div class="container py-5">
     <div class="row g-5">
         
-        <!-- Main Bio Content -->
         <div class="col-lg-8">
             <h1 class="display-4 fw-bold text-uppercase text-glow-primary" style="font-family: 'Impact', sans-serif;">Evan Wright</h1>
             <p class="h4 text-warning fw-bold mb-4">Bass Guitar, Rhythm Guitar, Backing Vocals</p>
@@ -25,6 +24,17 @@ $pageTitle = "Evan Wright - The Stardust Engine";
                 He is the quiet, steady presence in the "engine room," and his bond with his twin brother is legendary. On tour during the Apex era, Evan and Tyler were inseparable, famously taking one of the two cramped motel beds while the three O'Connell siblings piled into the other.
             </p>
 
+            <h3 class="fw-bold mt-5 mb-3">The Crash of '90: "The Human Ramp"</h3>
+            <p class="text-muted">
+                After Ryan's injury in 1990, the reality of touring changed instantly. While Holly and Cassidy handled the private medical logistics (transfers, catheterization), it was Evan and Tyler who handled the brute force required to navigate a world built without ramps.
+            </p>
+            <p class="text-muted">
+                In 1991, venues rarely had elevators. If the band had to play a second-floor club, or if the "accessible ramp" was a dangerous piece of plywood, Evan and Tyler became the <strong>"Human Ramp."</strong> The twins developed a silent, synchronized lifting technique—Tyler on the back handles, Evan gripping the frame by the knees—to carry Ryan and his chair up fire escapes, loading docks, and stairwells.
+            </p>
+            <p class="text-muted">
+                To Evan, this wasn't a burden; it was the job. Just as the bass carries the melody, the bassist carries the singer.
+            </p>
+
             <h3 class="fw-bold mt-5 mb-3">Post-Apex Freedom</h3>
             <p class="text-muted">
                 During the "Freedom Era," Evan's contributions became even more pronounced. His driving basslines on tracks like "Garbage" (from *The Warehouse Tapes*) and his ability to lock in with his brother's "Human Metronome" timing allowed the band to finally explore the raw, unpolished 80s rock sound that Apex Records had suppressed.
@@ -35,7 +45,6 @@ $pageTitle = "Evan Wright - The Stardust Engine";
 
         </div>
 
-        <!-- Stats Card -->
         <div class="col-lg-4">
             <div style="top: 8rem;">
                 <?php $props = [
@@ -46,7 +55,7 @@ $pageTitle = "Evan Wright - The Stardust Engine";
                     'description' => "<strong>Role:</strong> Bass, Rhythm Guitar, Vocals<br>
                                       <strong>Age (in 1987):</strong> 20<br>
                                       <strong>CPI Status:</strong> Alumnus, Class of '89<br>
-                                      <strong>Key Fact:</strong> Identical twin to Tyler Wright",
+                                      <strong>Status:</strong> The Human Ramp (Unbroken)",
                     'buttonProps' => [
                         'text' => 'Back to The Band', 
                         'href' => '/band', 

@@ -21,7 +21,7 @@ $pageTitle = "Our History - The Stardust Engine";
         </h2>
         <div class="row align-items-center">
             <div class="col-md-8">
-                <p class="fs-5">
+                <p class="fs-5 text-muted">
                     The story begins at <strong>Commonwealth Polytechnic Institute (CPI)</strong> in Blacksburg, Virginia. Through a combination of delayed entry (Ryan) and academic acceleration (Holly), all five family members—siblings Ryan, Cassidy, and Holly O'Connell, and their cousins Evan and Tyler Wright—managed to enter the <strong>Class of '89</strong> together.
                 </p>
                 <p>
@@ -32,7 +32,7 @@ $pageTitle = "Our History - The Stardust Engine";
                 </p>
             </div>
             <div class="col-md-4 text-center">
-                <i class="fa-duotone fa-graduation-cap display-1 opacity-25"></i>
+                <i class="fa-duotone fa-graduation-cap fa-5x opacity-25"></i>
             </div>
         </div>
     </section>
@@ -43,9 +43,9 @@ $pageTitle = "Our History - The Stardust Engine";
         </h2>
         <div class="alert alert-light border-secondary">
             <i class="fa-duotone fa-circle-info me-2"></i>
-            <strong>Key Albums:</strong> <a href="/albums/1987-electric-color">Electric Color</a>, <a href="/albums/1989-neon-hearts">Neon Hearts</a>
+            <strong>Key Albums:</strong> <a href="/discography/1987-electric-color">Electric Color</a>, <a href="/discography/1989-neon-hearts">Neon Hearts</a>
         </div>
-        <p class="fs-5">
+        <p class="fs-5 text-muted">
             Their success at CPI attracted <strong>Apex Records</strong>, a major label looking for the next big synth-pop act. This began a five-year "Cold War" over the band's identity.
         </p>
         <p>
@@ -79,7 +79,7 @@ $pageTitle = "Our History - The Stardust Engine";
         </h2>
         <div class="row">
             <div class="col-md-12">
-                <p class="fs-5">
+                <p class="fs-5 text-muted">
                     Penniless but free, the band retreated to a warehouse in Blacksburg they dubbed "The Fortress." They were saved by the <strong>"Forger Nation War Chest,"</strong> a grassroots fundraising campaign by their loyal college fanbase.
                 </p>
                 <p>
@@ -98,7 +98,7 @@ $pageTitle = "Our History - The Stardust Engine";
         <h2 class="border-bottom border-secondary pb-2 mb-4">
             2008-2014: The Long Hiatus
         </h2>
-        <p class="fs-5">
+        <p class="fs-5 text-muted">
             After a decade of non-stop independent touring, the "family unit" needed to heal. In 2008, following the grueling "Long Way Home" tour, the band announced an indefinite hiatus.
         </p>
         <p>
@@ -114,7 +114,7 @@ $pageTitle = "Our History - The Stardust Engine";
             2015-2016: Re-Ignition
         </h2>
         
-        <p class="fs-5">
+        <p class="fs-5 text-muted">
             The silence broke in 2015 with the release of <strong>Re-Ignition</strong>. The album was a massive return to form, featuring the "Stardust" melodies and "Engine" power that defined them.
         </p>
         <p>
@@ -165,19 +165,24 @@ $pageTitle = "Our History - The Stardust Engine";
                         <i class="fa-duotone fa-shield-halved fs-1 text-warning me-4 mt-1"></i>
                         <div>
                             <h4 class="alert-heading text-warning h5">The Nine-Figure Refusal</h4>
-                            <p class="text-light mb-3">
-                                In what the industry called "suicide" and the band called "survival," Engine Room Records was approached by <strong>Omni-Global Media</strong> with a <strong>$150,000,000</strong> offer for their entire master catalog.
+                            <p class="mb-3">
+                                In 2018, <strong>Omni-Global Media</strong> approached the family with a staggering <strong>$150,000,000</strong> offer for their entire master catalog. All five members were present for what they thought was a standard business meeting.
                             </p>
                             <p class="text-light small mb-3">
-                                The deal included a "Catalog Optimization" clause: Omni-Global intended to slice the 15-minute masterpiece <em>Escape Velocity (Ad Astra)</em> into four separate, playlist-friendly tracks. When Cassidy O'Connell learned they wanted to "rip her baby apart," the reaction was immediate and devastating. She suffered a severe autistic meltdown, inconsolable for hours, with Ryan holding her through the storm.
+                                Then came the slide about <strong>"Catalog Optimization."</strong> The executives explained their plan to slice the 15-minute masterpiece <em>Escape Velocity (Ad Astra)</em> into four separate, playlist-friendly tracks.
                             </p>
-                            <p class="text-light small mb-2">
-                                Seeing Cassidy's pain made the decision instant. <strong>Engine Room Records, LLC</strong> is owned by five family members: Holly, Ryan, Cassidy, Evan, and Tyler. Family protects family.
+                            <p class="text-light small mb-3 fst-italic border-start border-danger border-3 ps-3 ms-1">
+                                "They are going to rip my baby apart!"
+                            </p>
+                            <p class="small mb-3">
+                                Cassidy's scream pierced the air before dissolving into a low, guttural sound as she fell into a severe autistic meltdown. To her, <em>Ad Astra</em> wasn't just a song; it was her magnum opus, the document of their freedom, and an epic journey she refused to let be fragmented. 
+                            </p>
+                            <p class="small mb-3">
+                                Ryan was moving before she hit the floor, catching her and holding her through the storm. <strong>Holly O'Connell</strong> stood up, stared down the executives, and said three words: <strong>"The meeting is over."</strong>
                             </p>
                             <hr class="border-warning opacity-25 my-2">
                             <p class="mb-0 fst-italic text-light">
-                                <strong>The vote was unanimous and immediate.</strong> As Holly O'Connell wrote in the rejection letter: 
-                                <span class="text-warning">"We didn't build a fortress just to sell the keys."</span>
+                                They weren't looking to sell anyway, but seeing their sister in pain made the decision instantaneous. <strong>Family protects family.</strong>
                             </p>
                         </div>
                     </div>

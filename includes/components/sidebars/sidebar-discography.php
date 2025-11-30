@@ -1,10 +1,8 @@
 <?php
 // includes/components/sidebars/sidebar-discography.php
-// v2.0 - Dynamic Generation from Single Source of Truth
-// Now reads directly from _discography.php
+// v2.1 - Fixed Variable Name Mismatch & Data Structure Access
 
 // 1. Ensure Data exists
-// Use include_once to prevent redeclaration errors if it's already loaded
 include_once ROOT_PATH . '/includes/components/arrays/_discography.php';
 
 // 2. Get Current Context
@@ -15,26 +13,36 @@ $current_req = $_SERVER['REQUEST_URI'];
     <div class="accordion accordion-flush" id="discographyAccordion">
         
         <?php 
+        // SAFETY: Check if the variable exists from the include
+        $library = $discographyLibrary ?? [];
+        
         $eraIndex = 0;
-        foreach ($discographyMenu as $eraTitle => $albums): 
+        foreach ($library as $eraKey => $eraData): 
             $eraIndex++;
-            // Generate a unique ID for the accordion collapse
+            
+            // EXTRACT V2.0 DATA
+            // The sidebar loop was breaking because it didn't know about the new structure
+            $eraTitle = $eraData['label']; 
+            $albums   = $eraData['albums'];
+            
+            // Skip eras with no albums (like Modern Era currently)
+            if (empty($albums)) continue;
+
+            // Generate IDs
             $collapseId = 'collapse-era-' . $eraIndex;
             $headingId  = 'heading-era-' . $eraIndex;
             
-            // Determine if this Era should be open
-            // It opens if:
-            // A. We are actively viewing one of its albums
-            // B. We are on the main /discography page (Default to first Era)
+            // Determine Open State
             $isOpen = false;
             foreach ($albums as $album) {
+                // Check if current URL matches this album URL
                 if (str_contains($current_req, $album['url'])) {
                     $isOpen = true;
                     break;
                 }
             }
             
-            // Default open the first one if on root
+            // Default open the first one if on root discography page
             if ($current_req === '/discography' && $eraIndex === 1) {
                 $isOpen = true;
             }
@@ -49,10 +57,10 @@ $current_req = $_SERVER['REQUEST_URI'];
                             aria-expanded="<?php echo $isOpen ? 'true' : 'false'; ?>" 
                             aria-controls="<?php echo $collapseId; ?>">
                         <?php 
-                            // Add icons based on Era Name for flavor
-                            if (str_contains($eraTitle, 'Apex')) echo '<i class="fa-duotone fa-building me-2"></i>';
-                            elseif (str_contains($eraTitle, 'Freedom')) echo '<i class="fa-duotone fa-warehouse me-2"></i>';
-                            elseif (str_contains($eraTitle, 'Re-Ignition')) echo '<i class="fa-duotone fa-fire-burner me-2"></i>';
+                            // Flavor Icons based on Era Key
+                            if ($eraKey === 'apex') echo '<i class="fa-duotone fa-building me-2"></i>';
+                            elseif ($eraKey === 'freedom') echo '<i class="fa-duotone fa-warehouse me-2"></i>';
+                            elseif ($eraKey === 'reignition') echo '<i class="fa-duotone fa-fire-burner me-2"></i>';
                             else echo '<i class="fa-duotone fa-compact-disc me-2"></i>';
                         ?>
                         <?php echo $eraTitle; ?>
@@ -72,7 +80,7 @@ $current_req = $_SERVER['REQUEST_URI'];
                                 $title = $album['title'];
                                 $year = $album['year'];
                                 $url = $album['url'];
-                                $extra = $album['extra'] ?? ''; // Badges like CANCELED
+                                $extra = $album['extra'] ?? ''; 
                             ?>
                                 <li class="nav-item">
                                     <a class="nav-link link-secondary py-1 <?php echo $isActive ? 'active fw-bold text-light' : ''; ?>" 

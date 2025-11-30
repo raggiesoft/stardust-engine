@@ -6,7 +6,6 @@ $pageTitle = "Ryan O'Connell - The Stardust Engine";
 <div class="container py-5">
     <div class="row g-5">
         
-        <!-- Main Bio Content -->
         <div class="col-lg-8">
             <h1 class="display-4 fw-bold text-uppercase text-glow-primary" style="font-family: 'Impact', sans-serif;">Ryan O'Connell</h1>
             <p class="h4 text-warning fw-bold mb-4">Lead Vocals, Lead Guitar</p>
@@ -29,31 +28,32 @@ $pageTitle = "Ryan O'Connell - The Stardust Engine";
                 </div>
             </div>
 
+            <h3 class="fw-bold mt-5 mb-3">The Crash of '90</h3>
             <p class="text-muted">
-                His entire tenure at Apex Records was defined by conflict. The label, wanting a clean pop sound, branded him "The Engine"—a nickname he hated. The label actively suppressed his heavier, industrial-inspired guitar work. This led to his famous "malicious compliance" tracks, where he would hide angsty, anti-corporate lyrics inside "safe" pop-rock wrappers.
+                The <em>Live in Chicago</em> (1990) album art captures the last time Ryan O'Connell stood on a stage. In December 1990, while driving back to Blacksburg on I-81 through a winter storm, Ryan was involved in a catastrophic black ice accident.
+            </p>
+            <p class="text-muted">
+                The crash resulted in a T10 spinal cord injury, leaving him paralyzed from the waist down. The "Stalemate Year" of 1991 wasn't just about fighting the label; it was about Ryan fighting to reclaim his identity. Apex Records pressured the band to hide his wheelchair or force him to sit on a high stool to "look normal." Ryan refused. He spent the year welding a custom, heavy-duty pedalboard and modifying his guitar rig to work from a seated position, proving the "Engine" was still running.
             </p>
 
-            <h3 class="fw-bold mt-5 mb-3">Key Tracks (Apex Era)</h3>
-            <ul class="list-group list-group-flush bg-transparent mb-4">
-                <li class="list-group-item bg-transparent text-muted border-secondary px-0">
-                    <strong>"Plastic Sky" (1987):</strong> A protest against the "thin, polished" sound the studio demanded, with lyrics like "My guitar is clean, the drums are thin / They polished away all the grit and sin."
-                </li>
-                <li class="list-group-item bg-transparent text-muted border-secondary px-0">
-                    <strong>"Running on the Edge" (1987):</strong> A direct complaint about being a "shadow in the light," with the lyric "This keyboard hook is all a bore / I know this guitar's made for more."
-                </li>
-                <li class="list-group-item bg-transparent text-muted border-secondary px-0">
-                    <strong>"Break the Walls" (1987):</strong> The one "pure rock" anthem Apex allowed on the debut, which opened Side B and became an immediate fan-favorite.
-                </li>
-            </ul>
+            <h3 class="fw-bold mt-5 mb-3">The "Freight Dog" Reality</h3>
+            <p class="text-muted">
+                Touring in the early 90s meant navigating a world built without him in mind. Venues rarely had ramps. Ryan often entered clubs through the loading dock, hauled up freight elevators alongside road cases and trash. 
+            </p>
+            <p class="text-muted">
+                He relied on his cousins, Evan and Tyler, as his "Human Ramp." The twins developed a synchronized lift technique to carry him and his chair up fire escapes and narrow stairwells, ensuring he never missed a show. This gritty, unglamorous reality hardened the band's resolve and deepened their reliance on the "Family Unit."
+            </p>
 
             <h3 class="fw-bold mt-5 mb-3">The "Friction" Catastrophe</h3>
             <p class="text-muted">
-                Ryan was the central figure in the 1992 "Friction" scandal. During the infamous photo shoot, he innocently wiped cocaine (which he mistook for dust) off a mirror, humiliating the executive, Julian Vance. When Vance retaliated by ordering Ryan and Cassidy to perform a sexual act on camera, it was Ryan's roar of <strong>"SHE'S! MY! SISTER!"</strong> that detonated the situation, revealed Vance's criminal act, and ultimately freed the band from their contract.
+                This context makes the 1992 "Friction" scandal even more harrowing. When executive Julian Vance demanded that Ryan and Cassidy perform a sexual act on camera, he was targeting a man who was <strong>less than two years</strong> into his life as a wheelchair user.
+            </p>
+            <p class="text-muted">
+                During the infamous "Dirty Mirror" incident, Ryan wiped the cocaine away not just because he was naive, but because he was sitting at eye-level with the table. To him, the white powder looked like falling drywall dust from the crumbling warehouse ceiling—just more filth he had to deal with. Vance's subsequent retaliation wasn't just professional malpractice; it was the exploitation of a disabled artist. Ryan's roar of <strong>"SHE'S! MY! SISTER!"</strong> was the sound of a man reclaiming the power the industry had tried to strip from him.
             </p>
 
         </div>
 
-        <!-- Stats Card -->
         <div class="col-lg-4">
             <div style="top: 8rem;">
                 <?php $props = [
@@ -64,7 +64,7 @@ $pageTitle = "Ryan O'Connell - The Stardust Engine";
                     'description' => "<strong>Role:</strong> Lead Vocals, Lead Guitar<br>
                                       <strong>Age (in 1987):</strong> 23<br>
                                       <strong>CPI Status:</strong> Alumnus, Class of '89<br>
-                                      <strong>Key Tracks:</strong> 'Plastic Sky', 'Break the Walls', 'Garbage'",
+                                      <strong>Status:</strong> The Engine (Unbroken)",
                     'buttonProps' => [
                         'text' => 'Back to The Band', 
                         'href' => '/band', 

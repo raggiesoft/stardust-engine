@@ -26,7 +26,18 @@ $pageTitle = "The Friction Catastrophe - The Stardust Engine Lore";
                 For their third album, a new, "rogue agent" executive, Julian Vance, was assigned to the project.
             </p>
             <p class="mb-4">
-                Julian, in a panic over industry leaks of <strong>Cydele's</strong> upcoming <strong>Sanctuary</strong> album and <strong>The Sanctuary Book</strong>, wanted to create his own "sex-sells" competitor. He looked at the band's roster, saw "Ryan O'Connell & Cassidy O'Connell," and made a lazy, fatal assumption: that they were a married couple (like <strong>Silver Stream</strong>), not <strong>blood siblings</strong> (like <strong>The Masons</strong>). He had never even listened to the 1990 <strong>Live in Chicago</strong> album, where Ryan clearly introduces Cassidy as "my sister."
+                Julian, in a panic over industry leaks of <strong>Cydele's</strong> upcoming <strong>Sanctuary</strong> album and <strong>"Worship"</strong> coffee table book, wanted to create his own "sex-sells" competitor.
+            </p>
+            
+            <div class="alert alert-dark border-warning d-flex align-items-center mb-4">
+                <i class="fa-duotone fa-image-polaroid text-warning fs-2 me-3"></i>
+                <div class="small text-muted">
+                    <strong>The Intelligence Failure:</strong> Julian Vance never met the band before the concept phase. He formulated his entire plan looking at <strong>1989 publicity photos</strong> from the <em>Neon Hearts</em> tour—photos where Ryan O'Connell was standing. Julian had no idea that Ryan had been paralyzed in the Crash of '90.
+                </div>
+            </div>
+
+            <p class="mb-4">
+                He looked at those old photos, saw "Ryan O'Connell & Cassidy O'Connell," and made a lazy, fatal assumption: that they were a married couple (like <strong>Silver Stream</strong>), not <strong>blood siblings</strong> (like <strong>The Masons</strong>). He had never even listened to the 1990 <strong>Live in Chicago</strong> album, where Ryan clearly introduces Cassidy as "my sister."
             </p>
 
             <h2 class="h3 fw-bold border-bottom border-secondary pb-2 mb-3 mt-5">
@@ -36,7 +47,7 @@ $pageTitle = "The Friction Catastrophe - The Stardust Engine Lore";
                 Julian proposed the working title <strong>"Friction."</strong> The band, obsessed with their astronomy theme ("cosmos and rockets"), was ecstatic. They believed the label was finally embracing their true identity and planned an album about the literal, scientific <strong>friction of a space shuttle re-entering the atmosphere.</strong>
             </p>
             <p class="mb-4">
-                They enthusiastically recorded a demo for <strong>"Atmosphere,"</strong> with lyrics about "burning up with our desire" and "breaking through this atmosphere"—all metaphors for space flight. Julian, in his "depraved" mindset, heard these lyrics as sexual metaphors for his *Sanctuary* knockoff and greenlit the track, convinced the "married couple" was playing along.
+                They enthusiastically recorded a demo for <strong>"Atmosphere,"</strong> with lyrics about "burning up with our desire" and "breaking through this atmosphere"—all metaphors for space flight. Julian, in his "depraved" mindset, heard these lyrics as sexual metaphors for his *Worship* knockoff and greenlit the track, convinced the "married couple" was playing along.
             </p>
 
             <div class="card border-danger mb-5 shadow-sm">
@@ -69,15 +80,15 @@ $pageTitle = "The Friction Catastrophe - The Stardust Engine Lore";
                 3. The Photo Shoot (September 1992)
             </h2>
             <p class="fs-5 text-muted mb-4">
-                The entire conflict exploded at the infamous album photo shoot in a cold warehouse. The day was a series of escalating disasters:
+                The entire conflict exploded at the infamous album photo shoot in a cold warehouse. When Ryan rolled in wearing his wheelchair, Julian Vance was momentarily confused but arrogant, assuming they could "shoot around the chair." He did not realize his shot list was now physically impossible.
             </p>
 
             <ul class="list-group list-group-flush bg-transparent fs-5">
                 <li class="list-group-item bg-transparent text-muted border-secondary px-0">
-                    <strong>The "Dirty Mirror" Incident:</strong> Julian, trying to "loosen up" the band, offered Ryan a tray with champagne and a mirror covered in cocaine. Ryan, who is straight-edge and had never seen the drug, genuinely thought it was dust. He meticulously <strong>wiped the mirror clean</strong> with a napkin, humiliating Julian and destroying $500 worth of cocaine.
+                    <strong>The "Dirty Mirror" Incident:</strong> Julian, trying to "loosen up" the band, offered Ryan a tray with champagne and a mirror covered in cocaine. Ryan, who is straight-edge and had never seen the drug, genuinely thought it was drywall dust. He meticulously <strong>wiped the mirror clean</strong> with a napkin, humiliating Julian and destroying $500 worth of cocaine.
                 </li>
                 <li class="list-group-item bg-transparent text-muted border-secondary px-0">
-                    <strong>The Clipboard Attack:</strong> Furious and humiliated, Julian snatched the photographer's clipboard. He found the shot list for his "Sex Book" knockoff—<strong>SHOT 12: CASSIDY/RYAN. THE LOVERS. FULL SIMULATED INTERCOURSE.</strong>
+                    <strong>The Clipboard Attack:</strong> Furious and humiliated, Julian snatched the photographer's clipboard. He found the shot list for his "Worship" book knockoff—<strong>SHOT 12: CASSIDY/RYAN. THE LOVERS. FULL SIMULATED INTERCOURSE (RYAN ON TOP).</strong>
                 </li>
                 <li class="list-group-item bg-transparent text-muted border-secondary px-0">
                     <strong>The Crime:</strong> In a fit of rage, Julian viciously <strong>scratched out the word "simulated"</strong> and shoved the clipboard at Ryan, demanding they "Do it or be in breach of contract."
@@ -88,7 +99,7 @@ $pageTitle = "The Friction Catastrophe - The Stardust Engine Lore";
                 4. The Reveal & The Nuke
             </h2>
             <p class="fs-5 text-muted mb-4">
-                Ryan read the line item. His brain crashed. He roared the words that blew up the project:
+                Ryan read the line item. It was a demand for a physical act he could not perform, with a woman who was his sister. His brain crashed. He roared the words that blew up the project:
             </p>
             
             <blockquote class="blockquote text-center display-6 my-5 text-danger fw-bold text-uppercase" style="font-family: 'Impact', sans-serif; letter-spacing: 2px;">
@@ -96,7 +107,7 @@ $pageTitle = "The Friction Catastrophe - The Stardust Engine Lore";
             </blockquote>
 
             <p class="mb-4">
-                The photographer, Kevin, realized immediately what this meant—a $2 million contract was just detonated to prevent a crime. Julian, however, still didn't understand, assuming they were "stage siblings" like <strong>The Vectors</strong>. It wasn't until Ryan roared that Cassidy was his <strong>blood-related sister</strong> that Julian finally comprehended his catastrophic, felony-level error.
+                The photographer, Kevin—famous for shooting the wholesome <strong>Homestead Catalog</strong>—realized immediately what this meant: a $2 million contract was just detonated to prevent a crime. Julian, however, still didn't understand, assuming they were "stage siblings" like <strong>The Vectors</strong>. It wasn't until he saw Holly O'Connell sharing the same last name that he finally comprehended his catastrophic, felony-level error.
             </p>
 
             <h2 class="h3 fw-bold border-bottom border-secondary pb-2 mb-3 mt-5">
@@ -108,7 +119,7 @@ $pageTitle = "The Friction Catastrophe - The Stardust Engine Lore";
                         <div class="card-body">
                             <h4 class="card-title text-primary"><i class="fa-duotone fa-gavel me-2"></i>The Whistleblower</h4>
                             <p class="card-text text-muted">
-                                The photographer, Kevin—famous for shooting the <strong>Homestead Catalog</strong>—was horrified. He went to the LAPD as a whistleblower, turning the case into a criminal investigation.
+                                The photographer, Kevin, was horrified. He went to the LAPD as a whistleblower, turning the case into a criminal investigation.
                             </p>
                         </div>
                     </div>

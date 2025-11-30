@@ -1,6 +1,7 @@
 <?php
 // Page data
 $pageTitle = "Friction (The Lost Title Track) - The Stardust Engine Lore";
+$pageTheme = "ad-astra"; // Dark theme fits the serious tone
 ?>
 
 <div class="container py-5">
@@ -23,7 +24,7 @@ $pageTitle = "Friction (The Lost Title Track) - The Stardust Engine Lore";
                     </p>
                     
                     <div class="d-grid gap-3 d-md-flex justify-content-center">
-                        <a href="/story/the-friction-catastrophe" class="btn btn-outline-secondary btn-lg">
+                        <a href="/story/friction" class="btn btn-outline-secondary btn-lg">
                             <i class="fa-duotone fa-arrow-left me-2"></i>Return to Safety
                         </a>
                         <button onclick="unlockContent()" class="btn btn-danger btn-lg">
@@ -39,6 +40,9 @@ $pageTitle = "Friction (The Lost Title Track) - The Stardust Engine Lore";
         
         <div class="row mb-5">
             <div class="col-lg-8 mx-auto text-center">
+                <span class="badge bg-danger text-white rounded-pill px-3 py-2 shadow-glow mb-3">
+                    <i class="fa-duotone fa-ban me-2"></i>Banned Recording
+                </span>
                 <h1 class="display-4 fw-bold text-uppercase text-glow-primary" style="font-family: 'Impact', sans-serif;">
                     Friction
                 </h1>
@@ -55,10 +59,10 @@ $pageTitle = "Friction (The Lost Title Track) - The Stardust Engine Lore";
                 <section class="mb-5">
                     <h3 class="h5 text-primary border-bottom border-primary pb-2 mb-3">1. The "Fatal Assumption"</h3>
                     <p class="text-muted">
-                        In 1992, Apex Records assigned a new Executive Producer, <strong>Julian Vance</strong>, to the band. Julian had never worked with The Stardust Engine before. He looked at the roster, saw "Ryan O'Connell" and "Cassidy O'Connell," and made the lazy, catastrophic assumption that they were a married couple (like <em>Silver Stream</em>), not blood siblings.
+                        In 1992, Apex Records assigned a new Executive Producer, <strong>Julian Vance</strong>, to the band. Julian had never worked with The Stardust Engine before. He looked at the roster, saw "Ryan O'Connell" and "Cassidy O'Connell," and made the lazy, catastrophic assumption that they were a married couple (like <em>Silver Stream</em>), not blood siblings (like <em>The Masons</em>).
                     </p>
                     <p class="text-muted">
-                        Julian was obsessed with <strong>Cydele's</strong> upcoming <em>Sanctuary</em> project (the "Sex Book" era). He wanted his own "porn project" to compete. He pitched the title <strong>"Friction"</strong> to the band, envisioning a graphic concept album about sexual tension.
+                        Julian was obsessed with <strong>Cydele's</strong> upcoming <em>Sanctuary</em> project (the <strong>"Worship"</strong> book era). He wanted his own "porn project" to compete. He pitched the title <strong>"Friction"</strong> to the band, envisioning a graphic concept album about sexual tension.
                     </p>
                 </section>
 
@@ -97,13 +101,19 @@ $pageTitle = "Friction (The Lost Title Track) - The Stardust Engine Lore";
                 <section class="mb-5">
                     <h3 class="h5 text-primary border-bottom border-primary pb-2 mb-3">4. The Breaking Point</h3>
                     <p class="text-muted">
-                        The realization of what they had almost agreed to broke the band. Ryan O'Connell famously threw the lyrical draft into the trash, delivering the line that would become legend in the legal depositions that followed:
+                        Ryan O'Connell famously threw the lyrical draft into the trash, delivering the line that would become legend in the legal depositions that followed:
                     </p>
                     <blockquote class="blockquote border-start border-4 border-danger ps-4 my-4">
                         <p class="fst-italic text-light text-uppercase">"She's! My! Sister!"</p>
                     </blockquote>
                     <p class="text-muted">
-                        This specific demand became the "moral ammunition" for Holly O'Connell. While the "Dirty Mirror" incident was humiliating, this lyrical demand was <strong>proof of depravity</strong>. It was the key piece of evidence that convinced Apex Records to void the contract immediately rather than risk the public finding out what they had asked of two siblings.
+                        Even then, Julian hesitated. He assumed they were "stage siblings" like <strong>The Vectors</strong> (a punk band who famously adopted a shared surname despite no relation). He thought Ryan was just maintaining the gimmick.
+                    </p>
+                    <p class="text-muted">
+                        Then he looked at <strong>Holly O'Connell</strong>, the young manager standing in the corner whom he had dismissed as "average" and "not a model." He realized she shared the name too. The realization hit him like a physical blow: <em>It wasn't a gimmick. They were a family.</em>
+                    </p>
+                    <p class="text-muted">
+                        He had just asked a brother and sister to commit a felony on camera, in writing, in front of witnesses.
                     </p>
                 </section>
 

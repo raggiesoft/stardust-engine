@@ -6,7 +6,6 @@ $pageTitle = "Cassidy O'Connell - The Stardust Engine";
 <div class="container py-5">
     <div class="row g-5">
         
-        <!-- Main Bio Content -->
         <div class="col-lg-8">
             <h1 class="display-4 fw-bold text-uppercase text-glow-primary" style="font-family: 'Impact', sans-serif;">Cassidy O'Connell</h1>
             <p class="h4 text-warning fw-bold mb-4">Lead Vocals, Piano, Synthesizers</p>
@@ -29,8 +28,15 @@ $pageTitle = "Cassidy O'Connell - The Stardust Engine";
                 </div>
             </div>
 
+            <h3 class="fw-bold mt-5 mb-3">The Crash of '90: "The Anchor"</h3>
             <p class="text-muted">
-                She is the creative core, but also the emotional core. While the studio tried to pit her "Stardust" persona against Ryan's "Engine", the band's reality was the opposite. Her greatest anthems were often written while cuddled up with Holly and Ryan, the three of them sharing a single bed in a cramped motel room.
+                Following Ryan's catastrophic injury in December 1990, Cassidy's role in the band—and the family—transformed. Already close as siblings, they became inseparable.
+            </p>
+            <p class="text-muted">
+                Both Ryan and Cassidy are <strong>autistic</strong>. They share a hidden language of sensory processing and non-verbal cues that no one else fully understands. After the crash, Cassidy became Ryan's "Safe Person" and primary aide. She is his "Spotter" on stage, watching for signs of overstimulation or physical distress (like dysreflexia) that others might miss.
+            </p>
+            <p class="text-muted">
+                In the daily logistical war of touring, she is his preferred aide for the most vulnerable moments of his care. Their bond is one of absolute, unspoken trust—which made the 1992 "Friction" accusation that they were "lovers" not just factually wrong, but a violation of the sacred safety they had built together.
             </p>
 
             <h3 class="fw-bold mt-5 mb-3">Key Tracks (Apex Era)</h3>
@@ -39,21 +45,17 @@ $pageTitle = "Cassidy O'Connell - The Stardust Engine";
                     <strong>"Just a Girl" (1987):</strong> A "moody, introspective" song Apex saw as "filler." It became a surprise grassroots hit with female fans for its honest lyrics about her treatment: "They tell me 'sing the high note' / They tell me 'wear the red dress'."
                 </li>
                 <li class="list-group-item bg-transparent text-muted border-secondary px-0">
-                    <strong>"Light Up the Night" (1987):</strong> The "safe" synth-pop single Apex was *convinced* would be the #1 hit, but which ultimately failed to connect with audiences.
-                </li>
-                <li class="list-group-item bg-transparent text-muted border-secondary px-0">
                     <strong>"Not Your Doll" (1989):</strong> Her "fierce side" finally emerging on the *Neon Hearts* album. A "Pat Benatar-style" arena rock anthem directly rejecting the "Stardust" persona Apex forced on her.
                 </li>
             </ul>
 
             <h3 class="fw-bold mt-5 mb-3">The "Friction" Aftermath</h3>
             <p class="text-muted">
-                During the 1992 "Friction" scandal, Cassidy was the target of Julian Vance's depraved "Sex Book" knockoff scheme. The subsequent "Tabloid Hell" of the 1994 trial painted her as a "Victim-Saint." She responded on 1995's <strong>The Warehouse Tapes</strong> with the "rage" track "Not Your Saint" and the transcendent 4-part prog-rock epic "Escape Velocity (Ad Astra)," which detailed her escape from the trauma and her rebirth as an artist.
+                During the 1992 "Friction" scandal, Cassidy was the target of Julian Vance's depraved "Worship" book knockoff scheme. The subsequent "Tabloid Hell" of the 1994 trial painted her as a "Victim-Saint." She responded on 1995's <strong>The Warehouse Tapes</strong> with the "rage" track "Not Your Saint" and the transcendent 4-part prog-rock epic "Escape Velocity (Ad Astra)," which detailed her escape from the trauma and her rebirth as an artist.
             </p>
 
         </div>
 
-        <!-- Stats Card -->
         <div class="col-lg-4">
             <div style="top: 8rem;">
                 <?php $props = [
@@ -63,8 +65,8 @@ $pageTitle = "Cassidy O'Connell - The Stardust Engine";
                     'variant' => 'pact', // Maps to Pink
                     'description' => "<strong>Role:</strong> Lead Vocals, Piano, Synths<br>
                                       <strong>Age (in 1987):</strong> 20<br>
-                                      <strong>CPI Status:</strong> Alumna, Class of '89<br>
-                                      <strong>Key Tracks:</strong> 'Just a Girl', 'Not Your Doll', 'Escape Velocity'",
+                                      <strong>Status:</strong> The Stardust (Unbroken)<br>
+                                      <strong>Key Fact:</strong> Ryan's 'Safe Person'",
                     'buttonProps' => [
                         'text' => 'Back to The Band', 
                         'href' => '/band', 

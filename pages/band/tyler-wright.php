@@ -6,7 +6,6 @@ $pageTitle = "Tyler Wright - The Stardust Engine";
 <div class="container py-5">
     <div class="row g-5">
         
-        <!-- Main Bio Content -->
         <div class="col-lg-8">
             <h1 class="display-4 fw-bold text-uppercase text-glow-primary" style="font-family: 'Impact', sans-serif;">Tyler Wright</h1>
             <p class="h4 text-warning fw-bold mb-4">Drums, Percussion</p>
@@ -28,6 +27,14 @@ $pageTitle = "Tyler Wright - The Stardust Engine";
                 As Evan's identical twin, he shares a near-psychic connection with his brother, forming the tightest rhythm section in 80s rock. He is the thundering heartbeat of the band, the "Forger" providing the industrial power that gives the "Engine" its name.
             </p>
             
+            <h3 class="fw-bold mt-5 mb-3">The Crash of '90: "The Human Ramp"</h3>
+            <p class="text-muted">
+                Following Ryan's paralysis in 1990, the twins' role in the band went beyond music. In the early 90s, "accessibility" was a legal theory, not a reality. Venues often lacked ramps, elevators, or basic accommodations.
+            </p>
+            <p class="text-muted">
+                Tyler and Evan became Ryan's "Human Ramp." They developed a synchronized lifting technique to carry Ryan and his manual chair up fire escapes, loading docks, and narrow stairwells. While Holly and Cassidy handled the medical logistics, Tyler provided the brute strength required to physically move the tour. To this day, he is one of the few people Ryan trusts to lift him.
+            </p>
+
             <h3 class="fw-bold mt-5 mb-3">The "Ironhead" Connection</h3>
             <p class="text-muted">
                 Tyler is arguably the most passionate "Ironhead" in the group. His ability to replicate the sound of a full marching band drumline was the key to the success of the "Forgers' Fight Song" on the *Live at The Crucible* album.
@@ -37,7 +44,6 @@ $pageTitle = "Tyler Wright - The Stardust Engine";
             </p>
         </div>
 
-        <!-- Stats Card -->
         <div class="col-lg-4">
             <div style="top: 8rem;">
                 <?php $props = [
@@ -48,7 +54,7 @@ $pageTitle = "Tyler Wright - The Stardust Engine";
                     'description' => "<strong>Role:</strong> Drums, Percussion<br>
                                       <strong>Age (in 1987):</strong> 20<br>
                                       <strong>CPI Status:</strong> Alumnus, Class of '89<br>
-                                      <strong>Key Fact:</strong> 'The Human Metronome'",
+                                      <strong>Status:</strong> The Human Ramp (Unbroken)",
                     'buttonProps' => [
                         'text' => 'Back to The Band', 
                         'href' => '/band', 
