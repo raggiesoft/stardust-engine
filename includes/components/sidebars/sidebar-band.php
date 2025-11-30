@@ -39,7 +39,7 @@
 </h6>
 <ul class="nav flex-column mb-2">
    <li class="nav-item">
-    <a class="nav-link link-secondary" href="/band/band-history">
+    <a class="nav-link link-secondary" href="/band/history">
         <i class="fa-duotone fa-timeline me-2"></i>Full Timeline
     </a>
    </li>

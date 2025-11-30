@@ -1,224 +1,222 @@
 <?php
-// pages/player.php
+// pages/radio.php
 // "The Stardust Radio" - Official Audio Stream Console
-// v2.1 - Added "Frequency Tuner" Sidebar
+// v6.0 - "The Library Update" (Supports new _discography.php structure)
 
 $pageTitle = "Stardust Radio - The Console";
 
-// 1. CONFIGURATION
-$cdn_base = "https://assets.raggiesoft.com/stardust-engine/music";
-include ROOT_PATH . '/includes/components/arrays/_discography.php';
+// 1. SAFETY CHECKS
+if (!defined('ROOT_PATH')) {
+    define('ROOT_PATH', dirname(__DIR__)); 
+}
 
-// 2. DATA INGESTION
+// 2. CONFIGURATION
+$cdn_base = "https://assets.raggiesoft.com/stardust-engine/music";
+$discography_file = ROOT_PATH . '/includes/components/arrays/_discography.php';
+
+if (file_exists($discography_file)) {
+    include $discography_file;
+}
+
+// Fallback: Ensure the variable exists even if include fails
+if (!isset($discographyLibrary)) {
+    $discographyLibrary = []; 
+}
+
+// 3. DATA INGESTION
 $master_playlist = []; 
 $global_track_index = 0;
 
-// Helper to clean titles
-function clean_title_for_url($title) {
-    $title = strtolower($title);
-    $title = preg_replace('/[^\w\s-]/', '', $title);
-    $title = preg_replace('/[\s_]+/', '-', $title);
-    return preg_replace('/-+/', '-', $title);
-}
-
 // Helper to fetch album data
-function fetch_album_data($album_url, $cdn_base) {
-    $slug = basename($album_url);
+function fetch_album_data($album_entry, $cdn_base) {
+    
+    // A. Determine the Folder Slug
+    if (isset($album_entry['folder']) && !empty($album_entry['folder'])) {
+        $slug = $album_entry['folder'];
+    } else {
+        $slug = basename($album_entry['url']);
+    }
+
     $tracks_url = "{$cdn_base}/{$slug}/tracks.json";
     $album_json_url = "{$cdn_base}/{$slug}/album.json";
     
-    // Use @ to suppress errors if a specific album isn't uploaded yet
+    // B. Fetch Data
     $tracks_content = @file_get_contents($tracks_url);
     $album_content = @file_get_contents($album_json_url);
-    
+
     if ($tracks_content && $album_content) {
+        $tracks_data = json_decode($tracks_content, true);
+        $meta_data = json_decode($album_content, true);
+
+        if (json_last_error() !== JSON_ERROR_NONE) return null;
+
+        // Handle "tracks" wrapper if present
+        $tracks = isset($tracks_data['tracks']) ? $tracks_data['tracks'] : $tracks_data;
+
+        // Handle Album Title
+        $album_title = $meta_data['title'] ?? ($meta_data['albumName'] ?? 'Unknown Album');
+
         return [
-            'meta' => json_decode($album_content, true),
-            'tracks' => json_decode($tracks_content, true)['tracks'],
+            'tracks' => $tracks,
+            'album_title' => $album_title,
+            'art' => "{$cdn_base}/{$slug}/album-art.jpg",
             'slug' => $slug
         ];
     }
     return null;
 }
+
+// 4. BUILD THE MASTER PLAYLIST (Updated Loop Logic)
+if (!empty($discographyLibrary)) {
+    foreach ($discographyLibrary as $eraKey => $eraData) {
+        
+        // Drill down to the albums array in the new structure
+        $albums = $eraData['albums'] ?? []; 
+
+        foreach ($albums as $album) {
+            
+            // SKIP RULE: Cancelled Albums
+            if (isset($album['extra']) && strpos($album['extra'], 'CANCELED') !== false) {
+                continue;
+            }
+
+            // Fetch Data
+            $album_data = fetch_album_data($album, $cdn_base);
+
+            if ($album_data && !empty($album_data['tracks'])) {
+                foreach ($album_data['tracks'] as $track) {
+                    
+                    // Key Normalization
+                    $filename_stem = $track['fileName'] ?? ($track['filename'] ?? ($track['file'] ?? null));
+                    $title = $track['title'] ?? ($track['name'] ?? 'Unknown Track');
+
+                    if (empty($filename_stem)) {
+                        continue; 
+                    }
+
+                    // Path Construction
+                    $src_url = "{$cdn_base}/{$album_data['slug']}/ogg/{$filename_stem}.ogg";
+                    $lore_url = "{$cdn_base}/{$album_data['slug']}/lore/{$filename_stem}.md";
+
+                    $master_playlist[] = [
+                        'title' => $title,
+                        'artist' => 'The Stardust Engine',
+                        'album' => $album_data['album_title'],
+                        'artwork' => $album_data['art'],
+                        'src' => $src_url,
+                        'lyrics' => $lore_url,
+                        'global_index' => $global_track_index
+                    ];
+                    $global_track_index++;
+                }
+            }
+        }
+    }
+}
 ?>
 
-<div class="container-fluid mb-0 pb-0" data-bs-theme="dark" style="
-    position: relative;
-    background-image: linear-gradient(rgba(13, 6, 26, 0.7), rgba(13, 6, 26, 0.7)), 
-                      url('https://assets.raggiesoft.com/stardust-engine/images/stardust-engine-hero.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 100%;
-">
-    
-    <!-- HEADER (Full Width) -->
-    <div class="text-center pt-5 mb-0 border-bottom border-secondary">
-        <h1 class="display-3 fw-bold text-uppercase text-glow-primary" style="font-family: 'Audiowide', sans-serif;">
-            <i class="fa-duotone fa-radio me-3 text-warning" aria-hidden="true"></i>Stardust Radio
+<div class="container-fluid p-0">
+    <div class="p-5 text-center bg-dark border-bottom border-secondary" 
+         style="background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)), url('https://assets.raggiesoft.com/stardust-engine/images/studio-rack.jpg'); background-size: cover; background-position: center;">
+        
+        <h1 class="display-2 fw-bold text-uppercase text-glow-primary mb-2" style="font-family: 'Audiowide', sans-serif;">
+            <i class="fa-duotone fa-tower-broadcast me-3 text-danger"></i>Stardust Radio
         </h1>
-        <p class="lead text-white">
-            Broadcasting from The Fortress. Accessing full audio archives...
-        </p>
+        <p class="lead text-light font-monospace">Frequency: 104.2 FM // Port Telsus // The Weave</p>
+        
+        <div class="mt-4">
+            <button id="btn-start-radio" class="btn btn-lg btn-danger rounded-pill px-5 shadow-glow" onclick="loadTrack(0)">
+                <i class="fa-solid fa-power-off me-2"></i>POWER ON
+            </button>
+        </div>
     </div>
 
-    <div class="row">
-        
-        <!-- SIDEBAR: Frequency Tuner (Desktop Only) -->
-        <div class="col-lg-3 d-none d-lg-block border-end border-secondary bg-body-tertiary pt-0 mt-0 pb-4">
-            <div class="sticky-top" style="top: 100px;">
-                <h5 class="text-uppercase text-warning fw-bold my-4" style="font-family: 'Exo 2'; letter-spacing: 1px;">
-                    <i class="fa-duotone fa-sliders-up me-2" aria-hidden="true"></i>Frequency Tuner
-                </h5>
-                
-                <div class="nav flex-column nav-pills">
-                    <?php foreach ($discographyMenu as $era => $albums): 
-                        // Create a safe ID for the Era link
-                        $era_id = 'era-' . clean_title_for_url($era);
-                    ?>
-                        <a class="nav-link link-secondary mb-2" href="#<?php echo $era_id; ?>">
-                            <i class="fa-duotone fa-signal-stream me-2"></i><?php echo $era; ?>
-                        </a>
-                    <?php endforeach; ?>
-                </div>
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="card glass-card border-0 shadow-lg">
+                    <div class="card-header bg-transparent border-bottom border-secondary p-3">
+                        <h5 class="text-light mb-0 text-uppercase"><i class="fa-duotone fa-list-music me-2"></i>Transmission Log</h5>
+                    </div>
+                    <div class="card-body p-0" style="max-height: 600px; overflow-y: auto;">
+                        <div class="list-group list-group-flush" id="radio-tracklist">
+                            <?php if (empty($master_playlist)): ?>
+                                <div class="p-5 text-center text-secondary">
+                                    <i class="fa-duotone fa-satellite-dish fs-1 mb-3 text-danger"></i>
+                                    <h3 class="h5 text-light">Console Offline</h3>
+                                    <p class="mb-0">No active frequencies found. Check the archive connection.</p>
+                                    <small class="d-block mt-2 text-muted font-monospace">ERROR: 404_MANIFEST_NOT_FOUND</small>
+                                </div>
+                            <?php else: ?>
+                                <?php foreach ($master_playlist as $index => $track): ?>
+                                    <button type="button" 
+                                            class="list-group-item list-group-item-action bg-transparent border-secondary track-row d-flex align-items-center p-3"
+                                            id="track-row-<?php echo $index; ?>"
+                                            data-index="<?php echo $index; ?>">
+                                        
+                                        <div class="me-3 text-secondary font-monospace" style="width: 30px;">
+                                            <?php echo str_pad($index + 1, 2, '0', STR_PAD_LEFT); ?>
+                                        </div>
+                                        
+                                        <img src="<?php echo $track['artwork']; ?>" class="rounded shadow-sm me-3" style="width: 40px; height: 40px; object-fit: cover;">
+                                        
+                                        <div class="flex-grow-1 text-start">
+                                            <div class="text-light fw-bold"><?php echo $track['title']; ?></div>
+                                            <div class="small text-secondary text-uppercase"><?php echo $track['album']; ?></div>
+                                        </div>
 
-                <hr class="border-secondary my-4">
-
-                <div class="card bg-dark border-primary text-light">
-                    <div class="card-body">
-                        <h6 class="card-title text-primary"><i class="fa-duotone fa-circle-info me-2"></i>Console Status</h6>
-                        <p class="card-text small text-muted">
-                            System Online.<br>
-                            Archives Decrypted.<br>
-                            Signal Strength: 100%
-                        </p>
+                                        <div class="ms-3">
+                                            <i class="play-indicator fa-duotone fa-play-circle fs-4 text-primary opacity-50"></i>
+                                        </div>
+                                    </button>
+                                <?php endforeach; ?>
+                            <?php endif; ?>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!-- MAIN INTERFACE: The Jukebox -->
-        <div class="col-lg-9 p-4">
-            <div class="accordion" id="radioAccordion">
-                
-                <?php 
-                $is_first_era = true;
-                
-                foreach ($discographyMenu as $era => $albums): 
-                    $era_id = 'era-' . clean_title_for_url($era);
-                ?>
-                    <!-- Era Anchor -->
-                    <div id="<?php echo $era_id; ?>" class="pt-2"></div>
-                    
-                    <h5 class="text-warning text-uppercase border-bottom border-warning pb-2 mt-4 mb-3" style="font-family: 'Exo 2'; letter-spacing: 2px;">
-                        <?php echo $era; ?>
-                    </h5>
-
-                    <?php 
-                    foreach ($albums as $album): 
-                        $data = fetch_album_data($album['url'], $cdn_base);
-                        if (!$data) continue; 
-                        
-                        $album_art = "{$cdn_base}/{$data['slug']}/album-art.jpg";
-                        $album_name = $data['meta']['albumName'];
-                    ?>
-                        <!-- ALBUM CARD -->
-                        <div class="card bg-hud-orange mb-3 shadow-sm">
-                            <!-- Card Header: Click to Expand -->
-                            <div class="card-header bg-body-tertiary border-secondary d-flex align-items-center p-3" 
-                                 role="button" 
-                                 data-bs-toggle="collapse" 
-                                 data-bs-target="#collapse-<?php echo $data['slug']; ?>">
-                                
-                                <img src="<?php echo $album_art; ?>" alt="Art" class="rounded me-3 border border-secondary" style="width: 60px; height: 60px; object-fit: cover;">
-                                
-                                <div class="flex-grow-1">
-                                    <h2 class="h5 mb-0 fw-bold text-white" style="font-family: 'Audiowide'"><?php echo $album_name; ?></h2>
-                                    <small class="text-white"><?php echo $data['meta']['narrativeReleaseDate']; ?> &bull; <?php echo count($data['tracks']); ?> Tracks</small>
-                                </div>
-                                
-                                <i class="fa-duotone fa-chevron-down text-primary"></i>
-                            </div>
-
-                            <!-- Card Body: Tracklist -->
-                            <div id="collapse-<?php echo $data['slug']; ?>" class="accordion-collapse collapse <?php echo $is_first_era ? 'show' : ''; ?>">
-                                <div class="card-body p-0">
-                                    <div class="list-group list-group-flush">
-                                        <?php foreach ($data['tracks'] as $track): 
-                                            // Construct Paths
-                                            $track_pad = str_pad($track['track'], 2, '0', STR_PAD_LEFT);
-                                            $safe_title = clean_title_for_url($track['title']);
-                                            $filename_base = "{$track['disc']}-{$track_pad}-{$safe_title}";
-                                            
-                                            $ogg_url = "{$cdn_base}/{$data['slug']}/ogg/{$filename_base}.ogg";
-                                            $lyrics_url = "{$cdn_base}/{$data['slug']}/lyrics/{$filename_base}.md";
-                                            
-                                            // Add to Master Playlist
-                                            $master_playlist[] = [
-                                                'title' => $track['title'],
-                                                'artist' => "The Stardust Engine",
-                                                'album' => $album_name, // Used for "Repeat Album" logic
-                                                'src' => $ogg_url,
-                                                'artwork' => $album_art,
-                                                'lyrics' => $lyrics_url
-                                            ];
-                                            
-                                            $current_index = $global_track_index;
-                                            $global_track_index++;
-                                        ?>
-                                            <button type="button" 
-                                                    class="list-group-item list-group-item-action bg-transparent text-white border-secondary py-3 track-row d-flex align-items-center"
-                                                    id="track-row-<?php echo $current_index; ?>"
-                                                    data-index="<?php echo $current_index; ?>"> <!-- Use data attribute for listener -->
-                                                
-                                                <span class="text-white fw-bold me-3 text-end" style="width: 25px;"><?php echo $track['track']; ?></span>
-                                                <div class="flex-grow-1">
-                                                    <strong class="text-white"><?php echo $track['title']; ?></strong>
-                                                </div>
-                                                <i class="fa-duotone fa-play text-white opacity-50 play-indicator" aria-label="Play <?php echo $track['title']; ?>" title="Play <?php echo $track['title']; ?>"></i>
-                                            </button>
-                                        <?php endforeach; ?>
-                                    </div>
-                                </div>
-                            </div>
+            <div class="col-lg-4">
+                <div class="card bg-dark border-success mb-4 shadow-glow">
+                    <div class="card-body text-center p-4">
+                        <h4 class="text-success font-monospace mb-3">SIGNAL STRENGTH</h4>
+                        <div class="progress bg-secondary bg-opacity-25" style="height: 20px;">
+                            <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" role="progressbar" style="width: 92%"></div>
                         </div>
-                    <?php 
-                    endforeach; 
-                    $is_first_era = false; // Only expand the first era by default
-                    ?>
-                <?php endforeach; ?>
-                
+                        <p class="small text-muted mt-2 mb-0">Connected to Relay Station Alpha</p>
+                    </div>
+                </div>
+
+                <div class="card glass-card border-warning p-4">
+                    <h5 class="text-warning fw-bold mb-3"><i class="fa-duotone fa-triangle-exclamation me-2"></i>Axiom Alert</h5>
+                    <p class="small text-light">
+                        Unauthorized broadcasts are a violation of Port Telsus Compliance Code 77-B. 
+                        Listeners found tuning into this frequency will be subject to immediate audit.
+                    </p>
+                    <div class="alert alert-dark border-secondary mb-0 small">
+                        <strong>Current Status:</strong> <span class="text-danger blink">BROADCASTING</span>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
-<!-- ============================================================================== -->
-<!--  SECTION 4: PLAYER INTEGRATION                                                 -->
-<!-- ============================================================================== -->
-
-<!-- 1. Include the Shared UI (Player Bar & Modal) -->
 <?php include ROOT_PATH . '/includes/components/audio-player/sticky-player.php'; ?>
 
-<!-- 2. Initialize Data & Load Engine -->
 <script>
     // Pass the PHP playlist to the Global Window scope
     window.STARDUST_PLAYLIST = <?php echo json_encode($master_playlist); ?>;
 </script>
 
-<!-- 3. Load the Logic -->
 <script src="https://assets.raggiesoft.com/stardust-engine/js/stardust-player.js?v=<?php echo time(); ?>"></script>
 
-<!-- 4. Radio Specific Logic -->
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-    // We need to attach listeners to the radio rows manually since they don't use the standard .btn-play-index class
-    // Instead they are the rows themselves.
-    
+    // Bind clicks on the radio rows
     document.querySelectorAll('.track-row').forEach(row => {
         row.addEventListener('click', (e) => {
             const index = parseInt(row.getAttribute('data-index'));
-            // Call the global loadTrack function exposed by stardust-player.js
             if (typeof window.loadTrack === 'function') {
                 window.loadTrack(index);
             }

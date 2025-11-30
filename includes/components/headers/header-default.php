@@ -23,31 +23,53 @@ $isRadio = ($request_uri === '/radio');
     <a class="nav-link <?php echo $isRadio ? 'active' : ''; ?>" href="/radio"><i class="fa-duotone fa-radio me-2" aria-hidden="true"></i>Radio</a>
   </li>
 
-  <!-- Discography Dropdown -->
-  <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle <?php echo $isDiscography ? 'active' : ''; ?>" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle <?php echo ($isDiscography ?? false) ? 'active' : ''; ?>" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
         <i class="fa-duotone fa-list-music me-2" aria-hidden="true"></i>Discography
-      </a>
-      <ul class="dropdown-menu dropdown-menu-end scrollable-menu" style="max-height: 500px; overflow-y: auto;">
-          <li>
-              <a class="dropdown-item fw-bold" href="/discography">
-                  <i class="fa-duotone fa-list-music me-2"></i>Full Overview
-              </a>
-          </li>
-          <?php foreach ($discographyMenu as $eraName => $albums): ?>
-              <li><hr class="dropdown-divider"></li>
-              <li><h6 class="dropdown-header text-uppercase fw-bold ps-3"><?php echo $eraName; ?></h6></li>
-              <?php foreach ($albums as $album): ?>
-                  <li>
-                      <a class="dropdown-item d-flex align-items-center justify-content-between" href="<?php echo $album['url']; ?>">
-                          <span><?php echo $album['title']; ?> <small class="ms-1">(<?php echo $album['year']; ?>)</small></span>
-                          <?php if (isset($album['extra'])) echo $album['extra']; ?>
-                      </a>
-                  </li>
-              <?php endforeach; ?>
-          <?php endforeach; ?>
-      </ul>
-  </li>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end scrollable-menu" style="max-height: 500px; overflow-y: auto;">
+        
+        <li>
+            <a class="dropdown-item fw-bold" href="/discography">
+                <i class="fa-duotone fa-list-music me-2"></i>Full Overview
+            </a>
+        </li>
+
+        <?php 
+        // Ensure library exists (safe include)
+        include_once ROOT_PATH . '/includes/components/arrays/_discography.php';
+
+        if (isset($discographyLibrary)):
+            foreach ($discographyLibrary as $eraKey => $eraData): 
+                
+                // Skip empty eras automatically
+                if (empty($eraData['albums'])) continue;
+        ?>
+            <li><hr class="dropdown-divider"></li>
+            <li>
+                <h6 class="dropdown-header text-uppercase fw-bold ps-3 text-secondary">
+                    <?php echo $eraData['label']; ?>
+                </h6>
+            </li>
+            
+            <?php foreach ($eraData['albums'] as $album): ?>
+                <li>
+                    <a class="dropdown-item d-flex align-items-center justify-content-between" href="<?php echo $album['url']; ?>">
+                        <span>
+                            <?php echo $album['title']; ?> 
+                            <small class="ms-1 opacity-50">(<?php echo $album['year']; ?>)</small>
+                        </span>
+                        <?php if (isset($album['extra'])) echo $album['extra']; ?>
+                    </a>
+                </li>
+            <?php endforeach; ?>
+
+        <?php 
+            endforeach; 
+        endif;
+        ?>
+    </ul>
+</li>
 
   <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle <?php echo $isBand ? 'active' : ''; ?>" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -55,6 +77,7 @@ $isRadio = ($request_uri === '/radio');
     </a>
     <ul class="dropdown-menu dropdown-menu-end">
       <li><a class="dropdown-item" href="/band"><i class="fa-duotone fa-users me-2" aria-hidden="true"></i>Overview</a></li>
+      <li><a class="dropdown-item" href="/band/history"><i class="fa-duotone fa-clock-rotate-left me-2" aria-hidden="true"></i>Band History</a></li>
       <li><hr class="dropdown-divider"></li>
       <li><a class="dropdown-item" href="/band/ryan-oconnell"><i class="fa-duotone fa-person me-2" aria-hidden="true"></i>Ryan O'Connell</a></li>
       <li><a class="dropdown-item" href="/band/cassidy-oconnell"><i class="fa-duotone fa-person-dress me-2" aria-hidden="true"></i>Cassidy O'Connell</a></li>
