@@ -7,7 +7,7 @@ $pageTitle = "The Nine-Figure Refusal - The Stardust Engine Lore";
 
 <div class="starfield-container"><div class="starfield-twinkling"></div></div>
 
-<div class="container py-5 glass-container">
+<div class="container py-5 glass-container overflow-hidden">
     
     <div class="row justify-content-center mb-5">
         <div class="col-lg-8 text-center">
@@ -25,15 +25,30 @@ $pageTitle = "The Nine-Figure Refusal - The Stardust Engine Lore";
 
     <div class="row justify-content-center mb-5">
         <div class="col-lg-10">
+            <div class="position-relative rounded-4 overflow-hidden shadow-lg border border-white border-opacity-10 text-center">
+                <img src="https://assets.raggiesoft.com/stardust-engine/images/story/150-million-refusal.jpg"
+                        class="img-fluid w-100"
+                        alt="The meeting at Omni-Global: Ryan, Cassidy, and Holly O'Connell seated, with twin brothers Evan and Tyler Wright standing behind them">
+                <div class="position-absolute bottom-0 start-0 w-100 bg-black bg-opacity-75 p-2">
+                    <small class="text-info font-monospace text-uppercase letter-spacing-1">
+                        <i class="fa-solid fa-location-dot me-2"></i>Omni-Global HQ // The Pitch Meeting
+                    </small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row justify-content-center mb-5">
+        <div class="col-lg-10">
             <div class="card glass-card border-0 shadow-lg">
-                <div class="card-body p-5">
+                <div class="card-body p-3 p-md-5">
                     
                     <div class="row align-items-center mb-5">
                         <div class="col-md-3 text-center border-end border-secondary">
                             <h2 class="display-4 fw-bold text-success mb-0">$150M</h2>
                             <small class="text-uppercase text-muted">Total Offer</small>
                         </div>
-                        <div class="col-md-9 ps-md-5">
+                        <div class="col-md-9 ps-md-5 mt-3 mt-md-0">
                             <h3 class="h5 text-white fw-bold">The Proposal</h3>
                             <p class="text-white-50">
                                 Omni-Global Media proposed a complete buyout of the <strong>Engine Room Records</strong> master catalog. The deal included rights to all recordings from 1987 to 2017, including the <em>Warehouse Tapes</em> and <em>Knox</em>.
@@ -62,49 +77,55 @@ $pageTitle = "The Nine-Figure Refusal - The Stardust Engine Lore";
                                 The deal-breaker wasn't the money. It was a single presentation slide detailing how the corporation planned to "maximize streaming revenue" for the 15-minute epic <em>Escape Velocity (Ad Astra)</em>. The executives argued that a prog-rock suite was "algorithmic poison" with a high skip rate. Their plan was to <strong>De-Couple</strong> the track into four separate streaming assets.
                             </p>
 
-                            <div class="table-responsive">
-                                <table class="table table-dark table-borderless table-sm font-monospace small mb-0" style="background: transparent;">
-                                    <thead class="text-secondary text-uppercase border-bottom border-secondary">
-                                        <tr>
-                                            <th>Segment</th>
-                                            <th>Target Playlist / Demographic</th>
-                                            <th>Planned Edit / Usage</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody class="text-light">
-                                        <tr>
-                                            <td class="text-info fw-bold">1. "The Cage"</td>
-                                            <td>"Dark Moods", "Sad Indie Chill", "Late Night Vibes"</td>
-                                            <td>
-                                                <span class="text-danger">REMIX:</span> Loop synth intro. Remove specific lyrics about "The Trial" and "The Shark" to make trauma generic/relatable.
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="text-info fw-bold">2. "Ignition"</td>
-                                            <td>"Rock Workout", "High Octane Gaming", "Adrenaline"</td>
-                                            <td>
-                                                <span class="text-danger">SYNC:</span> License instrumental hook for Truck Commercials. <br>
-                                                <span class="text-warning">NOTE:</span> Digital smoothing required to remove "jarring" mechanical cutoff sound.
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="text-info fw-bold">3. "The Cosmos"</td>
-                                            <td>"Lo-Fi Study Beats", "Focus Flow", "Sleep Sounds"</td>
-                                            <td>
-                                                <span class="text-danger">STRIP:</span> Remove vocals entirely. Repackage as background music for coding/studying.
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="text-info fw-bold">4. "Re-entry"</td>
-                                            <td>"Uplifting Finales", "Morning Motivation"</td>
-                                            <td>
-                                                <span class="text-danger">VIRAL:</span> Isolate "Ad Astra... To the Stars" vocal swell for 15s social video "Glow Up" trend.
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                            <div class="d-flex flex-column gap-3 font-monospace small">
+                                
+                                <div class="p-3 border border-secondary border-opacity-25 rounded bg-black bg-opacity-25">
+                                    <div class="d-flex justify-content-between align-items-start flex-wrap mb-2">
+                                        <span class="text-info fw-bold text-uppercase">1. "The Cage"</span>
+                                        <span class="text-secondary text-end">Target: "Dark Moods", "Indie Chill"</span>
+                                    </div>
+                                    <div class="text-light">
+                                        <span class="badge border border-danger text-danger bg-transparent me-2">REMIX</span>
+                                        Loop synth intro. Remove specific lyrics about "The Trial" and "The Shark" to make trauma generic/relatable.
+                                    </div>
+                                </div>
+
+                                <div class="p-3 border border-secondary border-opacity-25 rounded bg-black bg-opacity-25">
+                                    <div class="d-flex justify-content-between align-items-start flex-wrap mb-2">
+                                        <span class="text-info fw-bold text-uppercase">2. "Ignition"</span>
+                                        <span class="text-secondary text-end">Target: "Rock Workout", "Gaming"</span>
+                                    </div>
+                                    <div class="text-light">
+                                        <span class="badge border border-danger text-danger bg-transparent me-2">SYNC</span>
+                                        License instrumental hook for Truck Commercials.
+                                        <div class="mt-1 text-warning"><i class="fa-solid fa-triangle-exclamation me-1"></i>NOTE: Digital smoothing required to remove "jarring" mechanical cutoff.</div>
+                                    </div>
+                                </div>
+
+                                <div class="p-3 border border-secondary border-opacity-25 rounded bg-black bg-opacity-25">
+                                    <div class="d-flex justify-content-between align-items-start flex-wrap mb-2">
+                                        <span class="text-info fw-bold text-uppercase">3. "The Cosmos"</span>
+                                        <span class="text-secondary text-end">Target: "Lo-Fi Study", "Focus Flow"</span>
+                                    </div>
+                                    <div class="text-light">
+                                        <span class="badge border border-danger text-danger bg-transparent me-2">STRIP</span>
+                                        Remove vocals entirely. Repackage as background music for coding/studying.
+                                    </div>
+                                </div>
+
+                                <div class="p-3 border border-secondary border-opacity-25 rounded bg-black bg-opacity-25">
+                                    <div class="d-flex justify-content-between align-items-start flex-wrap mb-2">
+                                        <span class="text-info fw-bold text-uppercase">4. "Re-entry"</span>
+                                        <span class="text-secondary text-end">Target: "Uplifting Finales"</span>
+                                    </div>
+                                    <div class="text-light">
+                                        <span class="badge border border-danger text-danger bg-transparent me-2">VIRAL</span>
+                                        Isolate "Ad Astra... To the Stars" vocal swell for 15s social video "Glow Up" trend.
+                                    </div>
+                                </div>
+
                             </div>
-                        </div>
+                            </div>
                     </div>
 
                     <div class="row">

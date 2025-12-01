@@ -94,10 +94,11 @@ $isRadio = ($request_uri === '/radio');
     <ul class="dropdown-menu dropdown-menu-end">
       <li><a class="dropdown-item" href="/story"><i class="fa-duotone fa-book-open me-2" aria-hidden="true"></i>Full History</a></li>
       <li><hr class="dropdown-divider"></li>
+      <li><a class="dropdown-item" href="/story/cpi"><i class="fa-duotone fa-users-gear me-2" aria-hidden="true"></i>CPI & The Forgers</a></li>
       <li><a class="dropdown-item" href="/story/crash-of-90"><i class="fa-duotone fa-car-crash me-2" aria-hidden="true"></i>The Crash of '90</a></li>
       <li><a class="dropdown-item" href="/story/friction"><i class="fa-duotone fa-fire me-2" aria-hidden="true"></i>The Friction Catastrophe</a></li>
-      <li><a class="dropdown-item" href="/story/cpi"><i class="fa-duotone fa-users-gear me-2" aria-hidden="true"></i>CPI & The Forgers</a></li>
       <li><a class="dropdown-item" href="/story/ad-astra"><i class="fa-duotone fa-rocket-launch me-2" aria-hidden="true"></i>Ad Astra: The Mission</a></li>
+      <li><a class="dropdown-item" href="/story/nine-figure-refusal"><i class="fa-duotone fa-handshake-simple-slash me-2" aria-hidden="true"></i>Nine-Figure Refusal</a></li>
     </ul>
   </li>
 

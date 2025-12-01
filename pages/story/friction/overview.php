@@ -1,6 +1,6 @@
 <?php
 // pages/story/friction/overview.php
-// v4.0 - Final Narrative Integration (LA Setting / CPI Law / Toon Brigade)
+// v4.4 - Optimized Layout for Square 1989 Photo
 
 $pageTitle = "The Friction Catastrophe - The Stardust Engine Lore";
 ?>
@@ -20,6 +20,7 @@ $pageTitle = "The Friction Catastrophe - The Stardust Engine Lore";
     <div class="row justify-content-center">
         <div class="col-lg-10 mx-auto">
             
+            <!-- SECTION: THE PRELUDE (Los Angeles) -->
             <div class="card border-secondary bg-transparent mb-5">
                 <div class="card-header bg-secondary bg-opacity-10 fw-bold font-monospace small text-uppercase d-flex justify-content-between">
                     <span><i class="fa-duotone fa-location-dot me-2"></i>LOCATION: Los Angeles, CA</span>
@@ -51,16 +52,48 @@ $pageTitle = "The Friction Catastrophe - The Stardust Engine Lore";
                     </div>
                 </div>
             </div>
-            <h2 class="h3 fw-bold border-bottom border-secondary pb-2 mb-3">
-                1. The "Fatal Assumption"
-            </h2>
-            <p class="fs-5 text-muted mb-4">
-                In 1991, The Stardust Engine was in a stalemate with their label, Apex Records. 
-                For their third album, a new executive, Julian Vance, was assigned to the project.
-            </p>
-            <p class="mb-4">
-                Julian, in a panic over industry leaks of <strong>Cydele's</strong> upcoming <strong>Sanctuary</strong> album, wanted to create his own "sex-sells" competitor. He looked at old 1989 publicity photos of "Ryan O'Connell & Cassidy O'Connell" and made the lazy, catastrophic assumption that they were a married couple (like <strong>Silver Stream</strong>), not blood siblings.
-            </p>
+            <!-- END PRELUDE -->
+ 
+            
+            <!-- THE FATAL PHOTO (Square Layout) -->
+            <div class="row mb-5 align-items-center">
+                <div class="col-md-5">
+                    <div class="card bg-white p-2 shadow transform-rotate-minus-2">
+                        <img src="https://assets.raggiesoft.com/stardust-engine/images/ryan-cassidy-1989.jpg" 
+                             class="img-fluid" 
+                             alt="Ryan and Cassidy O'Connell, 1989 Promo Shot. They are wearing matching glasses and sweaters, looking happy and clearly related."
+                             style="filter: contrast(1.1) sepia(10%);">
+                        <div class="text-center pt-2 pb-1">
+                            <p class="font-handwriting text-secondary mb-0 small">Neon Hearts Tour Promo '89</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-7 d-flex flex-column justify-content-center">
+                     <h2 class="h3 fw-bold border-bottom border-secondary pb-2 mb-3">
+                        1. The "Fatal Assumption"
+                    </h2>
+                    <p class="fs-5 text-muted mb-4">
+                        In 1991, The Stardust Engine was in a stalemate with their label, Apex Records. 
+                        For their third album, a new, "rogue agent" executive, Julian Vance, was assigned to the project.
+                    </p>
+                    <p class="text-muted">
+                        Julian wanted to create a "sex-sells" competitor to <strong>Cydele's</strong> <em>Sanctuary</em>. He formulated his entire plan looking at this specific <strong>1989 publicity photo</strong>.
+                    </p>
+                    <p class="text-muted">
+                        He saw the physical affection—Ryan's arm around her, Cassidy leaning in—and made a lazy, catastrophic assumption: <strong>"They're a couple."</strong>
+                    </p>
+                    <div class="alert alert-dark border-danger bg-opacity-10 mb-0">
+                        <div class="d-flex">
+                            <i class="fa-duotone fa-triangle-exclamation text-danger fs-4 me-3 mt-1"></i>
+                            <div>
+                                <strong class="text-danger d-block mb-1">The Error:</strong> 
+                                <span class="small text-muted">Julian ignored the shared facial features, the sibling energy, and the fact that <strong>Ryan is standing</strong>. He didn't know Ryan was paralyzed in 1990 because he never bothered to check the date on the photo.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END PHOTO SECTION -->
 
             <h2 class="h3 fw-bold border-bottom border-secondary pb-2 mb-3 mt-5">
                 2. The "Friction" Misunderstanding
@@ -69,7 +102,7 @@ $pageTitle = "The Friction Catastrophe - The Stardust Engine Lore";
                 Julian pitched the title <strong>"Friction."</strong> The band, obsessed with their astronomy theme, was ecstatic. They believed the label was finally embracing their identity and planned an album about the literal, scientific <strong>friction of a space shuttle re-entering the atmosphere.</strong>
             </p>
             <p class="mb-4">
-                They recorded a demo for <strong>"Atmosphere,"</strong> with lyrics about "burning up with our desire" (heat shields). Julian heard the demo and assumed they were playing along with his sexual metaphor.
+                They enthusiastically recorded a demo for <strong>"Atmosphere,"</strong> with lyrics about "burning up with our desire" (heat shields). Julian heard the demo and assumed they were playing along with his sexual metaphor.
             </p>
 
             <div class="card border-danger mb-5 shadow-sm">
@@ -81,7 +114,7 @@ $pageTitle = "The Friction Catastrophe - The Stardust Engine Lore";
                             </h4>
                             <p class="card-text text-muted small mb-0">
                                 While "Atmosphere" was a misunderstanding, the title track "Friction" was a demand. 
-                                Read the history of the song the band refused to record.
+                                Read the disturbing history of the song the band refused to record.
                             </p>
                         </div>
                         <div class="col-md-4 text-end">
@@ -117,6 +150,7 @@ $pageTitle = "The Friction Catastrophe - The Stardust Engine Lore";
                 </li>
             </ul>
 
+            <!-- REVISED DEPOSITION BLOCK -->
             <div class="card bg-dark border-secondary mb-5 shadow-lg">
                 <div class="card-header bg-secondary bg-opacity-25 text-light font-monospace small py-2 border-bottom border-secondary">
                     <div class="row">
@@ -142,6 +176,8 @@ $pageTitle = "The Friction Catastrophe - The Stardust Engine Lore";
                     </p>
                 </div>
             </div>
+            <!-- END DEPOSITION BLOCK -->
+
             <h2 class="h3 fw-bold border-bottom border-secondary pb-2 mb-3 mt-5">
                 4. The Reveal & The Nuke
             </h2>
