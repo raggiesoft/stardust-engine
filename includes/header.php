@@ -138,11 +138,22 @@
     ?>
 
     <script>
+        // 1. Create a Promise that resolves when the window is FULLY loaded (CSS/Images done)
+        const windowLoadPromise = new Promise((resolve) => {
+            if (document.readyState === 'complete') {
+                resolve();
+            } else {
+                window.addEventListener('load', resolve);
+            }
+        });
+
         document.addEventListener("DOMContentLoaded", function() {
+            // INJECT PHP QUEUE DATA
             const queue = <?php echo json_encode($load_queue); ?>;
+            
             let loadedCount = 0;
             const total = queue.length;
-            let isFinished = false;
+            let isQueueFinished = false; // Flag: Are our custom assets done?
             
             const progressBar = document.getElementById('telemetry-fill');
             const statusText = document.getElementById('telemetry-text');
@@ -151,26 +162,27 @@
             const siteContent = document.getElementById('main-site-wrapper');
 
             // --- JUMP DRIVE (Link Interceptor) ---
+            // Triggers the "Calculating Jump Vectors" animation on internal links
             document.body.addEventListener('click', function(e) {
                 const link = e.target.closest('a');
                 if (!link) return;
+                
                 const href = link.getAttribute('href');
                 const target = link.getAttribute('target');
-                
-                // Safety: Don't trigger on current page links (Prevents "Fake Reload" loop)
                 const currentPath = window.location.pathname;
                 
+                // Logic: Only intercept internal links that aren't anchors, mailto, or new tabs
                 if (href && 
                     !href.startsWith('#') && 
                     !href.startsWith('mailto:') && 
                     !href.startsWith('tel:') && 
                     target !== '_blank' && 
                     (href.startsWith('/') || href.includes(window.location.hostname)) &&
-                    href !== currentPath && // Fix: Don't animate if staying on page
+                    href !== currentPath && 
                     href !== window.location.href
                    ) {
                     overlay.style.display = 'flex';
-                    void overlay.offsetWidth; 
+                    void overlay.offsetWidth; // Force reflow
                     overlay.style.opacity = '1';
                     siteContent.style.opacity = '0';
                     statusText.innerHTML = "CALCULATING JUMP VECTORS<span class='cursor'>_</span>";
@@ -180,33 +192,49 @@
                 }
             });
 
-            // --- LOADER LOGIC ---
+            // --- ASSET LOADER LOGIC ---
             function itemLoaded(item) {
-                if (isFinished) return;
+                if (isQueueFinished) return;
+                
                 loadedCount++;
                 const percent = (loadedCount / total) * 100;
                 progressBar.style.width = percent + '%';
                 
+                // Flavor Text
                 const verbs = ["ACQUIRING", "PARSING", "DECRYPTING", "BUFFERING"];
                 const randomVerb = verbs[Math.floor(Math.random() * verbs.length)];
                 statusText.innerHTML = randomVerb + " DATA STREAM<span class='cursor'>_</span>";
                 detailText.innerText = "VERIFIED: " + (item.name || 'Asset'); 
 
+                // Check if our custom queue is done
                 if (loadedCount >= total) {
-                    finishLoading();
+                    isQueueFinished = true;
+                    attemptToCloseOverlay();
                 }
             }
 
-            function finishLoading() {
-                if (isFinished) return;
-                isFinished = true;
+            // --- THE GATEKEEPER ---
+            // Only closes if BOTH the custom queue is done AND the window is fully loaded
+            function attemptToCloseOverlay() {
+                if (!isQueueFinished) return;
+
+                statusText.innerHTML = "RENDERING UI<span class='cursor'>_</span>";
                 
+                // Wait for the browser to signal "All resources (CSS/Images) are ready"
+                windowLoadPromise.then(() => {
+                    finishLoading();
+                });
+            }
+
+            function finishLoading() {
+                // Visual "Success" State
                 statusText.innerHTML = "SYSTEM ONLINE<span class='cursor'>_</span>";
                 detailText.innerText = "Connection Established.";
                 progressBar.style.width = '100%';
                 progressBar.style.backgroundColor = "#00FF9D"; 
                 progressBar.style.boxShadow = "0 0 15px #00FF9D";
 
+                // Fade out
                 setTimeout(() => {
                     overlay.style.opacity = '0';
                     siteContent.style.opacity = '1';
@@ -215,15 +243,18 @@
                 }, 400);
             }
 
-            // --- SAFETY TIMEOUT (3 Seconds) ---
+            // --- SAFETY TIMEOUT (5 Seconds) ---
+            // If the window load event hangs (e.g. a broken ad script), force entry anyway
             setTimeout(() => {
-                if (!isFinished) {
+                const overlayVisible = window.getComputedStyle(overlay).opacity !== '0';
+                if (overlayVisible) {
                     console.warn("Telemetry timeout. Forcing system start.");
                     finishLoading();
                 }
-            }, 3000);
+            }, 5000);
 
-            // --- QUEUE PROCESSOR ---
+            // --- PROCESS THE QUEUE ---
+            // This starts downloading your custom assets immediately
             queue.forEach(item => {
                 if (item.type === 'css') {
                     const link = document.createElement('link');

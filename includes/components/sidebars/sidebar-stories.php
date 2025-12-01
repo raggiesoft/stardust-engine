@@ -30,6 +30,11 @@ $storyLinks = [
         'title' => 'The $150M Refusal',
         'url' => '/story/nine-figure-refusal',
         'icon' => 'fa-duotone fa-file-invoice-dollar'
+    ],
+    'ad-astra' => [
+        'title' => 'Ad Astra: The Mission',
+        'url' => '/story/ad-astra',
+        'icon' => 'fa-duotone fa-rocket-launch'
     ]
 ];
 ?>

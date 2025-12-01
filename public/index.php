@@ -161,6 +161,27 @@ $routes = [
         'ogDescription' => 'December 14, 1990. The night on I-81 that changed everything for Ryan O\'Connell and the band.',
     ],
 
+    // --- AD ASTRA NARRATIVE ARC ---
+    '/story/ad-astra' => [
+        'title' => 'Ad Astra: The Mission - The Stardust Engine Lore',
+        'theme' => 'ad-astra',
+        'showSidebar' => true,
+        'sidebar' => 'sidebar-ad-astra',
+        'ogTitle' => 'Ad Astra: The Mission',
+        'ogDescription' => 'The defining mythology of the band\'s freedom. Explore the story of the Aethelgard and the launch.',
+        'ogImage' => 'https://assets.raggiesoft.com/stardust-engine/images/stardust-engine-hero.jpg'
+    ],
+    '/story/ad-astra/voyage' => [
+        'title' => 'The Maiden Voyage - The Stardust Engine Lore',
+        'theme' => 'ad-astra',
+        'showSidebar' => true,
+        'sidebar' => 'sidebar-ad-astra',
+        'ogTitle' => 'The Maiden Voyage',
+        'ogDescription' => 'Mission Log: The Aethelgard. The story of the concert at the edge of the world.',
+        'ogImage' => 'https://assets.raggiesoft.com/stardust-engine/images/stardust-engine-logo-source.jpg'
+    ],
+
+
     // About Page
     '/about' => [
         'title' => 'Mission Profile - The Stardust Engine', 

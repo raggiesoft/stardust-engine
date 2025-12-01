@@ -1,13 +1,10 @@
 <?php
 // Page data
 $pageTitle = "Ad Astra - The Stardust Engine";
-$pageTheme = "ad-astra"; 
 
 // Pointing to the Single folder
 $album_path_web = '/stardust-engine/music/1995-ad-astra-single';
 ?>
-
-
 
 <div class="starfield-container"><div class="starfield-twinkling"></div></div>
 
@@ -52,6 +49,12 @@ $album_path_web = '/stardust-engine/music/1995-ad-astra-single';
                     
                     <div class="small text-white">
                         <i class="fa-duotone fa-compact-disc me-2"></i>Full Single &bull; 4 Tracks
+                    </div>
+                    
+                    <div class="mt-4">
+                        <a href="/story/ad-astra" class="btn btn-outline-info btn-sm rounded-pill px-4">
+                            <i class="fa-duotone fa-book-sparkles me-2"></i>Read the Mission Log
+                        </a>
                     </div>
                 </div>
             </div>

@@ -1,6 +1,6 @@
 <?php
 // pages/discography/overview.php
-// v3.0 - Dynamic Generation from Single Source of Truth
+// v3.1 - Added "Evidence" Stamp Logic for Seized Albums
 
 $pageTitle = "Discography Overview - The Stardust Engine";
 include_once ROOT_PATH . '/includes/components/arrays/_discography.php';
@@ -37,20 +37,29 @@ include_once ROOT_PATH . '/includes/components/arrays/_discography.php';
             </div>
 
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-                <?php foreach ($eraData['albums'] as $album): ?>
+                <?php foreach ($eraData['albums'] as $album): 
+                    // Check if this is a seized asset
+                    $isSeized = (isset($album['extra']) && str_contains($album['extra'], 'CANCELED'));
+                ?>
                     <div class="col">
-                        <div class="card h-100 bg-transparent border-secondary glass-card shadow-sm">
+                        <div class="card h-100 bg-transparent border-secondary glass-card shadow-sm overflow-hidden">
                             <div class="position-relative">
+                                
+                                <?php if ($isSeized): ?>
+                                    <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center" 
+                                         style="z-index: 2; background: rgba(0,0,0,0.5); pointer-events: none;">
+                                        <div class="bg-danger text-dark fw-bold h2 text-uppercase px-3 py-1" 
+                                             style="transform: rotate(-15deg); border: 3px dashed #000; opacity: 0.9; font-family: 'Impact', sans-serif; box-shadow: 0 0 10px #000;">
+                                            Evidence
+                                        </div>
+                                    </div>
+                                <?php endif; ?>
+
                                 <img src="<?php echo $album['img'] ?? 'https://assets.raggiesoft.com/common/images/defaults/vinyl-placeholder.jpg'; ?>" 
                                      class="card-img-top border-bottom border-secondary" 
                                      alt="<?php echo $album['title']; ?>"
-                                     style="aspect-ratio: 1/1; object-fit: cover;">
+                                     style="aspect-ratio: 1/1; object-fit: cover; <?php echo $isSeized ? 'filter: blur(5px) grayscale(100%);' : ''; ?>">
                                 
-                                <?php if(isset($album['extra']) && str_contains($album['extra'], 'CANCELED')): ?>
-                                    <div class="position-absolute top-0 end-0 m-2">
-                                        <span class="badge bg-danger shadow">CANCELED</span>
-                                    </div>
-                                <?php endif; ?>
                             </div>
 
                             <div class="card-body d-flex flex-column">
@@ -62,8 +71,12 @@ include_once ROOT_PATH . '/includes/components/arrays/_discography.php';
                                 </p>
                                 
                                 <div class="mt-auto">
-                                    <a href="<?php echo $album['url']; ?>" class="btn btn-sm btn-outline-primary w-100 stretched-link">
-                                        <i class="fa-duotone fa-compact-disc me-2"></i>View Album
+                                    <a href="<?php echo $album['url']; ?>" class="btn btn-sm <?php echo $isSeized ? 'btn-outline-danger' : 'btn-outline-primary'; ?> w-100 stretched-link">
+                                        <?php if ($isSeized): ?>
+                                            <i class="fa-duotone fa-gavel me-2"></i>View Case File
+                                        <?php else: ?>
+                                            <i class="fa-duotone fa-compact-disc me-2"></i>View Album
+                                        <?php endif; ?>
                                     </a>
                                 </div>
                             </div>

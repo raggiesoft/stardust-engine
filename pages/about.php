@@ -96,9 +96,9 @@ $customPageAssets = [
                         <i class="fa-duotone fa-brain-circuit fa-5x text-primary"></i>
                     </div>
                     <h4 class="h5 text-light fw-bold">Google Gemini</h4>
-                    <div class="badge bg-primary mb-2">NAV COMPUTER</div>
+                    <div class="badge bg-primary mb-2">NAV & VISUALS</div>
                     <p class="small mb-0">
-                        Lore Generation, Character Backstories, Lyrics, and Code Assistance.
+                        Lore Generation, Code Assistance, and Historical Photography (via Nano Banana).
                     </p>
                 </div>
             </div>
@@ -122,9 +122,9 @@ $customPageAssets = [
                         <i class="fa-duotone fa-palette fa-5x text-danger"></i>
                     </div>
                     <h4 class="h5 text-light fw-bold">DALL-E 3</h4>
-                    <div class="badge bg-danger mb-2">VISUAL SENSORS</div>
+                    <div class="badge bg-danger mb-2">ART DEPT</div>
                     <p class="small mb-0">
-                        Album Art, Photography, and Atmospheric Visuals.
+                        Album Artwork, Conceptual Design, and Atmospheric Visuals.
                     </p>
                 </div>
             </div>

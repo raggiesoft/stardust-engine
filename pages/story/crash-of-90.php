@@ -63,6 +63,27 @@ $pageTitle = "The Crash of '90 - The Stardust Engine Lore";
         </div>
     </div>
 
+    <!-- The Hospital Photo (Inserted Here) -->
+    <div class="row justify-content-center mb-5">
+        <div class="col-lg-8">
+            <div class="card bg-dark border-secondary shadow-lg p-2 transform-rotate-1">
+                <img src="https://assets.raggiesoft.com/stardust-engine/images/band-history/crash-of-1990.jpg" 
+                     class="card-img-top" 
+                     alt="Ryan O'Connell in his wheelchair at Roanoke Memorial Hospital, surrounded by Cassidy and Holly. December 18, 1990."
+                     style="filter: sepia(20%) contrast(1.1);">
+                <div class="card-body text-center bg-white pt-3 pb-2">
+                    <p class="font-monospace text-danger small fw-bold mb-1" style="font-family: 'Courier New', monospace; letter-spacing: 1px;">
+                        DEC 18 '90 // ROANOKE MEMORIAL
+                    </p>
+                    <p class="text-secondary small fst-italic mb-0 font-handwriting">
+                        Four days post-op. Ryan demanded a chair to fight "cabin fever."<br>
+                        First lap around the ward with the girls.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <hr class="border-secondary opacity-25 mb-5">
 
     <!-- The Deep Dive: Ryan's Needs (The New Reality) -->
