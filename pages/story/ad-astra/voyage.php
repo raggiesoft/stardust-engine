@@ -138,9 +138,13 @@ $customPageAssets = [
                         The blackness of space was gone. In its place was the <strong>Nebula</strong>—a swirling cathedral of violet, gold, and crimson dust.
                     </p>
                     <div class="card border-0 mb-4 overflow-hidden shadow-lg rounded-3">
-                        <img src="https://assets.raggiesoft.com/stardust-engine/images/stardust-engine-logo-source.jpg" 
+                        <img src="https://assets.raggiesoft.com/stardust-engine/images/story/ad-astra.jpg" 
                              class="img-fluid w-100" 
-                             alt="The Nebula Revealed">
+                             alt="The Stardust Engine performing live on the Aethelgard observation deck"
+                             onerror="this.src='https://placehold.co/1200x675/050508/00FFFF?text=Ad+Astra+Live';">
+                        <div class="card-footer bg-dark text-center border-top border-secondary small text-muted">
+                            <i class="fa-duotone fa-camera me-2"></i>Mission Archive Photo: The Moment of Re-entry
+                        </div>
                     </div>
                     <p class="text-white-50">
                         Cassidy began to sing, her voice whispered and ethereal: <span class="text-info fst-italic">"The walls are gone... The air is clear..."</span>

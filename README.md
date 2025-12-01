@@ -19,18 +19,31 @@ The Stardust Engine is a family band, all alumni of Commonwealth Polytechnic Ins
 - **Holly O’Connell:** Manager (CEO of Engine Room Records, LLC)
     
 
-### The Story
+### The Ad Astra Narrative (New Expansion)
 
-The band's history is defined by a "cold war" with their label, Apex Records. The studio attempted to market them with reductive "Stardust" (Cassidy's synth-pop) and "Engine" (Ryan's rock) personas, which the band hated.
+The project has evolved beyond historical fiction into high-concept sci-fi. The **Ad Astra** narrative arc reimagines the band not just as musicians, but as the "Launch Control" for the luxury star-cruiser _Aethelgard_.
 
-This conflict culminated in the 1992 _Friction_ album disaster, where a rogue executive made a fatal assumption about the siblings' dynamic. This "nuke" event ultimately freed the band from their contract and allowed them to found their own label, **Engine Room Records, LLC**, funded by their loyal "Forger Nation" fanbase.
+- **The Concept:** A 15-minute progressive rock suite that doubles as a literal launch sequence for a spaceship.
+- **The Lore:** The band performs in "The Monolith Room," a concert hall with a massive observation window facing a nebula.
+- **The Sound:** Ryan O'Connell physically yanking his guitar cable to simulate "Main Engine Cut-Off" (MECO) is a canonized technical detail.
+    
+
+### AI-Assisted Art Direction
+
+This project leverages generative AI ("Nano Banana" / Gemini) as a virtual art department.
+
+- **Scene Generation:** The "Maiden Voyage" concert image was created by feeding Gemini two disparate assets: the band's logo and a stock nebula image. The AI successfully "stitched" these elements together with a text prompt to render a photorealistic 35mm film shot of the band performing on stage in 1995.
+- **Historical Authenticity:** The AI also generated the "Crash of '90" hospital photo, perfectly capturing the grain, lighting, and emotional tone of a personal 90s snapshot.
+    
 
 ### Fictional Discography
 
 - **1987:** _Electric Color_ (Apex Records)
 - **1989:** _Neon Hearts_ (Apex Records)
 - **1990:** _Live in Chicago_ (Apex Records)
+- **1992:** _Friction_ (CANCELED / Seized Asset)
 - **1995:** _The Warehouse Tapes_ (Engine Room Records)
+- **1995:** _Ad Astra_ (Single / Mission Log)
 - **1997:** _Hard Reset_ (Engine Room Records)
 - **2007:** _Lost Sounds_ (Archival Compilation)
 - **2015:** _Re-Ignition_ (Reunion Album)
@@ -86,7 +99,7 @@ A custom Bash "Factory" script handles all media generation to ensure consistenc
     - **Stardust Theme:** A WCAG AAA compliant theme that supports both "Cosmic Day" (Light Mode) and "Cosmic Night" (Dark Mode).
     - **Crucible Theme:** A specialized "Homecoming" theme using the maroon and orange colors of the fictional university (CPI).
         
-- **Dynamic** Lyrics **Engine:** A JavaScript-powered parser that fetches raw Markdown files from the CDN and renders them into styled HTML (handling custom headers like `**LORE NOTE:**`) inside a modal, allowing users to read lore while listening without navigating away.
+- **Dynamic Lyrics Engine:** A JavaScript-powered parser that fetches raw Markdown files from the CDN and renders them into styled HTML (handling custom headers like `**LORE NOTE:**`) inside a modal, allowing users to read lore while listening without navigating away.
     
 
 ## 📜 Licensing
@@ -94,4 +107,4 @@ A custom Bash "Factory" script handles all media generation to ensure consistenc
 This project operates under a dual-license model:
 
 - **Source Code:** [MIT License](https://opensource.org/license/MIT)
-- **Creative Content:** [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
+- **Creative Content:** [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/ )
