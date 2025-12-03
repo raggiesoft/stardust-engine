@@ -253,15 +253,15 @@
         <div class="telemetry-bar-container">
             <div id="telemetry-fill" class="telemetry-bar-fill"></div>
         </div>
-        <div id="telemetry-text" class="telemetry-status">INITIALIZING SEQUENCE<span class="cursor">_</span></div>
+        <div id="telemetry-text" class="telemetry-status text-uppercase">Initializing Sequence<span class="cursor">_</span></div>
         <div id="telemetry-detail" class="telemetry-detail">Waiting for handshake...</div>
     </div>
 
     <div id="main-site-wrapper" class="d-flex flex-column flex-grow-1 h-100">
 
         <header class="sticky-top shadow-sm">
-        <nav class="navbar navbar-expand-md border-bottom">
-            <div class="container-lg">
+        <nav class="navbar navbar-expand-lg border-bottom">
+            <div class="container-fluid">
 
             <a class="navbar-brand text-uppercase" href="/" aria-label="Stardust Engine Home" 
                 style="font-family: 'Audiowide', sans-serif; letter-spacing: 1px; font-size: 1.25rem;">

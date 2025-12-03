@@ -20,9 +20,6 @@ $isRadio = ($request_uri === '/radio');
   <li class="nav-item">
     <a class="nav-link <?php echo $isHome ? 'active' : ''; ?>" href="/"><i class="fa-duotone fa-house me-2" aria-hidden="true"></i>Home</a>
   </li>
-  <li class="nav-item">
-    <a class="nav-link <?php echo $isRadio ? 'active' : ''; ?>" href="/radio"><i class="fa-duotone fa-radio me-2" aria-hidden="true"></i>Radio</a>
-  </li>
 
  <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle <?php echo ($isDiscography ?? false) ? 'active' : ''; ?>" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -30,6 +27,11 @@ $isRadio = ($request_uri === '/radio');
     </a>
     <ul class="dropdown-menu dropdown-menu-end scrollable-menu" style="max-height: 500px; overflow-y: auto;">
         
+        <li>
+            <a class="dropdown-item fw-bold" href="/radio">
+                <i class="fa-duotone fa-radio me-2"></i>Radio
+            </a>
+        </li>
         <li>
             <a class="dropdown-item fw-bold" href="/discography">
                 <i class="fa-duotone fa-list-music me-2"></i>Full Overview
@@ -103,24 +105,15 @@ $isRadio = ($request_uri === '/radio');
     </ul>
   </li>
 
-  <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle <?php echo $isAbout ? 'active' : ''; ?>" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-      <i class="fa-duotone fa-info-circle me-2" aria-hidden="true"></i>About
-    </a>
-    <ul class="dropdown-menu dropdown-menu-end">
-      <li><a class="dropdown-item" href="/about"><i class="fa-duotone fa-info-circle me-2 text-muted"></i>About This Project</a></li>
-      <li><a class="dropdown-item" href="/contact"><i class="fa-duotone fa-envelope me-2" aria-hidden="true"></i>Contact</a>
-      <li><a class="dropdown-item" href="/license"><i class="fa-duotone fa-file-contract me-2" aria-hidden="true"></i>License</a></li>
-    </ul>
-  </li>
-
   <!-- RaggieSoft Network Dropdown -->
   <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle text-secondary" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
         <i class="fa-duotone fa-network-wired me-2" aria-hidden="true"></i>RaggieSoft
       </a>
       <ul class="dropdown-menu dropdown-menu-end">
-        
+        <li><a class="dropdown-item" href="/about"><i class="fa-duotone fa-info-circle me-2 text-muted"></i>About This Project</a></li>
+        <li><a class="dropdown-item" href="/contact"><i class="fa-duotone fa-envelope me-2" aria-hidden="true"></i>Contact</a>
+        <li><a class="dropdown-item" href="/license"><i class="fa-duotone fa-file-contract me-2" aria-hidden="true"></i>License</a></li>
         <li><hr class="dropdown-divider"></li>  
         <?php foreach ($raggiesoftSites as $key => $site): ?>
               <li>

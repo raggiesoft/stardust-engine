@@ -1,6 +1,7 @@
 <?php
 // includes/components/sidebars/sidebar-stories.php
 // Navigation for the Lore & History Section
+// Updated: v2.1 (Fixed Active State Visibility for Corporate Theme)
 
 $current_req = $_SERVER['REQUEST_URI'];
 
@@ -11,10 +12,10 @@ $storyLinks = [
         'url' => '/story/overview', // Acts as the section home
         'icon' => 'fa-duotone fa-book-open'
     ],
-    'ad-astra' => [
-        'title' => 'Ad Astra: The Mission',
-        'url' => '/story/ad-astra',
-        'icon' => 'fa-duotone fa-rocket-launch'
+    'cpi' => [
+        'title' => 'CPI & The Forgers',
+        'url' => '/story/cpi',
+        'icon' => 'fa-duotone fa-school'
     ],
     'crash-of-90' => [
         'title' => 'The Crash of \'90',
@@ -26,16 +27,16 @@ $storyLinks = [
         'url' => '/story/friction',
         'icon' => 'fa-duotone fa-fire'
     ],
-    'cpi' => [
-        'title' => 'CPI & The Forgers',
-        'url' => '/story/cpi',
-        'icon' => 'fa-duotone fa-school'
-    ],
     'refusal' => [
         'title' => 'The $150M Refusal',
         'url' => '/story/nine-figure-refusal',
         'icon' => 'fa-duotone fa-file-invoice-dollar'
     ],
+    'ad-astra' => [
+        'title' => 'Ad Astra: The Mission',
+        'url' => '/story/ad-astra',
+        'icon' => 'fa-duotone fa-rocket-launch'
+    ]
 ];
 ?>
 
@@ -58,7 +59,7 @@ $storyLinks = [
             $isActive = ($isExactMatch || $isSubPage);
         ?>
             <li class="nav-item">
-                <a class="nav-link py-2 <?php echo $isActive ? 'active fw-bold text-light' : 'link-secondary'; ?>" 
+                <a class="nav-link py-2 <?php echo $isActive ? 'active fw-bold text-body-emphasis' : 'link-secondary'; ?>" 
                    href="<?php echo $link['url']; ?>">
                     <i class="<?php echo $link['icon']; ?> me-2" style="width: 20px; text-align: center;"></i>
                     <?php echo $link['title']; ?>

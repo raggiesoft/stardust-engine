@@ -26,12 +26,12 @@ $pageTitle = "License Information - The Stardust Engine";
                     </h2>
                 </div>
                 <div class="card-body">
-                    <h5 class="card-title text-white">CC BY-SA 4.0</h5>
+                    <h5 class="card-title text-muted">CC BY-SA 4.0</h5>
                     <p class="card-text text-muted">
                         All narrative content, lore, characters, music, and artwork associated with <strong>The Stardust Engine</strong> are licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer" class="link-warning">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
                     </p>
                     <hr class="border-secondary">
-                    <h6 class="text-white">What this means:</h6>
+                    <h6 class="text-muted">What this means:</h6>
                     <ul class="text-muted small">
                         <li class="mb-2"><strong>You are free to Share:</strong> Copy and redistribute the material in any medium or format.</li>
                         <li class="mb-2"><strong>You are free to Remix:</strong> Remix, transform, and build upon the material for any purpose, even commercially.</li>
@@ -54,17 +54,17 @@ $pageTitle = "License Information - The Stardust Engine";
                     </h2>
                 </div>
                 <div class="card-body">
-                    <h5 class="card-title text-white">The MIT License</h5>
+                    <h5 class="card-title text-muted">The MIT License</h5>
                     <p class="card-text text-muted">
                         The underlying source code that powers this website (PHP, HTML, CSS, JS) is licensed under the <a href="https://opensource.org/licenses/MIT" target="_blank" rel="noopener noreferrer" class="link-primary">MIT License</a>.
                     </p>
                     <hr class="border-secondary">
-                    <h6 class="text-white">What this means:</h6>
+                    <h6 class="text-muted">What this means:</h6>
                     <p class="small text-muted">
                         You are free to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the software. The only requirement is that the copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
                     </p>
                     
-                    <h6 class="text-white mt-4 mb-3">GitHub Repositories:</h6>
+                    <h6 class="text-muted mt-4 mb-3">GitHub Repositories:</h6>
                     <div class="list-group list-group-flush bg-transparent">
                         <a href="https://github.com/raggiesoft/stardust-engine" target="_blank" class="list-group-item list-group-item-action bg-transparent border-secondary text-muted d-flex justify-content-between align-items-center">
                             <span><i class="fa-solid fa-code me-2"></i>Main Website (PHP)</span>
