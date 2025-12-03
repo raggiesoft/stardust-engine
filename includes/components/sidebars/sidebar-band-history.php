@@ -41,6 +41,11 @@
 
 <h6 class="pt-3 pb-2 mb-3 border-bottom mt-4">Related Lore</h6>
 <ul class="nav flex-column mb-2">
+  <li class="nav-item">
+  <a class="nav-link link-secondary" href="/story/ad-astra">
+    <i class="fa-duotone fa-rocket-launch me-2"></i>Ad Astra
+  </a>
+  </li>
    <li class="nav-item">
     <a class="nav-link link-secondary" href="/story/cpi">
         <i class="fa-duotone fa-school me-2"></i>About CPI & The Forgers
