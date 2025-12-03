@@ -1,6 +1,6 @@
 <?php
 ob_start(); 
-// RaggieSoft Elara Router v3.6 (Error Path Patch)
+// RaggieSoft Elara Router v3.9 (Auto-Discovery Restore)
 
 define('ROOT_PATH', dirname(__DIR__));
 $request_uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
@@ -21,6 +21,7 @@ $defaults = [
     'theme' => $defaultTheme,
     'showSidebar' => false, 
     'sidebar' => 'sidebar-default',
+    'site' => $projectSlug,
     'ogTitle' => 'The Stardust Engine - Official Band Archive',
     'ogDescription' => "The official archive of the fictional 80s band 'The Stardust Engine.' A narrative universe and AI art project forged in the fires of CPI.",
     'ogImage' => $cdnBaseUrl . "/stardust-engine/images/stardust-engine-logo-social.jpg",
@@ -29,42 +30,72 @@ $defaults = [
 
 // --- 2. ROUTE CONFIGURATION ---
 $routes = [
-    
 
     // Band Member Pages
     '/band' => [
         'title' => 'The Band - The Stardust Engine',
         'ogTitle' => 'The Band - The Stardust Engine',
-        'ogDescription' => 'Meet the members of The Stardust Engine: Ryan O\'Connell, Cassidy O\'Connell, and Marcus Lee. The talented trio behind the legendary 80s band.',
+        'ogDescription' => 'Meet the members of The Stardust Engine: Ryan O\'Connell, Cassidy O\'Connell, and Marcus Lee.',
         'showSidebar' => true,
         'sidebar' => 'sidebar-band',
         'theme' => 'ad-astra',
-        
     ],
     '/band/ryan-oconnell' => [
         'title' => 'Ryan O\'Connell - The Stardust Engine Band Bio',
         'ogTitle' => 'Ryan O\'Connell - The Stardust Engine Band Bio',
-        'ogDescription' => 'Lead vocalist and rhythm guitarist of The Stardust Engine. The creative force behind the band\'s signature sound and rebellious spirit.',
+        'ogDescription' => 'Lead vocalist and rhythm guitarist of The Stardust Engine.',
         'showSidebar' => true,
         'sidebar' => 'sidebar-band',
     ],
+    '/band/cassidy-oconnell' => [
+        'title' => 'Cassidy O\'Connell - The Stardust Engine Band Bio',
+        'showSidebar' => true,
+        'sidebar' => 'sidebar-band',
+    ],
+    '/band/holly-oconnell' => [
+        'title' => 'Holly O\'Connell - The Stardust Engine Band Bio',
+        'showSidebar' => true,
+        'sidebar' => 'sidebar-band',
+    ],
+    '/band/evan-wright' => [
+        'title' => 'Evan Wright - The Stardust Engine Band Bio',
+        'showSidebar' => true,
+        'sidebar' => 'sidebar-band',
+    ],
+    '/band/tyler-wright' => [
+        'title' => 'Tyler Wright - The Stardust Engine Band Bio',
+        'showSidebar' => true,
+        'sidebar' => 'sidebar-band',
+    ],
+    '/band/history' => [
+        'title' => 'Our History - The Stardust Engine',
+        'showSidebar' => true,
+        'sidebar' => 'sidebar-band-history',
+    ],
+
 
     // Apex Records Era Albums
     '/discography/1987-electric-color' => [
         'ogTitle' => 'Electric Color (1987) - The Stardust Engine',
-        'ogDescription' => 'The 1987 debut defined by a studio \'cold war.\' Features the synth-pop hits the label demanded and the \'malicious compliance\' rock tracks the band fought for.',
+        'ogDescription' => 'The 1987 debut defined by a studio \'cold war.\'',
         'showSidebar' => true,
         'sidebar' => 'sidebar-discography',
     ],
     '/discography/1989-neon-hearts' => [
         'ogTitle' => 'Neon Hearts (1989) - The Stardust Engine',
-        'ogDescription' => 'The \'panic\' album. Terrified by the 1989 \'Sermon\' controversy, Apex Records demanded a safe sound, but the band fought back with \'Chain Reaction.\'',
+        'ogDescription' => 'The \'panic\' album.',
         'showSidebar' => true,
         'sidebar' => 'sidebar-discography',
     ],
     '/discography/1990-live-in-chicago' => [
         'ogTitle' => 'Live in Chicago (1990) - The Stardust Engine',
-        'ogDescription' => 'A snapshot of the conflict live. This 26-minute \'stop-gap\' EP features a studio-mandated setlist that famously banned their heavy rock anthems.',
+        'ogDescription' => 'A snapshot of the conflict live.',
+        'showSidebar' => true,
+        'sidebar' => 'sidebar-discography',
+    ],
+    '/discography/1992-friction' => [
+        'ogTitle' => 'Friction (CANCELED) - The Stardust Engine',
+        'ogDescription' => 'The album that never was.',
         'showSidebar' => true,
         'sidebar' => 'sidebar-discography',
     ],
@@ -72,18 +103,18 @@ $routes = [
     // Freedom Era Albums
     '/discography/1995-the-warehouse-tapes' => [
         'ogTitle' => 'The Warehouse Tapes (1995) - The Stardust Engine',
-        'ogDescription' => 'The \'bat signal\' to the fans. Recorded in \'The Fortress\' and funded by the Forger Nation, this raw EP marks the band\'s independent rebirth.',
+        'ogDescription' => 'The \'bat signal\' to the fans.',
         'theme' => 'ad-astra',
         'showSidebar' => true,
         'sidebar' => 'sidebar-discography',
     ],
     
-    // --- SPECIAL ROUTE: AD ASTRA (Manual Override for Assets) ---
+    // Special Ad Astra Route
     '/discography/1995-the-warehouse-tapes/ad-astra' => [
         'title' => 'Escape Velocity (Ad Astra) - The Stardust Engine',
         'theme' => 'ad-astra',
         'ogTitle' => 'Escape Velocity (Ad Astra) - The Stardust Engine',
-        'ogDescription' => 'The 15-minute progressive rock suite that defined the band\'s freedom. The magnum opus of the Freedom Era.',
+        'ogDescription' => 'The 15-minute progressive rock suite.',
         'ogImage' => 'https://assets.raggiesoft.com/stardust-engine/music/1995-ad-astra-single/social-preview.jpg',
         'showSidebar' => true,
         'sidebar' => 'sidebar-discography',
@@ -91,29 +122,29 @@ $routes = [
 
     '/discography/1997-hard-reset' => [
         'ogTitle' => 'Hard Reset (1997) - The Stardust Engine',
-        'ogDescription' => 'The high-stakes commercial comeback. Their first professional release on Engine Room Records, proving they could survive—and thrive—without a label.',
+        'ogDescription' => 'The high-stakes commercial comeback.',
         'showSidebar' => true,
         'sidebar' => 'sidebar-discography',
     ],
     '/discography/2007-lost-sounds' => [
         'ogTitle' => 'Lost Sounds (2007) - The Stardust Engine',
-        'ogDescription' => 'A gift to the fans during the hiatus. This archival compilation finally releases the \'Lost Gems\' and banned demos of the Apex era, including \'The Promise.\'',
-        'theme' => 'ad-astra', // Using Ad Astra theme for the "Archive" feel
+        'ogDescription' => 'A gift to the fans during the hiatus.',
+        'theme' => 'ad-astra',
         'showSidebar' => true,
         'sidebar' => 'sidebar-discography',
     ],
 
     // Homecoming Era Albums
-    '/discography/2015-reignition' => [
+    '/discography/2015-re-ignition' => [
         'ogTitle' => 'Re-Ignition (2015) - The Stardust Engine',
-        'ogDescription' => 'The triumphant reunion album. After a long hiatus, the band returns with the \'Engine\' power and \'Stardust\' melodies that defined their legacy.',
+        'ogDescription' => 'The triumphant reunion album.',
         'showSidebar' => true,
         'sidebar' => 'sidebar-discography',
     ],
     '/discography/2016-live-at-the-crucible' => [
         'theme' => 'crucible',
         'ogTitle' => 'Live at The Crucible (2016) - The Stardust Engine',
-        'ogDescription' => 'The magnum opus. Recorded live before 60,000 \'Ironheads\' at their CPI homecoming, featuring the sacred entrance anthem \'Ignition\' performed live for the first time.',
+        'ogDescription' => 'The homecoming finale.',
         'showSidebar' => true,
         'sidebar' => 'sidebar-discography',
     ],
@@ -121,54 +152,60 @@ $routes = [
     // Modern Era Albums
     '/discography/2017-knox-ost' => [
         'ogTitle' => 'Knox (O.S.T.) (2017) - The Stardust Engine',
-        'ogDescription' => 'The atmospheric industrial-rock score for the sci-fi epic \'Knox.\' Exploring the sonic dualities of the neon-lit Axiom and the bioluminescent Weave.',
+        'ogDescription' => 'The atmospheric industrial-rock score.',
         'showSidebar' => true,
         'sidebar' => 'sidebar-discography',
     ],
     
-    // --- LORE & STORIES ---
-    
-    // Force Sidebar on Overview Pages
+    // LORE & STORIES
+    '/story' => [
+        'title' => 'The Lore - The Stardust Engine',
+        'showSidebar' => true,
+        'sidebar' => 'sidebar-stories',
+    ],
     '/story/friction' => [
         'showSidebar' => true,
         'sidebar' => 'sidebar-stories',
-        'ogDescription' => 'The album that destroyed a contract. Discover the story of the \'fatal assumption,\' the photo shoot disaster, and the scandal that freed the band.',
+        'ogDescription' => 'The album that destroyed a contract.',
     ],
-    
-    // The CPI Origins Page
+    '/story/friction/the-lost-title-track' => [
+        'title' => 'Friction (The Lost Title Track)',
+        'theme' => 'ad-astra',
+        'showSidebar' => true,
+        'sidebar' => 'sidebar-stories',
+    ],
     '/story/cpi' => [
         'title' => 'CPI & The Forgers - The Stardust Engine Lore',
         'theme' => 'crucible', 
         'showSidebar' => true,
         'sidebar' => 'sidebar-stories',
-        'ogDescription' => 'Enter The Forge. The history of the "Ironheads" and the sacred anthem "Ignition".',
+        'ogDescription' => 'Enter The Forge.',
     ],
     
-    // The Refusal
+    // *** THE REFUSAL - CORPORATE THEME OVERRIDE ***
     '/story/nine-figure-refusal' => [
         'showSidebar' => true,
         'sidebar' => 'sidebar-stories',
         'title' => 'The Nine-Figure Refusal - The Stardust Engine Lore',
-        'theme' => 'ad-astra',
-        'ogDescription' => 'The day they said no to $150 million. Discover how Cassidy O\'Connell\'s autistic meltdown in the boardroom saved the magnum opus \'Ad Astra.\'',
+        'site' => 'corporate', 
+        'theme' => null,
+        'ogDescription' => 'The day they said no to $150 million.',
     ],
     
-    // The Crash of '90
     '/story/crash-of-90' => [
         'title' => 'The Crash of \'90 - The Stardust Engine Lore',
         'showSidebar' => true,
         'sidebar' => 'sidebar-stories',
-        'ogDescription' => 'December 14, 1990. The night on I-81 that changed everything for Ryan O\'Connell and the band.',
+        'ogDescription' => 'December 14, 1990.',
     ],
 
-    // --- AD ASTRA NARRATIVE ARC ---
+    // AD ASTRA ARC
     '/story/ad-astra' => [
         'title' => 'Ad Astra: The Mission - The Stardust Engine Lore',
         'theme' => 'ad-astra',
         'showSidebar' => true,
         'sidebar' => 'sidebar-ad-astra',
         'ogTitle' => 'Ad Astra: The Mission',
-        'ogDescription' => 'The defining mythology of the band\'s freedom. Explore the story of the Aethelgard and the launch.',
         'ogImage' => 'https://assets.raggiesoft.com/stardust-engine/images/stardust-engine-hero.jpg'
     ],
     '/story/ad-astra/voyage' => [
@@ -177,28 +214,46 @@ $routes = [
         'showSidebar' => true,
         'sidebar' => 'sidebar-ad-astra',
         'ogTitle' => 'The Maiden Voyage',
-        'ogDescription' => 'Mission Log: The Aethelgard. The story of the concert at the edge of the world.',
         'ogImage' => 'https://assets.raggiesoft.com/stardust-engine/images/stardust-engine-logo-source.jpg'
     ],
+    '/concepts/port' => [
+        'title' => 'Port Telsus - The Ironworks',
+        'theme' => 'ad-astra',
+    ],
+    '/concepts/pact' => [
+        'title' => 'The Pact - Knox Lore',
+        'theme' => 'ad-astra',
+    ],
 
-
-    // About Page
+    // General
     '/about' => [
         'title' => 'Mission Profile - The Stardust Engine', 
         'theme' => 'ad-astra',
         'ogTitle' => 'Mission Profile - The Stardust Engine',
-        'ogDescription' => 'Discover the dual-world experience of The Stardust Engine: a real-world AI art project and the in-universe archive of a fictional 1980s family band.',
         'showSidebar' => true,
         'sidebar' => 'sidebar-default',
     ],
-    
-    // Contact Page
     '/contact' => [
         'title' => 'Contact Flight Control - The Stardust Engine',
         'theme' => 'ad-astra',
         'showSidebar' => false,
         'ogTitle' => 'Contact Flight Control',
-        'ogDescription' => 'Secure Uplink to the Flight Director.',
+    ],
+    '/license' => [
+        'title' => 'License Information',
+        'showSidebar' => true,
+    ],
+    
+    // FIXED: Removed manual view mapping to allow Auto-Discovery to work
+    '/discography' => [
+        'title' => 'Discography Overview',
+        'showSidebar' => true,
+        'sidebar' => 'sidebar-discography',
+    ],
+    '/radio' => [
+        'title' => 'Stardust Radio',
+        'theme' => 'ad-astra',
+        'showSidebar' => false,
     ],
 ];
 
@@ -256,11 +311,10 @@ if (isset($pageConfig['view'])) {
         }
     }
 
-    // Auto-Title Logic (H1 Detection)
+    // Auto-Title
     if (!isset($pageConfig['title'])) {
         $titleFound = false;
         $viewPath = ROOT_PATH . '/' . $pageConfig['view'] . '.php';
-        
         if (file_exists($viewPath)) {
             $content = file_get_contents($viewPath);
             if (preg_match('/<h1[^>]*>(.*?)<\/h1>/si', $content, $matches)) {
@@ -280,14 +334,10 @@ if (isset($pageConfig['view'])) {
 
 // --- NEW: AUTOMATED ASSET LOGIC ---
 if (str_starts_with($request_uri, '/discography/') && $request_uri !== '/discography') {
-    
     $albumSlug = basename($request_uri); 
-    
-    // Only apply auto-logic if NOT explicitly set in routes above
     if (!isset($pageConfig['ogImage'])) {
         $pageConfig['ogImage'] = "https://assets.raggiesoft.com/stardust-engine/music/" . $albumSlug . "/social-preview.jpg";
     }
-    
     if (!isset($pageConfig['ogTitle']) && isset($pageConfig['title'])) {
         $pageConfig['ogTitle'] = $pageConfig['title'];
     }
@@ -296,19 +346,16 @@ if (str_starts_with($request_uri, '/discography/') && $request_uri !== '/discogr
 // --- 4. MERGE & RENDER ---
 $config = array_merge($defaults, $pageConfig);
 
-// [FIX] Force 404 Header & Theme if view is error page or default error view
 if ($config['view'] === 'errors/404') {
     http_response_code(404);
-    // Ensure "Ad Astra" theme is set for the error page fallback
-    if (!isset($pageConfig['theme'])) {
-         $config['theme'] = 'ad-astra';
-    }
+    if (!isset($pageConfig['theme'])) { $config['theme'] = 'ad-astra'; }
 }
 
 // Extract variables
 $pageTitle = $config['title'];
 $currentPageTheme = $config['theme'];
 $showSidebar = $config['showSidebar'];
+$currentSite = $config['site'];
 $ogTitle = $config['ogTitle'];
 $ogDescription = $config['ogDescription'];
 $ogImage = $config['ogImage'];
@@ -334,9 +381,7 @@ if ($showSidebar && file_exists($currentSidebar)) {
 if (file_exists(ROOT_PATH . '/' . $config['view'] . '.php')) {
     require_once ROOT_PATH . '/' . $config['view'] . '.php';
 } else {
-    // Fallback: Force 404 and load the standalone error page
     http_response_code(404);
-    // Point to the NEW public location of the error page
     require_once ROOT_PATH . '/public/errors/404.php';
 }
 

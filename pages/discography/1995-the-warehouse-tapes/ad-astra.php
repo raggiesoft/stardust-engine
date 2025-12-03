@@ -8,53 +8,53 @@ $album_path_web = '/stardust-engine/music/1995-ad-astra-single';
 
 <div class="starfield-container"><div class="starfield-twinkling"></div></div>
 
-<div class="container py-5 glass-container">
-    
+<div class="container pb-5 glass-container">
+    <div style="background: linear-gradient(to bottom right, rgba(5, 5, 8, 0.8), rgba(5, 5, 8, 0.6)), url('https://assets.raggiesoft.com/stardust-engine/images/story/ad-astra/harmonic-velocity.jpg') center/cover no-repeat;">
     <div class="text-center mb-5 fade-in-up">
-        <span class="badge rounded-pill border border-warning text-warning mb-3 px-3 py-2 shadow-glow">
-            <i class="fa-duotone fa-stars me-2"></i>The Magnum Opus
-        </span>
-        <h1 class="display-1 fw-bold text-uppercase text-glow-primary mb-0" style="font-family: 'Audiowide', sans-serif; letter-spacing: 4px;">
-            Ad Astra
-        </h1>
-        <p class="h5 text-info fw-light text-uppercase mt-2" style="font-family: 'Exo 2', sans-serif; letter-spacing: 2px;">
-            (Officially: "Escape Velocity (Ad Astra)")
-        </p>
-    </div>
-
-    <div class="row justify-content-center align-items-center mb-5">
-        
-        <div class="col-md-5 mb-4 mb-md-0">
-            <?php $props = [
-                'path' => $album_path_web, 
-                'alt' => 'Ad Astra Single Art',
-                'variant' => 'pact' // Violet border
-            ]; include ROOT_PATH . '/includes/components/_album-art-header.php'; ?>
+            <span class="badge rounded-pill border border-warning text-warning mb-3 px-3 pt-5 pb-2 shadow-glow">
+                <i class="fa-duotone fa-stars me-2"></i>The Magnum Opus
+            </span>
+            <h1 class="display-1 fw-bold text-uppercase text-glow-primary mb-0" style="font-family: 'Audiowide', sans-serif; letter-spacing: 4px;">
+                Ad Astra
+            </h1>
+            <p class="h5 text-info fw-light text-uppercase mt-2" style="font-family: 'Exo 2', sans-serif; letter-spacing: 2px;">
+                (Officially: "Escape Velocity (Ad Astra)")
+            </p>
         </div>
 
-        <div class="col-md-7">
-            <div class="card border-primary shadow-lg h-100" style="background: rgba(10, 5, 20, 0.7); backdrop-filter: blur(20px);">
-                <div class="card-body p-5 text-center d-flex flex-column justify-content-center">
-                    
-                    <p class="lead text-white mb-4">
-                        The 15-minute progressive rock suite that defined the band's freedom.
-                        <br><span class="text-info small fst-italic">"The moment the 'Engine' ignited and the 'Stardust' took over."</span>
-                    </p>
+        <div class="row justify-content-center align-items-center mb-5 p-4 p-md-5 rounded-4 shadow-lg border border-info border-opacity-25">
+            <div class="col-md-5 mb-4 mb-md-0">
+                <?php $props = [
+                    'path' => $album_path_web, 
+                    'alt' => 'Ad Astra Single Art',
+                    'variant' => 'pact' // Violet border
+                ]; include ROOT_PATH . '/includes/components/_album-art-header.php'; ?>
+            </div>
 
-                    <button class="btn btn-primary btn-lg rounded-pill px-5 py-3 shadow-glow mb-3" 
-                            id="btn-launch-mission"
-                            style="font-family: 'Audiowide'; letter-spacing: 1px;">
-                        <i class="fa-duotone fa-rocket-launch me-2"></i> Launch Mission (15:33)
-                    </button>
-                    
-                    <div class="small text-white">
-                        <i class="fa-duotone fa-compact-disc me-2"></i>Full Single &bull; 4 Tracks
-                    </div>
-                    
-                    <div class="mt-4">
-                        <a href="/story/ad-astra" class="btn btn-outline-info btn-sm rounded-pill px-4">
-                            <i class="fa-duotone fa-book-sparkles me-2"></i>Read the Mission Log
-                        </a>
+            <div class="col-md-7">
+                <div class="card border-primary shadow-lg h-100" style="background: rgba(10, 5, 20, 0.5); backdrop-filter: blur(20px);">
+                    <div class="card-body p-5 text-center d-flex flex-column justify-content-center">
+                        
+                        <p class="lead text-white mb-4">
+                            The 15-minute progressive rock suite that defined the band's freedom.
+                            <br><span class="text-info small fst-italic">"The moment the 'Engine' ignited and the 'Stardust' took over."</span>
+                        </p>
+
+                        <button class="btn btn-primary btn-lg rounded-pill px-5 py-3 shadow-glow mb-3" 
+                                id="btn-launch-mission"
+                                style="font-family: 'Audiowide'; letter-spacing: 1px;">
+                            <i class="fa-duotone fa-rocket-launch me-2"></i> Launch Mission (15:33)
+                        </button>
+                        
+                        <div class="small text-white">
+                            <i class="fa-duotone fa-compact-disc me-2"></i>Full Single &bull; 4 Tracks
+                        </div>
+                        
+                        <div class="mt-4">
+                            <a href="/story/ad-astra" class="btn btn-outline-info btn-sm rounded-pill px-4">
+                                <i class="fa-duotone fa-book-sparkles me-2"></i>Read the Mission Log
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>

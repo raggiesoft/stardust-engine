@@ -1,6 +1,6 @@
 <?php
 // includes/header.php
-// Universal RaggieSoft Header v8.2 (Stability Patch & Theme Fixes)
+// Universal RaggieSoft Header v8.3 (Corporate Theme Fix)
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -27,18 +27,17 @@
     <meta name="twitter:card" content="summary_large_image">
 
     <style>
+        /* Global Base (Default Dark, overridden by Corporate Theme) */
         body { margin: 0; overflow: hidden; background-color: #050508; color: #E0E0FF; font-family: 'Courier New', monospace; }
         #main-site-wrapper { opacity: 0; transition: opacity 0.6s ease-in-out; }
         
-        /* Overlay (Default Visible) */
+        /* Telemetry Overlay */
         #stardust-telemetry-overlay {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background-color: #050508; z-index: 9999;
             display: flex; flex-direction: column; align-items: center; justify-content: center;
             transition: opacity 0.4s ease-in-out;
         }
-
-        /* Spinner */
         .telemetry-spinner {
             width: 50px; height: 50px;
             border: 2px solid rgba(112, 0, 255, 0.2);
@@ -48,8 +47,6 @@
             margin-bottom: 25px;
             box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
         }
-
-        /* Progress Bar */
         .telemetry-bar-container {
             width: 240px; height: 2px; background: rgba(255,255,255,0.1); 
             border-radius: 0; overflow: hidden; margin-bottom: 10px;
@@ -59,8 +56,6 @@
             box-shadow: 0 0 10px #7000FF;
             transition: width 0.2s ease-out;
         }
-
-        /* Status Text */
         .telemetry-status {
             font-size: 0.75rem; color: #00FFFF; 
             text-transform: uppercase; letter-spacing: 1px;
@@ -69,35 +64,38 @@
         .telemetry-detail {
             font-size: 0.65rem; color: #6c757d; margin-top: 5px; text-transform: uppercase;
         }
-
-        /* Blinking Cursor */
         .cursor { animation: blink 1s step-end infinite; }
-
         @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
         @keyframes blink { 50% { opacity: 0; } }
     </style>
 
     <?php
         // ===================================================================
-        // RESOURCE MANIFEST GENERATOR
+        // RESOURCE MANIFEST GENERATOR (v2)
         // ===================================================================
-        $site  = $currentSite ?? ($projectSlug ?? null);
+        
+        // 1. Resolve Context
+        $site  = $currentSite ?? 'stardust-engine';
         $theme = $currentPageTheme ?? null;
-        if ($theme === $site) { $theme = null; } 
-
+        
         $cdn_root = "https://assets.raggiesoft.com";
         $path_common = $cdn_root . "/common/css/bootstrap-common"; 
         
-        if (empty($site)) {
+        // 2. Determine Theme Path
+        if ($site === 'corporate') {
             $path_theme = $cdn_root . "/common/css/raggiesoft-corporate";
-        } elseif ($theme) {
+        } elseif ($theme && $theme !== $site) { 
+            // Only treat as a sub-theme if it DOESN'T match the site name
             $path_theme = $cdn_root . "/{$site}/css/bootstrap/{$theme}";
         } else {
+            // Default Path (Root of bootstrap folder)
             $path_theme = $cdn_root . "/{$site}/css/bootstrap";
         }
 
-        // 1. CSS Queue
+        // 3. Build Queue
         $load_queue = [];
+        
+        // CSS Modules
         $css_modules = [
             ['file' => 'bootstrap-base.css',   'source' => 'common', 'name' => 'Core Framework'],
             ['file' => 'root.css',             'source' => 'theme',  'name' => 'Theme Variables'],
@@ -105,8 +103,6 @@
             ['file' => 'bootstrap-header.css', 'source' => 'common', 'name' => 'Nav Systems'],
             ['file' => 'bootstrap-footer.css', 'source' => 'common', 'name' => 'Player Interface'],
             ['file' => 'safety-net.css',       'source' => 'theme',  'name' => 'Safety Overrides'],
-            
-            // NEW: Global Network Overrides (Loads Last)
             ['file' => 'raggiesoft-extras.css','source' => 'common', 'name' => 'Global Patches']
         ];
 
@@ -119,7 +115,7 @@
             ];
         }
 
-        // 2. Asset Queue (Default + Page Specific Merge)
+        // Images
         $critical_images = [
             'System Logo' => 'https://assets.raggiesoft.com/stardust-engine/images/stardust-engine-logo.png'
         ];
@@ -138,7 +134,6 @@
     ?>
 
     <script>
-        // 1. Create a Promise that resolves when the window is FULLY loaded (CSS/Images done)
         const windowLoadPromise = new Promise((resolve) => {
             if (document.readyState === 'complete') {
                 resolve();
@@ -148,12 +143,10 @@
         });
 
         document.addEventListener("DOMContentLoaded", function() {
-            // INJECT PHP QUEUE DATA
             const queue = <?php echo json_encode($load_queue); ?>;
-            
             let loadedCount = 0;
             const total = queue.length;
-            let isQueueFinished = false; // Flag: Are our custom assets done?
+            let isQueueFinished = false;
             
             const progressBar = document.getElementById('telemetry-fill');
             const statusText = document.getElementById('telemetry-text');
@@ -161,28 +154,17 @@
             const overlay = document.getElementById('stardust-telemetry-overlay');
             const siteContent = document.getElementById('main-site-wrapper');
 
-            // --- JUMP DRIVE (Link Interceptor) ---
-            // Triggers the "Calculating Jump Vectors" animation on internal links
+            // Link Interceptor
             document.body.addEventListener('click', function(e) {
                 const link = e.target.closest('a');
                 if (!link) return;
-                
                 const href = link.getAttribute('href');
                 const target = link.getAttribute('target');
                 const currentPath = window.location.pathname;
                 
-                // Logic: Only intercept internal links that aren't anchors, mailto, or new tabs
-                if (href && 
-                    !href.startsWith('#') && 
-                    !href.startsWith('mailto:') && 
-                    !href.startsWith('tel:') && 
-                    target !== '_blank' && 
-                    (href.startsWith('/') || href.includes(window.location.hostname)) &&
-                    href !== currentPath && 
-                    href !== window.location.href
-                   ) {
+                if (href && !href.startsWith('#') && !href.startsWith('mailto:') && !href.startsWith('tel:') && target !== '_blank' && (href.startsWith('/') || href.includes(window.location.hostname)) && href !== currentPath && href !== window.location.href) {
                     overlay.style.display = 'flex';
-                    void overlay.offsetWidth; // Force reflow
+                    void overlay.offsetWidth;
                     overlay.style.opacity = '1';
                     siteContent.style.opacity = '0';
                     statusText.innerHTML = "CALCULATING JUMP VECTORS<span class='cursor'>_</span>";
@@ -192,49 +174,35 @@
                 }
             });
 
-            // --- ASSET LOADER LOGIC ---
             function itemLoaded(item) {
                 if (isQueueFinished) return;
-                
                 loadedCount++;
                 const percent = (loadedCount / total) * 100;
                 progressBar.style.width = percent + '%';
-                
-                // Flavor Text
                 const verbs = ["ACQUIRING", "PARSING", "DECRYPTING", "BUFFERING"];
                 const randomVerb = verbs[Math.floor(Math.random() * verbs.length)];
                 statusText.innerHTML = randomVerb + " DATA STREAM<span class='cursor'>_</span>";
                 detailText.innerText = "VERIFIED: " + (item.name || 'Asset'); 
-
-                // Check if our custom queue is done
                 if (loadedCount >= total) {
                     isQueueFinished = true;
                     attemptToCloseOverlay();
                 }
             }
 
-            // --- THE GATEKEEPER ---
-            // Only closes if BOTH the custom queue is done AND the window is fully loaded
             function attemptToCloseOverlay() {
                 if (!isQueueFinished) return;
-
                 statusText.innerHTML = "RENDERING UI<span class='cursor'>_</span>";
-                
-                // Wait for the browser to signal "All resources (CSS/Images) are ready"
                 windowLoadPromise.then(() => {
                     finishLoading();
                 });
             }
 
             function finishLoading() {
-                // Visual "Success" State
                 statusText.innerHTML = "SYSTEM ONLINE<span class='cursor'>_</span>";
                 detailText.innerText = "Connection Established.";
                 progressBar.style.width = '100%';
                 progressBar.style.backgroundColor = "#00FF9D"; 
                 progressBar.style.boxShadow = "0 0 15px #00FF9D";
-
-                // Fade out
                 setTimeout(() => {
                     overlay.style.opacity = '0';
                     siteContent.style.opacity = '1';
@@ -243,18 +211,13 @@
                 }, 400);
             }
 
-            // --- SAFETY TIMEOUT (5 Seconds) ---
-            // If the window load event hangs (e.g. a broken ad script), force entry anyway
             setTimeout(() => {
-                const overlayVisible = window.getComputedStyle(overlay).opacity !== '0';
-                if (overlayVisible) {
+                if (window.getComputedStyle(overlay).opacity !== '0') {
                     console.warn("Telemetry timeout. Forcing system start.");
                     finishLoading();
                 }
             }, 5000);
 
-            // --- PROCESS THE QUEUE ---
-            // This starts downloading your custom assets immediately
             queue.forEach(item => {
                 if (item.type === 'css') {
                     const link = document.createElement('link');

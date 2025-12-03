@@ -22,7 +22,7 @@ $cardBackground = 'https://assets.raggiesoft.com/stardust-engine/images/story/ad
         <img src="https://assets.raggiesoft.com/stardust-engine/images/story/ad-astra/band-ready.jpg" 
              alt="The Stardust Engine on stage in the Monolith Room, strapped in for launch." 
              class="w-100 h-100 object-fit-cover"
-             style="opacity: 0.6; filter: brightness(0.8) sepia(20%);">
+             style="opacity: 0.95; filter: brightness(0.8) sepia(20%);">
         <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark" 
              style="opacity: 0.4; background: linear-gradient(to bottom, transparent 0%, #050508 100%);"></div>
     </div>

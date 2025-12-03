@@ -11,10 +11,10 @@ $storyLinks = [
         'url' => '/story/overview', // Acts as the section home
         'icon' => 'fa-duotone fa-book-open'
     ],
-    'cpi' => [
-        'title' => 'CPI & The Forgers',
-        'url' => '/story/cpi',
-        'icon' => 'fa-duotone fa-school'
+    'ad-astra' => [
+        'title' => 'Ad Astra: The Mission',
+        'url' => '/story/ad-astra',
+        'icon' => 'fa-duotone fa-rocket-launch'
     ],
     'crash-of-90' => [
         'title' => 'The Crash of \'90',
@@ -26,16 +26,16 @@ $storyLinks = [
         'url' => '/story/friction',
         'icon' => 'fa-duotone fa-fire'
     ],
+    'cpi' => [
+        'title' => 'CPI & The Forgers',
+        'url' => '/story/cpi',
+        'icon' => 'fa-duotone fa-school'
+    ],
     'refusal' => [
         'title' => 'The $150M Refusal',
         'url' => '/story/nine-figure-refusal',
         'icon' => 'fa-duotone fa-file-invoice-dollar'
     ],
-    'ad-astra' => [
-        'title' => 'Ad Astra: The Mission',
-        'url' => '/story/ad-astra',
-        'icon' => 'fa-duotone fa-rocket-launch'
-    ]
 ];
 ?>
 

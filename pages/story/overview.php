@@ -21,7 +21,7 @@ $pageTitle = "The Lore - The Stardust Engine";
             <div class="card bg-dark border-info shadow-lg overflow-hidden position-relative group-hover-scale">
                 <div class="row g-0">
                     <div class="col-lg-7 position-relative">
-                        <img src="https://assets.raggiesoft.com/stardust-engine/images/story/ad-astra.jpg" 
+                        <img src="https://assets.raggiesoft.com/stardust-engine/images/story/ad-astra/band-ready.jpg" 
                              class="img-fluid h-100 object-fit-cover" 
                              alt="A wide-angle shot captures Cassidy O'Connell singing into a microphone on stage, wearing a red t-shirt and jeans. To her right, her older brother Ryan O'Connell plays an electric guitar, seated in a wheelchair. In the background, their twin cousins, Evan (on bass guitar) and Tyler (on drums), perform. They are on a stage inside a spaceship, with a massive window behind them displaying a vibrant nebula in space. A banner with a rocket logo hangs on the right."
                              style="min-height: 350px;">
@@ -55,32 +55,7 @@ $pageTitle = "The Lore - The Stardust Engine";
     <!-- THE ARCHIVE GRID -->
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
         
-        <!-- 1. The Friction Catastrophe -->
-        <div class="col">
-            <div class="card h-100 border-primary bg-transparent shadow-sm hover-card">
-                <img src="https://assets.raggiesoft.com/stardust-engine/music/1992-friction/album-art.jpg" 
-                     class="card-img-top" 
-                     alt="Abstract art representing the Friction scandal"
-                     style="filter: grayscale(100%) brightness(0.8);">
-                <div class="card-body d-flex flex-column">
-                    <h3 class="h5 fw-bold text-primary">The Friction Catastrophe</h3>
-                    <p class="card-text text-muted small">
-                        The defining moment in the band's history. How a "fatal assumption" by a record executive and a disastrous photo shoot in 1992 led to the band's explosive departure from Apex Records.
-                    </p>
-                    <div class="mt-auto pt-3">
-                        <?php $props = [
-                            'text' => 'Read The Full Story', 
-                            'href' => '/story/friction',
-                            'variant' => 'primary',
-                            'icon' => 'fa-duotone fa-book-open-cover',
-                            'fullWidth' => true
-                        ]; include ROOT_PATH . '/includes/components/button.php'; ?>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- 2. The Crash of '90 (New Entry) -->
+        <!-- 1. The Crash of '90 (New Entry) -->
         <div class="col">
             <div class="card h-100 border-danger bg-transparent shadow-sm hover-card">
                 <img src="https://assets.raggiesoft.com/stardust-engine/images/story/crash-of-1990.jpg" 
@@ -101,28 +76,45 @@ $pageTitle = "The Lore - The Stardust Engine";
             </div>
         </div>
 
-        <!-- 3. The Refusal (New Entry) -->
+        <!-- 2. The Friction Catastrophe -->
         <div class="col">
-            <div class="card h-100 border-warning bg-transparent shadow-sm hover-card">
-                <img src="https://assets.raggiesoft.com/stardust-engine/images/story/150-million-refusal.jpg" 
-                     class="card-img-top" 
-                     alt="Cassidy O'Connell looking fierce in a corporate boardroom rejecting a contract offer"
-                     style="filter: brightness(0.8);">
+            <div class="card h-100 border-primary bg-transparent shadow-sm hover-card">
+                
+                <div class="position-relative">
+                    
+                    <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center" 
+                         style="z-index: 2; background: rgba(0,0,0,0.5); pointer-events: none;">
+                        <div class="bg-danger text-dark fw-bold h2 text-uppercase px-3 py-1" 
+                             style="transform: rotate(-15deg); border: 3px dashed #000; opacity: 0.9; font-family: 'Impact', sans-serif; box-shadow: 0 0 10px #000;">
+                            Evidence
+                        </div>
+                    </div>
+
+                    <img src="https://assets.raggiesoft.com/stardust-engine/music/1992-friction/album-art.jpg" 
+                         class="card-img-top border-bottom border-primary" 
+                         alt="Abstract art representing the Friction scandal"
+                         style="filter: grayscale(100%) brightness(0.8);">
+                </div>
+
                 <div class="card-body d-flex flex-column">
-                    <h3 class="h5 fw-bold text-warning">The $150M Refusal</h3>
+                    <h3 class="h5 fw-bold text-primary">The Friction Catastrophe</h3>
                     <p class="card-text text-muted small">
-                        The day they said no. Discover how Cassidy O'Connell's meltdown in a corporate boardroom saved <em>Ad Astra</em> from being butchered by an algorithm.
+                        The defining moment in the band's history. How a "fatal assumption" by a record executive and a disastrous photo shoot in 1992 led to the band's explosive departure from Apex Records.
                     </p>
                     <div class="mt-auto pt-3">
-                        <a href="/story/nine-figure-refusal" class="btn btn-outline-warning w-100">
-                            <i class="fa-duotone fa-shield-halved me-2"></i>Read The Minutes
-                        </a>
+                        <?php $props = [
+                            'text' => 'Read The Full Story', 
+                            'href' => '/story/friction',
+                            'variant' => 'primary',
+                            'icon' => 'fa-duotone fa-book-open-cover',
+                            'fullWidth' => true
+                        ]; include ROOT_PATH . '/includes/components/button.php'; ?>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- 4. CPI & The Forgers -->
+        <!-- 3. CPI & The Forgers -->
         <div class="col">
             <div class="card h-100 border-secondary bg-transparent shadow-sm hover-card">
                 <img src="https://assets.raggiesoft.com/stardust-engine/music/2016-live-at-the-crucible/album-art.jpg" 
@@ -146,7 +138,53 @@ $pageTitle = "The Lore - The Stardust Engine";
             </div>
         </div>
 
-        <!-- 5. Complete Timeline -->
+        <!-- 4. The Refusal (New Entry) -->
+        <div class="col">
+            <div class="card h-100 border-warning bg-transparent shadow-sm hover-card">
+                <img src="https://assets.raggiesoft.com/stardust-engine/images/story/150-million-refusal.jpg" 
+                     class="card-img-top" 
+                     alt="Cassidy O'Connell looking fierce in a corporate boardroom rejecting a contract offer"
+                     style="filter: brightness(0.8);">
+                <div class="card-body d-flex flex-column">
+                    <h3 class="h5 fw-bold text-warning">The $150M Refusal</h3>
+                    <p class="card-text text-muted small">
+                        The day they said no. Discover how Cassidy O'Connell's meltdown in a corporate boardroom saved <em>Ad Astra</em> from being butchered by an algorithm.
+                    </p>
+                    <div class="mt-auto pt-3">
+                        <a href="/story/nine-figure-refusal" class="btn btn-outline-warning w-100">
+                            <i class="fa-duotone fa-shield-halved me-2"></i>Read The Minutes
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 5. Port Telsus -->
+         <div class="col">
+            <div class="card h-100 border-info bg-transparent shadow-sm hover-card">
+                <img src="https://assets.raggiesoft.com/knox/images/port-telsus-atmospheric-sq.jpg" 
+                     class="card-img-top" 
+                     alt="The neon-lit industrial sprawl of Port Telsus"
+                     style="filter: brightness(0.8);">
+                <div class="card-body d-flex flex-column">
+                    <h3 class="h5 fw-bold text-info">The Ironworks</h3>
+                    <p class="card-text text-muted small">
+                        The band's current base of operations. Explore the "sanctioned entertainment zone" in the lower decks of Port Telsus, where they broadcast their signal to the Weave.
+                    </p>
+                    <div class="mt-auto pt-3">
+                        <?php $props = [
+                            'text' => 'Enter Sector 4', 
+                            'href' => '/concepts/port', 
+                            'variant' => 'neutral',
+                            'icon' => 'fa-duotone fa-location-dot',
+                            'fullWidth' => true
+                        ]; include ROOT_PATH . '/includes/components/button.php'; ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 6. Complete Timeline -->
         <div class="col">
             <div class="card h-100 border-secondary bg-transparent shadow-sm hover-card">
                 <img src="https://assets.raggiesoft.com/stardust-engine/images/story/timeline.jpg" 
