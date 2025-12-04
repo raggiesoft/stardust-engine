@@ -262,6 +262,21 @@ $routes = [
         'theme' => 'ad-astra',
         'showSidebar' => false,
     ],
+
+    // Engine Room Records, LLC
+    // --- ENGINE ROOM RECORDS (Corporate Site) ---
+    '/engine-room' => [
+        'title' => 'Engine Room Records, LLC',
+        'site' => 'corporate',
+        'showSidebar' => false,
+        'view' => 'engine-room/overview',
+    ],
+    '/engine-room/artists/origin' => [
+        'title' => 'Origin - Engine Room Records',
+        'site' => 'corporate',
+        'showSidebar' => false,
+        'view' => 'engine-room/artists/origin',
+    ],
 ];
 
 // --- 3. SMART ROUTER LOGIC ---
