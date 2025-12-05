@@ -31,9 +31,9 @@
                 
                 <img id="player-album-art" src="" alt="Art" class="rounded shadow-sm me-3 border border-secondary" style="height: 40px; width: 40px; object-fit: cover;">
                 
-                <div class="text-truncate">
-                    <span class="text-secondary small text-uppercase fw-bold d-block" style="font-size: 0.7rem;">Now Playing</span>
-                    <strong id="player-track-title" class="text-light">Select a track...</strong>
+                <div class="text-truncate" style="line-height: 1.2;">
+                    <strong id="player-track-title" class="text-light d-block text-truncate">Select a track...</strong>
+                    <span id="player-track-artist" class="text-secondary small text-uppercase fw-bold text-truncate">Engine Room Radio</span>
                 </div>
             </div>
             
@@ -73,9 +73,6 @@
 </div>
 
 <script>
-    // DOM FIX: Move player and modal to <body>
-    // This breaks them out of the .glass-card container on ad-astra.php,
-    // ensuring 'fixed-bottom' relates to the viewport, not the card.
     (function() {
         const player = document.getElementById('sticky-audio-player');
         const modal = document.getElementById('lyricsModal');

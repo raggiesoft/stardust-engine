@@ -1,7 +1,7 @@
 <?php
 // Page data
 $pageTitle = "Knox (Original Soundtrack) (2017) - The Stardust Engine";
-$album_path_web = '/stardust-engine/music/2017-knox-ost';
+$album_path_web = '/engine-room-records/artists/the-stardust-engine/2017-knox-ost';
 ?>
 
 <div class="container py-5">

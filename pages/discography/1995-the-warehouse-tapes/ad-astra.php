@@ -3,7 +3,7 @@
 $pageTitle = "Ad Astra - The Stardust Engine";
 
 // Pointing to the Single folder
-$album_path_web = '/stardust-engine/music/1995-ad-astra-single';
+$album_path_web = '/engine-room-records/artists/the-stardust-engine/1995-ad-astra-single';
 ?>
 
 <div class="starfield-container"><div class="starfield-twinkling"></div></div>

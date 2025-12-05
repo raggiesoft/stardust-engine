@@ -1,7 +1,7 @@
 <?php
 // Page data
 $pageTitle = "The Warehouse Tapes (1995) - The Stardust Engine";
-$album_path_web = '/stardust-engine/music/1995-the-warehouse-tapes';
+$album_path_web = '/engine-room-records/artists/the-stardust-engine/1995-the-warehouse-tapes';
 ?>
 
 <div class="container py-5">

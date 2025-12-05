@@ -1,7 +1,7 @@
 <?php
 // Page data
 $pageTitle = "Re-Ignition (2015) - The Stardust Engine";
-$album_path_web = '/stardust-engine/music/2015-re-ignition';
+$album_path_web = '/engine-room-records/artists/the-stardust-engine/2015-re-ignition';
 ?>
 
 <div class="container py-5">

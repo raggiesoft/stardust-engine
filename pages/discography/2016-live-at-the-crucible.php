@@ -1,7 +1,7 @@
 <?php
 // Page data
 $pageTitle = "Live at The Crucible (2016) - The Stardust Engine";
-$album_path_web = '/stardust-engine/music/2016-live-at-the-crucible';
+$album_path_web = '/engine-room-records/artists/the-stardust-engine/2016-live-at-the-crucible';
 $pageTheme = 'crucible'; // Triggers the Maroon/Orange "Ironhead" theme
 ?>
 

@@ -161,13 +161,17 @@ $js_playlist = []; // The Master Array for JS
         </div>
     <?php endforeach; ?>
 </div>
+<?php
+// ==============================================================================
+//  SECTION 4: UI & PLAYER INITIALIZATION
+// ==============================================================================
+?>
 
 <?php include ROOT_PATH . '/includes/components/audio-player/sticky-player.php'; ?>
 
 <script>
     // Pass the PHP playlist to the Global Window scope
-    // The external JS file will look for this variable immediately upon loading.
     window.STARDUST_PLAYLIST = <?php echo json_encode($js_playlist); ?>;
 </script>
 
-<script src="https://assets.raggiesoft.com/stardust-engine/js/stardust-player.js?v=<?php echo time(); ?>"></script>
+<script src="https://assets.raggiesoft.com/engine-room-records/js/stardust-player.js?v=<?php echo time(); ?>"></script>

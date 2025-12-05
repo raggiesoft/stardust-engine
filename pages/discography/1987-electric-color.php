@@ -1,7 +1,7 @@
 <?php
 // Page data
 $pageTitle = "Electric Color (1987) - The Stardust Engine";
-$album_path_web = '/stardust-engine/music/1987-electric-color';
+$album_path_web = '/engine-room-records/artists/the-stardust-engine/1987-electric-color';
 ?>
 
 <div class="container py-5">

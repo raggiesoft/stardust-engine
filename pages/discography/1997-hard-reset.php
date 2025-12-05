@@ -1,7 +1,7 @@
 <?php
 // Page data
 $pageTitle = "Hard Reset (1997) - The Stardust Engine";
-$album_path_web = '/stardust-engine/music/1997-hard-reset';
+$album_path_web = '/engine-room-records/artists/the-stardust-engine/1997-hard-reset';
 ?>
 
 <div class="container py-5">

@@ -1,7 +1,7 @@
 <?php
 // Page data
 $pageTitle = "Neon Hearts (1989) - The Stardust Engine";
-$album_path_web = '/stardust-engine/music/1989-neon-hearts';
+$album_path_web = '/engine-room-records/artists/the-stardust-engine/1989-neon-hearts';
 ?>
 
 <div class="container py-5">

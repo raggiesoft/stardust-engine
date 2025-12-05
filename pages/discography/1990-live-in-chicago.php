@@ -1,7 +1,7 @@
 <?php
 // Page data
 $pageTitle = "Live in Chicago (1990) - The Stardust Engine";
-$album_path_web = '/stardust-engine/music/1990-live-in-chicago';
+$album_path_web = '/engine-room-records/artists/the-stardust-engine/1990-live-in-chicago';
 ?>
 
 <div class="container py-5">

@@ -16,7 +16,7 @@ $pageTitle = "The Paternoster Incident - The Stardust Engine Lore";
             <h1 class="display-3 fw-bold text-uppercase text-body-emphasis mb-0" style="font-family: 'Impact', sans-serif;">
                 The Paternoster
             </h1>
-            <p class="lead text-secondary font-monospace mt-2">
+            <p class="lead text-dark font-monospace mt-2">
                 October 14, 1998 // Prague // The Ministry of Culture
             </p>
         </div>
@@ -28,16 +28,16 @@ $pageTitle = "The Paternoster Incident - The Stardust Engine Lore";
             <div class="card border-0 shadow-sm bg-body-tertiary p-4 mb-5">
                 <div class="card-body">
                     <h3 class="h5 fw-bold text-dark border-bottom pb-2 mb-3">The Machine That Never Stops</h3>
-                    <p class="text-secondary">
+                    <p class="text-dark">
                         We arrived at the Ministry building for the press junket at 8:00 AM. The promoter had promised "full accessibility." He lied.
                     </p>
-                    <p class="text-secondary">
+                    <p class="text-dark">
                         The lobby was dominated by a <strong>Paternoster</strong>—a cyclic elevator with no doors, just a chain of open wooden boxes moving relentlessly upward. <em>Click-clack. Click-clack.</em> You had to hop on while it was moving.
                     </p>
-                    <p class="text-secondary">
+                    <p class="text-dark">
                         Ryan sat in his chair, staring at it. The lip of the compartment was ten inches high. The gap was narrow. If his caster wheels caught, the machine wouldn't stop; it would crush the chair—and him—against the ceiling.
                     </p>
-                    <p class="text-secondary mb-0">
+                    <p class="text-dark mb-0">
                         "It's a meat grinder," Evan said, standing protectively between Ryan and the open shaft.
                     </p>
                 </div>

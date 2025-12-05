@@ -1,7 +1,7 @@
 <?php
 // Page data
 $pageTitle = "Lost Sounds (2007) - The Stardust Engine";
-$album_path_web = '/stardust-engine/music/2007-lost-sounds';
+$album_path_web = '/engine-room-records/artists/the-stardust-engine/2007-lost-sounds';
 ?>
 
 <div class="container py-5">
