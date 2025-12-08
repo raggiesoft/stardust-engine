@@ -15,6 +15,8 @@
     <link rel="preconnect" href="https://assets.raggiesoft.com">
 
     <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap" rel="stylesheet">
+
     <link rel="icon" href="https://assets.raggiesoft.com/stardust-engine/images/stardust-engine-logo.png" type="image/png">
     <link rel="apple-touch-icon" href="https://assets.raggiesoft.com/stardust-engine/images/stardust-engine-logo.png">
     <script src="https://kit.fontawesome.com/ec060982d4.js" crossorigin="anonymous"></script>

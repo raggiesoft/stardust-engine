@@ -9,7 +9,6 @@ $pageTitle = "The Crash of '90 - The Stardust Engine Lore";
 
 <div class="container py-5">
     
-    <!-- Header -->
     <div class="row justify-content-center mb-5">
         <div class="col-lg-8 text-center">
             <span class="badge bg-danger text-white rounded-pill px-3 py-2 shadow-sm mb-3">
@@ -19,12 +18,11 @@ $pageTitle = "The Crash of '90 - The Stardust Engine Lore";
                 The Crash of '90
             </h1>
             <p class="lead text-secondary font-monospace mt-2">
-                December 14, 1990 // Interstate 81 // Mile Marker 98
+                December 10, 1990 // Interstate 81 // Mile Marker 98
             </p>
         </div>
     </div>
 
-    <!-- The Accident Report (Standard Terminal Style, less "Sci-Fi") -->
     <div class="row justify-content-center mb-5">
         <div class="col-lg-10">
             <div class="card bg-dark border-danger shadow-lg">
@@ -34,7 +32,7 @@ $pageTitle = "The Crash of '90 - The Stardust Engine Lore";
                 </div>
                 <div class="card-body font-monospace small text-light">
                     <div class="row mb-3 opacity-75">
-                        <div class="col-md-4">DATE: Dec 14, 1990</div>
+                        <div class="col-md-4">DATE: Dec 10, 1990</div>
                         <div class="col-md-4">TIME: 23:42 EST</div>
                         <div class="col-md-4">LOC: I-81 NB, Exit 98 (Newbern)</div>
                     </div>
@@ -42,13 +40,12 @@ $pageTitle = "The Crash of '90 - The Stardust Engine Lore";
                     <p class="mb-2"><strong>CONDITIONS:</strong> Heavy Snow, Visibility < 50ft. Road surface iced. Winter Weather Ban pending.</p>
                     <p class="mb-2"><strong>VEHICLE 1 (Victim):</strong> 1988 Holt Freighter Van (Touring Vehicle). Traveling North at approx 40 MPH in right lane. Hazard lights active.</p>
                     <p class="mb-2"><strong>VEHICLE 2 (At Fault):</strong> Commercial Sedan. Traveling North at est. 65-70 MPH. Driver lost control attempting to pass, clipping Vehicle 1's rear quarter panel.</p>
-                    <p class="mb-0"><strong>OUTCOME:</strong> Vehicle 1 spun off roadway, rolling twice into the embankment. Driver (R. O'Connell) pinned requiring extraction. Four passengers sustained minor injuries. Driver airlifted to Roanoke Memorial.</p>
+                    <p class="mb-0"><strong>OUTCOME:</strong> Vehicle 1 spun off roadway, rolling twice into the embankment. Driver (R. O'Connell) pinned requiring extraction. Four passengers sustained minor injuries. Driver airlifted to Star City General Hospital.</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- The Narrative -->
     <div class="row justify-content-center mb-5">
         <div class="col-lg-9 text-secondary fs-5">
             <p>
@@ -63,21 +60,22 @@ $pageTitle = "The Crash of '90 - The Stardust Engine Lore";
         </div>
     </div>
 
-    <!-- The Hospital Photo (Inserted Here) -->
     <div class="row justify-content-center mb-5">
         <div class="col-lg-8">
             <div class="card bg-dark border-secondary shadow-lg p-2 transform-rotate-1">
                 <img src="https://assets.raggiesoft.com/stardust-engine/images/story/crash-of-1990.jpg" 
-                     class="card-img-top" 
-                     alt="Ryan O'Connell in his wheelchair at Roanoke Memorial Hospital, surrounded by Cassidy and Holly. December 18, 1990."
-                     style="filter: sepia(20%) contrast(1.1);">
+                    class="card-img-top" 
+                    alt="Ryan O'Connell in his wheelchair at Star City General Hospital, surrounded by Cassidy and Holly. December 18, 1990."
+                    style="filter: sepia(20%) contrast(1.1);">
+                    
                 <div class="card-body text-center bg-white pt-3 pb-2">
                     <p class="font-monospace text-danger small fw-bold mb-1" style="font-family: 'Courier New', monospace; letter-spacing: 1px;">
-                        DEC 18 '90 // ROANOKE MEMORIAL
+                        DEC 18 '90 // STAR CITY GENERAL
                     </p>
-                    <p class="text-secondary small fst-italic mb-0 font-handwriting">
-                        Four days post-op. Ryan demanded a chair to fight "cabin fever."<br>
-                        First lap around the ward with the girls.
+                    
+                    <p class="text-secondary mb-0 font-handwriting" style="line-height: 1.1;">
+                        He hates the chair. Absolutely loathes it.<br>
+                        But the girls begged for a walk. He's pushing through for them.
                     </p>
                 </div>
             </div>
@@ -86,7 +84,6 @@ $pageTitle = "The Crash of '90 - The Stardust Engine Lore";
 
     <hr class="border-secondary opacity-25 mb-5">
 
-    <!-- The Deep Dive: Ryan's Needs (The New Reality) -->
     <div class="row">
         <div class="col-12 mb-4">
             <h2 class="h3 fw-bold text-warning text-uppercase border-bottom border-warning pb-2">
@@ -97,7 +94,6 @@ $pageTitle = "The Crash of '90 - The Stardust Engine Lore";
             </p>
         </div>
 
-        <!-- Card 1: The Morning Lockdown -->
         <div class="col-md-6 mb-4">
             <div class="card h-100 bg-transparent border-secondary">
                 <div class="card-header bg-secondary bg-opacity-10 text-info fw-bold">
@@ -114,7 +110,6 @@ $pageTitle = "The Crash of '90 - The Stardust Engine Lore";
             </div>
         </div>
 
-        <!-- Card 2: The 4-Hour Clock -->
         <div class="col-md-6 mb-4">
             <div class="card h-100 bg-transparent border-secondary">
                 <div class="card-header bg-secondary bg-opacity-10 text-info fw-bold">
@@ -131,7 +126,6 @@ $pageTitle = "The Crash of '90 - The Stardust Engine Lore";
             </div>
         </div>
 
-        <!-- Card 3: The Pressure Clock -->
         <div class="col-md-6 mb-4">
             <div class="card h-100 bg-transparent border-secondary">
                 <div class="card-header bg-secondary bg-opacity-10 text-info fw-bold">
@@ -148,7 +142,6 @@ $pageTitle = "The Crash of '90 - The Stardust Engine Lore";
             </div>
         </div>
 
-        <!-- Card 4: The Human Ramp -->
         <div class="col-md-6 mb-4">
             <div class="card h-100 bg-dark border-secondary">
                 <div class="card-header border-bottom border-secondary text-info fw-bold">
@@ -167,10 +160,8 @@ $pageTitle = "The Crash of '90 - The Stardust Engine Lore";
 
     </div>
 
-    <!-- Navigation -->
     <div class="row mt-5">
         <div class="col-12 text-center">
-            <!-- FIX APPLIED: Changed btn-outline-light to btn-outline-secondary for visibility on white backgrounds -->
             <a href="/band/ryan-oconnell" class="btn btn-outline-secondary rounded-pill px-4">
                 <i class="fa-duotone fa-user me-2"></i>Return to Ryan's Bio
             </a>
