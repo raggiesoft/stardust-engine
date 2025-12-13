@@ -165,14 +165,14 @@ $routes = [
     ],
     '/story/friction' => [
         'showSidebar' => true,
-        'site' => 'corporate', 
+        'site' => 'portfolio', 
         'theme' => null,
         'sidebar' => 'sidebar-stories',
         'ogDescription' => 'The album that destroyed a contract.',
     ],
     '/story/friction/the-lost-title-track' => [
         'title' => 'Friction (The Lost Title Track)',
-        'site' => 'corporate', 
+        'site' => 'portfolio', 
         'theme' => null,
         'showSidebar' => true,
         'sidebar' => 'sidebar-stories',
@@ -185,12 +185,12 @@ $routes = [
         'ogDescription' => 'Enter The Forge.',
     ],
     
-    // *** THE REFUSAL - CORPORATE THEME OVERRIDE ***
+    // *** THE REFUSAL - portfolio THEME OVERRIDE ***
     '/story/nine-figure-refusal' => [
         'showSidebar' => true,
         'sidebar' => 'sidebar-stories',
         'title' => 'The Nine-Figure Refusal - The Stardust Engine Lore',
-        'site' => 'corporate', 
+        'site' => 'portfolio', 
         'theme' => null,
         'ogDescription' => 'The day they said no to $150 million.',
     ],
@@ -198,7 +198,7 @@ $routes = [
     '/story/crash-of-90' => [
         'title' => 'The Crash of \'90 - The Stardust Engine Lore',
         'showSidebar' => true,
-        'site' => 'corporate', 
+        'site' => 'portfolio', 
         'theme' => null,
         'sidebar' => 'sidebar-stories',
         'ogDescription' => 'December 14, 1990.',
@@ -247,7 +247,7 @@ $routes = [
     '/license' => [
         'title' => 'License Information',
         'showSidebar' => true,
-        'site' => 'corporate', 
+        'site' => 'portfolio', 
         'theme' => null,
     ],
     
@@ -264,16 +264,16 @@ $routes = [
     ],
 
     // Engine Room Records, LLC
-    // --- ENGINE ROOM RECORDS (Corporate Site) ---
+    // --- ENGINE ROOM RECORDS (portfolio Site) ---
     '/engine-room' => [
         'title' => 'Engine Room Records, LLC',
-        'site' => 'corporate',
+        'site' => 'portfolio',
         'showSidebar' => false,
         'view' => 'engine-room/overview',
     ],
     '/engine-room/artists/origin' => [
         'title' => 'Origin - Engine Room Records',
-        'site' => 'corporate',
+        'site' => 'portfolio',
         'showSidebar' => false,
         'view' => 'engine-room/artists/origin',
     ],
