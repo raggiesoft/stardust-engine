@@ -4,10 +4,6 @@
 // "We're going to build an engine, too."
 
 $pageTitle = "Mirage - Engine Room Records Roster";
-
-// --- CRITICAL CONFIGURATION ---
-// This variable tells _tracklist-downloader.php where to find tracks.json/album.json
-$album_path_web = '/engine-room-records/artists/mirage/2001-static-and-silence';
 ?>
 
 <style>
@@ -96,7 +92,7 @@ $album_path_web = '/engine-room-records/artists/mirage/2001-static-and-silence';
                                 <i class="fa-solid fa-file-contract me-2"></i>The "Paper Wall"
                             </h5>
                             <p class="card-text small">
-                                Julian Croft ("Leo") and Maya Sterling ("Olivia") live as a married couple but remain legally single. [cite_start]Under current disability laws, marriage would strip Julian of his SSI and Medicaid—a death sentence for his care [cite: 14-16].
+                                Julian Croft (Lead Vocals) and Maya Sterling (Percussion) live as a married couple but remain legally single. Under current disability laws, marriage would strip Julian of his SSI and Medicaid—a death sentence for his care. 
                             </p>
                             <p class="card-text small fw-bold mb-0">
                                 Engine Room Records does not just distribute their music. We fund the "Paper Wall" legal trust that protects their assets and independence.
@@ -121,8 +117,12 @@ $album_path_web = '/engine-room-records/artists/mirage/2001-static-and-silence';
                             <i class="fa-solid fa-heart text-danger"></i>
                         </li>
                         <li class="list-group-item bg-transparent border-secondary">
-                            <strong>The Sisters (The Croft Line):</strong> 
-                            <span class="opacity-75">Izzy ("Luna"), Bea ("Stella"), Charlotte</span>
+                            <strong>The Sisters (Luna, Stella, Charlie):</strong> 
+                            <span class="opacity-75">Izzy, Bea, Charlotte Croft</span>
+                        </li>
+                        <li class="list-group-item bg-transparent border-secondary">
+                            <strong>The Cousins (Enforcers):</strong> 
+                            <span class="opacity-75">Diana Hale, Ellie Cross, Fiona Croft</span>
                         </li>
                     </ul>
 
@@ -140,13 +140,16 @@ $album_path_web = '/engine-room-records/artists/mirage/2001-static-and-silence';
                         </p>
                         
                         <p>
-                            Julian Croft was 19, attempting to restart his life after escaping his abuser. [cite_start]He rolled into the back of Newman Hall during a CPI Orientation event [cite: 55-57].
+                            Julian Croft was 19, attempting to restart his life after escaping his abuser ("Vanessa"). He rolled into the back of Newman Hall during a CPI Orientation event, unsure if he belonged.
                         </p>
                         <p>
-                            On stage, <strong>Ryan O'Connell</strong> was strapped into his chair, screaming <em>Ignition (The Forger's Call)</em>. Julian watched Ryan command 60,000 "Ironheads" without standing up.
+                            On stage, <strong>Ryan O'Connell</strong>—The Stardust Engine's T10 paraplegic frontman—was strapped into his chair, sweating, screaming, and dominating the room with the band's anthem, <em>Ignition (The Forger's Call)</em>.
+                        </p>
+                        <p>
+                            Julian watched Ryan command 60,000 "Ironheads" without standing up. He watched the O'Connell siblings and Wright twins operate as a single, protective unit.
                         </p>
                         <p class="fst-italic border-start border-4 border-danger ps-3 my-4">
-                            He turned to Maya and said:<br>
+                            Julian grabbed Maya's hand. He realized he didn't need to be "cured" to be on stage. He turned to her and said:<br>
                             <strong class="text-danger">"We're going to build an engine, too."</strong>
                         </p>
                     </div>
@@ -155,46 +158,65 @@ $album_path_web = '/engine-room-records/artists/mirage/2001-static-and-silence';
         </div>
     </div>
 
-    <div class="bg-body-tertiary py-5 border-top border-secondary">
+    <div class="bg-black text-white py-5 border-top border-secondary">
         <div class="container">
-            <div class="row align-items-center mb-5">
-                
-                <div class="col-md-5">
-                    <div class="position-relative shadow-lg border border-4 border-white">
-                        <img src="https://assets.raggiesoft.com/engine-room-records/artists/mirage/2001-static-and-silence/album-art.jpg" 
-                             class="img-fluid w-100" alt="Static & Silence Cover Art">
-                        <div class="position-absolute bottom-0 start-0 bg-danger text-white px-3 py-1 fw-bold text-uppercase small">
-                            New Release (2001)
-                        </div>
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <img src="https://assets.raggiesoft.com/engine-room-records/artists/mirage/2001-static-and-silence/album-art.jpg" 
+                         class="img-fluid border border-secondary shadow-glow" alt="Static & Silence Art">
+                    
+                    <div class="mt-4">
+                        <button class="btn btn-outline-light rounded-0 w-100 mb-2 text-uppercase">
+                            <i class="fa-solid fa-play me-2"></i>Stream Album
+                        </button>
+                        <button class="btn btn-danger rounded-0 w-100 text-uppercase fw-bold">
+                            <i class="fa-solid fa-cart-shopping me-2"></i>Buy Physical (2xCD)
+                        </button>
                     </div>
                 </div>
                 
-                <div class="col-md-7 ps-md-5 mt-4 mt-md-0">
-                    <div class="d-flex justify-content-between align-items-start">
-                        <div>
-                            <h2 class="display-4 fw-bold text-stenciled mb-2 text-body-emphasis">Static & Silence</h2>
-                            <p class="lead opacity-75 mb-4">Released: 2001 // Rock Opera // Industrial</p>
-                        </div>
-                        <div class="text-end d-none d-lg-block">
-                             <span class="badge badge-industrial p-2">CATALOG: ERR-004</span>
-                        </div>
-                    </div>
+                <div class="col-md-8 ps-md-5">
+                    <h2 class="display-4 fw-bold text-stenciled mb-2">Static & Silence</h2>
+                    <p class="lead text-white-50 mb-4">Released: 2001 // Rock Opera</p>
                     
-                    <p class="lead mb-4">
-                        The defining masterpiece of the post-grunge era. A harrowing, autobiographical concept album detailing "Leo's" (Julian's) survival of abuse, his cross-country escape on a Greyhound bus, and his return to the "Safe Harbor."
+                    <p class="mb-4">
+                        A harrowing, autobiographical concept album detailing "Leo's" (Julian's) survival of abuse, his cross-country escape on a Greyhound bus, and his return to the "Safe Harbor."
                     </p>
-                    
-                    <div class="alert alert-dark border-secondary d-flex align-items-center" role="alert">
-                        <i class="fa-duotone fa-info-circle fs-3 me-3"></i>
-                        <div>
-                            <strong>Note for Listeners:</strong> This is a Double Album (2xCD). The player below will load both discs sequentially.
+
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <h5 class="text-uppercase border-bottom border-secondary pb-2 mb-3">Disc 1: The Long Road West</h5>
+                            <ol class="list-group list-group-numbered list-group-flush">
+                                <li class="list-group-item bg-transparent text-white-50 border-secondary">Nineteen and Invincible</li>
+                                <li class="list-group-item bg-transparent text-white-50 border-secondary">A New Light</li>
+                                <li class="list-group-item bg-transparent text-white-50 border-secondary">Painted Smile</li>
+                                <li class="list-group-item bg-transparent text-white-50 border-secondary">The Unspoken Word</li>
+                                <li class="list-group-item bg-transparent text-white-50 border-secondary">Westward, Broken</li>
+                                <li class="list-group-item bg-transparent text-white-50 border-secondary">Nashville</li>
+                                <li class="list-group-item bg-transparent text-white-50 border-secondary">The Pasco Lock</li>
+                                <li class="list-group-item bg-transparent text-white-50 border-secondary">Shattered Voice, Silent Explosion</li>
+                            </ol>
+                        </div>
+
+                        <div class="col-md-6">
+                            <h5 class="text-uppercase border-bottom border-secondary pb-2 mb-3">Disc 2: The Journey Home</h5>
+                            <ol class="list-group list-group-numbered list-group-flush">
+                                <li class="list-group-item bg-transparent text-white border-secondary fw-bold">
+                                    <i class="fa-solid fa-star text-danger me-2 small"></i>Curbstone, 4 AM
+                                </li>
+                                <li class="list-group-item bg-transparent text-white-50 border-secondary">165 to Burien</li>
+                                <li class="list-group-item bg-transparent text-white-50 border-secondary">A TTY Lifeline</li>
+                                <li class="list-group-item bg-transparent text-white-50 border-secondary">The Anchor Holds</li>
+                                <li class="list-group-item bg-transparent text-white-50 border-secondary">Homeward on This Day</li>
+                                <li class="list-group-item bg-transparent text-white-50 border-secondary">Flight 1138</li>
+                                <li class="list-group-item bg-transparent text-white-50 border-secondary">Sanctuary</li>
+                                <li class="list-group-item bg-transparent text-white-50 border-secondary">Haven City</li>
+                            </ol>
                         </div>
                     </div>
+
                 </div>
             </div>
-
-            <?php include ROOT_PATH . '/includes/components/_tracklist-downloader.php'; ?>
-            
         </div>
     </div>
 

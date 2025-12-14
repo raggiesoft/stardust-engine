@@ -139,7 +139,7 @@ $pageTitle = "Our History - The Stardust Engine";
                     <div class="card-body">
                         <div class="row align-items-center">
                             <div class="col-md-3 mb-3 mb-md-0">
-                                <img src="https://assets.raggiesoft.com/stardust-engine/music/2017-knox-ost/album-art.jpg" alt="Knox OST" class="img-fluid rounded shadow border border-secondary">
+                                <img src="https://assets.raggiesoft.com/engine-room-records/artists/the-stardust-engine/2017-knox-ost/album-art.jpg" alt="Knox OST" class="img-fluid rounded shadow border border-secondary">
                             </div>
                             <div class="col-md-9">
                                 <p class="text-light">

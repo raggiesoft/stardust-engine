@@ -1,130 +1,134 @@
 <?php
-$pageTitle = "Artist Roster - Engine Room Records";
+// pages/engine-room/artists/overview.php
+// The Complete Roster.
+// Access: /engine-room/artists
+
+$pageTitle = "Artist Roster - Engine Room Records, LLC";
 ?>
 
-<div class="container py-5">
+<style>
+    .industrial-header {
+        background-color: #fff;
+        background-image: radial-gradient(circle at 50% 50%, #f8f8f8 0%, #e9ecef 100%);
+        border-bottom: 4px solid #000;
+        color: #000;
+        transition: all 0.3s ease;
+    }
+    [data-bs-theme="dark"] .industrial-header {
+        background-color: #111;
+        background-image: radial-gradient(circle at 50% 50%, #222 0%, #000 100%);
+        border-bottom: 4px solid #333;
+        color: #fff;
+    }
+    .text-stenciled {
+        font-family: 'Impact', 'Arial Black', sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+    .card-industrial {
+        border: 2px solid #333;
+        background-color: #f4f4f4;
+        color: #000;
+        transition: all 0.3s ease;
+    }
+    [data-bs-theme="dark"] .card-industrial {
+        background-color: #1a1a1a;
+        border-color: #555;
+        color: #e0e0e0;
+    }
+    .card-industrial:hover {
+        border-color: #000;
+        box-shadow: 10px 10px 0px rgba(0,0,0,0.2);
+        transform: translateY(-5px);
+    }
+    [data-bs-theme="dark"] .card-industrial:hover {
+        border-color: #fff;
+        box-shadow: 10px 10px 0px rgba(255,255,255,0.1);
+    }
+    .badge-industrial {
+        background-color: #000;
+        color: #fff;
+        font-family: monospace;
+        border-radius: 0;
+    }
+    [data-bs-theme="dark"] .badge-industrial {
+        background-color: #fff;
+        color: #000;
+    }
+</style>
+
+<div class="container-fluid p-0">
     
-    <nav aria-label="breadcrumb" class="mb-4">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="/engine-room" class="text-decoration-none">Engine Room Records</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Artist Roster</li>
-        </ol>
-    </nav>
-
-    <div class="row mb-5 align-items-end">
-        <div class="col-md-8">
-            <h1 class="display-3 fw-bold text-primary mb-0" style="letter-spacing: -1px;">
-                The Roster
-            </h1>
-            <p class="lead text-secondary mt-2">
-                "We don't sign genres. We sign independence."
-            </p>
-        </div>
-        <div class="col-md-4 text-md-end">
-             <a href="/contact" class="btn btn-outline-primary rounded-pill px-4">
-                <i class="fa-duotone fa-paper-plane me-2"></i>Submit Demo
-            </a>
+    <div class="industrial-header py-5">
+        <div class="container py-5 text-center">
+            <h1 class="display-3 fw-bold text-stenciled mb-2">The Roster</h1>
+            <p class="lead font-monospace opacity-75 mb-4">ENGINE ROOM RECORDS // OFFICIAL ARTIST ARCHIVE</p>
         </div>
     </div>
 
-    <h6 class="text-uppercase text-secondary fw-bold border-bottom pb-2 mb-4">
-        <i class="fa-duotone fa-crown me-2"></i>Founding Artists
-    </h6>
-
-    <div class="card border-0 shadow-sm bg-body-tertiary mb-5 overflow-hidden">
-        <div class="row g-0">
-            <div class="col-md-4 position-relative">
-                <img src="https://assets.raggiesoft.com/stardust-engine/images/stardust-engine-hero.jpg" 
-                     class="img-fluid h-100 object-fit-cover" 
-                     alt="The Stardust Engine"
-                     style="filter: grayscale(100%) contrast(1.2);">
-                <div class="position-absolute top-0 start-0 m-3">
-                    <span class="badge bg-primary">EST. 1985</span>
-                </div>
-            </div>
-            <div class="col-md-8">
-                <div class="card-body p-4 p-lg-5 d-flex flex-column h-100">
-                    <h3 class="display-5 fw-bold text-dark mb-1" style="font-family: 'Audiowide', sans-serif;">The Stardust Engine</h3>
-                    <p class="text-primary fw-bold mb-3">The Architects of the Fortress</p>
-                    <p class="text-secondary mb-4">
-                        The band that built the building. After escaping their Apex Records contract in 1994, the O'Connell family founded Engine Room Records to ensure no other artist would have to choose between their integrity and their career.
-                    </p>
-                    <div class="mt-auto">
-                        <a href="/" class="btn btn-primary rounded-pill px-4">
-                            <i class="fa-duotone fa-rocket-launch me-2"></i>View Official Archive
-                        </a>
+    <div class="bg-body py-5">
+        <div class="container">
+            <div class="row g-5">
+                
+                <div class="col-lg-4 d-flex align-items-stretch">
+                    <div class="card card-industrial w-100">
+                        <div class="bg-black p-4 text-center border-bottom border-secondary" style="height: 250px; display: flex; align-items: center; justify-content: center;">
+                            <img src="https://assets.raggiesoft.com/stardust-engine/images/stardust-engine-logo.png" 
+                                 class="img-fluid" style="max-height: 150px;" alt="The Stardust Engine">
+                        </div>
+                        <div class="card-body d-flex flex-column p-4">
+                            <span class="badge badge-industrial align-self-start mb-2">ERR-001</span>
+                            <h3 class="h4 fw-bold text-uppercase">The Stardust Engine</h3>
+                            <p class="card-text small flex-grow-1">
+                                The founding artist. A family-owned progressive rock unit blending 80s synth-pop with industrial rock.
+                            </p>
+                            <a href="/" class="btn btn-dark rounded-0 w-100 text-uppercase fw-bold mt-3">View Archive</a>
+                        </div>
                     </div>
                 </div>
+
+                <div class="col-lg-4 d-flex align-items-stretch">
+                    <div class="card card-industrial w-100 border-danger">
+                        <div class="bg-dark p-0 border-bottom border-secondary overflow-hidden position-relative" style="height: 250px;">
+                            <img src="https://assets.raggiesoft.com/engine-room-records/artists/mirage/2001-static-and-silence/album-art.jpg" 
+                                 class="img-fluid w-100 h-100 object-fit-cover opacity-75" alt="Mirage">
+                            <div class="position-absolute bottom-0 start-0 bg-danger text-white px-2 py-1 small fw-bold text-uppercase">Active</div>
+                        </div>
+                        <div class="card-body d-flex flex-column p-4">
+                            <span class="badge badge-industrial align-self-start mb-2">ERR-002</span>
+                            <h3 class="h4 fw-bold text-uppercase text-danger">Mirage</h3>
+                            <p class="card-text small flex-grow-1">
+                                Cinematic rock opera led by Julian Croft. [cite_start]Known for the "Paper Wall" legal trust and the album <em>Static & Silence</em> [cite: 14-16, 99].
+                            </p>
+                            <a href="/engine-room/artists/mirage" class="btn btn-outline-danger rounded-0 w-100 text-uppercase fw-bold mt-3">View Profile</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 d-flex align-items-stretch">
+                    <div class="card card-industrial w-100 opacity-75" style="border-style: dashed;">
+                        <div class="bg-body-tertiary p-4 text-center border-bottom border-secondary" style="height: 250px; display: flex; align-items: center; justify-content: center;">
+                            <i class="fa-duotone fa-user-music fa-4x text-muted opacity-50"></i>
+                        </div>
+                        <div class="card-body d-flex flex-column p-4">
+                            <span class="badge bg-secondary rounded-0 align-self-start mb-2">ERR-003</span>
+                            <h3 class="h4 fw-bold text-uppercase text-muted">Future Signing</h3>
+                            <p class="card-text small flex-grow-1 text-muted">
+                                Reserved for future roster expansion. This slot is open for the next artist protected by the Engine Room.
+                            </p>
+                            <button class="btn btn-outline-secondary rounded-0 w-100 text-uppercase fw-bold mt-3 disabled">Coming Soon</button>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
 
-    <h6 class="text-uppercase text-secondary fw-bold border-bottom pb-2 mb-4">
-        <i class="fa-duotone fa-signal-stream me-2"></i>Active Signings
-    </h6>
-
-    <div class="row g-4 mb-5">
-        
-        <div class="col-lg-6">
-            <div class="card h-100 border-0 shadow-sm bg-body-tertiary">
-                <div class="card-body p-4">
-                    <div class="d-flex justify-content-between align-items-start mb-3">
-                        <h3 class="h4 fw-bold text-dark mb-0 text-uppercase" style="font-family: 'Audiowide', sans-serif;">Origin</h3>
-                        <span class="badge bg-success-subtle text-success border border-success-subtle">Active</span>
-                    </div>
-                    <p class="small text-muted text-uppercase fw-bold mb-3">London, UK // Art Rock</p>
-                    <p class="card-text text-secondary">
-                        Discovered by Ryan O'Connell during the <strong>1998 <em>Hard Reset</em> European Tour</strong>. Origin combines 1983-style progressive pop with complex, gated-reverb percussion and soaring flute melodies. Their refusal to "modernize" for the late-90s pop explosion made them the perfect first signing for the label.
-                    </p>
-                    <hr class="border-secondary-subtle opacity-25">
-                    <div class="d-flex align-items-center justify-content-between">
-                        <small class="text-muted"><i class="fa-duotone fa-compact-disc me-2"></i>Latest: <em>Origin</em> (1999)</small>
-                        <a href="/engine-room/artists/origin" class="btn btn-sm btn-outline-dark rounded-pill px-3">
-                            View Profile
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-6">
-            <div class="card h-100 border-0 shadow-sm bg-body-tertiary opacity-75">
-                <div class="card-body p-4">
-                    <div class="d-flex justify-content-between align-items-start mb-3">
-                        <h3 class="h4 fw-bold text-muted mb-0" style="font-family: 'Audiowide', sans-serif;">[REDACTED]</h3>
-                        <span class="badge bg-warning-subtle text-warning border border-warning-subtle">In Development</span>
-                    </div>
-                    <p class="small text-muted text-uppercase fw-bold mb-3">Virginia Beach, VA // Pop-Punk</p>
-                    <p class="card-text text-secondary">
-                        A high-energy trio that opened for The Stardust Engine on the '97 <em>Hard Reset</em> tour. They bring a youthful, chaotic energy to the roster, currently recording their debut at The Fortress under Holly's supervision.
-                    </p>
-                    <hr class="border-secondary-subtle opacity-25">
-                    <div class="d-flex align-items-center justify-content-between">
-                        <small class="text-muted"><i class="fa-duotone fa-microphone-lines me-2"></i>Tracking Vocals...</small>
-                        <button class="btn btn-sm btn-outline-secondary rounded-pill px-3" disabled>
-                            Coming Soon
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-    <h6 class="text-uppercase text-secondary fw-bold border-bottom pb-2 mb-4">
-        <i class="fa-duotone fa-box-archive me-2"></i>Legacy & Safe Harbor
-    </h6>
-
-    <div class="alert alert-light border-start border-warning border-4 bg-body-tertiary">
-        <div class="d-flex">
-            <i class="fa-duotone fa-hand-holding-heart text-warning fs-3 me-3 mt-1"></i>
-            <div>
-                <h5 class="alert-heading h6 fw-bold text-dark">The "Rescue" Program</h5>
-                <p class="mb-0 small text-secondary">
-                    Engine Room Records also manages the <strong>"Safe Harbor Catalog,"</strong> a collection of masters purchased from defunct labels to return ownership to the original artists. While these artists are not active on the roster, their legacy is protected within our vault.
-                </p>
-            </div>
-        </div>
+    <div class="bg-body-tertiary py-4 text-center border-top border-secondary">
+        <a href="/engine-room" class="btn btn-link text-decoration-none text-uppercase fw-bold text-body">
+            <i class="fa-solid fa-arrow-left me-2"></i>Back to Headquarters
+        </a>
     </div>
 
 </div>

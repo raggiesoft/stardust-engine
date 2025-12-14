@@ -17,7 +17,7 @@
             
             <h1 class="display-2 text-uppercase text-glow-primary" 
                 style="font-family: 'Audiowide', sans-serif; letter-spacing: 2px;">
-                The Stardust Engine
+                <i class="fa-solid fa-rocket me-3"></i>The Stardust Engine
             </h1>
             
             <p class="lead fs-3 text-uppercase text-white" 

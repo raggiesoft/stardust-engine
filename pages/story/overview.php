@@ -90,7 +90,7 @@ $pageTitle = "The Lore - The Stardust Engine";
                         </div>
                     </div>
 
-                    <img src="https://assets.raggiesoft.com/stardust-engine/music/1992-friction/album-art.jpg" 
+                    <img src="https://assets.raggiesoft.com/engine-room-records/artists/the-stardust-engine/1992-friction/album-art.jpg" 
                          class="card-img-top border-bottom border-primary" 
                          alt="Abstract art representing the Friction scandal"
                          style="filter: grayscale(100%) brightness(0.8);">
@@ -117,7 +117,7 @@ $pageTitle = "The Lore - The Stardust Engine";
         <!-- 3. CPI & The Forgers -->
         <div class="col">
             <div class="card h-100 border-secondary bg-transparent shadow-sm hover-card">
-                <img src="https://assets.raggiesoft.com/stardust-engine/music/2016-live-at-the-crucible/album-art.jpg" 
+                <img src="https://assets.raggiesoft.com/engine-room-records/artists/the-stardust-engine/2016-live-at-the-crucible/album-art.jpg" 
                      class="card-img-top" 
                      alt="The Crucible Stadium at night">
                 <div class="card-body d-flex flex-column">
@@ -162,7 +162,7 @@ $pageTitle = "The Lore - The Stardust Engine";
         <!-- 5. Port Telsus -->
          <div class="col">
             <div class="card h-100 border-info bg-transparent shadow-sm hover-card">
-                <img src="https://assets.raggiesoft.com/knox/images/port-telsus-atmospheric-sq.jpg" 
+                <img src="https://assets.raggiesoft.com/engine-room-records/artists/the-stardust-engine/2017-knox-ost/album-art.jpg" 
                      class="card-img-top" 
                      alt="The neon-lit industrial sprawl of Port Telsus"
                      style="filter: brightness(0.8);">

@@ -108,12 +108,17 @@ $isRadio = ($request_uri === '/radio');
   <!-- RaggieSoft Network Dropdown -->
   <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle text-secondary" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-        <i class="fa-duotone fa-network-wired me-2" aria-hidden="true"></i>RaggieSoft
+        <i class="fa-duotone fa-network-wired me-2" aria-hidden="true"></i>Network
       </a>
       <ul class="dropdown-menu dropdown-menu-end">
         <li><a class="dropdown-item" href="/about"><i class="fa-duotone fa-info-circle me-2 text-muted"></i>About This Project</a></li>
         <li><a class="dropdown-item" href="/contact"><i class="fa-duotone fa-envelope me-2" aria-hidden="true"></i>Contact</a>
         <li><a class="dropdown-item" href="/license"><i class="fa-duotone fa-file-contract me-2" aria-hidden="true"></i>License</a></li>
+        <li>
+            <a class="dropdown-item fw-bold text-uppercase" href="/engine-room">
+                <i class="fa-solid fa-industry me-2 text-danger"></i>Engine Room Records
+            </a>
+        </li>
         <li><hr class="dropdown-divider"></li>  
         <?php foreach ($raggiesoftSites as $key => $site): ?>
               <li>

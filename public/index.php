@@ -1,10 +1,11 @@
 <?php
 ob_start(); 
-// RaggieSoft Elara Router v3.9 (Auto-Discovery Restore)
+// RaggieSoft Elara Router v4.0
 
 define('ROOT_PATH', dirname(__DIR__));
 $request_uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
+// Normalize trailing slashes
 if (strlen($request_uri) > 1) {
     $request_uri = rtrim($request_uri, '/');
 }
@@ -25,11 +26,23 @@ $defaults = [
     'ogTitle' => 'The Stardust Engine - Official Band Archive',
     'ogDescription' => "The official archive of the fictional 80s band 'The Stardust Engine.' A narrative universe and AI art project forged in the fires of CPI.",
     'ogImage' => $cdnBaseUrl . "/stardust-engine/images/stardust-engine-logo-social.jpg",
-    'ogUrl' => "https://thestardustengine.com" . $request_uri
+    'ogUrl' => "https://thestardustengine.com" . $request_uri,
+    // NEW: Navbar Defaults
+    'navbarBrandLogo' => $cdnBaseUrl . "/stardust-engine/images/stardust-engine-logo.png",
+    'navbarBrandText' => 'The Stardust Engine',
+    'navbarBrandLink' => '/',
+    'navbarBrandAlt'  => 'Stardust Logo',
+    'navbarBrandClass' => 'rounded-circle shadow-glow' // Specific classes for the standard logo
 ];
 
 // --- 2. ROUTE CONFIGURATION ---
 $routes = [
+
+    '/' => [
+        'view' => 'pages/home',
+        'title' => 'Home - ' . $siteName,
+        'showSidebar' => false
+    ],
 
     // Band Member Pages
     '/band' => [
@@ -169,6 +182,14 @@ $routes = [
         'theme' => null,
         'sidebar' => 'sidebar-stories',
         'ogDescription' => 'The album that destroyed a contract.',
+        // OVERRIDE: Corporate Identity
+        'navbarBrandLogo' => 'https://assets.raggiesoft.com/engine-room-records/images/engine-room-records-logo.jpg',
+        'navbarBrandText' => 'Engine Room Records',
+        'navbarBrandLink' => '/',
+        'navbarBrandAlt'  => 'Engine Room Records Official Seal',
+        
+        // ADDED CLASS: 'navbar-brand-corporate-img' handles the JPEG transparency/inversion
+        'navbarBrandClass' => 'rounded-0 navbar-brand-corporate-img'
     ],
     '/story/friction/the-lost-title-track' => [
         'title' => 'Friction (The Lost Title Track)',
@@ -176,6 +197,14 @@ $routes = [
         'theme' => null,
         'showSidebar' => true,
         'sidebar' => 'sidebar-stories',
+        // OVERRIDE: Corporate Identity
+        'navbarBrandLogo' => 'https://assets.raggiesoft.com/engine-room-records/images/engine-room-records-logo.jpg',
+        'navbarBrandText' => 'Engine Room Records',
+        'navbarBrandLink' => '/',
+        'navbarBrandAlt'  => 'Engine Room Records Official Seal',
+        
+        // ADDED CLASS: 'navbar-brand-corporate-img' handles the JPEG transparency/inversion
+        'navbarBrandClass' => 'rounded-0 navbar-brand-corporate-img'
     ],
     '/story/cpi' => [
         'title' => 'CPI & The Forgers - The Stardust Engine Lore',
@@ -193,6 +222,14 @@ $routes = [
         'site' => 'portfolio', 
         'theme' => null,
         'ogDescription' => 'The day they said no to $150 million.',
+        // OVERRIDE: Corporate Identity
+        'navbarBrandLogo' => 'https://assets.raggiesoft.com/engine-room-records/images/engine-room-records-logo.jpg',
+        'navbarBrandText' => 'Engine Room Records',
+        'navbarBrandLink' => '/',
+        'navbarBrandAlt'  => 'Engine Room Records Official Seal',
+        
+        // ADDED CLASS: 'navbar-brand-corporate-img' handles the JPEG transparency/inversion
+        'navbarBrandClass' => 'rounded-0 navbar-brand-corporate-img'
     ],
     
     '/story/crash-of-90' => [
@@ -202,6 +239,14 @@ $routes = [
         'theme' => null,
         'sidebar' => 'sidebar-stories',
         'ogDescription' => 'December 14, 1990.',
+        // OVERRIDE: Corporate Identity
+        'navbarBrandLogo' => 'https://assets.raggiesoft.com/engine-room-records/images/engine-room-records-logo.jpg',
+        'navbarBrandText' => 'Engine Room Records',
+        'navbarBrandLink' => '/',
+        'navbarBrandAlt'  => 'Engine Room Records Official Seal',
+        
+        // ADDED CLASS: 'navbar-brand-corporate-img' handles the JPEG transparency/inversion
+        'navbarBrandClass' => 'rounded-0 navbar-brand-corporate-img'
     ],
 
     // AD ASTRA ARC
@@ -264,18 +309,22 @@ $routes = [
     ],
 
     // Engine Room Records, LLC
-    // --- ENGINE ROOM RECORDS (portfolio Site) ---
+    // --- ENGINE ROOM RECORDS (Corporate Fortress) ---
     '/engine-room' => [
         'title' => 'Engine Room Records, LLC',
-        'site' => 'portfolio',
+        'site'  => 'portfolio', // Sets context for CSS loading
         'showSidebar' => false,
-        'view' => 'engine-room/overview',
-    ],
-    '/engine-room/artists/origin' => [
-        'title' => 'Origin - Engine Room Records',
-        'site' => 'portfolio',
-        'showSidebar' => false,
-        'view' => 'engine-room/artists/origin',
+        
+        // VIEW: Removed. Auto-Discovery finds 'pages/engine-room/overview.php' automatically.
+
+        // OVERRIDE: Corporate Identity
+        'navbarBrandLogo' => 'https://assets.raggiesoft.com/engine-room-records/images/engine-room-records-logo.jpg',
+        'navbarBrandText' => 'Engine Room Records',
+        'navbarBrandLink' => '/',
+        'navbarBrandAlt'  => 'Engine Room Records Official Seal',
+        
+        // ADDED CLASS: 'navbar-brand-corporate-img' handles the JPEG transparency/inversion
+        'navbarBrandClass' => 'rounded-0 navbar-brand-corporate-img'
     ],
 ];
 
@@ -365,6 +414,31 @@ if (str_starts_with($request_uri, '/discography/') && $request_uri !== '/discogr
     }
 }
 
+// --- NEW: CONTEXT INHERITANCE (The "Blanket Rule") ---
+// Automatically apply Engine Room Records branding to ANY URL starting with /engine-room
+if (str_starts_with($request_uri, '/engine-room')) {
+    
+    // 1. Force the Site Context (loads the industrial CSS)
+    if (!isset($pageConfig['site'])) {
+        $pageConfig['site'] = 'portfolio';
+    }
+    
+    // 2. Force the Sidebar (Default to none for corporate pages)
+    if (!isset($pageConfig['showSidebar'])) {
+        $pageConfig['showSidebar'] = false;
+    }
+
+    // 3. Apply the Corporate Identity (The "Photocopier Trick")
+    // We only apply this if a specific page hasn't manually overridden it.
+    if (!isset($pageConfig['navbarBrandLogo'])) {
+        $pageConfig['navbarBrandLogo']  = 'https://assets.raggiesoft.com/engine-room-records/images/engine-room-records-logo.jpg';
+        $pageConfig['navbarBrandText']  = 'Engine Room Records';
+        $pageConfig['navbarBrandLink']  = '/engine-room'; // Clicking logo goes to Corporate Home
+        $pageConfig['navbarBrandAlt']   = 'Engine Room Records Official Seal';
+        $pageConfig['navbarBrandClass'] = 'rounded-0 navbar-brand-corporate-img';
+    }
+}
+
 // --- 4. MERGE & RENDER ---
 $config = array_merge($defaults, $pageConfig);
 
@@ -383,14 +457,37 @@ $ogDescription = $config['ogDescription'];
 $ogImage = $config['ogImage'];
 $ogUrl = $config['ogUrl'];
 
-$currentHeaderMenu = ROOT_PATH . '/includes/components/headers/header-default.php';
+// NAVBAR VARIABLES (If you missed this block, the header goes blank!)
+$navbarBrandLogo  = $config['navbarBrandLogo'];
+$navbarBrandText  = $config['navbarBrandText'];
+$navbarBrandLink  = $config['navbarBrandLink'];
+$navbarBrandAlt   = $config['navbarBrandAlt'];
+$navbarBrandClass = $config['navbarBrandClass'];
+
+
+// --- HEADER SELECTION LOGIC ---
+if (isset($pageConfig['headerMenu'])) {
+    // Explicit override in route config
+    $currentHeaderMenu = ROOT_PATH . $pageConfig['headerMenu'];
+} elseif (str_starts_with($request_uri, '/engine-room')) {
+    // Automatic Context: If inside Engine Room, load Corporate Header
+    $currentHeaderMenu = ROOT_PATH . '/includes/components/headers/header-engine-room.php';
+} else {
+    // Default: Load Standard Band Header
+    $currentHeaderMenu = ROOT_PATH . '/includes/components/headers/header-default.php';
+}
+
+
 $currentSidebar = ROOT_PATH . '/includes/components/sidebars/' . $config['sidebar'] . '.php';
 
+// RENDER HEADER
 require_once ROOT_PATH . '/includes/header.php';
 
-echo '<div class="container-fluid flex-grow-1 d-flex">';
-echo '  <div class="row flex-grow-1">';
+// RENDER BODY WRAPPER
+echo '<div class="container-fluid flex-grow-1 d-flex p-0">';
+echo '  <div class="row flex-grow-1 m-0 w-100">';
 
+// RENDER SIDEBAR (IF APPLICABLE)
 if ($showSidebar && file_exists($currentSidebar)) {
     echo '    <aside class="col-md-3 col-lg-2 d-none d-md-block bg-body-tertiary border-end p-3">';
     require_once $currentSidebar;
@@ -400,6 +497,7 @@ if ($showSidebar && file_exists($currentSidebar)) {
     echo '    <main id="main-content" class="col-12 p-0">'; 
 }
 
+// RENDER VIEW
 if (file_exists(ROOT_PATH . '/' . $config['view'] . '.php')) {
     require_once ROOT_PATH . '/' . $config['view'] . '.php';
 } else {
@@ -407,10 +505,12 @@ if (file_exists(ROOT_PATH . '/' . $config['view'] . '.php')) {
     require_once ROOT_PATH . '/public/errors/404.php';
 }
 
+// CLOSE TAGS
 echo '    </main>'; 
 echo '  </div>'; 
 echo '</div>'; 
 
+// RENDER FOOTER
 require_once ROOT_PATH . '/includes/footer.php';
 ob_end_flush();
 ?>
