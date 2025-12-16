@@ -1,5 +1,7 @@
 <?php
-// Page data
+// pages/band/cassidy-oconnell.php
+// The Voice. The Dreamer. The Secret Billionaire.
+
 $pageTitle = "Cassidy O'Connell - The Stardust Engine";
 ?>
 
@@ -35,19 +37,34 @@ $pageTitle = "Cassidy O'Connell - The Stardust Engine";
             <p class="text-muted">
                 Both Ryan and Cassidy are <strong>autistic</strong>. They share a hidden language of sensory processing and non-verbal cues that no one else fully understands. After the crash, Cassidy became Ryan's "Safe Person" and primary aide. She is his "Spotter" on stage, watching for signs of overstimulation or physical distress (like dysreflexia) that others might miss.
             </p>
-            <p class="text-muted">
-                In the daily logistical war of touring, she is his preferred aide for the most vulnerable moments of his care. Their bond is one of absolute, unspoken trust—which made the 1992 "Friction" accusation that they were "lovers" not just factually wrong, but a violation of the sacred safety they had built together.
-            </p>
 
-            <h3 class="fw-bold mt-5 mb-3">Key Tracks (Apex Era)</h3>
-            <ul class="list-group list-group-flush bg-transparent mb-4">
-                <li class="list-group-item bg-transparent text-muted border-secondary px-0">
-                    <strong>"Just a Girl" (1987):</strong> A "moody, introspective" song Apex saw as "filler." It became a surprise grassroots hit with female fans for its honest lyrics about her treatment: "They tell me 'sing the high note' / They tell me 'wear the red dress'."
-                </li>
-                <li class="list-group-item bg-transparent text-muted border-secondary px-0">
-                    <strong>"Not Your Doll" (1989):</strong> Her "fierce side" finally emerging on the *Neon Hearts* album. A "Pat Benatar-style" arena rock anthem directly rejecting the "Stardust" persona Apex forced on her.
-                </li>
-            </ul>
+            <div class="card bg-dark border-info shadow-lg mt-5 mb-5 overflow-hidden">
+                <div class="card-header bg-info bg-opacity-25 text-white fw-bold border-bottom border-info">
+                    <i class="fa-duotone fa-ticket me-2"></i>CONFIDENTIAL: The "Dream Number" Event (2012)
+                </div>
+                <div class="card-body p-4">
+                    <div class="row align-items-center">
+                        <div class="col-md-9">
+                            <h4 class="text-info fw-bold">The Accidental Billionaire</h4>
+                            <p class="text-light small">
+                                For years, fans wondered how the band could afford to reject millions in licensing deals. The answer wasn't record sales. It was Cassidy.
+                            </p>
+                            <p class="text-light small">
+                                In 2012, while stopping for gas in Daleville, VA, Cassidy bought a single lottery ticket. She didn't buy it to get rich; she bought it because she liked the visual pattern the numbers made on the scantron sheet.
+                            </p>
+                            <p class="text-light small fst-italic border-start border-2 border-info ps-3 my-3">
+                                "The numbers looked like a constellation. I just wanted to hold the paper."
+                            </p>
+                            <p class="text-light small mb-0">
+                                That ticket won the <strong>$2.04 Billion</strong> "American Dream" jackpot. Overwhelmed by the scale of the wealth, she famously handed the winning ticket to her sister Holly and asked for only one thing in return: <em>"Buy us a castle where no one can ever hurt us again."</em> (Holly bought "The Fortress" instead).
+                            </p>
+                        </div>
+                        <div class="col-md-3 text-center d-none d-md-block">
+                            <i class="fa-duotone fa-sparkles fa-5x text-info opacity-50"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <h3 class="fw-bold mt-5 mb-3">The "Friction" Aftermath</h3>
             <p class="text-muted">
@@ -57,7 +74,7 @@ $pageTitle = "Cassidy O'Connell - The Stardust Engine";
         </div>
 
         <div class="col-lg-4">
-            <div style="top: 8rem;">
+            <div class="sticky-top" style="top: 8rem;">
                 <?php $props = [
                     'title' => 'Cassidy O\'Connell',
                     'imgSrc' => 'https://assets.raggiesoft.com/stardust-engine/images/band-members/cassidy.jpg',
@@ -66,7 +83,7 @@ $pageTitle = "Cassidy O'Connell - The Stardust Engine";
                     'description' => "<strong>Role:</strong> Lead Vocals, Piano, Synths<br>
                                       <strong>Age (in 1987):</strong> 20<br>
                                       <strong>Status:</strong> The Stardust (Unbroken)<br>
-                                      <strong>Key Fact:</strong> Ryan's 'Safe Person'",
+                                      <strong>Net Worth:</strong> Classified (Winner)",
                     'buttonProps' => [
                         'text' => 'Back to The Band', 
                         'href' => '/band', 

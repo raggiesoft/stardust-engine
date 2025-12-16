@@ -1,8 +1,8 @@
 <?php
-// pages/story/friction/overview.php
-// v4.4 - Optimized Layout for Square 1989 Photo
+// pages/engine-room/history/friction/overview.php
+// The Friction Catastrophe Archive
 
-$pageTitle = "The Friction Catastrophe - The Stardust Engine Lore";
+$pageTitle = "The Friction Catastrophe - Engine Room History";
 ?>
 
 <div class="container py-5">
@@ -20,42 +20,35 @@ $pageTitle = "The Friction Catastrophe - The Stardust Engine Lore";
     <div class="row justify-content-center">
         <div class="col-lg-10 mx-auto">
             
-            <!-- SECTION: THE PRELUDE (Los Angeles) -->
-            <div class="card border-secondary bg-transparent mb-5">
-                <div class="card-header bg-secondary bg-opacity-10 fw-bold font-monospace small text-uppercase d-flex justify-content-between">
-                    <span><i class="fa-duotone fa-location-dot me-2"></i>LOCATION: Los Angeles, CA</span>
-                    <span><i class="fa-duotone fa-clock me-2"></i>09:30 AM (PST)</span>
-                </div>
-                <div class="card-body">
-                    <div class="row align-items-center">
-                        <div class="col-md-8">
-                            <h3 class="h5 text-light fw-bold">The "Toon Brigade" Incident</h3>
-                            <p class="text-muted small mb-3">
-                                The band had flown in from Virginia the night before. They arrived at the warehouse location early, finding the set cold and the crew still rigging lights. To pass the time, Tyler popped a tape into a rolling TV/VCR cart: a <strong>Rocket Burger</strong> promotional copy of <em>Toon Brigade Against Trouble</em> (1990).
-                            </p>
-                            <p class="text-muted small mb-0">
-                                When executive <strong>Julian Vance</strong> arrived at 10:00 AM, he found the band laughing at "famous cartoon figures" fighting a smoke monster. He sneered, assuming they were immature children he could easily manipulate.
-                            </p>
-                        </div>
-                        <div class="col-md-4 text-center border-start border-secondary border-opacity-25">
-                            <i class="fa-duotone fa-tv-retro fa-3x text-secondary mb-2"></i>
-                            <div class="small text-muted fst-italic">
-                                "This is your brain..."
-                            </div>
+            <div class="card bg-dark border-secondary mb-5 shadow-lg overflow-hidden">
+                <div class="row g-0">
+                    <div class="col-md-7 position-relative">
+                         <img src="https://assets.raggiesoft.com/stardust-engine/images/story/friction-photoshoot.jpg" 
+                             class="img-fluid h-100 object-fit-cover" 
+                             style="filter: sepia(10%) contrast(1.1);"
+                             alt="The Stardust Engine waiting in a cold warehouse. Ryan is in his wheelchair looking annoyed. Cassidy is shivering in a black dress. A TV cart plays cartoons in the background.">
+                        <div class="position-absolute top-0 start-0 m-3">
+                            <span class="badge bg-black bg-opacity-75 border border-secondary text-white shadow-sm">
+                                <i class="fa-duotone fa-camera-retro me-2 text-danger"></i>Los Angeles, 1992
+                            </span>
                         </div>
                     </div>
-                    <hr class="border-secondary opacity-25">
-                    <div class="alert alert-dark bg-transparent border-0 p-0 mb-0">
-                        <p class="small text-secondary mb-0">
-                            <strong><i class="fa-duotone fa-circle-info me-2"></i>Context Note:</strong> Because the cartoon focused on marijuana ("Smoke") and crack ("Rocks"), it never depicted <strong>powder cocaine</strong>. This seemingly trivial detail is why Ryan O'Connell later mistook the drug on the prop mirror for falling drywall dust.
-                        </p>
+                    <div class="col-md-5 d-flex align-items-center bg-dark">
+                        <div class="card-body p-4">
+                            <h3 class="h5 text-light fw-bold border-bottom border-secondary pb-2 mb-3">
+                                The "Toon Brigade" Incident
+                            </h3>
+                            <p class="text-muted small mb-3">
+                                <strong>09:30 AM:</strong> The band arrived to a freezing warehouse. To pass the time, they watched a <em>Toon Brigade</em> promo tape on a rolling TV cart.
+                            </p>
+                            <p class="text-muted small mb-0">
+                                When executive <strong>Julian Vance</strong> walked in, this is what he saw: a "childish" band distracted by cartoons. He sneered, assuming they would be easy to manipulate. He failed to notice the tension, the cold, or the wheelchair.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
-            <!-- END PRELUDE -->
- 
             
-            <!-- THE FATAL PHOTO (Square Layout) -->
             <div class="row mb-5 align-items-center">
                 <div class="col-md-5">
                     <div class="card bg-white p-2 shadow transform-rotate-minus-2">
@@ -93,16 +86,12 @@ $pageTitle = "The Friction Catastrophe - The Stardust Engine Lore";
                     </div>
                 </div>
             </div>
-            <!-- END PHOTO SECTION -->
 
             <h2 class="h3 fw-bold border-bottom border-secondary pb-2 mb-3 mt-5">
                 2. The "Friction" Misunderstanding
             </h2>
             <p class="fs-5 text-muted mb-4">
                 Julian pitched the title <strong>"Friction."</strong> The band, obsessed with their astronomy theme, was ecstatic. They believed the label was finally embracing their identity and planned an album about the literal, scientific <strong>friction of a space shuttle re-entering the atmosphere.</strong>
-            </p>
-            <p class="mb-4">
-                They enthusiastically recorded a demo for <strong>"Atmosphere,"</strong> with lyrics about "burning up with our desire" (heat shields). Julian heard the demo and assumed they were playing along with his sexual metaphor.
             </p>
 
             <div class="card border-danger mb-5 shadow-sm">
@@ -120,7 +109,7 @@ $pageTitle = "The Friction Catastrophe - The Stardust Engine Lore";
                         <div class="col-md-4 text-end">
                             <?php $props = [
                                 'text' => 'Read The Deep Dive', 
-                                'href' => '/story/friction/the-lost-title-track', 
+                                'href' => '/engine-room/history/friction/the-lost-title-track',
                                 'variant' => 'neutral', 
                                 'size' => 'small',
                                 'icon' => 'fa-duotone fa-arrow-right',
@@ -137,7 +126,6 @@ $pageTitle = "The Friction Catastrophe - The Stardust Engine Lore";
             <p class="fs-5 text-muted mb-4">
                 Ryan arrived in his wheelchair — the permanent result of the 1990 crash. Julian, confused but arrogant, waved it off and insisted they could "shoot around it," failing to see that several of his explicit shot‑list items were now physically impossible.
             </p>
-
             <ul class="list-group list-group-flush bg-transparent fs-5 mb-5">
                 <li class="list-group-item bg-transparent text-muted border-secondary px-0">
                     <strong>The "Dirty Mirror" Incident:</strong> Julian offered Ryan a mirror covered in cocaine to "loosen up." Ryan, a straight-edge "Ironhead" whose only reference for drugs was the animated smoke in <em>Toon Brigade</em>, genuinely thought it was drywall dust. He <strong>wiped the mirror clean</strong> with a napkin, humiliating Julian and destroying $500 worth of product.
@@ -145,12 +133,8 @@ $pageTitle = "The Friction Catastrophe - The Stardust Engine Lore";
                 <li class="list-group-item bg-transparent text-muted border-secondary px-0">
                     <strong>The Clipboard Attack:</strong> Furious, Julian snatched the photographer's clipboard. He found his concept shot: <strong>SHOT 12: CASSIDY/RYAN. THE LOVERS. FULL SIMULATED INTERCOURSE (RYAN ON TOP).</strong>
                 </li>
-                <li class="list-group-item bg-transparent text-muted border-secondary px-0">
-                    <strong>The Crime:</strong> In a fit of rage, Julian viciously <strong>scratched out the word "simulated"</strong> and shoved the clipboard at Ryan, demanding they "Do it or be in breach of contract."
-                </li>
             </ul>
 
-            <!-- REVISED DEPOSITION BLOCK -->
             <div class="card bg-dark border-secondary mb-5 shadow-lg">
                 <div class="card-header bg-secondary bg-opacity-25 text-light font-monospace small py-2 border-bottom border-secondary">
                     <div class="row">
@@ -165,63 +149,15 @@ $pageTitle = "The Friction Catastrophe - The Stardust Engine Lore";
                     <p class="mb-3">
                         <strong>MITCHELL:</strong> Yes. Ryan rolled in early. We actually had a gentle conversation about lighting the wheelchair. He was very specific—he didn't want us to hide it. He told me, "I want the kids to see it. I want them to know you can be paralyzed and still be a rock star."
                     </p>
-                    <p class="mb-3 opacity-75">
-                        <strong>ATTORNEY:</strong> Describe the moment Mr. Vance handed them the direction.
-                    </p>
-                    <p class="mb-3">
-                        <strong>MITCHELL:</strong> Julian was agitated. He grabbed my shot list, crossed out the word "SIMULATED" with a thick marker, and shoved it at Ryan. The note wasn't artistic direction. It was a demand for the siblings to <span class="bg-secondary text-dark px-1">[REDACTED]</span> on camera.
-                    </p>
                     <p class="mb-0">
-                        <strong>MITCHELL:</strong> I saw Ryan's face drop. He wasn't just angry; he was horrified. That's when I capped the lens. I told my assistant to pack the gear. I wasn't shooting an album cover anymore; I was witnessing a crime.
+                        <strong>MITCHELL:</strong> Then Julian arrived. He grabbed my shot list, crossed out the word "SIMULATED" with a thick marker, and shoved it at Ryan. The note wasn't artistic direction. It was a demand for the siblings to <span class="bg-secondary text-dark px-1">[REDACTED]</span> on camera.
                     </p>
                 </div>
             </div>
-            <!-- END DEPOSITION BLOCK -->
 
             <h2 class="h3 fw-bold border-bottom border-secondary pb-2 mb-3 mt-5">
-                4. The Reveal & The Nuke
+                4. The Aftermath
             </h2>
-            <p class="fs-5 text-muted mb-4">
-                Ryan read the line item. It was a demand for a physical act he could not perform, with a woman who was his sister. He roared the words that blew up the project:
-            </p>
-            
-            <blockquote class="blockquote text-center display-6 my-5 text-danger fw-bold text-uppercase" style="font-family: 'Impact', sans-serif; letter-spacing: 2px;">
-                "SHE'S! MY! SISTER!"
-            </blockquote>
-
-            <p class="mb-4">
-                In the corner, <strong>Holly O'Connell</strong> clicked her pen shut. She was 23 years old, a 2nd-year law student at <strong>CPI</strong> who had flown 2,500 miles to manage this shoot. She hadn't passed the Bar yet, but she had just aced <em>Contracts I</em> and <em>Criminal Law</em>. 
-            </p>
-            <p class="mb-4">
-                She knew exactly what "Material Breach" and "Solicitation" looked like. She picked up her legal bag and stepped out of the shadows. The "Girl Next Door" was gone. The Shark had entered the water.
-            </p>
-
-            <h2 class="h3 fw-bold border-bottom border-secondary pb-2 mb-3 mt-5">
-                5. The Aftermath
-            </h2>
-            <div class="row g-4">
-                <div class="col-md-6">
-                    <div class="card h-100 bg-transparent border-primary">
-                        <div class="card-body">
-                            <h4 class="card-title text-primary"><i class="fa-duotone fa-gavel me-2"></i>The Whistleblower</h4>
-                            <p class="card-text text-muted">
-                                The photographer, Kevin, was horrified. He went to the LAPD as a whistleblower, turning the case into a criminal investigation.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="card h-100 bg-transparent border-warning">
-                        <div class="card-body">
-                            <h4 class="card-title text-warning"><i class="fa-duotone fa-file-contract me-2"></i>Holly the Shark</h4>
-                            <p class="card-text text-muted">
-                                Holly secured the altered clipboard (Exhibit A) and the <strong>Live in Chicago</strong> tape (Exhibit B). Caught between a criminal case and a civil nuke, Apex Records immediately voided the band's contract and surrendered the masters.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
             <div class="alert alert-dark border-primary mt-5" role="alert">
                 <h4 class="alert-heading text-primary"><i class="fa-duotone fa-flag me-2"></i>The Rebirth</h4>
                 <p>

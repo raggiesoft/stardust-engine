@@ -59,7 +59,7 @@
     </a> 
   </li>
   <li class="nav-item">
-    <a class="nav-link link-secondary" href="/story/friction">
+    <a class="nav-link link-secondary" href="/engine-room/history/friction">
       <i class="fa-duotone fa-burst me-2"></i>The Friction Scandal
     </a>
   </li>

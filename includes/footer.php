@@ -36,7 +36,7 @@
           </div>
           <div class="modal-body text-center p-4">
             
-            <img src="https://assets.raggiesoft.com/stardust-engine/music/1995-ad-astra-single/album-art.jpg" 
+            <img src="https://assets.raggiesoft.com/engine-room-records/artists/the-stardust-engine/1995-ad-astra-single/album-art.jpg" 
                 class="img-fluid rounded shadow-lg mb-4 border border-secondary" 
                 alt="Ad Astra Single Art"
                 style="max-height: 300px;">

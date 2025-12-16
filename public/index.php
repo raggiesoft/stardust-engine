@@ -1,6 +1,7 @@
 <?php
 ob_start(); 
-// RaggieSoft Elara Router v4.0
+// RaggieSoft Elara Router v4.2
+// Updated: Added custom header configuration for Nine-Figure Refusal saga
 
 define('ROOT_PATH', dirname(__DIR__));
 $request_uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
@@ -25,11 +26,11 @@ $defaults = [
     'site' => $projectSlug,
     'ogTitle' => 'The Stardust Engine - Official Band Archive',
     'ogDescription' => "The official archive of the fictional 80s band 'The Stardust Engine.' A narrative universe and AI art project forged in the fires of CPI.",
-    'ogImage' => $cdnBaseUrl . "/stardust-engine/images/stardust-engine-logo-social.jpg",
+    'ogImage' => $cdnBaseUrl . "/stardust-engine/images/social-media/stardust-engine-logo-social.jpg",
     'ogUrl' => "https://thestardustengine.com" . $request_uri,
     // NEW: Navbar Defaults
-    'navbarBrandLogo' => $cdnBaseUrl . "/stardust-engine/images/stardust-engine-logo.png",
-    'navbarBrandText' => 'The Stardust Engine',
+    'navbarBrandLogo' => $cdnBaseUrl . "/stardust-engine/images/logos/stardust-engine-logo.png",
+    'navbarBrandText' => '<span class="d-none d-md-inline">The </span>Stardust Engine',
     'navbarBrandLink' => '/',
     'navbarBrandAlt'  => 'Stardust Logo',
     'navbarBrandClass' => 'rounded-circle shadow-glow' // Specific classes for the standard logo
@@ -83,7 +84,7 @@ $routes = [
     '/band/history' => [
         'title' => 'Our History - The Stardust Engine',
         'showSidebar' => true,
-        'sidebar' => 'sidebar-band-history',
+        'sidebar' => 'sidebar-history-band',
     ],
 
 
@@ -176,36 +177,7 @@ $routes = [
         'showSidebar' => true,
         'sidebar' => 'sidebar-stories',
     ],
-    '/story/friction' => [
-        'showSidebar' => true,
-        'site' => 'portfolio', 
-        'theme' => null,
-        'sidebar' => 'sidebar-stories',
-        'ogDescription' => 'The album that destroyed a contract.',
-        // OVERRIDE: Corporate Identity
-        'navbarBrandLogo' => 'https://assets.raggiesoft.com/engine-room-records/images/engine-room-records-logo.jpg',
-        'navbarBrandText' => 'Engine Room Records',
-        'navbarBrandLink' => '/',
-        'navbarBrandAlt'  => 'Engine Room Records Official Seal',
-        
-        // ADDED CLASS: 'navbar-brand-corporate-img' handles the JPEG transparency/inversion
-        'navbarBrandClass' => 'rounded-0 navbar-brand-corporate-img'
-    ],
-    '/story/friction/the-lost-title-track' => [
-        'title' => 'Friction (The Lost Title Track)',
-        'site' => 'portfolio', 
-        'theme' => null,
-        'showSidebar' => true,
-        'sidebar' => 'sidebar-stories',
-        // OVERRIDE: Corporate Identity
-        'navbarBrandLogo' => 'https://assets.raggiesoft.com/engine-room-records/images/engine-room-records-logo.jpg',
-        'navbarBrandText' => 'Engine Room Records',
-        'navbarBrandLink' => '/',
-        'navbarBrandAlt'  => 'Engine Room Records Official Seal',
-        
-        // ADDED CLASS: 'navbar-brand-corporate-img' handles the JPEG transparency/inversion
-        'navbarBrandClass' => 'rounded-0 navbar-brand-corporate-img'
-    ],
+    
     '/story/cpi' => [
         'title' => 'CPI & The Forgers - The Stardust Engine Lore',
         'theme' => 'crucible', 
@@ -214,23 +186,6 @@ $routes = [
         'ogDescription' => 'Enter The Forge.',
     ],
     
-    // *** THE REFUSAL - portfolio THEME OVERRIDE ***
-    '/story/nine-figure-refusal' => [
-        'showSidebar' => true,
-        'sidebar' => 'sidebar-stories',
-        'title' => 'The Nine-Figure Refusal - The Stardust Engine Lore',
-        'site' => 'portfolio', 
-        'theme' => null,
-        'ogDescription' => 'The day they said no to $150 million.',
-        // OVERRIDE: Corporate Identity
-        'navbarBrandLogo' => 'https://assets.raggiesoft.com/engine-room-records/images/engine-room-records-logo.jpg',
-        'navbarBrandText' => 'Engine Room Records',
-        'navbarBrandLink' => '/',
-        'navbarBrandAlt'  => 'Engine Room Records Official Seal',
-        
-        // ADDED CLASS: 'navbar-brand-corporate-img' handles the JPEG transparency/inversion
-        'navbarBrandClass' => 'rounded-0 navbar-brand-corporate-img'
-    ],
     
     '/story/crash-of-90' => [
         'title' => 'The Crash of \'90 - The Stardust Engine Lore',
@@ -240,12 +195,10 @@ $routes = [
         'sidebar' => 'sidebar-stories',
         'ogDescription' => 'December 14, 1990.',
         // OVERRIDE: Corporate Identity
-        'navbarBrandLogo' => 'https://assets.raggiesoft.com/engine-room-records/images/engine-room-records-logo.jpg',
-        'navbarBrandText' => 'Engine Room Records',
+        'navbarBrandLogo' => 'https://assets.raggiesoft.com/engine-room-records/images/logos/engine-room-records-logo.jpg',
+        'navbarBrandText' => 'Engine Room<span class="d-none d-md-inline"> Records</span>',
         'navbarBrandLink' => '/',
         'navbarBrandAlt'  => 'Engine Room Records Official Seal',
-        
-        // ADDED CLASS: 'navbar-brand-corporate-img' handles the JPEG transparency/inversion
         'navbarBrandClass' => 'rounded-0 navbar-brand-corporate-img'
     ],
 
@@ -296,7 +249,6 @@ $routes = [
         'theme' => null,
     ],
     
-    // FIXED: Removed manual view mapping to allow Auto-Discovery to work
     '/discography' => [
         'title' => 'Discography Overview',
         'showSidebar' => true,
@@ -309,23 +261,183 @@ $routes = [
     ],
 
     // Engine Room Records, LLC
-    // --- ENGINE ROOM RECORDS (Corporate Fortress) ---
+    // --- Engine Room Records (Corporate Fortress) ---
     '/engine-room' => [
         'title' => 'Engine Room Records, LLC',
         'site'  => 'portfolio', // Sets context for CSS loading
         'showSidebar' => false,
-        
-        // VIEW: Removed. Auto-Discovery finds 'pages/engine-room/overview.php' automatically.
-
-        // OVERRIDE: Corporate Identity
-        'navbarBrandLogo' => 'https://assets.raggiesoft.com/engine-room-records/images/engine-room-records-logo.jpg',
-        'navbarBrandText' => 'Engine Room Records',
+        'navbarBrandLogo' => 'https://assets.raggiesoft.com/engine-room-records/images/logos/engine-room-records-logo.jpg',
+        'navbarBrandText' => 'Engine Room<span class="d-none d-md-inline"> Records</span>',
         'navbarBrandLink' => '/',
         'navbarBrandAlt'  => 'Engine Room Records Official Seal',
-        
-        // ADDED CLASS: 'navbar-brand-corporate-img' handles the JPEG transparency/inversion
         'navbarBrandClass' => 'rounded-0 navbar-brand-corporate-img'
     ],
+    '/engine-room/history/friction' => [
+        'title' => 'The Friction Catastrophe',
+        'site' => 'portfolio', 
+        'theme' => null,
+        'showSidebar' => true,
+        'sidebar' => 'sidebar-history-engine-room',
+        'navbarBrandLogo' => 'https://assets.raggiesoft.com/engine-room-records/images/logos/engine-room-records-logo.jpg',
+        'navbarBrandText' => 'Engine Room<span class="d-none d-md-inline"> Records</span>',
+        'navbarBrandLink' => '/engine-room',
+        'navbarBrandAlt'  => 'Engine Room Records Official Seal',
+        'navbarBrandClass' => 'rounded-0 navbar-brand-corporate-img'
+    ],
+
+    '/engine-room/history/friction/the-lost-title-track' => [
+        'title' => 'Friction (The Lost Title Track)',
+        'site' => 'portfolio', 
+        'theme' => null,
+        'showSidebar' => true,
+        'sidebar' => 'sidebar-history-engine-room',
+        'navbarBrandLogo' => 'https://assets.raggiesoft.com/engine-room-records/images/logos/engine-room-records-logo.jpg',
+        'navbarBrandText' => 'Engine Room<span class="d-none d-md-inline"> Records</span>',
+        'navbarBrandLink' => '/engine-room',
+        'navbarBrandAlt'  => 'Engine Room Records Official Seal',
+        'navbarBrandClass' => 'rounded-0 navbar-brand-corporate-img'
+    ],
+    
+    // *** THE NINE-FIGURE REFUSAL SAGA ***
+    // NOTE: We now explicitly set 'headerMenu' to use the custom sub-navigation for this case file.
+
+    '/engine-room/history/nine-figure-refusal' => [
+        'showSidebar' => true,
+        'sidebar' => 'sidebar-history-nine-figure-refusal',
+        'headerMenu' => 'engine-room/header-nine-figure-refusal', // <--- CUSTOM HEADER
+        'title' => 'The Nine-Figure Refusal - Overview',
+        'site' => 'portfolio', 
+        'theme' => null,
+        'ogDescription' => 'The day they said no to $150 million.',
+        // OVERRIDE: Corporate Identity
+        'navbarBrandLogo' => 'https://assets.raggiesoft.com/engine-room-records/images/logos/engine-room-records-logo.jpg',
+        'navbarBrandText' => 'Engine Room<span class="d-none d-md-inline"> Records</span>',
+        'navbarBrandLink' => '/engine-room',
+        'navbarBrandAlt'  => 'Engine Room Records Official Seal',
+        'navbarBrandClass' => 'rounded-0 navbar-brand-corporate-img'
+    ],
+
+    '/engine-room/history/nine-figure-refusal/target-profile' => [
+        'title' => 'Target Profile',
+        'site' => 'portfolio', 
+        'theme' => null,
+        'showSidebar' => true,
+        'sidebar' => 'sidebar-history-nine-figure-refusal',
+        'headerMenu' => 'engine-room/header-nine-figure-refusal', // <--- CUSTOM HEADER
+        // OVERRIDE: Corporate Identity
+        'navbarBrandLogo' => 'https://assets.raggiesoft.com/engine-room-records/images/logos/engine-room-records-logo.jpg',
+        'navbarBrandText' => 'Engine Room<span class="d-none d-md-inline"> Records</span>',
+        'navbarBrandLink' => '/engine-room',
+        'navbarBrandAlt'  => 'Engine Room Records Official Seal',
+        'navbarBrandClass' => 'rounded-0 navbar-brand-corporate-img'
+    ],
+
+    '/engine-room/history/nine-figure-refusal/zenith-report/omni-global-chapter-11' => [
+        'title' => 'Omni Global Chapter 11 Bankruptcy',
+        'site' => 'portfolio', 
+        'theme' => null,
+        'showSidebar' => true,
+        'sidebar' => 'sidebar-history-nine-figure-refusal',
+        'headerMenu' => 'engine-room/header-nine-figure-refusal', // <--- CUSTOM HEADER
+        // OVERRIDE: Corporate Identity
+        'navbarBrandLogo' => 'https://assets.raggiesoft.com/engine-room-records/images/logos/engine-room-records-logo.jpg',
+        'navbarBrandText' => 'Engine Room<span class="d-none d-md-inline"> Records</span>',
+        'navbarBrandLink' => '/engine-room',
+        'navbarBrandAlt'  => 'Engine Room Records Official Seal',
+        'navbarBrandClass' => 'rounded-0 navbar-brand-corporate-img'
+    ],
+
+    '/engine-room/history/nine-figure-refusal/zenith-report/stardust-bus-ride' => [
+        'title' => 'The Stardust Bus Ride',
+        'site' => 'portfolio', 
+        'theme' => null,
+        'showSidebar' => true,
+        'sidebar' => 'sidebar-history-nine-figure-refusal',
+        'headerMenu' => 'engine-room/header-nine-figure-refusal', // <--- CUSTOM HEADER
+        // OVERRIDE: Corporate Identity
+        'navbarBrandLogo' => 'https://assets.raggiesoft.com/engine-room-records/images/logos/engine-room-records-logo.jpg',
+        'navbarBrandText' => 'Engine Room<span class="d-none d-md-inline"> Records</span>',
+        'navbarBrandLink' => '/engine-room',
+        'navbarBrandAlt'  => 'Engine Room Records Official Seal',
+        'navbarBrandClass' => 'rounded-0 navbar-brand-corporate-img'
+    ],
+
+    '/engine-room/history/nine-figure-refusal/the-jessica-miller-center' => [
+        'title' => 'The Jessica Miller Center for Artist Advocacy',
+        'site' => 'portfolio', 
+        'theme' => null,
+        'showSidebar' => true,
+        'sidebar' => 'sidebar-history-nine-figure-refusal',
+        'headerMenu' => 'engine-room/header-nine-figure-refusal', // <--- CUSTOM HEADER
+        // OVERRIDE: Miller Center Identity
+        'navbarBrandLogo' => 'https://assets.raggiesoft.com/engine-room-records/images/logos/miller-center-logo.jpg',
+        'navbarBrandText' => '<span class="d-none d-md-inline">The Jessica </span>Miller Center',
+        'navbarBrandLink' => '/engine-room', 
+        'navbarBrandAlt'  => 'The Jessica Miller Center Official Seal',
+        'navbarBrandClass' => 'rounded-circle navbar-brand-corporate-img shadow-sm' // Circle for the round logo
+    ],
+
+    '/engine-room/history/nine-figure-refusal/the-bus-memo' => [
+        'title' => 'The Bus Memo',
+        'site' => 'portfolio', 
+        'theme' => null,
+        'showSidebar' => true,
+        'sidebar' => 'sidebar-history-nine-figure-refusal',
+        'headerMenu' => 'engine-room/header-nine-figure-refusal', // <--- CUSTOM HEADER
+        // OVERRIDE: Corporate Identity
+        'navbarBrandLogo' => 'https://assets.raggiesoft.com/engine-room-records/images/logos/engine-room-records-logo.jpg',
+        'navbarBrandText' => 'Engine Room<span class="d-none d-md-inline"> Records</span>',
+        'navbarBrandLink' => '/engine-room',
+        'navbarBrandAlt'  => 'Engine Room Records Official Seal',
+        'navbarBrandClass' => 'rounded-0 navbar-brand-corporate-img'
+    ],
+
+    '/engine-room/history/nine-figure-refusal/the-offer-letter' => [
+        'title' => 'The Offer Letter',
+        'site' => 'portfolio', 
+        'theme' => null,
+        'showSidebar' => true,
+        'sidebar' => 'sidebar-history-nine-figure-refusal',
+        'headerMenu' => 'engine-room/header-nine-figure-refusal', // <--- CUSTOM HEADER
+        // OVERRIDE: Corporate Identity
+        'navbarBrandLogo' => 'https://assets.raggiesoft.com/engine-room-records/images/logos/engine-room-records-logo.jpg',
+        'navbarBrandText' => 'Engine Room<span class="d-none d-md-inline"> Records</span>',
+        'navbarBrandLink' => '/engine-room',
+        'navbarBrandAlt'  => 'Engine Room Records Official Seal',
+        'navbarBrandClass' => 'rounded-0 navbar-brand-corporate-img'
+    ],
+    
+    '/engine-room/history/nine-figure-refusal/the-trigger' => [
+        'title' => 'The Trigger',
+        'site' => 'portfolio', 
+        'theme' => null,
+        'showSidebar' => true,
+        'sidebar' => 'sidebar-history-nine-figure-refusal',
+        'headerMenu' => 'engine-room/header-nine-figure-refusal', // <--- CUSTOM HEADER
+        // OVERRIDE: Corporate Identity
+        'navbarBrandLogo' => 'https://assets.raggiesoft.com/engine-room-records/images/logos/engine-room-records-logo.jpg',
+        'navbarBrandText' => 'Engine Room<span class="d-none d-md-inline"> Records</span>',
+        'navbarBrandLink' => '/engine-room',
+        'navbarBrandAlt'  => 'Engine Room Records Official Seal',
+        'navbarBrandClass' => 'rounded-0 navbar-brand-corporate-img'
+    ],
+    
+    '/engine-room/history/nine-figure-refusal/the-non-profit-model' => [
+        'title' => 'The Non-Profit Model',
+        'site' => 'portfolio', 
+        'theme' => null,
+        'showSidebar' => true,
+        'sidebar' => 'sidebar-history-nine-figure-refusal',
+        'headerMenu' => 'engine-room/header-nine-figure-refusal', // <--- CUSTOM HEADER
+        // OVERRIDE: Miller Center Identity
+        'navbarBrandLogo' => 'https://assets.raggiesoft.com/engine-room-records/images/logos/miller-center-logo.jpg',
+        'navbarBrandText' => '<span class="d-none d-md-inline">The Jessica </span>Miller Center',
+        'navbarBrandLink' => '/engine-room', 
+        'navbarBrandAlt'  => 'The Jessica Miller Center Official Seal',
+        'navbarBrandClass' => 'rounded-circle navbar-brand-corporate-img shadow-sm' // Circle for the round logo
+    ],
+
+
 ];
 
 // --- 3. SMART ROUTER LOGIC ---
@@ -415,7 +527,7 @@ if (str_starts_with($request_uri, '/discography/') && $request_uri !== '/discogr
 }
 
 // --- NEW: CONTEXT INHERITANCE (The "Blanket Rule") ---
-// Automatically apply Engine Room Records branding to ANY URL starting with /engine-room
+// Automatically apply Engine Room Branding to ANY URL starting with /engine-room
 if (str_starts_with($request_uri, '/engine-room')) {
     
     // 1. Force the Site Context (loads the industrial CSS)
@@ -431,8 +543,8 @@ if (str_starts_with($request_uri, '/engine-room')) {
     // 3. Apply the Corporate Identity (The "Photocopier Trick")
     // We only apply this if a specific page hasn't manually overridden it.
     if (!isset($pageConfig['navbarBrandLogo'])) {
-        $pageConfig['navbarBrandLogo']  = 'https://assets.raggiesoft.com/engine-room-records/images/engine-room-records-logo.jpg';
-        $pageConfig['navbarBrandText']  = 'Engine Room Records';
+        $pageConfig['navbarBrandLogo']  = 'https://assets.raggiesoft.com/engine-room-records/images/logos/engine-room-records-logo.jpg';
+        $pageConfig['navbarBrandText']  = 'Engine Room<span class="d-none d-md-inline"> Records</span>';
         $pageConfig['navbarBrandLink']  = '/engine-room'; // Clicking logo goes to Corporate Home
         $pageConfig['navbarBrandAlt']   = 'Engine Room Records Official Seal';
         $pageConfig['navbarBrandClass'] = 'rounded-0 navbar-brand-corporate-img';
@@ -457,7 +569,7 @@ $ogDescription = $config['ogDescription'];
 $ogImage = $config['ogImage'];
 $ogUrl = $config['ogUrl'];
 
-// NAVBAR VARIABLES (If you missed this block, the header goes blank!)
+// NAVBAR VARIABLES
 $navbarBrandLogo  = $config['navbarBrandLogo'];
 $navbarBrandText  = $config['navbarBrandText'];
 $navbarBrandLink  = $config['navbarBrandLink'];
@@ -468,10 +580,10 @@ $navbarBrandClass = $config['navbarBrandClass'];
 // --- HEADER SELECTION LOGIC ---
 if (isset($pageConfig['headerMenu'])) {
     // Explicit override in route config
-    $currentHeaderMenu = ROOT_PATH . $pageConfig['headerMenu'];
+    $currentHeaderMenu = ROOT_PATH . '/includes/components/headers/' . $pageConfig['headerMenu'] . '.php';
 } elseif (str_starts_with($request_uri, '/engine-room')) {
     // Automatic Context: If inside Engine Room, load Corporate Header
-    $currentHeaderMenu = ROOT_PATH . '/includes/components/headers/header-engine-room.php';
+    $currentHeaderMenu = ROOT_PATH . '/includes/components/headers/engine-room/header-engine-room.php';
 } else {
     // Default: Load Standard Band Header
     $currentHeaderMenu = ROOT_PATH . '/includes/components/headers/header-default.php';

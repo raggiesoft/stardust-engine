@@ -1,38 +1,54 @@
 <?php
 /**
  * COMPONENT: Engine Room Records Corporate Letterhead
- * PURPOSE: Standardized legal formatting for in-universe documents.
+ * PATH: /includes/components/corporate/letterhead.php
  * * REQUIRED VARIABLES:
- * $letter_date  (string)  - e.g., "September 14, 2018"
- * $letter_to    (string)  - e.g., "The Board of Directors, Omni-Global"
- * $letter_body  (string)  - The HTML content of the letter.
+ * $letter_date     (string)  - e.g., "September 14, 2018"
+ * $letter_to       (string)  - e.g., "The Board of Directors"
+ * $letter_body     (string)  - The HTML content of the letter.
  * * OPTIONAL VARIABLES:
- * $letter_stamp (string)  - Text for the rubber stamp (e.g., "CASE CLOSED"). Null to disable.
- * $stamp_color  (string)  - Bootstrap color class (success, danger, etc). Default: 'success'.
+ * $letter_stamp    (string)  - Text for rubber stamp (e.g., "CASE CLOSED").
+ * $stamp_color     (string)  - Bootstrap color (success, danger). Default: 'success'.
+ * $letter_rotation (float)   - Degrees to rotate the card (e.g., -1, 1.5). Default: 0.
  */
 
-// Default Stamp Settings
+// Default Settings
 $stamp_text = $letter_stamp ?? null;
-$stamp_class = $stamp_color ?? 'success'; // Default to green
+$stamp_class = $stamp_color ?? 'success'; 
+$rotation = $letter_rotation ?? 0;
+
+// Build the rotation style string if needed
+$rotation_style = $rotation ? "transform: rotate({$rotation}deg);" : "";
 ?>
 
-<link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Mrs+Saint+Delafield&display=swap" rel="stylesheet">
-
-<div class="card border-0 bg-white text-dark shadow-lg mx-auto" style="max-width: 850px;">
+<div class="card border-0 bg-white text-dark shadow-lg mx-auto" 
+     style="max-width: 850px; <?php echo $rotation_style; ?> transition: transform 0.3s ease;">
+    
     <div class="card-body p-5 position-relative overflow-hidden">
         
         <div class="d-flex justify-content-between align-items-center border-bottom border-dark pb-4 mb-4">
             <div>
                 <h4 class="fw-bold text-uppercase mb-0" style="font-family: 'Impact', sans-serif; letter-spacing: 1px;">
-                    ENGINE ROOM RECORDS, LLC
+                    Engine Room Records, LLC
                 </h4>
-                <small class="text-muted text-uppercase letter-spacing-1 fw-bold" style="font-size: 0.8rem;">
-                    Blacksburg, Virginia <span class="mx-2">&bull;</span> Est. 1992
-                </small>
+                
+                <div class="text-muted text-uppercase letter-spacing-1 fw-bold d-flex align-items-center gap-2" style="font-size: 0.75rem;">
+                    <span>Blacksburg, Virginia</span>
+                    <i class="fa-solid fa-circle" style="font-size: 4px;"></i>
+                    <span>Est. 1992</span>
+                    <i class="fa-solid fa-circle" style="font-size: 4px;"></i>
+                    <span>Privately Held</span>
+                </div>
+
+                <div class="text-secondary letter-spacing-1 fw-bold mt-1" style="font-size: 0.75rem;">
+                    <i class="fa-solid fa-globe me-1 opacity-50"></i>
+                    <span style="font-family: 'Courier New', monospace; text-transform: lowercase;">thestardustengine.com/engine-room</span>
+                </div>
             </div>
+
             <div class="text-end">
-                <img src="https://assets.raggiesoft.com/engine-room-records/images/engine-room-records-logo.jpg" 
-                     alt="Seal" 
+                <img src="https://assets.raggiesoft.com/engine-room-records/images/logos/engine-room-records-logo.jpg" 
+                     alt="Official Seal" 
                      style="width: 100px; mix-blend-mode: multiply; filter: contrast(120%);">
             </div>
         </div>
@@ -55,12 +71,14 @@ $stamp_class = $stamp_color ?? 'success'; // Default to green
                 </div>
                 
                 <div class="pt-2 position-relative" style="z-index: 1;">
-                    <p class="mb-0 fw-bold text-uppercase letter-spacing-1">Holly O'Connell, Esq.</p>
-                    <p class="mb-0 small text-secondary">CEO & General Counsel</p>
-                    <p class="mb-0 small fst-italic text-muted border-top border-secondary d-inline-block mt-2 pt-1" 
-                       style="border-top-style: dotted !important; border-width: 1px;">
-                        J.D., CPI School of Law (Class of '94)
-                    </p>
+                    <p class="mb-0 fw-bold text-uppercase letter-spacing-1 text-dark">Holly O'Connell, Esq.</p>
+                    <p class="mb-2 small text-secondary fw-bold text-uppercase">Chief Executive Officer & General Counsel</p>
+                    
+                    <div class="text-muted border-top border-secondary pt-1" style="font-size: 0.7rem; line-height: 1.4; font-family: 'Arial', sans-serif;">
+                        <p class="mb-0"><strong>J.D.</strong>, CPI School of Law (Class of 1994)</p>
+                        <p class="mb-0"><strong>Bar Admissions:</strong> Virginia ('94), New York ('98), California ('01)</p>
+                        <p class="mb-0 fst-italic">Enrolled Agent (IRS) &bull; CFA Charterholder &bull; Certified Forensic Accountant</p>
+                    </div>
                 </div>
             </div>
 

@@ -102,6 +102,9 @@ if (isset($customPageAssets) && is_array($customPageAssets)) {
     
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Mrs+Saint+Delafield&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@700&display=swap" rel="stylesheet">
     
     <style>
         .navbar-brand-corporate-img {
@@ -116,6 +119,189 @@ if (isset($customPageAssets) && is_array($customPageAssets)) {
   </head>
   
   <body class="d-flex flex-column h-100">
+    <style>
+      /* 1. The Curtain */
+    #page-loader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #050508;
+        z-index: 99999;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+        /* THE FIX:
+           When showing (removing class), Opacity fades in, Visibility is INSTANT. */
+        opacity: 1;
+        visibility: visible;
+        transition: opacity 0.5s ease-in-out, visibility 0s 0s;
+    }
+
+    /* 2. Hidden State */
+    #page-loader.loader-hidden {
+        opacity: 0;
+        visibility: hidden;
+        
+        /* THE TRICK:
+           When hiding (adding class), wait 0.5s for Opacity to finish 
+           before setting Visibility to hidden. */
+        transition: opacity 0.5s ease-in-out, visibility 0s 0.5s;
+    }
+
+      /* 3. The Progress Bar Container */
+      .loader-progress-container {
+          width: 300px;
+          height: 4px;
+          background-color: #333;
+          margin-top: 20px;
+          position: relative;
+          overflow: hidden;
+      }
+
+      /* 4. The Bar Itself */
+      .loader-progress-bar {
+          height: 100%;
+          background-color: #0dcaf0; /* Cyan / Info */
+          width: 0%;
+          transition: width 0.2s ease;
+          box-shadow: 0 0 10px #0dcaf0;
+      }
+  </style>
+
+  <div id="page-loader">
+      <div class="spinner-border text-info mb-3" role="status" style="width: 3rem; height: 3rem;">
+          <span class="visually-hidden">Loading...</span>
+      </div>
+      
+      <h4 class="text-white text-uppercase" style="font-family: 'Audiowide', sans-serif; letter-spacing: 2px;">
+          Stardust Engine
+      </h4>
+
+      <div class="loader-progress-container">
+          <div class="loader-progress-bar" id="loader-bar"></div>
+      </div>
+
+      <div class="text-info font-monospace small mt-2" id="loader-text">
+          > CONNECTING...
+      </div>
+  </div>
+
+  <script>
+(function() {
+    // --- CONFIGURATION ---
+    const loader = document.getElementById('page-loader');
+    const bar = document.getElementById('loader-bar');
+    const text = document.getElementById('loader-text');
+    
+    // Fake "Loading Steps" to simulate component assembly
+    const loadingMessages = [
+        "> ASSEMBLING COMPONENTS...",
+        "> FETCHING ASSETS...",
+        "> PARSING DOM...",
+        "> RENDERING IMAGES...",
+        "> FINALIZING..."
+    ];
+
+    let progress = 0;
+    let progressInterval;
+
+    // --- FUNCTION: Start the Fake Progress Bar ---
+    function startProgress() {
+        if (progressInterval) clearInterval(progressInterval);
+        progress = 0;
+        if(bar) bar.style.width = '0%';
+        
+        progressInterval = setInterval(() => {
+            progress += Math.random() * 5;
+            if (progress > 90) progress = 90;
+            
+            if(bar) bar.style.width = progress + '%';
+            
+            const step = Math.floor((progress / 100) * loadingMessages.length);
+            if (loadingMessages[step] && text) {
+                text.innerText = loadingMessages[step];
+            }
+        }, 100);
+    }
+
+    // --- FUNCTION: Finish and Hide ---
+    function finishLoad() {
+        if (progressInterval) clearInterval(progressInterval);
+        if(bar) bar.style.width = '100%';
+        if(text) text.innerText = "> READY.";
+        
+        setTimeout(() => {
+            if(loader) loader.classList.add('loader-hidden');
+        }, 500);
+    }
+
+    // ==========================================
+    // 1. INCOMING: Waiting for the Page to Load
+    // ==========================================
+    startProgress();
+    window.addEventListener('load', finishLoad);
+    setTimeout(finishLoad, 10000); // Safety net
+
+    // ==========================================
+    // 2. OUTGOING: Clicking a Link
+    // ==========================================
+    document.addEventListener('click', (e) => {
+        const link = e.target.closest('a');
+        
+        // If not a link, ignore
+        if (!link) return;
+
+        const href = link.getAttribute('href');
+        const target = link.getAttribute('target');
+
+        // --- THE FIX: SAFETY CHECKS ---
+        // 1. Ignore Dropdowns (Bootstrap toggles)
+        if (link.classList.contains('dropdown-toggle') || 
+            link.getAttribute('data-bs-toggle') === 'dropdown' ||
+            link.getAttribute('role') === 'button') {
+            return;
+        }
+
+        // 2. Ignore Placeholder links (just "#")
+        if (href === '#' || !href) {
+            return;
+        }
+
+        // 3. Ignore Hash Anchors (jumping to #section on same page)
+        if (href.startsWith('#')) {
+            return;
+        }
+
+        // 4. Ignore New Tabs or External Links
+        if (target === '_blank') return;
+        
+        // Check absolute URLs to ensure we stay on the same domain
+        if (link.href && link.href.indexOf(window.location.hostname) === -1) {
+            return;
+        }
+
+        // --- EXECUTE LOADER ---
+        // If we passed all checks, this is a real internal navigation.
+        if(loader) loader.classList.remove('loader-hidden');
+        if(text) text.innerText = "> NAVIGATING...";
+        startProgress();
+    });
+
+    // ==========================================
+    // 3. BROWSER BACK BUTTON FIX
+    // ==========================================
+    window.addEventListener('pageshow', (event) => {
+        if (event.persisted && loader) {
+            loader.classList.add('loader-hidden');
+        }
+    });
+
+})();
+</script>
     
     <header>
       <nav class="navbar navbar-expand-md sticky-top border-bottom border-primary border-opacity-50 bg-body">
@@ -128,9 +314,12 @@ if (isset($customPageAssets) && is_array($customPageAssets)) {
                  height="30" 
                  class="me-2 d-inline-block align-text-top <?php echo htmlspecialchars($navbarBrandClass ?? 'rounded-circle shadow-glow'); ?>">
             
-            <span class="fw-bold text-uppercase d-none d-sm-inline" style="font-family: 'Audiowide', sans-serif;">
-                <?php echo htmlspecialchars($navbarBrandText ?? 'The Stardust Engine'); ?>
-            </span>
+            <span class="fw-bold text-uppercase" style="font-family: 'Audiowide', sans-serif;">
+              <?php 
+                  // Allow ONLY <span> tags (for your responsive classes), strip everything else for security
+                  echo strip_tags($navbarBrandText ?? '<span class="d-none d-md-inline">The </span>Stardust Engine', '<span>'); 
+              ?>
+          </span>
           </a>
           
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" 
