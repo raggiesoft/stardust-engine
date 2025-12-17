@@ -1,0 +1,211 @@
+<?php
+// pages/engine-room/history/nine-figure-refusal/the-extraction.php
+// EVIDENCE ITEM #03: The Departure
+// Context: The family executes "Code Carry" and leaves the building.
+// UPDATED: Added Narrative Navigation (Chapter 3 End -> Chapter 4 Start)
+
+$pageTitle = "The Extraction - Evidence Item #03";
+?>
+
+<div class="container py-5">
+    
+    <div class="row justify-content-center mb-5">
+        <div class="col-lg-8 text-center">
+            <span class="badge bg-secondary text-white rounded-pill px-3 py-2 mb-3 text-uppercase letter-spacing-1 shadow-glow">
+                <i class="fa-duotone fa-person-to-door me-2"></i>The Departure
+            </span>
+            <h1 class="display-4 fw-bold text-white mb-2" style="font-family: 'Impact', sans-serif;">
+                PROTOCOL: "SAFE HARBOR"
+            </h1>
+            <p class="lead text-muted font-monospace">
+                They didn't run. They didn't scream. They simply collected their own—and one extra—and walked out.
+            </p>
+        </div>
+    </div>
+
+    <div class="row justify-content-center mb-5">
+        <div class="col-lg-10">
+            
+            <div class="card border-0 shadow-lg bg-dark text-white mb-4">
+                <div class="card-header bg-black bg-opacity-50 border-bottom border-secondary py-3">
+                    <h5 class="text-secondary fw-bold text-uppercase mb-0 letter-spacing-2">
+                        <i class="fa-duotone fa-users-medical me-2"></i>Phase 1: Conference Room A (10:24 AM)
+                    </h5>
+                </div>
+                <div class="card-body p-5">
+                    <p>
+                        Holly stood by the heavy oak door, holding it open. She didn't look back at the screen or the bankrupt executives. She watched her family.
+                    </p>
+                    <p>
+                        On the floor, Cassidy was rocking slightly, her eyes squeezed shut, her hands clamped over her ears. She was gone—deep in the protective shutdown of a Level 5 meltdown. She couldn't walk. She couldn't hear.
+                    </p>
+                    <p>
+                        Ryan rolled his wheelchair backward a few inches. "Evan. Tyler," he said softly. "Code Carry."
+                    </p>
+                    <p>
+                        <strong>Secure Protocol:</strong> Holly knelt briefly, gently removing Cassidy's glasses. "I've got them, Cass," she whispered, slipping the frames into her hard-shell briefcase to prevent them from being flung or broken during the transport.
+                    </p>
+                    <div class="row my-4 align-items-center">
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-center mb-2">
+                                <span class="badge bg-secondary me-2">DRUMS</span>
+                                <strong class="me-2">Evan (Left Flank):</strong> Dropped to one knee. Wearing his standard maroon CPI tee, he offered the stable, muscular support for her upper back.
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-center mb-2">
+                                <span class="badge bg-secondary me-2">BASS</span>
+                                <strong class="me-2">Tyler (Right Flank):</strong> Dropped to one knee. Wearing his standard orange CPI tee, he grabbed a foam lumbar cushion from one of the conference chairs to place under her legs, preventing the pressure of their arms from cutting off her circulation.
+                            </div>
+                        </div>
+                    </div>
+                    <p>
+                        "Cass," Evan whispered. "We've got you. Going up on three."
+                    </p>
+                    <p>
+                        <em>One. Two. Three.</em>
+                    </p>
+                    <p>
+                        They lifted her effortlessly. Cassidy didn't fight them. She curled into the space between them, burying her face into the soft fabric of Tyler's orange tee shirt, using it as a sensory shield against the harsh office lights.
+                    </p>
+                    <p>
+                        "Let's go," Holly said.
+                    </p>
+                </div>
+            </div>
+
+            <div class="card bg-black border-secondary mb-4 overflow-hidden shadow-lg">
+                <div class="position-relative">
+                    <img src="https://assets.raggiesoft.com/engine-room-records/images/omni-global/cassidy-extraction.jpg" 
+                         class="img-fluid w-100 opacity-75" 
+                         alt="Security footage of Evan and Tyler carrying Cassidy out of the Omni-Global offices."
+                         style="filter: contrast(1.1) sepia(0.2);">
+                    
+                    <div class="position-absolute top-0 end-0 p-3 font-monospace text-success fw-bold text-shadow-black">
+                        CAM_04 [REC] 10:25:02 AM
+                    </div>
+                    
+                    <div class="position-absolute bottom-0 start-0 w-100 p-3 bg-black bg-opacity-75 text-white-50 font-monospace small border-top border-secondary">
+                        <i class="fa-solid fa-video me-2 text-danger"></i>
+                        <strong>SUBJECTS:</strong> Wright, E. (Left); Wright, T. (Right); O'Connell, C. (Cargo). Note the improvisation of the lumbar cushion for lower-body support.
+                    </div>
+                </div>
+            </div>
+
+            <div class="card border-0 shadow-lg bg-secondary bg-opacity-10 text-white mb-4">
+                <div class="card-header bg-secondary bg-opacity-25 border-bottom border-secondary py-3">
+                    <h5 class="text-white fw-bold text-uppercase mb-0 letter-spacing-2">
+                        <i class="fa-duotone fa-elevator me-2"></i>Phase 2: The Descent (10:26 AM)
+                    </h5>
+                </div>
+                <div class="card-body p-5">
+                    <p>
+                        The heavy door clicked shut behind them. David, the Junior Associate, walked beside Holly, looking shaken.
+                    </p>
+                    <p>
+                        "Sorry you had to hear that," David said, gesturing toward the shouting coming from the Chairman's office.
+                    </p>
+                    <p>
+                        "Don't be," Holly replied. "It's the sweetest sound I've heard all morning."
+                    </p>
+                    <p>
+                        They reached the reception desk. <strong>Jessica</strong>, the young intern, was trembling in her manual chair.
+                    </p>
+                    <p>
+                        "Jessica," Holly said, stopping the formation. "Grab your bag. You're coming with us."
+                    </p>
+                    <p>
+                        "Where?"
+                    </p>
+                    <p>
+                        "Lunch," Ryan said from the rear guard position. "Tacos. Our treat. You need to clear the cache."
+                    </p>
+                    <hr class="border-secondary opacity-25 my-4">
+                    <p>
+                        <em>Ding.</em> The elevator doors closed, sealing the seven of them in.
+                    </p>
+                    <p>
+                        Evan and Tyler gently lowered Cassidy to the floor, keeping the cushion under her knees. David stood by the control panel, watching the numbers blur.
+                    </p>
+                    <p>
+                        "My son... his name is Toby," David said suddenly. "He's six. He loves rockets... but loud noises wreck him. When I saw your sister..."
+                    </p>
+                    <p>
+                        He looked at Cassidy on the floor, surrounded by her family.
+                    </p>
+                    <p>
+                        "I didn't know you could fight back," David whispered. "In this building... we're taught to ignore it."
+                    </p>
+                    <p>
+                        Ryan looked up. "You don't ignore it, David. You lock the wheels. You hold the line."
+                    </p>
+                    <p>
+                        Holly handed David a note. "Anaheim Colosseum. Next month. Four passes. Bring Toby. Bring Jessica."
+                    </p>
+                </div>
+            </div>
+
+            <div class="card border-0 shadow-lg bg-light text-dark">
+                <div class="card-header bg-white border-bottom border-dark py-3">
+                    <h5 class="text-dark fw-bold text-uppercase mb-0 letter-spacing-2">
+                        <i class="fa-duotone fa-bus me-2"></i>Phase 3: The Real World (10:30 AM)
+                    </h5>
+                </div>
+                <div class="card-body p-5">
+                    <p>
+                        The heat of the Los Angeles morning hit them as they exited the glass atrium.
+                    </p>
+                    <p>
+                        They reached the crosswalk. Jessica paused, stood up from her chair, and folded it with a practiced snap.
+                    </p>
+                    <p>
+                        "I can walk to the stop," Jessica said. "It's just across the street."
+                    </p>
+                    <p>
+                        "Solid," Ryan nodded. "Energy conservation."
+                    </p>
+                    <p>
+                        The massive red <strong>Civic-Rapid 720</strong> pulled up. The bus knelt.
+                    </p>
+                    <ul class="list-unstyled ms-4 font-monospace small text-muted">
+                        <li class="mb-2">>> Evan and Tyler boarded first, carrying Cassidy up the steps.</li>
+                        <li class="mb-2">>> Ryan rolled up the ramp.</li>
+                        <li class="mb-2">>> Jessica stepped up, dragging her folded chair.</li>
+                    </ul>
+                    <p>
+                        Holly stepped up last. Before the doors folded shut, she looked back across traffic. She saw David standing there, loosening his tie.
+                    </p>
+                    <p>
+                        She didn't wave. She just nodded. <em>Mission Accomplished.</em>
+                    </p>
+                    <p>
+                        David watched the bus merge into traffic. He took a deep breath of the smoggy air and smiled.
+                    </p>
+                    <p class="fst-italic">
+                        "Ad astra, Toby," he whispered. "Ad astra."
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row mt-5 pt-4 border-top border-secondary border-opacity-25 align-items-center">
+        <div class="col-4">
+            <a href="/engine-room/history/nine-figure-refusal/the-autopsy" class="btn btn-outline-secondary rounded-pill">
+                <i class="fa-solid fa-arrow-left me-2"></i>Previous
+            </a>
+        </div>
+        <div class="col-4 text-center">
+            <a href="/engine-room/history/nine-figure-refusal" class="btn btn-outline-primary rounded-pill">
+                <i class="fa-duotone fa-list-tree me-2"></i>Overview
+            </a>
+        </div>
+        <div class="col-4 text-end">
+            <a href="/engine-room/history/nine-figure-refusal/zenith-report/omni-global-chapter-11" class="btn btn-primary rounded-pill shadow-sm">
+                Next: The Fallout <i class="fa-solid fa-arrow-right ms-2"></i>
+            </a>
+        </div>
+    </div>
+
+</div>

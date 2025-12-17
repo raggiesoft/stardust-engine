@@ -299,17 +299,16 @@ $routes = [
     ],
     
     // *** THE NINE-FIGURE REFUSAL SAGA ***
-    // NOTE: We now explicitly set 'headerMenu' to use the custom sub-navigation for this case file.
 
+    // 1. OVERVIEW
     '/engine-room/history/nine-figure-refusal' => [
         'showSidebar' => true,
         'sidebar' => 'sidebar-history-nine-figure-refusal',
-        'headerMenu' => 'engine-room/header-nine-figure-refusal', // <--- CUSTOM HEADER
+        'headerMenu' => 'engine-room/header-nine-figure-refusal',
         'title' => 'The Nine-Figure Refusal - Overview',
         'site' => 'portfolio', 
         'theme' => null,
         'ogDescription' => 'The day they said no to $150 million.',
-        // OVERRIDE: Corporate Identity
         'navbarBrandLogo' => 'https://assets.raggiesoft.com/engine-room-records/images/logos/engine-room-records-logo.jpg',
         'navbarBrandText' => 'Engine Room<span class="d-none d-md-inline"> Records</span>',
         'navbarBrandLink' => '/engine-room',
@@ -317,74 +316,27 @@ $routes = [
         'navbarBrandClass' => 'rounded-0 navbar-brand-corporate-img'
     ],
 
+    // 2. CHAPTER 1: THE SETUP
     '/engine-room/history/nine-figure-refusal/target-profile' => [
-        'title' => 'Target Profile',
-        'site' => 'portfolio', 
-        'theme' => null,
         'showSidebar' => true,
         'sidebar' => 'sidebar-history-nine-figure-refusal',
-        'headerMenu' => 'engine-room/header-nine-figure-refusal', // <--- CUSTOM HEADER
-        // OVERRIDE: Corporate Identity
+        'headerMenu' => 'engine-room/header-nine-figure-refusal',
+        'title' => 'Target Profile: Engine Room Records',
+        'site' => 'portfolio',
+        'ogDescription' => 'Confidential Omni-Global M&A Briefing.',
         'navbarBrandLogo' => 'https://assets.raggiesoft.com/engine-room-records/images/logos/engine-room-records-logo.jpg',
         'navbarBrandText' => 'Engine Room<span class="d-none d-md-inline"> Records</span>',
         'navbarBrandLink' => '/engine-room',
         'navbarBrandAlt'  => 'Engine Room Records Official Seal',
         'navbarBrandClass' => 'rounded-0 navbar-brand-corporate-img'
     ],
-
-    '/engine-room/history/nine-figure-refusal/zenith-report/omni-global-chapter-11' => [
-        'title' => 'Omni Global Chapter 11 Bankruptcy',
-        'site' => 'portfolio', 
-        'theme' => null,
-        'showSidebar' => true,
-        'sidebar' => 'sidebar-history-nine-figure-refusal',
-        'headerMenu' => 'engine-room/header-nine-figure-refusal', // <--- CUSTOM HEADER
-        // OVERRIDE: Corporate Identity
-        'navbarBrandLogo' => 'https://assets.raggiesoft.com/engine-room-records/images/logos/engine-room-records-logo.jpg',
-        'navbarBrandText' => 'Engine Room<span class="d-none d-md-inline"> Records</span>',
-        'navbarBrandLink' => '/engine-room',
-        'navbarBrandAlt'  => 'Engine Room Records Official Seal',
-        'navbarBrandClass' => 'rounded-0 navbar-brand-corporate-img'
-    ],
-
-    '/engine-room/history/nine-figure-refusal/zenith-report/stardust-bus-ride' => [
-        'title' => 'The Stardust Bus Ride',
-        'site' => 'portfolio', 
-        'theme' => null,
-        'showSidebar' => true,
-        'sidebar' => 'sidebar-history-nine-figure-refusal',
-        'headerMenu' => 'engine-room/header-nine-figure-refusal', // <--- CUSTOM HEADER
-        // OVERRIDE: Corporate Identity
-        'navbarBrandLogo' => 'https://assets.raggiesoft.com/engine-room-records/images/logos/engine-room-records-logo.jpg',
-        'navbarBrandText' => 'Engine Room<span class="d-none d-md-inline"> Records</span>',
-        'navbarBrandLink' => '/engine-room',
-        'navbarBrandAlt'  => 'Engine Room Records Official Seal',
-        'navbarBrandClass' => 'rounded-0 navbar-brand-corporate-img'
-    ],
-
-    '/engine-room/history/nine-figure-refusal/the-jessica-miller-center' => [
-        'title' => 'The Jessica Miller Center for Artist Advocacy',
-        'site' => 'portfolio', 
-        'theme' => null,
-        'showSidebar' => true,
-        'sidebar' => 'sidebar-history-nine-figure-refusal',
-        'headerMenu' => 'engine-room/header-nine-figure-refusal', // <--- CUSTOM HEADER
-        // OVERRIDE: Miller Center Identity
-        'navbarBrandLogo' => 'https://assets.raggiesoft.com/engine-room-records/images/logos/miller-center-logo.jpg',
-        'navbarBrandText' => '<span class="d-none d-md-inline">The Jessica </span>Miller Center',
-        'navbarBrandLink' => '/engine-room', 
-        'navbarBrandAlt'  => 'The Jessica Miller Center Official Seal',
-        'navbarBrandClass' => 'rounded-circle navbar-brand-corporate-img shadow-sm' // Circle for the round logo
-    ],
-
     '/engine-room/history/nine-figure-refusal/the-bus-memo' => [
-        'title' => 'The Bus Memo',
-        'site' => 'portfolio', 
-        'theme' => null,
         'showSidebar' => true,
         'sidebar' => 'sidebar-history-nine-figure-refusal',
-        'headerMenu' => 'engine-room/header-nine-figure-refusal', // <--- CUSTOM HEADER
-        // OVERRIDE: Corporate Identity
+        'headerMenu' => 'engine-room/header-nine-figure-refusal',
+        'title' => 'Evidence Item #44-B: The Bus Memo',
+        'site' => 'portfolio',
+        'ogDescription' => 'The internal email that proved the bias.',
         'navbarBrandLogo' => 'https://assets.raggiesoft.com/engine-room-records/images/logos/engine-room-records-logo.jpg',
         'navbarBrandText' => 'Engine Room<span class="d-none d-md-inline"> Records</span>',
         'navbarBrandLink' => '/engine-room',
@@ -392,50 +344,147 @@ $routes = [
         'navbarBrandClass' => 'rounded-0 navbar-brand-corporate-img'
     ],
 
+    // 3. CHAPTER 2: THE TRAP
+    '/engine-room/history/nine-figure-refusal/forensic-audit' => [
+        'showSidebar' => true,
+        'sidebar' => 'sidebar-history-nine-figure-refusal',
+        'headerMenu' => 'engine-room/header-nine-figure-refusal',
+        'title' => 'Evidence Item #00-B: Holly\'s Homework',
+        'site' => 'portfolio',
+        'ogDescription' => 'Annotated SEC filings showing Omni-Global\'s insolvency.',
+        'navbarBrandLogo' => 'https://assets.raggiesoft.com/engine-room-records/images/logos/engine-room-records-logo.jpg',
+        'navbarBrandText' => 'Engine Room<span class="d-none d-md-inline"> Records</span>',
+        'navbarBrandLink' => '/engine-room',
+        'navbarBrandAlt'  => 'Engine Room Records Official Seal',
+        'navbarBrandClass' => 'rounded-0 navbar-brand-corporate-img'
+    ],
     '/engine-room/history/nine-figure-refusal/the-offer-letter' => [
-        'title' => 'The Offer Letter',
-        'site' => 'portfolio', 
-        'theme' => null,
         'showSidebar' => true,
         'sidebar' => 'sidebar-history-nine-figure-refusal',
-        'headerMenu' => 'engine-room/header-nine-figure-refusal', // <--- CUSTOM HEADER
-        // OVERRIDE: Corporate Identity
+        'headerMenu' => 'engine-room/header-nine-figure-refusal',
+        'title' => 'Evidence Item #01-A: The Offer Letter',
+        'site' => 'portfolio',
+        'ogDescription' => 'The $150,000,000 term sheet.',
         'navbarBrandLogo' => 'https://assets.raggiesoft.com/engine-room-records/images/logos/engine-room-records-logo.jpg',
         'navbarBrandText' => 'Engine Room<span class="d-none d-md-inline"> Records</span>',
         'navbarBrandLink' => '/engine-room',
         'navbarBrandAlt'  => 'Engine Room Records Official Seal',
         'navbarBrandClass' => 'rounded-0 navbar-brand-corporate-img'
     ],
-    
+
+    // 4. CHAPTER 3: THE EVENT
     '/engine-room/history/nine-figure-refusal/the-trigger' => [
-        'title' => 'The Trigger',
-        'site' => 'portfolio', 
-        'theme' => null,
         'showSidebar' => true,
         'sidebar' => 'sidebar-history-nine-figure-refusal',
-        'headerMenu' => 'engine-room/header-nine-figure-refusal', // <--- CUSTOM HEADER
-        // OVERRIDE: Corporate Identity
+        'headerMenu' => 'engine-room/header-nine-figure-refusal',
+        'title' => 'The Trigger: Slide 14',
+        'site' => 'portfolio',
+        'ogDescription' => 'The moment the negotiation ended.',
         'navbarBrandLogo' => 'https://assets.raggiesoft.com/engine-room-records/images/logos/engine-room-records-logo.jpg',
         'navbarBrandText' => 'Engine Room<span class="d-none d-md-inline"> Records</span>',
         'navbarBrandLink' => '/engine-room',
         'navbarBrandAlt'  => 'Engine Room Records Official Seal',
         'navbarBrandClass' => 'rounded-0 navbar-brand-corporate-img'
     ],
-    
-    '/engine-room/history/nine-figure-refusal/the-non-profit-model' => [
-        'title' => 'The Non-Profit Model',
-        'site' => 'portfolio', 
-        'theme' => null,
+    '/engine-room/history/nine-figure-refusal/the-autopsy' => [
         'showSidebar' => true,
         'sidebar' => 'sidebar-history-nine-figure-refusal',
-        'headerMenu' => 'engine-room/header-nine-figure-refusal', // <--- CUSTOM HEADER
-        // OVERRIDE: Miller Center Identity
-        'navbarBrandLogo' => 'https://assets.raggiesoft.com/engine-room-records/images/logos/miller-center-logo.jpg',
-        'navbarBrandText' => '<span class="d-none d-md-inline">The Jessica </span>Miller Center',
-        'navbarBrandLink' => '/engine-room', 
-        'navbarBrandAlt'  => 'The Jessica Miller Center Official Seal',
-        'navbarBrandClass' => 'rounded-circle navbar-brand-corporate-img shadow-sm' // Circle for the round logo
+        'headerMenu' => 'engine-room/header-nine-figure-refusal',
+        'title' => 'The Autopsy: Holly Takes Control',
+        'site' => 'portfolio',
+        'ogDescription' => 'Holly O\'Connell dismantles the balance sheet.',
+        'navbarBrandLogo' => 'https://assets.raggiesoft.com/engine-room-records/images/logos/engine-room-records-logo.jpg',
+        'navbarBrandText' => 'Engine Room<span class="d-none d-md-inline"> Records</span>',
+        'navbarBrandLink' => '/engine-room',
+        'navbarBrandAlt'  => 'Engine Room Records Official Seal',
+        'navbarBrandClass' => 'rounded-0 navbar-brand-corporate-img'
     ],
+    '/engine-room/history/nine-figure-refusal/the-extraction' => [
+        'showSidebar' => true,
+        'sidebar' => 'sidebar-history-nine-figure-refusal',
+        'headerMenu' => 'engine-room/header-nine-figure-refusal',
+        'title' => 'The Extraction',
+        'site' => 'portfolio',
+        'ogDescription' => 'Protocol: Safe Harbor.',
+        'navbarBrandLogo' => 'https://assets.raggiesoft.com/engine-room-records/images/logos/engine-room-records-logo.jpg',
+        'navbarBrandText' => 'Engine Room<span class="d-none d-md-inline"> Records</span>',
+        'navbarBrandLink' => '/engine-room',
+        'navbarBrandAlt'  => 'Engine Room Records Official Seal',
+        'navbarBrandClass' => 'rounded-0 navbar-brand-corporate-img'
+    ],
+
+    // 5. CHAPTER 4: THE FALLOUT
+    '/engine-room/history/nine-figure-refusal/zenith-report/omni-global-chapter-11' => [
+        'showSidebar' => true,
+        'sidebar' => 'sidebar-history-nine-figure-refusal',
+        'headerMenu' => 'engine-room/header-nine-figure-refusal',
+        'title' => 'Market Alert: Omni-Global Corp Files Ch. 11',
+        'site' => 'portfolio',
+        'ogDescription' => 'The giant falls.',
+        'navbarBrandLogo' => 'https://assets.raggiesoft.com/engine-room-records/images/logos/engine-room-records-logo.jpg',
+        'navbarBrandText' => 'Engine Room<span class="d-none d-md-inline"> Records</span>',
+        'navbarBrandLink' => '/engine-room',
+        'navbarBrandAlt'  => 'Engine Room Records Official Seal',
+        'navbarBrandClass' => 'rounded-0 navbar-brand-corporate-img'
+    ],
+    '/engine-room/history/nine-figure-refusal/zenith-report/stardust-bus-ride' => [
+        'showSidebar' => true,
+        'sidebar' => 'sidebar-history-nine-figure-refusal',
+        'headerMenu' => 'engine-room/header-nine-figure-refusal',
+        'title' => 'Investigative Report: The $350 Million Bus Ride',
+        'site' => 'portfolio',
+        'ogDescription' => 'How a visual audit cost Omni-Global everything.',
+        'navbarBrandLogo' => 'https://assets.raggiesoft.com/engine-room-records/images/logos/engine-room-records-logo.jpg',
+        'navbarBrandText' => 'Engine Room<span class="d-none d-md-inline"> Records</span>',
+        'navbarBrandLink' => '/engine-room',
+        'navbarBrandAlt'  => 'Engine Room Records Official Seal',
+        'navbarBrandClass' => 'rounded-0 navbar-brand-corporate-img'
+    ],
+
+    // 6. CHAPTER 5: THE LEGACY
+    '/engine-room/history/nine-figure-refusal/the-jessica-miller-center' => [
+        'showSidebar' => true,
+        'sidebar' => 'sidebar-history-nine-figure-refusal',
+        'headerMenu' => 'engine-room/header-nine-figure-refusal',
+        'title' => 'The Jessica Miller Center',
+        'site' => 'portfolio',
+        'ogDescription' => 'The new West Coast HQ.',
+        'navbarBrandLogo' => 'https://assets.raggiesoft.com/engine-room-records/images/logos/engine-room-records-logo.jpg',
+        'navbarBrandText' => 'Engine Room<span class="d-none d-md-inline"> Records</span>',
+        'navbarBrandLink' => '/engine-room',
+        'navbarBrandAlt'  => 'Engine Room Records Official Seal',
+        'navbarBrandClass' => 'rounded-0 navbar-brand-corporate-img'
+    ],
+    '/engine-room/history/nine-figure-refusal/the-non-profit-model' => [
+        'showSidebar' => true,
+        'sidebar' => 'sidebar-history-nine-figure-refusal',
+        'headerMenu' => 'engine-room/header-nine-figure-refusal',
+        'title' => 'The Non-Profit Model',
+        'site' => 'portfolio',
+        'ogDescription' => 'Logistics as a Service.',
+        'navbarBrandLogo' => 'https://assets.raggiesoft.com/engine-room-records/images/logos/engine-room-records-logo.jpg',
+        'navbarBrandText' => 'Engine Room<span class="d-none d-md-inline"> Records</span>',
+        'navbarBrandLink' => '/engine-room',
+        'navbarBrandAlt'  => 'Engine Room Records Official Seal',
+        'navbarBrandClass' => 'rounded-0 navbar-brand-corporate-img'
+    ],
+
+    // 7. EPILOGUE: THE CODA
+    '/engine-room/history/nine-figure-refusal/frost-interview' => [
+        'showSidebar' => true,
+        'sidebar' => 'sidebar-history-nine-figure-refusal',
+        'headerMenu' => 'engine-room/header-nine-figure-refusal',
+        'title' => 'Lore: The Interview - The Coda',
+        'site' => 'portfolio',
+        'ogDescription' => 'Jameson Frost applies for a job. The final "Cultural Fit" assessment.',
+        'navbarBrandLogo' => 'https://assets.raggiesoft.com/engine-room-records/images/logos/engine-room-records-logo.jpg',
+        'navbarBrandText' => 'Engine Room<span class="d-none d-md-inline"> Records</span>',
+        'navbarBrandLink' => '/engine-room',
+        'navbarBrandAlt'  => 'Engine Room Records Official Seal',
+        'navbarBrandClass' => 'rounded-0 navbar-brand-corporate-img'
+    ],
+
+    
 
 
 ];

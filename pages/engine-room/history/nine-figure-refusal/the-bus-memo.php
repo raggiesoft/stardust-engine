@@ -1,6 +1,7 @@
 <?php
 // pages/engine-room/history/nine-figure-refusal/the-bus-memo.php
 // EVIDENCE ITEM #44-B: The Document That Killed a Corporation
+// UPDATED: Added bias regarding "T-Shirts" to the visual audit.
 
 $pageTitle = "The 'Bus Memo' - Evidence Item #44-B";
 ?>
@@ -136,7 +137,9 @@ $pageTitle = "The 'Bus Memo' - Evidence Item #44-B";
                         <p>Hold the $500M offer sheet. Slash it to $150M. I want the new papers on the table before they get upstairs.</p>
                         
                         <p class="bg-warning bg-opacity-10 p-3 border-start border-warning border-4 position-relative my-4">
-                            I just watched them get off a city bus. The <span class="circled-text fw-bold text-danger">cripple</span> is in a manual chair and the girl is using it like a walker. It's pathetic. No private transport? No security? They are liquidating dignity for bus fare.
+                            I just watched them get off a city bus. The <span class="circled-text fw-bold text-danger">cripple</span> is in a manual chair and the girl is using it like a walker. 
+                            <br><br>
+                            And the "security"? Two kids in faded university gym t-shirts. No suits. No handlers. It's pathetic. They are liquidating dignity for bus fare.
                             
                             <svg class="annotation-arrow position-absolute" style="top: 15px; right: -50px; width: 60px; height: 50px; overflow: visible; z-index: 5;">
                                 <path d="M -10,15 Q 20,5 55,35" stroke="#dc3545" stroke-width="2" fill="none" marker-end="url(#arrowhead)" />
@@ -148,7 +151,7 @@ $pageTitle = "The 'Bus Memo' - Evidence Item #44-B";
                             </svg>
                         </p>
 
-                        <p>They are desperate. We don't need to pay a premium for a charity case. Cut the number. They'll take whatever crumbs we give them because they need to pay for the ramps.</p>
+                        <p>They are desperate. We don't need to pay a premium for a charity case. Cut the number. They'll take whatever crumbs we give them because they need to pay for the ramps and buy some decent clothes.</p>
 
                         <p>Make sure the "Cash" offer is prominent. They won't read the fine print about the leverage.</p>
 
@@ -191,7 +194,7 @@ $pageTitle = "The 'Bus Memo' - Evidence Item #44-B";
                         <div class="card-body">
                             <h5 class="text-danger"><i class="fa-solid fa-2 me-2"></i>The "Malice" Multiplier</h5>
                             <p class="text-secondary small">
-                                The phrase "charity case" and "pathetic" proved <strong>Malice</strong>. This allowed Holly to seek <strong>Punitive Damages</strong> (designed to punish), which can be 3x to 9x the actual damages.
+                                The phrase "charity case" and the mockery of their attire proved <strong>Malice</strong>. This allowed Holly to seek <strong>Punitive Damages</strong> (designed to punish), which can be 3x to 9x the actual damages.
                             </p>
                         </div>
                     </div>
@@ -204,7 +207,24 @@ $pageTitle = "The 'Bus Memo' - Evidence Item #44-B";
                     When Holly presented this email to the Creditor Committee, the Senior Lenders realized they were defending a hate crime, not a business deal. They voted to remove the Board immediately to stop Holly from showing this document to a jury.
                 </p>
             </div>
+        </div>
+    </div>
 
+    <div class="row mt-5 pt-4 border-top border-secondary border-opacity-25 align-items-center">
+        <div class="col-4">
+            <a href="/engine-room/history/nine-figure-refusal/target-profile" class="btn btn-outline-secondary rounded-pill">
+                <i class="fa-solid fa-arrow-left me-2"></i>Previous
+            </a>
+        </div>
+        <div class="col-4 text-center">
+            <a href="/engine-room/history/nine-figure-refusal" class="btn btn-outline-primary rounded-pill">
+                <i class="fa-duotone fa-list-tree me-2"></i>Overview
+            </a>
+        </div>
+        <div class="col-4 text-end">
+            <a href="/engine-room/history/nine-figure-refusal/forensic-audit" class="btn btn-primary rounded-pill shadow-sm">
+                Next: Holly's Homework <i class="fa-solid fa-arrow-right ms-2"></i>
+            </a>
         </div>
     </div>
 

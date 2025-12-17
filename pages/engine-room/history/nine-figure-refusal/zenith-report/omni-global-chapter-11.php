@@ -1,7 +1,8 @@
 <?php
-// pages/story/nine-figure-refusal/zenith-bankruptcy.php
+// pages/engine-room/history/nine-figure-refusal/zenith-report/omni-global-chapter-11.php
 // The Fallout: Omni-Global collapses after realizing they tried to buyout a Lottery Winner.
 // Context: "Market Alert: Chapter 11"
+// UPDATED: Added Narrative Navigation & AP Style Naming
 
 $pageTitle = "The Zenith Report: Omni-Global Files Chapter 11";
 ?>
@@ -74,14 +75,6 @@ $pageTitle = "The Zenith Report: Omni-Global Files Chapter 11";
 
 <div class="container py-5">
     
-    <div class="row justify-content-center mb-4">
-        <div class="col-lg-11 text-start">
-            <a href="/story/nine-figure-refusal" class="btn btn-sm btn-outline-secondary rounded-pill">
-                <i class="fa-duotone fa-arrow-left me-2"></i>Back to The Refusal
-            </a>
-        </div>
-    </div>
-
     <div class="row justify-content-center mb-5">
         <div class="col-lg-11">
             <div class="card shadow-lg zenith-paper">
@@ -116,7 +109,7 @@ $pageTitle = "The Zenith Report: Omni-Global Files Chapter 11";
                             
                             <div class="zenith-body">
                                 <p>
-                                    <span class="fw-bold text-uppercase">Century City —</span> The house of cards has collapsed. Just hours after attempting a $150M leveraged buyout of <strong>Engine Room Records</strong>, Omni-Global Media (NYSE: OMG) has filed for Chapter 11 bankruptcy protection.
+                                    <span class="fw-bold text-uppercase">Century City —</span> The house of cards has collapsed. Just hours after attempting a $150M leveraged buyout of <strong>Engine Room Records</strong>, <strong>Omni-Global Media Corp. (NYSE: OMG)</strong> has filed for Chapter 11 bankruptcy protection.
                                 </p>
                                 <p>
                                     Internal leaks confirm the catalyst was a catastrophic pitch meeting where VP <strong>Jameson Frost</strong> attempted to bully the O'Connell family—owners of the fiercely independent label—into a sale.
@@ -187,4 +180,23 @@ $pageTitle = "The Zenith Report: Omni-Global Files Chapter 11";
             </div>
         </div>
     </div>
+
+    <div class="row justify-content-center mt-5 pt-4 border-top border-secondary border-opacity-25 align-items-center">
+        <div class="col-4">
+            <a href="/engine-room/history/nine-figure-refusal/the-extraction" class="btn btn-outline-secondary rounded-pill">
+                <i class="fa-solid fa-arrow-left me-2"></i>Previous
+            </a>
+        </div>
+        <div class="col-4 text-center">
+            <a href="/engine-room/history/nine-figure-refusal" class="btn btn-outline-primary rounded-pill">
+                <i class="fa-duotone fa-list-tree me-2"></i>Overview
+            </a>
+        </div>
+        <div class="col-4 text-end">
+            <a href="/engine-room/history/nine-figure-refusal/zenith-report/stardust-bus-ride" class="btn btn-primary rounded-pill shadow-sm">
+                Next: The Bus Article <i class="fa-solid fa-arrow-right ms-2"></i>
+            </a>
+        </div>
+    </div>
+
 </div>

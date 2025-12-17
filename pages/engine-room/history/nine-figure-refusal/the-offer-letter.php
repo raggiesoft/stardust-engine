@@ -1,6 +1,7 @@
 <?php
 // pages/engine-room/history/nine-figure-refusal/the-offer-letter.php
 // EVIDENCE ITEM #01-A: The "Lowball" Term Sheet
+// UPDATED: Added Visual Context & Narrative Navigation
 
 $pageTitle = "The $150M Offer Letter - Evidence Item #01-A";
 ?>
@@ -23,21 +24,29 @@ $pageTitle = "The $150M Offer Letter - Evidence Item #01-A";
 
     <div class="row justify-content-center mb-5">
         <div class="col-lg-10">
-            <div class="card bg-dark border-start border-danger border-5 shadow-lg">
-                <div class="card-body p-4">
-                    <div class="row align-items-center">
-                        <div class="col-md-2 text-center text-danger">
-                            <i class="fa-duotone fa-user-tie fa-3x mb-2"></i>
-                        </div>
-                        <div class="col-md-10">
-                            <h5 class="text-white fw-bold text-uppercase">The Psychological Error</h5>
-                            <p class="text-white-50 mb-0">
-                                Jameson Frost (55) is lecturing the room, treating the band like the teenagers they were in 1987. He fails to realize that <strong>Holly O'Connell</strong> is now 49 years old, a seasoned attorney, and the CEO of a solvent corporation.
+            <div class="card bg-black border-secondary shadow-lg overflow-hidden">
+                <div class="row g-0">
+                    <div class="col-lg-7 position-relative">
+                         <img src="https://assets.raggiesoft.com/engine-room-records/images/omni-global/150-million-refusal.jpg" 
+                             class="img-fluid h-100 object-fit-cover" 
+                             alt="The O'Connell family facing Jameson Frost in the Omni-Global boardroom.">
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="card-body p-4 d-flex flex-column justify-content-center h-100">
+                            <h5 class="text-white fw-bold text-uppercase border-bottom border-secondary pb-2 mb-3">
+                                <i class="fa-solid fa-users-viewfinder me-2 text-warning"></i>The Scene
+                            </h5>
+                            <p class="text-white-50 small mb-3">
+                                <strong>Date:</strong> Sept 12, 2018<br>
+                                <strong>Location:</strong> Conf. Room A, 40th Floor<br>
+                                <strong>Status:</strong> T-Minus 5 Minutes to Meltdown
                             </p>
-                            <p class="text-white mt-3 fst-italic border-top border-secondary pt-3">
-                                "He thinks I'm playing a game on this tablet. I'm actually running a forensic audit on his liquidity." <br>
-                                <span class="text-muted small">— Holly O'Connell (Deposition, 2019)</span>
+                            <p class="text-white small fst-italic mb-0">
+                                "He stood there leaning on the table, treating us like we were a garage band applying for a loan. He didn't look at the CPI engineers standing behind us. He didn't look at the lawyer sitting next to me. He just saw the wheelchair and assumed 'easy target'."
                             </p>
+                            <div class="mt-3 text-end">
+                                <small class="text-muted font-monospace">— Ryan O'Connell</small>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -124,10 +133,20 @@ $pageTitle = "The $150M Offer Letter - Evidence Item #01-A";
         </div>
     </div>
     
-    <div class="row justify-content-center">
-        <div class="col-lg-8 text-center">
-            <a href="/engine-room/history/nine-figure-refusal/overview" class="btn btn-outline-light rounded-pill px-4">
-                <i class="fa-solid fa-arrow-left me-2"></i>Return to Case Overview
+    <div class="row mt-5 pt-4 border-top border-secondary border-opacity-25 align-items-center">
+        <div class="col-4">
+            <a href="/engine-room/history/nine-figure-refusal/forensic-audit" class="btn btn-outline-secondary rounded-pill">
+                <i class="fa-solid fa-arrow-left me-2"></i>Previous
+            </a>
+        </div>
+        <div class="col-4 text-center">
+            <a href="/engine-room/history/nine-figure-refusal" class="btn btn-outline-primary rounded-pill">
+                <i class="fa-duotone fa-list-tree me-2"></i>Overview
+            </a>
+        </div>
+        <div class="col-4 text-end">
+            <a href="/engine-room/history/nine-figure-refusal/the-trigger" class="btn btn-primary rounded-pill shadow-sm">
+                Next: The Trigger <i class="fa-solid fa-arrow-right ms-2"></i>
             </a>
         </div>
     </div>

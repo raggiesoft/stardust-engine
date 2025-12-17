@@ -1,7 +1,7 @@
 <?php
 // pages/engine-room/history/nine-figure-refusal/overview.php
 // The "Accidental Empire" Archive
-// V5.0: Added link to The Offer Letter
+// V7.0: Full Table of Contents (Chapters 1-5 + Epilogue)
 
 $pageTitle = "The $150M Refusal & Acquisition - Engine Room History";
 $activePage = 'overview';
@@ -35,28 +35,28 @@ $activePage = 'overview';
                             <div class="p-3 border border-secondary rounded bg-black h-100 position-relative">
                                 <span class="badge bg-secondary position-absolute top-0 start-50 translate-middle">Sept 13</span>
                                 <h4 class="text-white mt-2">The Offer</h4>
-                                <p class="small text-muted mb-0">Holly offers a $5M settlement to walk away quietly.</p>
+                                <p class="small text-muted mb-0">$150M "All-Cash" Hostile Takeover Bid.</p>
                             </div>
                         </div>
                         <div class="col-md-3">
                             <div class="p-3 border border-danger rounded bg-danger bg-opacity-10 h-100 position-relative">
                                 <span class="badge bg-danger position-absolute top-0 start-50 translate-middle">Sept 14</span>
-                                <h4 class="text-danger mt-2">The Rejection</h4>
-                                <p class="small text-danger-emphasis mb-0">Omni-Global refuses. Files Ch. 11. "See you in court."</p>
+                                <h4 class="text-danger mt-2">The Refusal</h4>
+                                <p class="small text-danger-emphasis mb-0">Meeting terminated. Omni-Global files Ch. 11.</p>
                             </div>
                         </div>
                         <div class="col-md-3">
                             <div class="p-3 border border-warning rounded bg-warning bg-opacity-10 h-100 position-relative">
                                 <span class="badge bg-warning text-dark position-absolute top-0 start-50 translate-middle">Nov 20</span>
-                                <h4 class="text-warning mt-2">The Escalation</h4>
-                                <p class="small text-warning-emphasis mb-0">Discovery reveals discrimination. Claim jumps to $600M.</p>
+                                <h4 class="text-warning mt-2">The Discovery</h4>
+                                <p class="small text-warning-emphasis mb-0">Internal memos reveal discrimination. Damages hit $600M.</p>
                             </div>
                         </div>
                         <div class="col-md-3">
                             <div class="p-3 border border-success rounded bg-success bg-opacity-10 h-100 position-relative">
                                 <span class="badge bg-success position-absolute top-0 start-50 translate-middle">Jan 15</span>
                                 <h4 class="text-success mt-2">The Surrender</h4>
-                                <p class="small text-success-emphasis mb-0">Banks force a Debt-for-Equity swap. Holly named CEO.</p>
+                                <p class="small text-success-emphasis mb-0">Banks force Debt-for-Equity swap. Holly named CEO.</p>
                             </div>
                         </div>
                     </div>
@@ -65,144 +65,55 @@ $activePage = 'overview';
         </div>
     </div>
 
-    <div class="row justify-content-center mb-5">
+    <div class="row justify-content-center mb-4">
         <div class="col-lg-10">
-            <div class="position-relative rounded-3 overflow-hidden shadow-lg border border-secondary">
-                <img src="https://assets.raggiesoft.com/stardust-engine/images/story/150-million-refusal.jpg"
-                    class="img-fluid w-100 object-fit-cover"
-                    style="min-height: 400px;"
-                    alt="Boardroom Scene">
-                
-                <div class="bg-black text-white p-2 d-flex justify-content-between align-items-center small font-monospace border-top border-secondary">
-                    <span>
-                        <i class="fa-solid fa-location-dot text-danger me-2"></i>
-                        Omni-Global HQ // Century City
-                    </span>
-                    <span class="text-white-50">
-                        <i class="fa-regular fa-clock me-1"></i> 09:42 AM (The Walkout)
-                    </span>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="row justify-content-center mb-5">
-        <div class="col-lg-10">
-            <div class="card border-0 bg-dark text-white shadow-sm">
-                <div class="card-body p-4 border-start border-warning border-5">
-                    <h4 class="text-warning fw-bold text-uppercase mb-3">
-                        <i class="fa-duotone fa-suitcase-rolling me-2"></i>The Prelude: A Courtesy Meeting
-                    </h4>
-                    <p class="text-white-50">
-                        Holly O'Connell did not fly to Los Angeles to sell her company. The family was already in the city for a <strong>scheduled two-week vacation</strong>—a rare break from touring.
-                    </p>
-                    <p class="text-white-50 mb-0">
-                        She agreed to the 10:00 AM meeting solely to stop the incessant voicemails from Omni-Global VP <strong>Jameson Frost</strong>. She entered the room with zero intention of selling, treating the meeting as a minor scheduling nuisance between breakfast and the beach.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="row justify-content-center mb-5">
-        <div class="col-lg-10">
-            <div class="card bg-white border-0 shadow-sm" style="transform: rotate(-1deg);">
-                <div class="card-body p-4 d-flex align-items-center justify-content-between flex-wrap gap-3">
-                    <div class="d-flex align-items-center">
-                        <div class="bg-secondary bg-opacity-10 text-dark rounded-circle d-flex align-items-center justify-content-center me-4" style="width: 60px; height: 60px;">
-                            <i class="fa-duotone fa-file-invoice-dollar fs-2"></i>
-                        </div>
-                        <div>
-                            <h5 class="fw-bold mb-1 text-dark text-uppercase letter-spacing-1">Evidence Item #01-A</h5>
-                            <p class="mb-0 text-muted small font-monospace">
-                                The $150,000,000.00 "All-Cash" Offer Letter.
-                            </p>
+            <h3 class="h4 fw-bold text-white border-bottom border-secondary pb-2 mb-4">
+                Chapter 1: The Setup
+            </h3>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="card bg-white h-100 border-0 shadow-sm" style="transform: rotate(-1deg);">
+                        <div class="card-body p-4">
+                            <h5 class="fw-bold text-dark text-uppercase mb-1"><i class="fa-solid fa-crosshairs me-2 text-danger"></i>Target Profile</h5>
+                            <p class="small text-muted mb-3">The Enemy's Playbook. How Omni-Global profiled the family as "poor amateurs."</p>
+                            <a href="/engine-room/history/nine-figure-refusal/target-profile" class="btn btn-outline-dark btn-sm rounded-pill fw-bold stretched-link">Read Briefing</a>
                         </div>
                     </div>
-                    <a href="/engine-room/history/nine-figure-refusal/the-offer-letter" class="btn btn-outline-dark rounded-pill px-4 fw-bold">
-                        <i class="fa-solid fa-magnifying-glass me-2"></i>Read The Fine Print
-                    </a>
+                </div>
+                <div class="col-md-6">
+                    <div class="card bg-white h-100 border-0 shadow-sm" style="transform: rotate(1deg);">
+                        <div class="card-body p-4">
+                            <h5 class="fw-bold text-dark text-uppercase mb-1"><i class="fa-solid fa-envelope-open-text me-2 text-warning"></i>The Bus Memo</h5>
+                            <p class="small text-muted mb-3">Evidence Item #44-B. The email proving Frost slashed the offer based on bias.</p>
+                            <a href="/engine-room/history/nine-figure-refusal/the-bus-memo" class="btn btn-outline-dark btn-sm rounded-pill fw-bold stretched-link">View Evidence</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="row justify-content-center mb-5">
-        <div class="col-lg-10">
-            <div class="alert alert-dark border-danger border-2 d-flex align-items-center p-4 shadow-lg">
-                <i class="fa-duotone fa-siren-on text-danger fs-1 me-4"></i>
-                <div>
-                    <h5 class="fw-bold text-white">Phase 0: The Incitement</h5>
-                    <p class="mb-2 text-white-50">
-                        Before the legal war, there was the meeting. Read the full account of "Slide 14" and Cassidy O'Connell's meltdown that triggered the crisis.
-                    </p>
-                    <a href="/engine-room/history/nine-figure-refusal/the-trigger" class="btn btn-danger btn-sm fw-bold text-white mt-1">
-                        View The Trigger Event <i class="fa-solid fa-arrow-right ms-2"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="row justify-content-center mb-5">
+    <div class="row justify-content-center mb-4">
         <div class="col-lg-10">
             <h3 class="h4 fw-bold text-primary border-bottom border-primary pb-2 mb-4">
-                Phase 1: The "Exit Ramp"
+                Chapter 2: The Trap
             </h3>
-            <p class="mb-4 text-muted">
-                Holly O'Connell offered Omni-Global a way out. She sent a settlement demand designed to be painful ($5M), but survivable, to avoid a protracted legal battle.
-            </p>
-
-            <?php 
-            // HOLLY'S DEMAND LETTER
-            $letter_date = "September 13, 2018";
-            $letter_to = "Arthur Vane, Chairman (Omni-Global)";
-            
-            $letter_body = '
-                <p>Mr. Vane,</p>
-                <p>I see the news. I assume you wish to avoid a "Breach of Duty" lawsuit from my family piling onto your bankruptcy docket. We will withhold filing our Complaint for Damages in exchange for:</p>
-                <ol class="ps-4">
-                    <li><strong>Written Apology:</strong> A public retraction of all claims regarding our financial stability.</li>
-                    <li><strong>Permanent Injunction:</strong> No contact with the O\'Connell/Wright families. Ever.</li>
-                    <li><strong>The "Jameson Frost" Tax:</strong> A one-time <strong>$5,000,000.00</strong> donation to the <strong>CPI Adaptive Music Program</strong>.</li>
-                </ol>
-                <p>You have until 9:00 AM tomorrow before the bankruptcy stay takes effect. Wire it now, or I become your largest creditor.</p>
-            ';
-
-            $letter_stamp = "SETTLEMENT DEMAND"; 
-            $stamp_color = "warning"; 
-            $letter_rotation = -1; 
-
-            include ROOT_PATH . '/includes/components/corporate/letterhead.php'; 
-            ?>
-        </div>
-    </div>
-
-    <div class="row justify-content-center mb-5">
-        <div class="col-lg-10">
-            <h3 class="h4 fw-bold text-danger border-bottom border-danger pb-2 mb-4">
-                Phase 2: The Rejection
-            </h3>
-            <div class="row align-items-center">
-                <div class="col-md-7">
-                    <p class="text-white">
-                        Arthur Vane made a fatal miscalculation. He believed the "Automatic Stay" of Chapter 11 Bankruptcy would shield him from Holly's lawsuit. He chose to fight.
-                    </p>
-                    <p class="text-muted">
-                        At 8:45 AM, Omni-Global General Counsel <strong>Marcus Thorne</strong> sent a one-line response that sealed the company's fate.
-                    </p>
-                </div>
-                <div class="col-md-5">
-                    <div class="card border-danger border-4 bg-light shadow-lg" style="transform: rotate(2deg);">
-                        <div class="card-header bg-danger text-white text-uppercase fw-bold text-center letter-spacing-1">
-                            Omni-Global Legal Dept
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="card bg-dark border-primary h-100 shadow-sm">
+                        <div class="card-body p-4">
+                            <h5 class="fw-bold text-white text-uppercase mb-1"><i class="fa-solid fa-magnifying-glass-dollar me-2 text-primary"></i>Holly's Homework</h5>
+                            <p class="small text-white-50 mb-3">Evidence Item #00-B. Holly's annotated copy of Omni-Global's insolvent balance sheet.</p>
+                            <a href="/engine-room/history/nine-figure-refusal/forensic-audit" class="btn btn-primary btn-sm rounded-pill fw-bold stretched-link">See What She Saw</a>
                         </div>
-                        <div class="card-body font-monospace text-center py-5">
-                            <p class="mb-0 text-secondary small fw-bold text-uppercase">Re: Settlement Offer dated Sept 13</p>
-                            <h2 class="display-5 fw-bold text-danger my-4" style="font-family: 'Black Ops One', cursive;">REJECTED</h2>
-                            <p class="lead fw-bold text-dark">"Get in line with the other creditors, Ms. O'Connell."</p>
-                            <hr>
-                            <small class="text-muted">Transmitted: 08:45 AM</small>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card bg-dark border-secondary h-100 shadow-sm">
+                        <div class="card-body p-4">
+                            <h5 class="fw-bold text-white text-uppercase mb-1"><i class="fa-solid fa-file-contract me-2 text-secondary"></i>The Offer Letter</h5>
+                            <p class="small text-white-50 mb-3">Evidence Item #01-A. The $150M contract containing the predatory "LBO Clause."</p>
+                            <a href="/engine-room/history/nine-figure-refusal/the-offer-letter" class="btn btn-outline-light btn-sm rounded-pill fw-bold stretched-link">Read The Fine Print</a>
                         </div>
                     </div>
                 </div>
@@ -210,29 +121,66 @@ $activePage = 'overview';
         </div>
     </div>
 
-    <div class="row justify-content-center mb-5">
+    <div class="row justify-content-center mb-4">
+        <div class="col-lg-10">
+            <h3 class="h4 fw-bold text-danger border-bottom border-danger pb-2 mb-4">
+                Chapter 3: The Event
+            </h3>
+            <div class="card bg-black border-danger mb-4">
+                <div class="row g-0">
+                    <div class="col-md-4 position-relative">
+                        <img src="https://assets.raggiesoft.com/engine-room-records/images/omni-global/cassidy-extraction.jpg" 
+                             class="img-fluid h-100 object-fit-cover opacity-50" style="filter: grayscale(100%);">
+                        <div class="position-absolute top-50 start-50 translate-middle text-center w-100 px-3">
+                            <i class="fa-duotone fa-siren-on text-danger fs-1 mb-2"></i>
+                            <h5 class="text-white text-uppercase fw-bold text-shadow-black">The Incident</h5>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body p-4">
+                            <div class="list-group list-group-flush">
+                                <a href="/engine-room/history/nine-figure-refusal/the-trigger" class="list-group-item list-group-item-action bg-black text-white border-secondary d-flex align-items-center justify-content-between">
+                                    <div><i class="fa-solid fa-bolt me-2 text-danger"></i> <strong>Part 1: The Trigger</strong> <span class="text-muted small ms-2">- Slide 14 & The Meltdown</span></div>
+                                    <i class="fa-solid fa-chevron-right text-muted"></i>
+                                </a>
+                                <a href="/engine-room/history/nine-figure-refusal/the-autopsy" class="list-group-item list-group-item-action bg-black text-white border-secondary d-flex align-items-center justify-content-between">
+                                    <div><i class="fa-solid fa-laptop-code me-2 text-warning"></i> <strong>Part 2: The Autopsy</strong> <span class="text-muted small ms-2">- Holly Takes Control</span></div>
+                                    <i class="fa-solid fa-chevron-right text-muted"></i>
+                                </a>
+                                <a href="/engine-room/history/nine-figure-refusal/the-extraction" class="list-group-item list-group-item-action bg-black text-white border-secondary d-flex align-items-center justify-content-between">
+                                    <div><i class="fa-solid fa-person-to-door me-2 text-success"></i> <strong>Part 3: The Extraction</strong> <span class="text-muted small ms-2">- Code Carry & Departure</span></div>
+                                    <i class="fa-solid fa-chevron-right text-muted"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row justify-content-center mb-4">
         <div class="col-lg-10">
             <h3 class="h4 fw-bold text-warning border-bottom border-warning pb-2 mb-4">
-                Phase 3: The Discovery (Nov 2018)
+                Chapter 4: The Fallout
             </h3>
-            <p>
-                By rejecting the settlement, Vane forced Holly to enter the bankruptcy proceedings. As the Chair of the Creditor's Committee, she gained access to internal emails.
-            </p>
-            <p>
-                She found the evidence that proved the $350M price cut wasn't business—it was a hate crime.
-            </p>
-
-            <div class="card bg-dark border-warning p-4 shadow-lg mb-3">
-                <div class="d-flex align-items-center">
-                    <i class="fa-duotone fa-file-magnifying-glass fa-3x text-warning me-4"></i>
-                    <div>
-                        <h5 class="fw-bold text-white">Evidence Item #44-B: "The Bus Memo"</h5>
-                        <p class="mb-2 text-white-50 small">
-                            The internal email where Jameson Frost admits to lowering the valuation based solely on the family's disability status.
-                        </p>
-                        <a href="/engine-room/history/nine-figure-refusal/the-bus-memo" class="btn btn-warning btn-sm fw-bold text-dark mt-2">
-                            Read the Document <i class="fa-solid fa-arrow-right ms-2"></i>
-                        </a>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="card bg-white h-100 border-0 shadow-sm" style="transform: rotate(1deg);">
+                        <div class="card-body p-4">
+                            <h5 class="fw-bold text-dark text-uppercase mb-1"><i class="fa-solid fa-newspaper me-2 text-muted"></i>Market Alert: Ch. 11</h5>
+                            <p class="small text-muted mb-3">The Zenith Report. Omni-Global collapses immediately after the meeting.</p>
+                            <a href="/engine-room/history/nine-figure-refusal/zenith-report/omni-global-chapter-11" class="btn btn-outline-dark btn-sm rounded-pill fw-bold stretched-link">Read Article</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card bg-white h-100 border-0 shadow-sm" style="transform: rotate(-1deg);">
+                        <div class="card-body p-4">
+                            <h5 class="fw-bold text-dark text-uppercase mb-1"><i class="fa-solid fa-bus me-2 text-danger"></i>The Bus Ride</h5>
+                            <p class="small text-muted mb-3">Investigative Report. Public exposure of the bias that killed the deal.</p>
+                            <a href="/engine-room/history/nine-figure-refusal/zenith-report/stardust-bus-ride" class="btn btn-outline-dark btn-sm rounded-pill fw-bold stretched-link">Read Article</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -242,49 +190,60 @@ $activePage = 'overview';
     <div class="row justify-content-center mb-5">
         <div class="col-lg-10">
             <h3 class="h4 fw-bold text-success border-bottom border-success pb-2 mb-4">
-                Phase 4: Unconditional Surrender (Jan 2019)
+                Chapter 5: The Legacy
             </h3>
-            <p>
-                Once the "Bus Memo" was entered into evidence, the claim value skyrocketed to <strong>$600 Million</strong>. The banks realized the only way to save their investment was to force a Debt-for-Equity swap, handing the company to Holly.
+            <p class="text-muted mb-4">
+                Holly O'Connell didn't just win; she rebuilt.
             </p>
-
-             <div class="card border-dark border-1 shadow-sm bg-white text-dark mb-5" style="transform: rotate(1deg);">
-                <div class="card-body p-5">
-                    <div class="text-center border-bottom border-dark pb-3 mb-4">
-                        <h3 class="fw-bold text-uppercase" style="letter-spacing: 2px;">CONSORTIUM OF LENDERS</h3>
-                        <small class="text-muted text-uppercase">Bankruptcy Steering Committee</small>
-                    </div>
-                    <div style="font-family: 'Arial', sans-serif; font-size: 0.95rem;">
-                        <p><strong>Date:</strong> January 15, 2019</p>
-                        <p><strong>To:</strong> Holly O'Connell, Engine Room Records, LLC</p>
-                        <p>Ms. O'Connell,</p>
-                        <p>The Senior Secured Lenders have reviewed your "Plan of Reorganization." We are exhausted. We surrender.</p>
-                        <p>Pursuant to the <strong>Debt-for-Equity Swap Agreement</strong> filed this morning:</p>
-                        <ol>
-                            <li>All outstanding debt obligations of Omni-Global Media are hereby extinguished.</li>
-                            <li><strong>51% Controlling Interest</strong> in the reorganized entity is transferred to Engine Room Records, LLC effective immediately.</li>
-                        </ol>
-                        <p>Here are the keys. Good luck with the mess.</p>
-                        <div class="mt-4 pt-4 border-top border-secondary">
-                            <p>Sincerely,<br><strong>The Banks</strong></p>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="card bg-dark border-success h-100 shadow-sm">
+                        <div class="card-body p-4">
+                            <h5 class="fw-bold text-success text-uppercase mb-1"><i class="fa-solid fa-building me-2"></i>The Jessica Miller Center</h5>
+                            <p class="small text-white-50 mb-3">The former Omni-Global HQ, renamed after the intern they bullied.</p>
+                            <a href="/engine-room/history/nine-figure-refusal/the-jessica-miller-center" class="btn btn-success btn-sm rounded-pill fw-bold stretched-link">View The Building</a>
                         </div>
                     </div>
-                     <div class="position-absolute bottom-0 end-0 p-5 opacity-75" 
-                         style="transform: rotate(-10deg); mix-blend-mode: multiply; pointer-events: none;">
-                        <div class="border border-4 border-success text-success p-2 fw-bold text-uppercase fs-1 text-center" 
-                             style="font-family: 'Black Ops One', cursive;">
-                            Approved
+                </div>
+                <div class="col-md-6">
+                    <div class="card bg-dark border-secondary h-100 shadow-sm">
+                        <div class="card-body p-4">
+                            <h5 class="fw-bold text-white text-uppercase mb-1"><i class="fa-solid fa-hand-holding-box me-2 text-primary"></i>The Non-Profit Model</h5>
+                            <p class="small text-white-50 mb-3">How Engine Room turned a predator into a utility for artists.</p>
+                            <a href="/engine-room/history/nine-figure-refusal/the-non-profit-model" class="btn btn-outline-light btn-sm rounded-pill fw-bold stretched-link">See The Operations</a>
                         </div>
                     </div>
                 </div>
             </div>
-            
-            <div class="text-center">
-                <a href="/engine-room/history/nine-figure-refusal/the-jessica-miller-center" class="btn btn-outline-success rounded-pill px-4">
-                    See What Holly Did With The Building <i class="fa-solid fa-arrow-right ms-2"></i>
-                </a>
-            </div>
+        </div>
+    </div>
 
+    <div class="row justify-content-center mb-5">
+        <div class="col-lg-10">
+            <h3 class="h4 fw-bold text-info border-bottom border-info pb-2 mb-4">
+                Epilogue: The Coda
+            </h3>
+            <div class="card bg-black border-info shadow-sm">
+                <div class="row g-0">
+                    <div class="col-md-3">
+                         <img src="https://assets.raggiesoft.com/engine-room-records/images/omni-global/frost-interview.jpg" 
+                             class="img-fluid h-100 object-fit-cover" 
+                             alt="Jameson Frost sitting far away from Jessica and Justin Miller in the office"
+                             style="filter: sepia(0.2) contrast(1.1);">
+                    </div>
+                    <div class="col-md-9">
+                        <div class="card-body p-4">
+                            <h5 class="fw-bold text-info text-uppercase mb-2"><i class="fa-duotone fa-user-clock me-2"></i>The Interview</h5>
+                            <p class="text-white-50 small mb-3">
+                                February 2019. Jameson Frost, desperate and unemployed, walks into the Jessica Miller Center for a job interview. He doesn't realize he's about to be interviewed by the intern he tormented.
+                            </p>
+                            <a href="/engine-room/history/nine-figure-refusal/frost-interview" class="btn btn-outline-info btn-sm rounded-pill fw-bold stretched-link">
+                                Read The Interview
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 

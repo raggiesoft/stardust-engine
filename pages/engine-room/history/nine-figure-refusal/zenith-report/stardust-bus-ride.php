@@ -1,7 +1,8 @@
 <?php
-// pages/story/nine-figure-refusal/zenith-report.php
+// pages/engine-room/history/nine-figure-refusal/zenith-report/stardust-bus-ride.php
 // The Leak. The article that exposed the prejudice.
 // Context: "The $350 Million Bus Ride."
+// UPDATED: Added Narrative Navigation & AP Style Naming
 
 $pageTitle = "The Zenith Report: The $350 Million Bus Ride";
 ?>
@@ -60,14 +61,6 @@ $pageTitle = "The Zenith Report: The $350 Million Bus Ride";
 
 <div class="container py-5">
     
-    <div class="row justify-content-center mb-4">
-        <div class="col-lg-11 text-start">
-            <a href="/engine-room/history/nine-figure-refusal" class="btn btn-sm btn-outline-secondary rounded-pill">
-                <i class="fa-duotone fa-arrow-left me-2"></i>Back to The Refusal
-            </a>
-        </div>
-    </div>
-
     <div class="row justify-content-center mb-5">
         <div class="col-lg-11">
             <div class="card border-1 border-dark shadow-lg zenith-paper">
@@ -102,7 +95,7 @@ $pageTitle = "The Zenith Report: The $350 Million Bus Ride";
                             
                             <div class="zenith-body">
                                 <p>
-                                    <span class="fw-bold text-uppercase">Century City —</span> At 8:45 AM yesterday, the valet stand outside 2000 Avenue of the Stars was, as usual, a parade of S-Class sedans and Bentleys. It is a building where perception is currency. Omni-Global Media, which leases the 38th, 39th, and 40th floors but lists the building as its "Headquarters," relies on this perception.
+                                    <span class="fw-bold text-uppercase">Century City —</span> At 8:45 AM yesterday, the valet stand outside 2000 Avenue of the Stars was, as usual, a parade of S-Class sedans and Bentleys. It is a building where perception is currency. <strong>Omni-Global Media Corp.</strong>, which leases the 38th, 39th, and 40th floors but lists the building as its "Headquarters," relies on this perception.
                                 </p>
                                 <p>
                                     Then came the <strong>Civic-Rapid 720</strong>.
@@ -132,10 +125,10 @@ $pageTitle = "The Zenith Report: The $350 Million Bus Ride";
                                     He was wrong.
                                 </p>
                                 <p>
-                                    "We took the 720 because the traffic on Santa Monica Boulevard was gridlocked," said Holly O'Connell in a brief statement. "We own two tour buses. We own a recording studio. We have zero debt. We took the bus because it was efficient. Omni-Global assumed we were poor because we didn't waste money on a limo to drive three miles."
+                                    "We took the 720 because the traffic on Santa Monica Boulevard was gridlocked," said Holly O'Connell in a brief statement. "We own a tour bus. We own a recording studio. We have zero debt. We took the bus because it was efficient. Omni-Global assumed we were poor because we didn't waste money on a limo to drive three miles."
                                 </p>
                                 <p>
-                                    The "Visual Audit" cost Omni-Global the deal. By the time the meeting started, the O'Connells had already realized they were dealing with amateurs.
+                                    The "Visual Audit" cost the Company the deal. By the time the meeting started, the O'Connells had already realized they were dealing with amateurs.
                                 </p>
                             </div>
                         </div>
@@ -167,7 +160,7 @@ $pageTitle = "The Zenith Report: The $350 Million Bus Ride";
                             <h6 class="fw-bold text-uppercase border-bottom border-dark pb-2 mb-3 text-dark mt-5">Related</h6>
                             <ul class="list-unstyled small" style="font-family: 'Georgia', serif;">
                                 <li class="mb-3"><a href="#" class="text-dark text-decoration-none fw-bold">Opinion: Why the "Visual Audit" is illegal.</a></li>
-                                <li class="mb-3"><a href="/story/friction" class="text-dark text-decoration-none fw-bold">History: How Holly O'Connell beat Apex in '92.</a></li>
+                                <li class="mb-3"><a href="/engine-room/history/friction" class="text-dark text-decoration-none fw-bold">History: How Holly O'Connell beat Apex in '92.</a></li>
                             </ul>
                         </div>
 
@@ -181,4 +174,23 @@ $pageTitle = "The Zenith Report: The $350 Million Bus Ride";
             </div>
         </div>
     </div>
+
+    <div class="row justify-content-center mt-5 pt-4 border-top border-secondary border-opacity-25 align-items-center">
+        <div class="col-4">
+            <a href="/engine-room/history/nine-figure-refusal/zenith-report/omni-global-chapter-11" class="btn btn-outline-secondary rounded-pill">
+                <i class="fa-solid fa-arrow-left me-2"></i>Previous
+            </a>
+        </div>
+        <div class="col-4 text-center">
+            <a href="/engine-room/history/nine-figure-refusal" class="btn btn-outline-primary rounded-pill">
+                <i class="fa-duotone fa-list-tree me-2"></i>Overview
+            </a>
+        </div>
+        <div class="col-4 text-end">
+            <a href="/engine-room/history/nine-figure-refusal/the-jessica-miller-center" class="btn btn-primary rounded-pill shadow-sm">
+                Next: The Legacy <i class="fa-solid fa-arrow-right ms-2"></i>
+            </a>
+        </div>
+    </div>
+
 </div>

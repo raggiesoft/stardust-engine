@@ -1,13 +1,13 @@
 <?php
 // includes/components/headers/header-default.php
+// UPDATED: Dynamic Discography loading from CDN JSON
 
-// [Data Loading Section omitted for brevity - remains the same]
-
-// 2. Determine Active States
+// 1. Determine Active States
+$request_uri = $_SERVER['REQUEST_URI'] ?? '/';
 $isHome = ($request_uri === '/');
 $isDiscography = (str_starts_with($request_uri, '/discography') || $request_uri === '/discography');
 $isBand = (str_starts_with($request_uri, '/band'));
-$isLore = (str_starts_with($request_uri, '/story') || str_starts_with($request_uri, '/engine-room/history')); // Updated to include history pages
+$isLore = (str_starts_with($request_uri, '/story') || str_starts_with($request_uri, '/engine-room/history')); 
 $isAbout = (str_starts_with($request_uri, '/about'));
 $isContact = ($request_uri === '/contact');
 $isRadio = ($request_uri === '/radio');
@@ -20,11 +20,61 @@ $isRadio = ($request_uri === '/radio');
   </li>
 
   <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle <?php echo ($isDiscography ?? false) ? 'active' : ''; ?>" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <a class="nav-link dropdown-toggle <?php echo $isDiscography ? 'active' : ''; ?>" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
         <i class="fa-duotone fa-list-music me-2" aria-hidden="true"></i>Discography
     </a>
     <ul class="dropdown-menu dropdown-menu-end scrollable-menu" style="max-height: 500px; overflow-y: auto;">
-       <?php include ROOT_PATH . '/includes/components/menus/discography-menu.php'; // Or inline code ?>
+       <?php 
+       // Configuration
+       $jsonUrl = 'https://assets.raggiesoft.com/engine-room-records/artists/the-stardust-engine/albums.json';
+       $discographyData = null;
+
+       // Fetch JSON with a timeout to prevent page hang
+       $context = stream_context_create([
+            'http' => ['timeout' => 2] // 2 second timeout
+       ]);
+
+       // Attempt fetch
+       $jsonData = @file_get_contents($jsonUrl, false, $context);
+
+       if ($jsonData) {
+           $discographyData = json_decode($jsonData, true);
+       }
+
+       // Render Menu
+       if ($discographyData) {
+           $eraCount = 0;
+           $totalEras = count($discographyData);
+
+           foreach ($discographyData as $eraKey => $eraData) {
+               $eraCount++;
+               
+               // Era Label
+               echo '<li><h6 class="dropdown-header text-uppercase text-muted small fw-bold mt-2">' . htmlspecialchars($eraData['label']) . '</h6></li>';
+               
+               // Albums Loop
+               if (!empty($eraData['albums'])) {
+                   foreach ($eraData['albums'] as $album) {
+                       $extraBadge = $album['extra'] ?? '';
+                       echo '<li>
+                               <a class="dropdown-item" href="' . htmlspecialchars($album['url']) . '">
+                                   <i class="fa-solid fa-compact-disc me-2 text-secondary"></i>' . htmlspecialchars($album['title']) . $extraBadge . '
+                               </a>
+                             </li>';
+                   }
+               }
+
+               // Divider (only if not the last item)
+               if ($eraCount < $totalEras) {
+                   echo '<li><hr class="dropdown-divider"></li>';
+               }
+           }
+       } else {
+           // Fallback if CDN fails
+           echo '<li><a class="dropdown-item" href="/discography">View All Albums</a></li>';
+           echo '<li><small class="dropdown-item text-muted">Unable to load catalog.</small></li>';
+       }
+       ?>
     </ul>
   </li>
 

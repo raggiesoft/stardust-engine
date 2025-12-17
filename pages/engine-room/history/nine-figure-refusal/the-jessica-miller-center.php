@@ -1,6 +1,7 @@
 <?php
 // pages/engine-room/history/nine-figure-refusal/the-jessica-miller-center.php
 // The Re-Branding of the Omni-Global Leasehold
+// UPDATED: Added Narrative Navigation (Chapter 5 Start)
 
 $pageTitle = "The Jessica Miller Center - Engine Room History";
 ?>
@@ -27,7 +28,7 @@ $pageTitle = "The Jessica Miller Center - Engine Room History";
                 <div class="card-body p-4">
                     <div class="row align-items-center">
                         <div class="col-md-4 text-center border-end border-secondary">
-                            <img src="https://assets.raggiesoft.com/stardust-engine/images/characters/jessica-miller.jpg" 
+                            <img src="https://assets.raggiesoft.com/stardust-engine/images/corporate/jessica-miller.jpg" 
                                  class="img-fluid rounded-3 border border-success border-2 shadow mb-3"
                                  style="width: 100%; max-width: 280px; object-fit: cover;" 
                                  alt="Jessica Miller, Executive Director">
@@ -153,7 +154,7 @@ $pageTitle = "The Jessica Miller Center - Engine Room History";
         </div>
     </div>
 
-    <div class="row justify-content-center">
+    <div class="row justify-content-center mb-5">
         <div class="col-lg-10">
             <div class="alert alert-dark border-primary d-flex align-items-center" role="alert">
                 <i class="fa-duotone fa-circle-info text-primary fs-2 me-3"></i>
@@ -164,6 +165,24 @@ $pageTitle = "The Jessica Miller Center - Engine Room History";
                     </p>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <div class="row mt-5 pt-4 border-top border-secondary border-opacity-25 align-items-center">
+        <div class="col-4">
+            <a href="/engine-room/history/nine-figure-refusal/zenith-report/stardust-bus-ride" class="btn btn-outline-secondary rounded-pill">
+                <i class="fa-solid fa-arrow-left me-2"></i>Previous
+            </a>
+        </div>
+        <div class="col-4 text-center">
+            <a href="/engine-room/history/nine-figure-refusal" class="btn btn-outline-primary rounded-pill">
+                <i class="fa-duotone fa-list-tree me-2"></i>Overview
+            </a>
+        </div>
+        <div class="col-4 text-end">
+            <a href="/engine-room/history/nine-figure-refusal/the-non-profit-model" class="btn btn-primary rounded-pill shadow-sm">
+                Next: The New Model <i class="fa-solid fa-arrow-right ms-2"></i>
+            </a>
         </div>
     </div>
 

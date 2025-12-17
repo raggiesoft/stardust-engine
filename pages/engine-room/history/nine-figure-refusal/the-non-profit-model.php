@@ -1,7 +1,7 @@
 <?php
 // pages/engine-room/history/nine-figure-refusal/the-non-profit-model.php
 // The "Service Over Sovereignty" Pivot
-// V1.0
+// UPDATED: Added Narrative Navigation (Chapter 5 End -> Epilogue Start)
 
 $pageTitle = "The Non-Profit Model - Engine Room History";
 ?>
@@ -158,6 +158,24 @@ $pageTitle = "The Non-Profit Model - Engine Room History";
                     </p>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <div class="row mt-5 pt-4 border-top border-secondary border-opacity-25 align-items-center">
+        <div class="col-4">
+            <a href="/engine-room/history/nine-figure-refusal/the-jessica-miller-center" class="btn btn-outline-secondary rounded-pill">
+                <i class="fa-solid fa-arrow-left me-2"></i>Previous
+            </a>
+        </div>
+        <div class="col-4 text-center">
+            <a href="/engine-room/history/nine-figure-refusal" class="btn btn-outline-primary rounded-pill">
+                <i class="fa-duotone fa-list-tree me-2"></i>Overview
+            </a>
+        </div>
+        <div class="col-4 text-end">
+            <a href="/engine-room/history/nine-figure-refusal/frost-interview" class="btn btn-primary rounded-pill shadow-sm">
+                Next: The Coda <i class="fa-solid fa-arrow-right ms-2"></i>
+            </a>
         </div>
     </div>
 
