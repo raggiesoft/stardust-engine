@@ -145,8 +145,8 @@ $pageTitle = "The $150M Offer Letter - Evidence Item #01-A";
             </a>
         </div>
         <div class="col-4 text-end">
-            <a href="/engine-room/history/nine-figure-refusal/the-trigger" class="btn btn-primary rounded-pill shadow-sm">
-                Next: The Trigger <i class="fa-solid fa-arrow-right ms-2"></i>
+            <a href="/engine-room/history/nine-figure-refusal/the-counter-offer" class="btn btn-primary rounded-pill shadow-sm">
+                Next: The Counter-Offer <i class="fa-solid fa-arrow-right ms-2"></i>
             </a>
         </div>
     </div>

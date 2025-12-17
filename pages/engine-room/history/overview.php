@@ -98,7 +98,7 @@ $pageTitle = "Corporate History - Engine Room Records";
 
                 <div class="row g-0">
                     <div class="col-md-5 position-relative order-md-2">
-                        <img src="https://assets.raggiesoft.com/stardust-engine/images/story/150-million-refusal.jpg" 
+                        <img src="https://assets.raggiesoft.com/engine-room-records/images/omni-global/150-million-refusal.jpg" 
                              class="img-fluid h-100 object-fit-cover" 
                              style="filter: grayscale(100%) contrast(1.2);"
                              alt="The Refusal">

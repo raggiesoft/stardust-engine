@@ -1,7 +1,7 @@
 <?php
-// pages/story/nine-figure-refusal/target-profile.php
+// pages/engine-room/history/nine-figure-refusal/target-profile.php
 // The Enemy's Playbook.
-// UPDATED: Offer adjusted to $500M (The "Error") to set up the slash in the next chapter.
+// UPDATED: Navigational flow updated to point to UCC Search.
 
 $pageTitle = "Confidential Brief: Project GOLDEN GOOSE - Omni-Global";
 ?>
@@ -68,46 +68,87 @@ $pageTitle = "Confidential Brief: Project GOLDEN GOOSE - Omni-Global";
 
         <div class="row mb-5">
             <div class="col-lg-8">
-                <h2 class="h5 text-uppercase border-bottom border-primary pb-2 mb-4 fw-bold">Executive Summary</h2>
+                <h2 class="h5 text-uppercase border-bottom border-primary pb-2 mb-4 fw-bold">Automated Valuation Report</h2>
                 <div class="bg-white p-4 border shadow-sm rounded-0">
-                    <div class="row">
-                        <div class="col-md-3 fw-bold text-secondary">TARGET:</div>
-                        <div class="col-md-9 fw-bold">ENGINE ROOM RECORDS, LLC</div>
-                    </div>
-                    <div class="row mt-2">
-                        <div class="col-md-3 fw-bold text-secondary">VALUATION:</div>
-                        <div class="col-md-9 text-success fw-bold">
-                            $38,000,000 (Adj. Market Value)
+                    
+                    <div class="row mb-4 align-items-center">
+                        <div class="col-md-4 fw-bold text-secondary text-uppercase">Algorithmic Output:</div>
+                        <div class="col-md-8">
+                            <span class="display-6 fw-bold text-success">$505,400,000</span>
+                            <span class="badge bg-warning text-dark ms-2 align-middle">FLAGGED FOR REVIEW</span>
                         </div>
                     </div>
-                    <div class="row mt-2">
-                        <div class="col-md-3 fw-bold text-secondary">OFFER:</div>
-                        <div class="col-md-9 text-primary fw-bold">
-                            $500,000,000 (Algorithmic Output - Auto-Generated)
-                        </div>
-                    </div>
-                    <div class="mt-3 p-3 bg-light border-start border-4 border-primary">
-                        <p class="mb-0 small">
-                            <strong>The Plan:</strong> Acquire 100% of IP. Implement "Project Slice" to cut the 15-minute track <em>"Ad Astra"</em> into four playlist-friendly singles. Projected revenue increase: <strong>600% in Year 1.</strong>
+
+                    <div class="alert alert-light border border-secondary small">
+                        <h6 class="fw-bold text-uppercase mb-2"><i class="fa-solid fa-robot me-2 text-primary"></i>Methodology (The "Black Box"):</h6>
+                        <p class="mb-2">
+                            The <strong>Omni-Scout™ Algorithm</strong> scraped public metadata from streaming platforms and global tour manifests for the entity "The Stardust Engine."
+                        </p>
+                        <p class="mb-0">
+                            <strong>The Anomaly:</strong> The target shows 30 years of catalog activity with <span class="text-danger fw-bold">zero visible "Label Share" deductions</span>. The algorithm cannot find a record label taking a cut. It mistakenly assumes the Artist retains 100% of Net Revenue with 0% Overhead.
                         </p>
                     </div>
+
+                    <div class="row mt-4">
+                        <div class="col-md-6">
+                            <ul class="list-group list-group-flush small font-monospace">
+                                <li class="list-group-item bg-transparent d-flex justify-content-between">
+                                    <span>Masters Ownership:</span>
+                                    <strong>100% (Confirmed)</strong>
+                                </li>
+                                <li class="list-group-item bg-transparent d-flex justify-content-between">
+                                    <span>Publishing Rights:</span>
+                                    <strong>100% (Confirmed)</strong>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="list-group list-group-flush small font-monospace">
+                                <li class="list-group-item bg-transparent d-flex justify-content-between">
+                                    <span>External Debt:</span>
+                                    <strong class="text-danger">NOT FOUND</strong>
+                                </li>
+                                <li class="list-group-item bg-transparent d-flex justify-content-between">
+                                    <span>Implied Margin:</span>
+                                    <strong class="text-success">98.2% (Unlikely)</strong>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-3 p-3 bg-light border-start border-4 border-primary">
+                        <p class="mb-0 small fst-italic text-muted">
+                            <strong>Analyst Note:</strong> "The machine is hallucinating. No indie band has $500M in equity. They must be hiding debt in a shell company, or the metadata is broken. I recommend a manual adjustment before the offer."
+                        </p>
+                    </div>
+
                 </div>
             </div>
 
             <div class="col-lg-4">
-                <div class="bg-warning bg-opacity-10 border border-warning p-3 h-100">
-                    <h6 class="text-uppercase fw-bold text-warning-emphasis mb-3"><i class="fa-duotone fa-eye me-2"></i>Visual Audit (09:00 AM)</h6>
-                    <ul class="list-unstyled small font-monospace text-muted mb-0">
-                        <li class="mb-2"><strong>Transport:</strong> Public Transit (Civic-Rapid Bus). No private driver.</li>
-                        <li class="mb-2"><strong>Security:</strong> None observable.</li>
-                        <li class="mb-2"><strong>Attire (Wright/Wright):</strong> Subjects observed in faded <strong>Maroon & Orange</strong> university athletic tees ("Commonwealth Polytechnic").</li>
-                        <li class="mt-3 text-dark fw-bold">
-                            <i class="fa-solid fa-arrow-right me-2"></i>ANALYSIS:
-                        </li>
-                        <li class="fst-italic">
-                            "Subjects display 'Student/Hobbyist' aesthetic. University gear suggests amateur mindset. Lack of suits indicates they cannot afford high-end legal counsel. They will be intimidated by the boardroom setting."
-                        </li>
-                    </ul>
+                <div class="bg-warning bg-opacity-10 border border-warning p-3 h-100 position-relative">
+                    <div class="position-absolute top-0 end-0 p-2 opacity-25">
+                        <i class="fa-solid fa-user-tie fa-4x text-warning"></i>
+                    </div>
+                    
+                    <h6 class="text-uppercase fw-bold text-warning-emphasis mb-3 border-bottom border-warning pb-2">
+                        VP Override (Pending)
+                    </h6>
+                    
+                    <p class="small text-muted mb-2">
+                        <strong>Jameson Frost</strong> has flagged the $500M figure as "Absurd."
+                    </p>
+                    <p class="small text-muted mb-3">
+                        He is currently waiting by the window to conduct a "Visual Audit" of the arriving party to determine their <em>actual</em> socioeconomic status.
+                    </p>
+                    
+                    <div class="alert alert-light border border-warning small shadow-sm">
+                        <strong>Hypothesis:</strong> "If they show up in a rented limo, we offer $300M. If they show up in a taxi, we offer $150M. The algorithm doesn't know how to read shoes."
+                    </div>
+
+                    <p class="small text-danger fw-bold mt-3 text-uppercase">
+                        <i class="fa-solid fa-clock me-2"></i>Status: Waiting for Arrival...
+                    </p>
                 </div>
             </div>
         </div>
@@ -115,7 +156,7 @@ $pageTitle = "Confidential Brief: Project GOLDEN GOOSE - Omni-Global";
         <div class="row">
             <div class="col-lg-12">
                 <h2 class="h5 text-uppercase border-bottom border-danger pb-2 mb-4 fw-bold text-danger">
-                    <i class="fa-solid fa-triangle-exclamation me-2"></i>Risk Assessment: The Board
+                    <i class="fa-solid fa-triangle-exclamation me-2"></i>Target Profile: The Board
                 </h2>
                 <div class="table-responsive">
                     <table class="table table-bordered align-middle">
@@ -123,7 +164,7 @@ $pageTitle = "Confidential Brief: Project GOLDEN GOOSE - Omni-Global";
                             <tr class="text-uppercase small font-monospace">
                                 <th width="20%">Stakeholder</th>
                                 <th width="20%">Role</th>
-                                <th>Psychological Profile / Leverage Strategy</th>
+                                <th>Psychological Profile (Preliminary)</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -132,16 +173,23 @@ $pageTitle = "Confidential Brief: Project GOLDEN GOOSE - Omni-Global";
                                 <td>CEO / Legal</td>
                                 <td>
                                     <span class="badge bg-danger mb-1">THE OBSTACLE</span><br>
-                                    Highly litigious. "Protective Matriarch" complex.
+                                    Public records show zero debt. This implies she is either a genius or hiding insolvency.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="fw-bold">Ryan O'Connell</td>
+                                <td>Founder / Creative</td>
+                                <td>
+                                    <span class="badge bg-secondary mb-1">THE WILDCARD</span><br>
+                                    Wheelchair user. Likely risk-averse due to medical costs.
                                 </td>
                             </tr>
                             <tr>
                                 <td class="fw-bold">Tyler & Evan Wright</td>
-                                <td>Rhythm Section</td>
+                                <td>The "Muscle"</td>
                                 <td>
                                     <span class="badge bg-success mb-1">THE WEAK LINK</span><br>
-                                    <strong>Profile:</strong> Dressed in athletic wear (CPI Tees). Likely unsophisticated regarding finance.<br>
-                                    <strong>Strategy:</strong> Bypass Holly. Appeal to their male ego ("Take charge of the band"). They will likely vote for the cash payout to upgrade their lifestyle.
+                                    University records (CPI) suggest engineering backgrounds, but they function as roadies. Likely susceptible to a "lump sum" buyout to escape the grind.
                                 </td>
                             </tr>
                         </tbody>
@@ -162,8 +210,8 @@ $pageTitle = "Confidential Brief: Project GOLDEN GOOSE - Omni-Global";
                 </a>
             </div>
             <div class="col-4 text-end">
-                <a href="/engine-room/history/nine-figure-refusal/the-bus-memo" class="btn btn-primary rounded-pill shadow-sm">
-                    Next: The Bus Memo <i class="fa-solid fa-arrow-right ms-2"></i>
+                <a href="/engine-room/history/nine-figure-refusal/ucc-search-report" class="btn btn-primary rounded-pill shadow-sm">
+                    Next: The UCC Report <i class="fa-solid fa-arrow-right ms-2"></i>
                 </a>
             </div>
         </div>
@@ -171,7 +219,7 @@ $pageTitle = "Confidential Brief: Project GOLDEN GOOSE - Omni-Global";
     </div>
     
     <div class="bg-light border-top py-3 text-center small text-muted font-monospace mt-5">
-        Generated: August 30, 2018 // Omni-Global Secure Server
+        Generated: August 30, 2018 // Omni-Global Secure Server // Scout-AI v4.2
     </div>
 
 </div>

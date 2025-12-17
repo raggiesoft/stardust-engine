@@ -33,9 +33,9 @@ $rotation_style = $rotation ? "transform: rotate({$rotation}deg);" : "";
                 </h4>
                 
                 <div class="text-muted text-uppercase letter-spacing-1 fw-bold d-flex align-items-center gap-2" style="font-size: 0.75rem;">
-                    <span>Blacksburg, Virginia</span>
+                    <span>Wilmington, Delaware</span>
                     <i class="fa-solid fa-circle" style="font-size: 4px;"></i>
-                    <span>Est. 1992</span>
+                    <span>Est. 1992 (VA)</span>
                     <i class="fa-solid fa-circle" style="font-size: 4px;"></i>
                     <span>Privately Held</span>
                 </div>
@@ -76,7 +76,7 @@ $rotation_style = $rotation ? "transform: rotate({$rotation}deg);" : "";
                     
                     <div class="text-muted border-top border-secondary pt-1" style="font-size: 0.7rem; line-height: 1.4; font-family: 'Arial', sans-serif;">
                         <p class="mb-0"><strong>J.D.</strong>, CPI School of Law (Class of 1994)</p>
-                        <p class="mb-0"><strong>Bar Admissions:</strong> Virginia ('94), New York ('98), California ('01)</p>
+                        <p class="mb-0"><strong>Bar Admissions:</strong> Virginia ('94), New York ('98), California ('01), Delaware ('15)</p>
                         <p class="mb-0 fst-italic">Enrolled Agent (IRS) &bull; CFA Charterholder &bull; Certified Forensic Accountant</p>
                     </div>
                 </div>

@@ -5,8 +5,6 @@
 $pageTitle = "Holly O'Connell - The Stardust Engine";
 ?>
 
-
-
 <div class="container py-5">
     <div class="row g-5">
         
@@ -75,6 +73,7 @@ $pageTitle = "Holly O'Connell - The Stardust Engine";
                             <span class="skill-pill" title="2005: Managing the surplus wealth"><i class="fa-solid fa-briefcase me-1"></i>CFA Charterholder ('05)</span>
                             <span class="skill-pill" title="2009: Hedging against the Recession"><i class="fa-solid fa-graduation-cap me-1"></i>M.S. Quant Finance ('09)</span>
                             <span class="skill-pill" title="2014: Auditing streaming royalties"><i class="fa-solid fa-magnifying-glass-dollar me-1"></i>Forensic Accountant ('14)</span>
+                            <span class="skill-pill" title="2015: Mastering the laws of the new corporate home"><i class="fa-solid fa-gavel me-1"></i>Delaware Bar ('15)</span>
                             <span class="skill-pill" title="2017: AI and Digital Rights"><i class="fa-brands fa-bitcoin me-1"></i>Blockchain Security ('17)</span>
                         </div>
                     </div>

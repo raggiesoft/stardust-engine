@@ -1,15 +1,15 @@
 <?php
 // includes/components/headers/header-nine-figure-refusal.php
 // Dedicated Navigation for the "Accidental Empire" Case File
-// UPDATED: Chronological Chapter Structure
+// UPDATED: Fixed "Invisible Text" bug in Light Mode by removing hardcoded 'text-white'
 
-// 1. Determine Active States for this section
+// 1. Determine Active States
 $uri = $_SERVER['REQUEST_URI'] ?? '';
 $isOverview = str_contains($uri, '/overview');
 
-// Check for ANY evidence file to highlight the "Evidence" dropdown
+// Updated Evidence List
 $evidenceFiles = [
-    'target-profile', 'the-bus-memo', 
+    'target-profile', 'ucc-search-report', 'the-bus-memo', 
     'forensic-audit', 'the-offer-letter', 
     'the-trigger', 'the-autopsy', 'the-extraction',
     'omni-global-chapter-11', 'stardust-bus-ride'
@@ -33,14 +33,14 @@ $isEpilogue = str_contains($uri, '/frost-interview');
     </li>
 
     <li class="nav-item">
-        <a class="nav-link <?php echo $isOverview ? 'active fw-bold text-white' : ''; ?>" 
+        <a class="nav-link <?php echo $isOverview ? 'active fw-bold' : ''; ?>" 
            href="/engine-room/history/nine-figure-refusal/overview">
             <i class="fa-duotone fa-chart-network me-2"></i>Overview
         </a>
     </li>
 
     <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle <?php echo $isEvidence ? 'active fw-bold text-white' : ''; ?>" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <a class="nav-link dropdown-toggle <?php echo $isEvidence ? 'active fw-bold' : ''; ?>" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             <i class="fa-duotone fa-file-magnifying-glass me-2"></i>The Case File
         </a>
         <ul class="dropdown-menu dropdown-menu-end shadow-lg border-danger" style="min-width: 280px;">
@@ -49,6 +49,11 @@ $isEpilogue = str_contains($uri, '/frost-interview');
             <li>
                 <a class="dropdown-item" href="/engine-room/history/nine-figure-refusal/target-profile">
                     <i class="fa-duotone fa-crosshairs me-2 text-danger"></i>Target Profile
+                </a>
+            </li>
+            <li>
+                <a class="dropdown-item" href="/engine-room/history/nine-figure-refusal/ucc-search-report">
+                    <i class="fa-duotone fa-file-certificate me-2 text-secondary"></i>UCC Search Report
                 </a>
             </li>
             <li>
@@ -105,7 +110,7 @@ $isEpilogue = str_contains($uri, '/frost-interview');
     </li>
 
     <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle <?php echo $isAssets ? 'active fw-bold text-white' : ''; ?>" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <a class="nav-link dropdown-toggle <?php echo $isAssets ? 'active fw-bold' : ''; ?>" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             <i class="fa-duotone fa-building me-2"></i>Legacy
         </a>
         <ul class="dropdown-menu dropdown-menu-end shadow-lg border-success">
@@ -126,7 +131,7 @@ $isEpilogue = str_contains($uri, '/frost-interview');
     </li>
 
      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle <?php echo $isEpilogue ? 'active fw-bold text-white' : ''; ?>" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <a class="nav-link dropdown-toggle <?php echo $isEpilogue ? 'active fw-bold' : ''; ?>" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             <i class="fa-duotone fa-building me-2"></i>Epilogue
         </a>
         <ul class="dropdown-menu dropdown-menu-end shadow-lg border-success">

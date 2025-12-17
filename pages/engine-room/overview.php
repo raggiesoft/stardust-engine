@@ -67,7 +67,7 @@ $pageTitle = "Engine Room Records, LLC - Est. 1992";
     <div class="industrial-header py-5">
         <div class="container py-5 text-center">
             
-            <img src="https://assets.raggiesoft.com/engine-room-records/images/engine-room-records-logo.jpg" 
+            <img src="https://assets.raggiesoft.com/engine-room-records/images/logos/engine-room-records-logo.jpg" 
                  alt="Engine Room Records Official Seal" 
                  class="img-fluid rounded-circle mb-4 shadow-lg navbar-brand-corporate-img" 
                  style="max-width: 250px; border: 4px solid transparent;">
@@ -99,7 +99,7 @@ $pageTitle = "Engine Room Records, LLC - Est. 1992";
                     <div class="card card-industrial h-100">
                         <div class="row g-0 h-100">
                             <div class="col-md-5 bg-black d-flex align-items-center justify-content-center p-4">
-                                <img src="https://assets.raggiesoft.com/stardust-engine/images/stardust-engine-logo.png" 
+                                <img src="https://assets.raggiesoft.com/stardust-engine/images/logos/stardust-engine-logo.png" 
                                      class="img-fluid" alt="The Stardust Engine">
                             </div>
                             <div class="col-md-7">

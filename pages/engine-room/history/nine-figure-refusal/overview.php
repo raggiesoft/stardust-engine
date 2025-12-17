@@ -1,7 +1,7 @@
 <?php
 // pages/engine-room/history/nine-figure-refusal/overview.php
 // The "Accidental Empire" Archive
-// V7.0: Full Table of Contents (Chapters 1-5 + Epilogue)
+// V7.1: Added UCC Search Report to Chapter 1
 
 $pageTitle = "The $150M Refusal & Acquisition - Engine Room History";
 $activePage = 'overview';
@@ -71,7 +71,7 @@ $activePage = 'overview';
                 Chapter 1: The Setup
             </h3>
             <div class="row g-4">
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <div class="card bg-white h-100 border-0 shadow-sm" style="transform: rotate(-1deg);">
                         <div class="card-body p-4">
                             <h5 class="fw-bold text-dark text-uppercase mb-1"><i class="fa-solid fa-crosshairs me-2 text-danger"></i>Target Profile</h5>
@@ -80,7 +80,18 @@ $activePage = 'overview';
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6">
+
+                <div class="col-md-4">
+                    <div class="card bg-light h-100 border border-secondary shadow-sm">
+                        <div class="card-body p-4">
+                            <h5 class="fw-bold text-dark text-uppercase mb-1"><i class="fa-solid fa-file-certificate me-2 text-secondary"></i>The "Clean" Sheet</h5>
+                            <p class="small text-muted mb-3">Evidence Item #12-C. The state search that proved zero debt and broke their algorithm.</p>
+                            <a href="/engine-room/history/nine-figure-refusal/ucc-search-report" class="btn btn-outline-secondary btn-sm rounded-pill fw-bold stretched-link">View Record</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
                     <div class="card bg-white h-100 border-0 shadow-sm" style="transform: rotate(1deg);">
                         <div class="card-body p-4">
                             <h5 class="fw-bold text-dark text-uppercase mb-1"><i class="fa-solid fa-envelope-open-text me-2 text-warning"></i>The Bus Memo</h5>

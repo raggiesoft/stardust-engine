@@ -1,238 +1,236 @@
 <?php
 // pages/engine-room/history/nine-figure-refusal/forensic-audit.php
-// EVIDENCE ITEM #00-B: Holly's "Homework"
-// Context: Annotated SEC filings showing Omni-Global's insolvency.
-// UPDATED: Added Narrative Navigation (Chapter 2 Start)
+// EVIDENCE ITEM #00-B: Holly's "Homework" & The SEC Whistleblower Submission
 
-$pageTitle = "Forensic Audit: Omni-Global Corp - Evidence Item #00-B";
+$pageTitle = "Forensic Audit: Omni-Global Media - Engine Room History";
 ?>
 
-<style>
-    /* DOCUMENT THEME: The "Red Pen" Audit */
-    .audit-paper {
-        background-color: #fdfbf7; 
-        font-family: 'Times New Roman', serif;
-        color: #000;
-        position: relative;
-        overflow: hidden; 
-    }
-
-    .sec-header {
-        text-align: center;
-        text-transform: uppercase;
-        border-bottom: 2px solid #000;
-        margin-bottom: 2rem;
-        padding-bottom: 1rem;
-    }
-
-    .line-item {
-        border-bottom: 1px dotted #ccc;
-        padding: 4px 0;
-        display: flex;
-        justify-content: space-between;
-        align-items: end;
-        position: relative; 
-    }
-    
-    .line-item-label { font-size: 0.9rem; }
-    .line-item-value { font-family: 'Courier New', monospace; font-weight: bold; }
-
-    .red-pen {
-        font-family: 'Kalam', cursive; 
-        color: #dc3545;
-        font-weight: bold;
-        font-size: 1.1rem;
-        position: absolute;
-        z-index: 10;
-        text-shadow: 1px 1px 0px rgba(255,255,255,0.8);
-        white-space: normal;
-        line-height: 1.1;
-        pointer-events: none;
-    }
-
-    .circle-highlight {
-        border: 3px solid #dc3545;
-        border-radius: 50% 60% 40% 70% / 50% 50% 60% 50%;
-        position: absolute;
-        pointer-events: none;
-        opacity: 0.9;
-    }
-
-    .sticky-note {
-        background-color: #ffeb3b;
-        color: #000;
-        padding: 15px;
-        font-family: 'Kalam', cursive;
-        transform: rotate(-1deg);
-        box-shadow: 3px 3px 8px rgba(0,0,0,0.2);
-        position: relative;
-        z-index: 20;
-    }
-
-    [data-bs-theme="dark"] .audit-paper {
-        filter: invert(1) hue-rotate(180deg);
-    }
-    [data-bs-theme="dark"] .audit-container-wrapper {
-        background-color: #222;
-        padding: 20px;
-        border-radius: 10px;
-    }
-</style>
-
-<div class="container py-5 audit-container-wrapper">
+<div class="container py-5">
     
     <div class="row justify-content-center mb-5">
         <div class="col-lg-8 text-center">
-            <span class="badge bg-warning text-dark rounded-pill px-3 py-2 mb-3 text-uppercase letter-spacing-1 border border-warning">
-                <i class="fa-duotone fa-magnifying-glass-dollar me-2"></i>Defense Exhibit A
+            <span class="badge bg-primary text-white rounded-pill px-3 py-2 mb-3 text-uppercase letter-spacing-1 shadow-glow border border-primary">
+                <i class="fa-duotone fa-magnifying-glass-dollar me-2"></i>Evidence Item #00-B
             </span>
-            <h1 class="display-4 fw-bold text-white mb-2" style="font-family: 'Impact', sans-serif;">
-                HOLLY'S HOMEWORK
+            <h1 class="display-4 fw-bold text-white mb-2 text-uppercase" style="font-family: 'Impact', sans-serif;">
+                Holly's Homework
             </h1>
             <p class="lead text-muted font-monospace">
-                The night before the meeting, Holly O'Connell (CFA, Forensic Accountant) downloaded the public 10-Q of <strong>Omni-Global Media Corp.</strong> This is what she saw.
+                "They thought they were the smartest guys in the room. They forgot that I read the footnotes."
             </p>
-        </div>
-    </div>
-
-    <div class="row justify-content-center mb-4">
-        <div class="col-lg-10">
-            <div class="card bg-dark border-secondary mb-3">
-                <div class="card-body d-flex align-items-start p-3">
-                    <i class="fa-duotone fa-user-tie text-danger fs-1 me-3"></i>
-                    <div>
-                        <h5 class="text-danger fw-bold text-uppercase mb-1">Frost's Fatal Error</h5>
-                        <p class="text-secondary small mb-0">
-                            <strong>The Profiling:</strong> Holly O'Connell is 49, but easily passes for 35. Frost looked at her—blonde, polished, quiet—and assumed she was a "Trophy Manager" or Ryan's girlfriend. He handed her the tablet assuming she would just swipe through the pretty graphics. He didn't know she wrote the textbook on forensic auditing.
-                        </p>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 
     <div class="row justify-content-center mb-5">
         <div class="col-lg-10">
             
-            <div class="card border-0 shadow-lg audit-paper p-5 mb-5">
-                
-                <div class="position-absolute top-0 end-0 p-4">
-                    <div class="border border-4 border-danger text-danger p-2 fw-bold text-uppercase fs-5 opacity-50" 
-                         style="font-family: 'Courier New', monospace; transform: rotate(15deg);">
-                        SEC EDGAR<br>FILING: 10-Q<br>AUG 2018
-                    </div>
-                </div>
-
-                <div class="sec-header">
-                    <h4>UNITED STATES SECURITIES AND EXCHANGE COMMISSION</h4>
-                    <h5 class="fw-bold mt-3">FORM 10-Q</h5>
-                    <hr class="my-3">
-                    <h2 class="fw-bold display-6">OMNI-GLOBAL MEDIA CORP.</h2>
-                </div>
-
-                <div class="row mt-4">
-                    <div class="col-12">
-                        <h5 class="fw-bold border-bottom border-dark pb-1 mb-3">CONSOLIDATED BALANCE SHEETS (In Thousands)</h5>
-                        
-                        <h6 class="fw-bold mt-3">ASSETS</h6>
-                        
-                        <div class="line-item">
-                            <span class="line-item-label">Cash and Cash Equivalents</span>
-                            <span class="line-item-value">$22,400</span>
-                            <div class="red-pen" style="top: -20px; left: 40%; transform: rotate(-5deg); max-width: 250px;">
-                                <i class="fa-solid fa-arrow-left me-1"></i> Payroll is $18M/mo. Running on fumes.
-                            </div>
-                        </div>
-
-                        <div class="line-item mt-2">
-                            <span class="line-item-label">Goodwill & Intangible Assets</span>
-                            <span class="line-item-value">$900,000</span>
-                            <div class="circle-highlight" style="top: -5px; right: -10px; width: 110px; height: 140%;"></div>
-                            <div class="red-pen text-end" style="top: 30px; right: 0; color: #dc3545; transform: rotate(0deg); max-width: 150px;">
-                                <i class="fa-solid fa-arrow-up me-1"></i> FAKE VALUE.<br>Legacy IP.
-                            </div>
-                        </div>
-
-                        <h6 class="fw-bold mt-5">LIABILITIES</h6>
-
-                        <div class="line-item">
-                            <span class="line-item-label">Revolving Credit Facility (Variable Rate)</span>
-                            <span class="line-item-value">$348,500</span>
-                            <div class="red-pen" style="top: -5px; left: 60%; color: #dc3545; max-width: 150px;">
-                                <i class="fa-solid fa-arrow-left me-1"></i> SEE NOTE 8.
-                            </div>
-                        </div>
-
-                        <div class="line-item border-top border-dark border-2 mt-1 py-2">
-                            <span class="line-item-label fw-bold">TOTAL LONG-TERM DEBT</span>
-                            <span class="line-item-value text-danger">$840,000</span>
-                        </div>
-
-                    </div>
+            <div class="d-flex justify-content-end mb-n4 position-relative" style="z-index: 10; margin-right: 2rem;">
+                <div class="bg-warning text-dark p-4 shadow-lg rotate-1" style="max-width: 320px; font-family: 'Kalam', cursive; font-size: 1.1rem; transform: rotate(2deg);">
+                    <i class="fa-solid fa-thumbtack text-danger position-absolute top-0 start-50 translate-middle"></i>
+                    <p class="mb-2 fw-bold">Ryan,</p>
+                    <p class="mb-0">
+                        They are pulling an Enron. See Section 4. 
+                        <br><br>
+                        They hid $400M of debt in shell companies to keep their stock price high. It's technically "legal" under SOX... until they run out of cash.
+                        <br><br>
+                        By my math, they bounce a check next Tuesday.
+                        <br><br>
+                        - H
+                    </p>
                 </div>
             </div>
 
-            <div class="card border-0 shadow-lg audit-paper p-5">
+            <div class="card bg-white text-dark shadow-lg border-0 overflow-hidden mb-5">
                 
-                <div class="position-absolute top-0 start-0 p-4">
-                    <div class="border border-2 border-dark p-1 px-2 fw-bold text-uppercase small font-monospace">
-                        Page 42
+                <div class="card-header bg-white border-bottom border-dark py-4">
+                    <div class="row align-items-end">
+                        <div class="col-md-8">
+                            <h4 class="fw-bold text-uppercase mb-0" style="font-family: 'Arial', sans-serif;">Consolidated Balance Sheet (Restated)</h4>
+                            <div class="text-muted small text-uppercase letter-spacing-1">Omni-Global Media Corp. (FY 2017)</div>
+                        </div>
+                        <div class="col-md-4 text-md-end">
+                            <div class="border border-2 border-danger text-danger px-3 py-1 d-inline-block fw-bold text-uppercase" 
+                                 style="font-family: 'Courier New', monospace; transform: rotate(-5deg); font-size: 0.9rem;">
+                                INTERNAL FAMILY BRIEFING<br>"PLAIN ENGLISH" VERSION
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="row mt-2">
-                    <div class="col-12">
-                        <h5 class="fw-bold border-bottom border-dark pb-1 mb-3">NOTES TO CONSOLIDATED FINANCIAL STATEMENTS</h5>
-                        
-                        <p class="fw-bold text-uppercase mb-2">Note 8. Long-Term Debt</p>
-                        <p class="small text-muted mb-3">The following table summarizes the Company’s outstanding debt obligations (in thousands):</p>
-
-                        <table class="table table-sm table-borderless small font-monospace" style="border: 1px solid #000;">
-                            <thead style="border-bottom: 2px solid #000;">
+                <div class="card-body p-0">
+                    <div class="table-responsive">
+                        <table class="table table-striped table-hover mb-0" style="font-family: 'Courier New', monospace;">
+                            <thead class="bg-light border-bottom border-dark">
                                 <tr>
-                                    <th width="40%">Instrument</th>
-                                    <th width="20%" class="text-end">Capacity</th>
-                                    <th width="20%" class="text-end">Outstanding</th>
-                                    <th width="20%" class="text-end">Maturity</th>
+                                    <th class="p-3">Line Item</th>
+                                    <th class="p-3 text-end">What They Claim</th>
+                                    <th class="p-3 text-end text-danger border-start border-danger border-2">The Truth</th>
+                                    <th class="p-3 text-danger border-start border-danger border-2" style="width: 300px;">Holly's Translation</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>Senior Secured Notes</td>
-                                    <td class="text-end">N/A</td>
-                                    <td class="text-end">$400,000</td>
-                                    <td class="text-end">2020</td>
+                                    <td class="p-3 fw-bold">Cash on Hand</td>
+                                    <td class="p-3 text-end">$45,000,000</td>
+                                    <td class="p-3 text-end text-danger border-start border-danger border-2">$12,000,000</td>
+                                    <td class="p-3 small text-danger fst-italic border-start border-danger border-2">
+                                        They can't touch most of this cash. It's locked in escrow accounts for lawsuits they are losing.
+                                    </td>
                                 </tr>
-                                <tr class="bg-warning bg-opacity-25">
-                                    <td class="fw-bold">Revolving Credit Facility</td>
-                                    <td class="text-end fw-bold">$350,000</td>
-                                    <td class="text-end fw-bold text-danger">$348,500</td>
-                                    <td class="text-end">2019</td>
+                                
+                                <tr class="table-warning">
+                                    <td class="p-3 fw-bold">
+                                        Projected Revenue<br>
+                                        <span class="small fw-normal text-muted">Syndication Deals (2018-2028)</span>
+                                    </td>
+                                    <td class="p-3 text-end fw-bold">$350,000,000</td>
+                                    <td class="p-3 text-end fw-bold text-danger border-start border-danger border-2">$0</td>
+                                    <td class="p-3 small text-danger fw-bold border-start border-danger border-2">
+                                        FAKE MONEY. They are counting profits from TV shows they haven't even filmed yet.
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="p-3 fw-bold">Global Headquarters</td>
+                                    <td class="p-3 text-end">$120,000,000</td>
+                                    <td class="p-3 text-end text-danger border-start border-danger border-2">$0</td>
+                                    <td class="p-3 small text-danger fst-italic border-start border-danger border-2">
+                                        <strong>They don't own the building.</strong> They rent it from Pacific Rim Properties. They just paid for the sign on the roof. If they miss rent next month, they get evicted.
+                                    </td>
+                                </tr>
+                                
+                                <tr class="bg-dark text-white border-top border-dark border-3">
+                                    <td class="p-3 fw-bold h5 mb-0">TOTAL REAL ASSETS</td>
+                                    <td class="p-3 text-end fw-bold h5 mb-0">$515,000,000</td>
+                                    <td class="p-3 text-end fw-bold h5 mb-0 text-danger border-start border-danger border-2">$12,000,000</td>
+                                    <td class="p-3 border-start border-danger border-2"></td>
                                 </tr>
                             </tbody>
                         </table>
+                    </div>
 
-                        <div class="red-pen" style="top: 155px; right: 80px; transform: rotate(-2deg);">
-                            <i class="fa-solid fa-arrow-up me-1"></i> MAXED OUT.
+                    <div class="p-3 bg-danger text-white border-top border-dark">
+                        <h6 class="fw-bold text-uppercase border-bottom border-white pb-2 mb-0">
+                            <i class="fa-solid fa-mask me-2"></i>The "Shell Game" (Hidden Debt)
+                        </h6>
+                    </div>
+                    
+                    <div class="table-responsive">
+                         <table class="table mb-0" style="font-family: 'Courier New', monospace;">
+                            <thead class="bg-light">
+                                <tr>
+                                    <th class="p-3 small text-muted">Entity Name</th>
+                                    <th class="p-3 small text-muted">What It Does</th>
+                                    <th class="p-3 small text-muted text-end">Hidden Debt</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="p-3 fw-bold">OGM Capital Partners IV, LLC</td>
+                                    <td class="p-3 small">A trash can. They move all their losing investments into this company so the main stock price looks good.</td>
+                                    <td class="p-3 text-end text-danger fw-bold">($210,000,000)</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-3 fw-bold">Wilshire Leasehold Trust</td>
+                                    <td class="p-3 small">This shell holds the lease for the HQ. It owes $155M in future rent payments that Omni doesn't have.</td>
+                                    <td class="p-3 text-end text-danger fw-bold">($155,000,000)</td>
+                                </tr>
+                                <tr class="bg-danger text-white border-top border-dark border-3">
+                                    <td class="p-3 fw-bold h5 mb-0" colspan="2">TRUE NET POSITION (INSOLVENT)</td>
+                                    <td class="p-3 text-end fw-bold h5 mb-0">($353,000,000)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+            
+            <div class="position-relative mt-5">
+                <div class="text-center mb-4">
+                    <h2 class="h4 text-white text-uppercase fw-bold border-bottom border-secondary d-inline-block pb-2">
+                        <i class="fa-solid fa-gavel me-2 text-warning"></i>The Weapon
+                    </h2>
+                    <p class="text-white-50 small mt-2">
+                        Holly didn't just find the fraud; she reported it. This is the document that triggered the SEC freeze.
+                    </p>
+                </div>
+
+                <div class="card bg-light border-0 shadow-lg mx-auto" style="max-width: 800px; font-family: 'Times New Roman', serif;">
+                    <div class="card-header bg-white border-bottom border-2 border-dark py-3">
+                        <div class="row align-items-center">
+                            <div class="col-2">
+                                <i class="fa-solid fa-building-columns fa-3x text-secondary opacity-50"></i>
+                            </div>
+                            <div class="col-8 text-center">
+                                <h5 class="fw-bold text-uppercase mb-0">United States Securities and Exchange Commission</h5>
+                                <p class="small text-muted mb-0">Washington, D.C. 20549</p>
+                                <h4 class="fw-bold mt-2">FORM TCR</h4>
+                                <p class="small fw-bold mb-0">TIP, COMPLAINT, OR REFERRAL</p>
+                            </div>
+                            <div class="col-2 text-end font-monospace small text-muted">
+                                OMB No. 3235-0672<br>
+                                Expires: May 31, 2021
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body p-4">
+                        
+                        <div class="mb-4">
+                            <h6 class="bg-dark text-white px-2 py-1 small fw-bold text-uppercase">A. Information about the Individual Submitting this Tip</h6>
+                            <div class="row g-2 small">
+                                <div class="col-md-6 border-bottom border-secondary pb-1">
+                                    <span class="fw-bold">1. Last Name:</span> <span class="bg-black text-black px-1 user-select-none">REDACTED</span>
+                                </div>
+                                <div class="col-md-6 border-bottom border-secondary pb-1">
+                                    <span class="fw-bold">2. First Name:</span> <span class="bg-black text-black px-1 user-select-none">REDACTED</span>
+                                </div>
+                                <div class="col-12 border-bottom border-secondary pb-1 mt-2">
+                                    <span class="fw-bold">3. Occupation:</span> Attorney / Forensic Accountant / Fiduciary
+                                </div>
+                            </div>
                         </div>
 
-                        <p class="small text-muted mt-3 fst-italic">
-                            *As of June 30, 2018, the Company had $1.5 million in remaining borrowing capacity under the Revolving Credit Facility.
-                        </p>
+                        <div class="mb-4">
+                            <h6 class="bg-dark text-white px-2 py-1 small fw-bold text-uppercase">B. Information about the Entity (Subject of Complaint)</h6>
+                            <div class="row g-2 small">
+                                <div class="col-12 border-bottom border-secondary pb-1">
+                                    <span class="fw-bold">1. Name of Entity:</span> Omni-Global Media Corp. (Ticker: OGMC)
+                                </div>
+                                <div class="col-12 border-bottom border-secondary pb-1 mt-2">
+                                    <span class="fw-bold">2. Type of Allegation:</span> 
+                                    <span class="ms-2"><i class="fa-solid fa-square-check me-1"></i>Material Misstatement of Financials</span>
+                                    <span class="ms-2"><i class="fa-solid fa-square-check me-1"></i>Ponzi Scheme</span>
+                                    <span class="ms-2"><i class="fa-solid fa-square-check me-1"></i>Accounting Fraud</span>
+                                </div>
+                            </div>
+                        </div>
 
-                        <div class="sticky-note mt-4 w-75 mx-auto">
-                            <h5 class="fw-bold text-uppercase mb-2 text-danger">The Reality:</h5>
-                            <ul class="list-unstyled fw-bold mb-0">
-                                <li>1. Capacity: $350M</li>
-                                <li>2. Used: $348.5M</li>
-                                <li>3. <strong>Remaining: $1.5M</strong> (Less than 3 days of operating cash).</li>
-                                <li class="mt-2 text-danger text-uppercase">>> HE IS BROKE.</li>
-                            </ul>
+                        <div class="mb-4">
+                            <h6 class="bg-dark text-white px-2 py-1 small fw-bold text-uppercase">C. Description of Facts</h6>
+                            <div class="p-3 border border-secondary bg-white small" style="min-height: 150px;">
+                                <p><strong>Details of Allegation:</strong></p>
+                                <p>
+                                    Registrant (Omni-Global) is engaging in systemic accounting fraud to conceal approximately $400,000,000 in debt obligations using off-balance sheet Special Purpose Vehicles (SPVs), specifically "OGM Capital Partners IV." 
+                                </p>
+                                <p>
+                                    Furthermore, Registrant has booked ten years of projected future revenue from syndication deals as current "Accounts Receivable," artificially inflating Earnings Per Share (EPS) to trigger executive stock option vesting events.
+                                </p>
+                                <p>
+                                    Based on the attached internal audit (Exhibit A), the Registrant is currently insolvent and will likely default on its Senior Secured Credit Facility within 7 business days.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="position-absolute bottom-0 end-0 p-4" style="pointer-events: none;">
+                             <div class="border border-4 border-danger text-danger p-2 fw-bold text-uppercase fs-4 text-center rotate-n15" 
+                                  style="font-family: 'Courier New', monospace; opacity: 0.7;">
+                                 RECEIVED<br>SEC ENFORCEMENT<br>SEPT 14 2018
+                             </div>
                         </div>
 
                     </div>
                 </div>
-
             </div>
 
         </div>
@@ -240,8 +238,8 @@ $pageTitle = "Forensic Audit: Omni-Global Corp - Evidence Item #00-B";
 
     <div class="row mt-5 pt-4 border-top border-secondary border-opacity-25 align-items-center">
         <div class="col-4">
-            <a href="/engine-room/history/nine-figure-refusal/the-bus-memo" class="btn btn-outline-secondary rounded-pill">
-                <i class="fa-solid fa-arrow-left me-2"></i>Previous
+            <a href="/engine-room/history/nine-figure-refusal/ucc-search-report" class="btn btn-outline-secondary rounded-pill">
+                <i class="fa-solid fa-arrow-left me-2"></i>Previous: UCC Search
             </a>
         </div>
         <div class="col-4 text-center">
@@ -251,7 +249,7 @@ $pageTitle = "Forensic Audit: Omni-Global Corp - Evidence Item #00-B";
         </div>
         <div class="col-4 text-end">
             <a href="/engine-room/history/nine-figure-refusal/the-offer-letter" class="btn btn-primary rounded-pill shadow-sm">
-                Next: The Offer Letter <i class="fa-solid fa-arrow-right ms-2"></i>
+                Next: The Offer <i class="fa-solid fa-arrow-right ms-2"></i>
             </a>
         </div>
     </div>

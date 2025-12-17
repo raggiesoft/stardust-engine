@@ -2,7 +2,7 @@
 // pages/engine-room/history/nine-figure-refusal/the-extraction.php
 // EVIDENCE ITEM #03: The Departure
 // Context: The family executes "Code Carry" and leaves the building.
-// UPDATED: Added Narrative Navigation (Chapter 3 End -> Chapter 4 Start)
+// UPDATED: Fixed Phase 2 text contrast & Reverted Image Filename
 
 $pageTitle = "The Extraction - Evidence Item #03";
 ?>
@@ -37,7 +37,7 @@ $pageTitle = "The Extraction - Evidence Item #03";
                         Holly stood by the heavy oak door, holding it open. She didn't look back at the screen or the bankrupt executives. She watched her family.
                     </p>
                     <p>
-                        On the floor, Cassidy was rocking slightly, her eyes squeezed shut, her hands clamped over her ears. She was gone—deep in the protective shutdown of a Level 5 meltdown. She couldn't walk. She couldn't hear.
+                        On the floor, Cassidy was rocking violently, her hands clamped over her ears. She was gone—deep in the critical failure of a <strong>Level 5 Meltdown</strong>. She couldn't walk. She couldn't hear. The "mask" was completely shattered.
                     </p>
                     <p>
                         Ryan rolled his wheelchair backward a few inches. "Evan. Tyler," he said softly. "Code Carry."
@@ -55,7 +55,7 @@ $pageTitle = "The Extraction - Evidence Item #03";
                         <div class="col-md-6">
                             <div class="d-flex align-items-center mb-2">
                                 <span class="badge bg-secondary me-2">BASS</span>
-                                <strong class="me-2">Tyler (Right Flank):</strong> Dropped to one knee. Wearing his standard orange CPI tee, he grabbed a foam lumbar cushion from one of the conference chairs to place under her legs, preventing the pressure of their arms from cutting off her circulation.
+                                <strong class="me-2">Tyler (Right Flank):</strong> Dropped to one knee. Wearing his standard orange CPI tee, he grabbed a foam lumbar cushion from one of the conference chairs to place under her legs.
                             </div>
                         </div>
                     </div>
@@ -66,7 +66,7 @@ $pageTitle = "The Extraction - Evidence Item #03";
                         <em>One. Two. Three.</em>
                     </p>
                     <p>
-                        They lifted her effortlessly. Cassidy didn't fight them. She curled into the space between them, burying her face into the soft fabric of Tyler's orange tee shirt, using it as a sensory shield against the harsh office lights.
+                        They lifted her effortlessly. Cassidy didn't fight them, but the sensory pain was still ripping through her. She was sobbing uncontrollably, unable to find a safe place to hide her face even as they moved her into the hallway.
                     </p>
                     <p>
                         "Let's go," Holly said.
@@ -78,7 +78,7 @@ $pageTitle = "The Extraction - Evidence Item #03";
                 <div class="position-relative">
                     <img src="https://assets.raggiesoft.com/engine-room-records/images/omni-global/cassidy-extraction.jpg" 
                          class="img-fluid w-100 opacity-75" 
-                         alt="Security footage of Evan and Tyler carrying Cassidy out of the Omni-Global offices."
+                         alt="Security footage of Evan and Tyler carrying a sobbing Cassidy out of the Omni-Global offices, followed by Ryan and Holly."
                          style="filter: contrast(1.1) sepia(0.2);">
                     
                     <div class="position-absolute top-0 end-0 p-3 font-monospace text-success fw-bold text-shadow-black">
@@ -86,24 +86,24 @@ $pageTitle = "The Extraction - Evidence Item #03";
                     </div>
                     
                     <div class="position-absolute bottom-0 start-0 w-100 p-3 bg-black bg-opacity-75 text-white-50 font-monospace small border-top border-secondary">
-                        <i class="fa-solid fa-video me-2 text-danger"></i>
-                        <strong>SUBJECTS:</strong> Wright, E. (Left); Wright, T. (Right); O'Connell, C. (Cargo). Note the improvisation of the lumbar cushion for lower-body support.
+                        <i class="fa-solid fa-triangle-exclamation me-2 text-danger"></i>
+                        <strong>SUBJECT STATUS:</strong> O'Connell, C. (Cargo). Visual indicators confirm <strong>LEVEL 5 DISTRESS</strong> (Active Crying/Non-Verbal). Extraction team maintaining formation.
                     </div>
                 </div>
             </div>
 
-            <div class="card border-0 shadow-lg bg-secondary bg-opacity-10 text-white mb-4">
+            <div class="card border-0 shadow-lg bg-secondary bg-opacity-10 mb-4">
                 <div class="card-header bg-secondary bg-opacity-25 border-bottom border-secondary py-3">
-                    <h5 class="text-white fw-bold text-uppercase mb-0 letter-spacing-2">
+                    <h5 class="text-dark fw-bold text-uppercase mb-0 letter-spacing-2">
                         <i class="fa-duotone fa-elevator me-2"></i>Phase 2: The Descent (10:26 AM)
                     </h5>
                 </div>
                 <div class="card-body p-5">
                     <p>
-                        The heavy door clicked shut behind them. David, the Junior Associate, walked beside Holly, looking shaken.
+                        The heavy door clicked shut behind them. David, the Junior Associate, walked beside Holly, looking shaken by the raw sound of Cassidy's distress.
                     </p>
                     <p>
-                        "Sorry you had to hear that," David said, gesturing toward the shouting coming from the Chairman's office.
+                        "Sorry you had to see that," David said, gesturing toward the shouting coming from the Chairman's office.
                     </p>
                     <p>
                         "Don't be," Holly replied. "It's the sweetest sound I've heard all morning."
@@ -125,7 +125,7 @@ $pageTitle = "The Extraction - Evidence Item #03";
                         <em>Ding.</em> The elevator doors closed, sealing the seven of them in.
                     </p>
                     <p>
-                        Evan and Tyler gently lowered Cassidy to the floor, keeping the cushion under her knees. David stood by the control panel, watching the numbers blur.
+                        Evan and Tyler gently lowered Cassidy to the floor, keeping the cushion under her knees. She curled up immediately, rocking against the metal wall. David stood by the control panel, watching the numbers blur.
                     </p>
                     <p>
                         "My son... his name is Toby," David said suddenly. "He's six. He loves rockets... but loud noises wreck him. When I saw your sister..."

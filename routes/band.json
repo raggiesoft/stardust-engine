@@ -1,0 +1,42 @@
+{
+  "/band": {
+    "title": "The Band - The Stardust Engine",
+    "ogTitle": "The Band - The Stardust Engine",
+    "ogDescription": "Meet the members of The Stardust Engine: Ryan O'Connell, Cassidy O'Connell, and Marcus Lee.",
+    "showSidebar": true,
+    "sidebar": "sidebar-band",
+    "theme": "ad-astra"
+  },
+  "/band/ryan-oconnell": {
+    "title": "Ryan O'Connell - The Stardust Engine Band Bio",
+    "ogTitle": "Ryan O'Connell - The Stardust Engine Band Bio",
+    "ogDescription": "Lead vocalist and rhythm guitarist of The Stardust Engine.",
+    "showSidebar": true,
+    "sidebar": "sidebar-band"
+  },
+  "/band/cassidy-oconnell": {
+    "title": "Cassidy O'Connell - The Stardust Engine Band Bio",
+    "showSidebar": true,
+    "sidebar": "sidebar-band"
+  },
+  "/band/holly-oconnell": {
+    "title": "Holly O'Connell - The Stardust Engine Band Bio",
+    "showSidebar": true,
+    "sidebar": "sidebar-band"
+  },
+  "/band/evan-wright": {
+    "title": "Evan Wright - The Stardust Engine Band Bio",
+    "showSidebar": true,
+    "sidebar": "sidebar-band"
+  },
+  "/band/tyler-wright": {
+    "title": "Tyler Wright - The Stardust Engine Band Bio",
+    "showSidebar": true,
+    "sidebar": "sidebar-band"
+  },
+  "/band/history": {
+    "title": "Our History - The Stardust Engine",
+    "showSidebar": true,
+    "sidebar": "sidebar-history-band"
+  }
+}

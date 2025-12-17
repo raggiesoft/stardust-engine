@@ -138,7 +138,7 @@ $pageTitle = "The Zenith Report: The $350 Million Bus Ride";
                             
                             <div class="mb-4">
                                 <div class="d-flex justify-content-between align-items-center mb-1">
-                                    <span class="fw-bold text-dark">OMG (Omni)</span>
+                                    <span class="fw-bold text-dark">OGMCQ (Omni)</span>
                                     <span class="text-danger fw-bold"><i class="fa-solid fa-caret-down"></i> -14.2%</span>
                                 </div>
                                 <div class="progress" style="height: 4px;">

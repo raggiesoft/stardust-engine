@@ -1,0 +1,31 @@
+{
+  "/": {
+    "view": "pages/home",
+    "title": "Home - The Stardust Engine",
+    "showSidebar": false
+  },
+  "/about": {
+    "title": "Mission Profile - The Stardust Engine",
+    "theme": "ad-astra",
+    "ogTitle": "Mission Profile - The Stardust Engine",
+    "showSidebar": true,
+    "sidebar": "sidebar-default"
+  },
+  "/contact": {
+    "title": "Contact Flight Control - The Stardust Engine",
+    "theme": "ad-astra",
+    "showSidebar": false,
+    "ogTitle": "Contact Flight Control"
+  },
+  "/license": {
+    "title": "License Information",
+    "showSidebar": true,
+    "site": "portfolio",
+    "theme": null
+  },
+  "/radio": {
+    "title": "Stardust Radio",
+    "theme": "ad-astra",
+    "showSidebar": false
+  }
+}
