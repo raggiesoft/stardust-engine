@@ -46,6 +46,12 @@ $pageTitle = "The Autopsy: Holly Takes Control - Evidence Item #02";
         color: #e0e0e0; /* Light Text */
         border-left: 4px solid #0d6efd;
     }
+
+    /* THE TWIN WALL STYLE */
+    .wall-card {
+        border-left: 4px solid #d63384; /* Narrative Pink */
+        background: linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.6));
+    }
 </style>
 
 <div class="container py-5">
@@ -84,7 +90,7 @@ $pageTitle = "The Autopsy: Holly Takes Control - Evidence Item #02";
                 </div>
             </div>
 
-            <div class="card border-0 shadow-lg narrative-card">
+            <div class="card border-0 shadow-lg narrative-card mb-5">
                 <div class="card-body p-5">
                     
                     <h5 class="text-danger fw-bold text-uppercase mb-4 letter-spacing-2">The Narrative Log</h5>
@@ -126,10 +132,38 @@ $pageTitle = "The Autopsy: Holly Takes Control - Evidence Item #02";
                         It wasn't a request. It was the tone of a CEO addressing a subordinate. Frost, bewildered by the sudden shift in gravity, sank into his chair.
                     </p>
                     <p>
-                        "Do you know why we're here, Jameson?" Holly asked, opening her laptop. "It's not your offer. I deleted your offer."
+                        "Do you know why we're here, Jameson?" Holly asked, opening her laptop.
+                    </p>
+                    
+                    <div class="credential-box p-3 my-4 shadow-sm">
+                        <p class="mb-0 text-muted fst-italic">
+                            Holly didn't ask for a cable. She typed a quick sequence, authenticating to the building's Tier 1 secure network: <strong>Pacific Rim Properties</strong>. 
+                            <br><br>
+                            She hit <code>CTRL+K</code> to open the <strong>Quantum Cast</strong> menu. The massive 85-inch monitor on the wall—hardware leased from Pacific Rim—recognized the command immediately. Following its hard-coded protocols, the device prioritized the Landlord signal over the Tenant signal, dumping Frost's connection and instantly mirroring her screen.
+                        </p>
+                    </div>
+
+                    <p>
+                        "What the hell?" Frost stood up, looking at the screen, then at the IT director in the corner. "Who authorized that? She's not on the network!"
+                    </p>
+                    
+                    <p>
+                        The IT Director was frantically tapping his tablet, his face pale. "Sir... she's not on <em>our</em> network. The monitor is responding to an override from the Infrastructure Layer. I can't stop it. It's pre-empting our traffic."
+                    </p>
+
+                    <p>
+                        "How did you do that?" Frost demanded, staring at Holly. "We have enterprise-grade encryption. You can't just Quantum Cast into my boardroom!"
+                    </p>
+
+                    <p>
+                        Holly didn't answer. She didn't even look up from her keyboard. She simply let the question hang in the air, a terrifying variable that Frost couldn't solve.
+                    </p>
+
+                    <p>
+                        "It's not your offer," she said, watching the wireless handshake complete. "I deleted your offer."
                     </p>
                     <p>
-                        She typed a command. A new window appeared on the giant screen. It wasn't a spreadsheet. It was an email client.
+                        A new window appeared on the giant screen. It wasn't a spreadsheet. It was an email client.
                     </p>
                     <p>
                         "We're here because last Tuesday, you bypassed my office. You sent an email directly to <code>tyler.wright@</code>."
@@ -285,11 +319,38 @@ $pageTitle = "The Autopsy: Holly Takes Control - Evidence Item #02";
                         "Pacific Rim is a wholly owned subsidiary of the <strong>O'Connell Family Trust</strong>. I am Pacific Rim."
                     </p>
                     <p>
-                        Frost stared at the paper.
+                        "You asked earlier how I connected to your screen? I didn't hack it. I authenticated as the Owner."
                     </p>
                     <p>
-                        "I am your landlord, Jameson. And according to my records, your July and August rent checks bounced. You are ninety days past due."
+                        She watched the realization dawn on him. It was slow, painful, and absolutely total.
                     </p>
+                    <p>
+                        "You never made the connection, did you?" she said, her voice dropping to a conversational tone. "You saw 'Holly O'Connell' on the band roster and thought 'manager.' You saw 'H. O'Connell' on your rent invoices and thought 'landlord.' It never occurred to you that we might be the same person because your worldview doesn't allow for a band manager to own a skyscraper."
+                    </p>
+                    <p>
+                        She gestured around the room.
+                    </p>
+                    <p>
+                        "I've never been to this building before today, Jameson. I manage Pacific Rim remotely from Virginia. I let Elena run the day-to-day. But make no mistake: I own the chair you're sitting in. And according to my records, your July and August rent checks bounced."
+                    </p>
+
+                    <p>
+                        She leaned forward, her eyes narrowing.
+                    </p>
+
+                    <div class="alert alert-dark border-start border-4 border-danger bg-black text-white p-4 my-4 shadow-lg">
+                        <i class="fa-solid fa-coins text-warning me-2"></i>
+                        <strong class="text-uppercase text-danger me-2">The Demand</strong>
+                        <p class="mb-0 mt-2 text-white-50 fst-italic">
+                            "But that's not why I flew across the country. I flew here because last Thursday, my mail carrier asked me for two quarters. You sent a fraudulent prospectus to my home using a bulk permit number—Permit 4021—on a single piece of mail. It arrived with 'Postage Due'."
+                        </p>
+                        <p class="mb-0 mt-3 text-white-50">
+                            "I had to pay fifty cents to receive your death threat, Jameson. The USPIS calls that mail fraud. I call it petty."
+                        </p>
+                        <p class="mb-0 mt-3 text-white fw-bold fs-5">
+                            "I want my fifty cents back."
+                        </p>
+                    </div>
 
                     <div class="col-md-12 mb-4">
                          <div class="p-3 bg-black border border-danger text-white font-monospace">
@@ -311,7 +372,7 @@ $pageTitle = "The Autopsy: Holly Takes Control - Evidence Item #02";
                         Bradford cleared his throat, looking nervous but eager to please. "Actually, Ms. O'Connell... under California Code of Civil Procedure Section 1161, a verbal Notice to Quit is not legally binding. It must be served in writing, stating the precise amount due, and providing a three-day cure period."
                     </p>
                     <p>
-                        Frost smirked, leaning back in his chair. "See? You can't just declare eviction like you're Michael Scott declaring bankruptcy. You need paperwork, honey."
+                        Frost smirked, leaning back in his chair. "See? You can't just declare eviction by saying the word. You're not a magician. You need paperwork, honey."
                     </p>
                     <p>
                         Holly looked at Bradford. "You're right. Section 1161(2). In writing. Three days to pay or quit."
@@ -336,7 +397,7 @@ $pageTitle = "The Autopsy: Holly Takes Control - Evidence Item #02";
                     </p>
                     
                     <div class="row justify-content-center">
-                        <div class="col-lg-8">
+                        <div class="col-lg-11">
                             
                             <?php
                             // CONFIGURATION FOR LETTERHEAD
@@ -423,6 +484,44 @@ $pageTitle = "The Autopsy: Holly Takes Control - Evidence Item #02";
                         "Update your resume, Jameson. And next time... check the org chart."
                     </p>
 
+                </div>
+            </div>
+
+            <div class="card wall-card shadow-lg mb-5">
+                <div class="card-body p-5">
+                    <div class="d-flex align-items-center mb-4">
+                        <i class="fa-duotone fa-shield-halved text-danger fs-2 me-3"></i>
+                        <h5 class="text-white text-uppercase letter-spacing-2 mb-0">Simultaneous Event: The World Behind the Wall</h5>
+                    </div>
+                    
+                    <p class="text-white-50 fs-5 mb-4">
+                        While Holly waged war with words and documents, the other half of the room existed in a different dimension.
+                    </p>
+                    
+                    <p class="text-white-50">
+                        <strong>Evan and Tyler Wright</strong> stood shoulder-to-shoulder, their broad backs forming a physical wall between the conference table and the floor. They didn't look at Frost. They didn't look at the screen. They watched the door, ensuring no one entered or left without permission.
+                    </p>
+                    
+                    <p class="text-white-50">
+                        Behind that wall, <strong>Ryan O'Connell</strong> had locked the brakes of his wheelchair. He leaned precariously over the side, wrapping his arms around his sister on the floor in a desperate "deep pressure" hold.
+                    </p>
+                    
+                    <div class="row align-items-center bg-black rounded p-3 border border-secondary mt-4">
+                        <div class="col-md-2 text-center">
+                            <i class="fa-duotone fa-ear-muffs text-secondary fs-1 opacity-50"></i>
+                        </div>
+                        <div class="col-md-10">
+                            <p class="small text-muted font-monospace mb-0">
+                                <strong>Sensory Protocol:</strong> Ryan hummed a low, steady B-flat against her ear—the "Safe Harbor" note. He squeezed her as tightly as he could, trying to manually regulate her nervous system.
+                                <br><br>
+                                <span class="text-danger">STATUS: FAILED.</span> She was too far gone. The pressure wasn't grounding her; she was vibrating apart.
+                            </p>
+                        </div>
+                    </div>
+
+                    <p class="text-white-50 mt-4 mb-0 fst-italic">
+                        Holly fought the corporation so Ryan could fight the panic. Two wars. One family.
+                    </p>
                 </div>
             </div>
 

@@ -142,10 +142,10 @@ $pageTitle = "Forensic Audit: Omni-Global Media - Engine Room History";
             
     <div class="position-relative mt-5">
         <div class="text-center mb-5">
-            <h2 class="h4 text-white text-uppercase fw-bold border-bottom border-secondary d-inline-block pb-2">
+            <h2 class="h4 text-dark text-uppercase fw-bold border-bottom border-secondary d-inline-block pb-2">
                 <i class="fa-solid fa-gavel me-2 text-warning"></i>The Triple Tap
             </h2>
-            <p class="text-white-50 small mt-2 mx-auto" style="max-width: 600px;">
+            <p class="text-dark-50 small mt-2 mx-auto" style="max-width: 600px;">
                 Holly knew a lawsuit would take years. So she called the agencies that don't need a warrant to freeze your assets. She submitted three forms at 5:01 PM.
             </p>
         </div>

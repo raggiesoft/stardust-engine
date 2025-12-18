@@ -2,7 +2,7 @@
 // pages/engine-room/history/nine-figure-refusal/zenith-report/omni-global-chapter-11.php
 // The Fallout: Omni-Global collapses after realizing they tried to buyout a Lottery Winner.
 // Context: "Market Alert: Chapter 11"
-// UPDATED: Added "Landlord Lawsuit" Article
+// UPDATED: Corrected Stock Symbol to OMGCQ (OTC/Pink Sheets).
 
 $pageTitle = "The Zenith Report: Omni-Global Files Chapter 11";
 ?>
@@ -67,10 +67,6 @@ $pageTitle = "The Zenith Report: Omni-Global Files Chapter 11";
     [data-bs-theme="dark"] .border-secondary-subtle {
         border-color: #333 !important;
     }
-
-    [data-bs-theme="dark"] .zenith-sidebar-header {
-        border-bottom-color: #e0e0e0;
-    }
 </style>
 
 <div class="container py-5">
@@ -101,7 +97,7 @@ $pageTitle = "The Zenith Report: Omni-Global Files Chapter 11";
                             </h3>
                             
                             <h4 class="h5 fst-italic text-muted mb-4" style="font-family: 'Georgia', serif; line-height: 1.6;">
-                                Following a disastrous morning meeting with indie giant Engine Room Records, Chairman Arthur Vane announces "Immediate Restructuring." VP Jameson Frost ousted.
+                                Following a disastrous morning meeting with indie giant Engine Room Records, Chairman Arthur Vane filed for "Immediate Restructuring" at 1:00 PM yesterday. VP Jameson Frost ousted.
                             </h4>
 
                             <div class="d-flex align-items-center mb-4 text-muted small font-monospace">
@@ -110,13 +106,16 @@ $pageTitle = "The Zenith Report: Omni-Global Files Chapter 11";
                             
                             <div class="zenith-body">
                                 <p>
-                                    <span class="fw-bold text-uppercase">Century City —</span> The house of cards has collapsed. Just hours after attempting a $150M leveraged buyout of <strong>Engine Room Records</strong>, <strong>Omni-Global Media Corp. (NYSE: OMG)</strong> has filed for Chapter 11 bankruptcy protection.
+                                    <span class="fw-bold text-uppercase">Century City —</span> The house of cards has collapsed. Just three hours after attempting a $150M leveraged buyout of <strong>Engine Room Records</strong>, <strong>Omni-Global Media Corp. (OTC: OMGCQ)</strong> has filed for Chapter 11 bankruptcy protection.
                                 </p>
                                 <p>
-                                    Internal leaks confirm the catalyst was a catastrophic pitch meeting where VP <strong>Jameson Frost</strong> attempted to bully the O'Connell family—owners of the fiercely independent label—into a sale.
+                                    Internal leaks confirm the catalyst was a catastrophic pitch meeting (10:00 AM yesterday) where VP <strong>Jameson Frost</strong> attempted to bully the O'Connell family into a sale.
                                 </p>
                                 <p>
                                     "Frost didn't do his homework," said one analyst. "He tried to buy a debt-free company with a maxed-out credit card. Holly O'Connell called his bluff, exposed their liquidity crisis in the room, and walked out. The stock tanked 14% before the trading halt."
+                                </p>
+                                <p>
+                                    Sources say the Chapter 11 filing was rushed through during the lunch hour in a desperate attempt to freeze the company's liabilities—specifically, the debts exposed by O'Connell's forensic audit.
                                 </p>
                             </div>
 
@@ -124,20 +123,27 @@ $pageTitle = "The Zenith Report: Omni-Global Files Chapter 11";
 
                             <div class="badge bg-dark text-white text-uppercase mb-2">Exclusive Update</div>
                             <h3 class="h2 fw-bold mb-3 text-dark" style="font-family: 'Georgia', serif;">
-                                Landlord Files Eviction: The $450,000 Secret
+                                Landlord Serves "Nuclear" Notice
                             </h3>
                             <div class="zenith-body">
                                 <p>
-                                    As if bankruptcy wasn't enough, court records filed this afternoon reveal that Omni-Global's headquarters at 2000 Avenue of the Stars is facing an Unlawful Detainer lawsuit. The plaintiff? <strong>Pacific Rim Properties, LLC</strong>.
+                                    As if bankruptcy wasn't enough, court records confirm that <strong>Pacific Rim Properties, LLC</strong>—the landlord for Omni-Global's Century City headquarters—served a <strong>"3-Day Notice to Pay Rent or Quit"</strong> mere minutes after the failed meeting.
                                 </p>
                                 <p>
-                                    In a twist of irony that has Century City buzzing, state records confirm that Pacific Rim Properties is a wholly owned subsidiary of the <strong>O'Connell Family Trust</strong>.
+                                    The twist? State records confirm Pacific Rim Properties is a wholly owned subsidiary of the <strong>O'Connell Family Trust</strong>. Jameson Frost wasn't just negotiating with a target; he was negotiating with his own landlord.
                                 </p>
                                 <p>
-                                    "It's almost Shakespearean," said legal analyst Marcus Thorne. "Jameson Frost spent six months planning a hostile takeover of a company that he owed three months of back rent to. He wasn't just negotiating with a target; he was negotiating with his own landlord."
+                                    The notice cites $450,000 in unpaid rent. While the Chapter 11 filing typically triggers an "Automatic Stay" on collections, legal experts believe the O'Connells will aggressively challenge it.
                                 </p>
                                 <p>
-                                    The lawsuit cites $450,000 in unpaid rent for July, August, and September. The eviction notice was reportedly served mere minutes after the failed acquisition meeting ended.
+                                    Despite the threat, Omni-Global executives appear unconcerned.
+                                </p>
+                                <blockquote class="blockquote border-start border-4 border-danger ps-3 my-3 fst-italic bg-body-secondary p-2">
+                                    "It's a negotiation tactic. She's bluffing. Nobody evicts an anchor tenant over a few missed payments. We'll settle this in post-bankruptcy restructuring."
+                                    <footer class="blockquote-footer mt-1">Senior Omni-Global Executive (Anonymous)</footer>
+                                </blockquote>
+                                <p>
+                                    Holly O'Connell declined to comment, but sources close to the Engine Room suggest she has already prepared the <strong>Unlawful Detainer</strong> lawsuit to be filed the moment the 72-hour notice expires.
                                 </p>
                             </div>
 
@@ -148,7 +154,7 @@ $pageTitle = "The Zenith Report: Omni-Global Files Chapter 11";
                             <h6 class="zenith-sidebar-header text-dark">Market Watch</h6>
                             <div class="mb-5">
                                 <div class="d-flex justify-content-between align-items-center mb-1">
-                                    <span class="fw-bold text-dark">OGMCQ (Omni)</span>
+                                    <span class="fw-bold text-dark">OMGCQ (Omni)</span>
                                     <span class="text-danger fw-bold"><i class="fa-solid fa-caret-down"></i> -14.2%</span>
                                 </div>
                                 <div class="progress" style="height: 4px;">

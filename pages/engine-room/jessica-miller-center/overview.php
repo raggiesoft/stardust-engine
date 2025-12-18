@@ -2,7 +2,7 @@
 // pages/engine-room/jessica-miller-center/overview.php
 // The Homepage for The Jessica Miller Center
 // Context: The main landing page for the sub-site.
-// UPDATED: Replaced image signature with Google Font text.
+// UPDATED: Added Destination Dispatch System Spotlight
 
 $pageTitle = "The Jessica Miller Center - Universal Design & Workplace Equity";
 ?>
@@ -154,6 +154,30 @@ $pageTitle = "The Jessica Miller Center - Universal Design & Workplace Equity";
                     <p class="text-muted small">
                         We normalize flexible hours, asynchronous communication, and the right to disconnect. Burnout is a system failure, not a personal one.
                     </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row justify-content-center mb-5">
+        <div class="col-lg-12">
+            <div class="card bg-dark border-info shadow-lg overflow-hidden">
+                <div class="row g-0 align-items-center">
+                    <div class="col-md-8 p-5">
+                        <h4 class="text-info fw-bold text-uppercase mb-3">
+                            <i class="fa-duotone fa-elevator me-2"></i>System Spotlight: Destination Dispatch
+                        </h4>
+                        <p class="text-white-50 mb-4">
+                            We have replaced standard elevator banks with intelligent, group-based dispatching. 
+                            Features include <strong>Badge-Based Home Floor</strong> assignment and a discreet <strong>ADA Mode</strong> for extended dwell times and audio guidance.
+                        </p>
+                        <a href="/engine-room/jessica-miller-center/destination-dispatch-elevators" class="btn btn-outline-info rounded-pill px-4">
+                            View User Guide
+                        </a>
+                    </div>
+                    <div class="col-md-4 bg-black text-center p-5 opacity-50 d-none d-md-block">
+                        <i class="fa-duotone fa-signs-post fa-5x text-info"></i>
+                    </div>
                 </div>
             </div>
         </div>

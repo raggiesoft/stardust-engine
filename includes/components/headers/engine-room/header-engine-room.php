@@ -53,7 +53,7 @@ $isHistory = (
     <ul class="dropdown-menu dropdown-menu-end rounded-0 border-secondary shadow-sm">
       <li><h6 class="dropdown-header text-uppercase text-primary fw-bold">Infrastructure</h6></li>
       <li>
-          <a class="dropdown-item" href="/engine-room/corporate/facilities">
+          <a class="dropdown-item" href="/engine-room/jessica-miller-center">
             <i class="fa-solid fa-building me-2 text-secondary"></i>The Jessica Miller Center
           </a>
       </li>

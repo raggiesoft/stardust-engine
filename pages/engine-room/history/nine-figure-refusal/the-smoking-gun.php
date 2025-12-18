@@ -2,7 +2,7 @@
 // pages/engine-room/history/nine-figure-refusal/the-smoking-gun.php
 // EVIDENCE ITEM #00-C: The Fraudulent Prospectus (The "Smoking Gun")
 // Context: The physical mailer sent to the family's unlisted home address.
-// Addressed to Tyler Wright (because Frost assumed the man was the decision maker).
+// UPDATED: Added the "Postage Due" narrative arc.
 
 $pageTitle = "Evidence #00-C: The Smoking Gun - Engine Room History";
 ?>
@@ -15,7 +15,6 @@ $pageTitle = "Evidence #00-C: The Smoking Gun - Engine Room History";
         color: #333;
         font-family: 'Times New Roman', serif;
         position: relative;
-        /* CRITICAL FIX: Overflow visible allows notes to hang off the edge */
         overflow: visible; 
         box-shadow: 0 1rem 3rem rgba(0,0,0,0.175)!important;
     }
@@ -46,24 +45,21 @@ $pageTitle = "Evidence #00-C: The Smoking Gun - Engine Room History";
         font-size: 0.95rem;
         line-height: 1.2;
         position: absolute;
-        width: 260px; /* Width of the handwritten note */
+        width: 260px;
         z-index: 10;
         text-shadow: 1px 1px 0px #fff;
-        
-        /* Default Desktop Position: Hanging in the right margin */
         left: 105%; 
         top: -15px;
         transform: rotate(-3deg);
     }
 
-    /* Mobile Breakpoint: Stack notes below text */
     @media (max-width: 1200px) {
         .holly-note {
             position: relative;
             display: block;
             left: 0 !important;
             top: 10px !important;
-            margin-bottom: 30px; /* Space between notes */
+            margin-bottom: 30px;
             width: 100%;
             transform: rotate(0deg);
             background: rgba(214, 51, 132, 0.05);
@@ -84,11 +80,75 @@ $pageTitle = "Evidence #00-C: The Smoking Gun - Engine Room History";
         line-height: 1.1;
     }
 
+    /* Envelope Styling */
+    .envelope-container {
+        background-color: #fcfcfc;
+        border: 1px solid #e0e0e0;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .permit-box {
+        border: 2px solid #000;
+        padding: 5px 10px;
+        text-align: center;
+        font-family: 'Arial', sans-serif;
+        font-size: 0.7rem;
+        font-weight: bold;
+        line-height: 1.2;
+        width: 120px;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+
+    /* POSTAGE DUE STAMP */
+    .postage-due-stamp {
+        border: 4px double #dc3545;
+        color: #dc3545;
+        padding: 10px 15px;
+        font-family: 'Courier New', monospace;
+        font-weight: bold;
+        text-transform: uppercase;
+        position: absolute;
+        bottom: 30px;
+        right: 40px;
+        transform: rotate(-15deg);
+        background-color: rgba(255, 255, 255, 0.9);
+        box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .address-window {
+        font-family: 'Courier New', monospace;
+        background-color: rgba(0,0,0,0.05);
+        padding: 15px;
+        border-radius: 4px;
+        border: 1px solid rgba(0,0,0,0.1);
+    }
+    
+    .evidence-tag {
+        position: absolute;
+        background-color: #dc3545;
+        color: white;
+        font-family: 'Impact', sans-serif;
+        padding: 2px 8px;
+        font-size: 0.8rem;
+        z-index: 10;
+        box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    }
+
     /* Exhibit B Styling */
     .title-search-paper {
         background-color: #eef2f5;
         border: 1px solid #cbd5e0;
         font-family: 'Courier New', monospace;
+    }
+    
+    /* DARK MODE */
+    [data-bs-theme="dark"] .envelope-container {
+        background-color: #e0e0e0;
+        color: #000;
     }
 </style>
 
@@ -103,7 +163,7 @@ $pageTitle = "Evidence #00-C: The Smoking Gun - Engine Room History";
                 THE SMOKING GUN
             </h1>
             <p class="lead text-muted font-monospace">
-                "He tried to mail a scam to my cousin because he didn't respect me. He forgot we live in the same house."
+                "It wasn't the fraud that made me book the flight. It was the fifty cents."
             </p>
         </div>
     </div>
@@ -121,9 +181,95 @@ $pageTitle = "Evidence #00-C: The Smoking Gun - Engine Room History";
                         <p class="mb-0 small text-white-50">
                             <strong>1. The Target:</strong> The letter is addressed to <strong>Tyler Wright</strong> (The Drummer), confirming Frost's bias that "the men" must be the decision makers. Frost bypassed the CEO (Holly) entirely.
                             <br>
-                            <strong>2. The Mistake:</strong> Frost didn't know the family lives together in a communal "Fortress." Holly screens all incoming mail. Frost literally mailed his felony confession directly to the Forensic Accountant he was trying to circumvent.
+                            <strong>2. The Mistake:</strong> Frost tried to use a "Bulk Mail" permit for a single letter. He thought he was saving money. Instead, he triggered a "Postage Due" flag at the destination.
                         </p>
                     </div>
+                </div>
+            </div>
+
+            <div class="card bg-dark border-secondary shadow-lg mb-5">
+                <div class="card-header bg-black border-bottom border-secondary text-white-50 small font-monospace d-flex justify-content-between">
+                    <span>EVIDENCE ITEM #00-C</span>
+                    <span>RECOVERED: SEPT 13, 2018</span>
+                </div>
+                <div class="card-body p-4 p-md-5 bg-dark">
+                    
+                    <div class="envelope-container p-5 rounded">
+                        
+                        <div class="evidence-tag" style="top: -10px; right: 100px;">VIOLATION: SINGLE PIECE</div>
+                        <div class="evidence-tag" style="bottom: 20px; left: 20px;">TARGET: TYLER WRIGHT</div>
+
+                        <div class="mb-5 small text-uppercase fw-bold text-dark">
+                            Omni-Global Media Corp.<br>
+                            2000 Avenue of the Stars<br>
+                            Suite 4000<br>
+                            Los Angeles, CA 90067
+                        </div>
+
+                        <div class="permit-box text-dark">
+                            PRESORTED<br>
+                            FIRST CLASS MAIL<br>
+                            U.S. POSTAGE PAID<br>
+                            LOS ANGELES, CA<br>
+                            PERMIT NO. 4021
+                        </div>
+
+                        <div class="postage-due-stamp text-center">
+                            <i class="fa-solid fa-hand-holding-dollar me-2"></i>POSTAGE DUE<br>
+                            <span class="fs-4">$0.50</span><br>
+                            <small>INVALID PERMIT</small>
+                        </div>
+
+                        <div class="row justify-content-center mt-5">
+                            <div class="col-md-6">
+                                <div class="address-window text-dark">
+                                    MR. TYLER WRIGHT<br>
+                                    C/O ENGINE ROOM RECORDS<br>
+                                    [REDACTED RESIDENTIAL ADDRESS]<br>
+                                    BLACKSBURG, VA 24060
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-5 text-center text-muted opacity-50 font-monospace" style="letter-spacing: 5px;">
+                            ||||| | ||| || |||| ||||| || || |
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="card-footer bg-black border-top border-secondary p-3">
+                    <div class="d-flex align-items-start">
+                        <i class="fa-solid fa-triangle-exclamation text-danger mt-1 me-3"></i>
+                        <div>
+                            <h6 class="text-white fw-bold mb-1">PROSECUTOR'S NOTE:</h6>
+                            <p class="text-white-50 small mb-0 font-monospace">
+                                Defendant utilized <strong>Permit No. 4021</strong> (Bulk Rate) for a single parcel. It bypassed LA sorting but was flagged for revenue protection in Blacksburg, VA.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card bg-white border-0 shadow-lg mb-5" style="transform: rotate(1deg);">
+                <div class="card-body p-4">
+                    <h5 class="fw-bold text-dark text-uppercase mb-3"><i class="fa-solid fa-comment-dollar me-2 text-success"></i>The 50-Cent War Declaration</h5>
+                    <p class="text-muted">
+                        On the morning of September 13th, the USPS mail carrier knocked on the door of the Engine Room Records HQ in Blacksburg. Holly O'Connell answered.
+                    </p>
+                    <p class="text-muted">
+                        "Morning, Ms. O'Connell," the carrier said, holding up the envelope. "Sender tried to pull a fast one with a bulk permit. You owe 50 cents if you want it."
+                    </p>
+                    <p class="text-muted">
+                        Holly stared at the return address. <strong>Omni-Global Media Corp.</strong> The same tenant who was currently 90 days past due on their rent ($450,000).
+                    </p>
+                    <p class="text-muted">
+                        She reached into her pocket, pulled out two quarters, and paid the postage.
+                    </p>
+                    <hr>
+                    <p class="fw-bold text-dark fst-italic mb-0">
+                        "That was the moment," Tyler later said. "She walked into the kitchen holding the letter. She wasn't yelling. She was scary calm. She said, 'Pack your bags. We're going to Los Angeles. I'm going to get my rent, and I'm going to get my fifty cents back.'"
+                    </p>
                 </div>
             </div>
 
@@ -258,7 +404,7 @@ $pageTitle = "Evidence #00-C: The Smoking Gun - Engine Room History";
                             Jameson Frost
                         </div>
                         <p class="fw-bold mb-0 mt-3 text-dark">Jameson Frost</p>
-                        <p class="small text-muted text-uppercase">
+                        <p class="small text-uppercase text-muted">
                             <span class="target-text">
                                 Vice President, Acquisitions & Private Wealth
                                 <span class="circle-sketch"></span>
