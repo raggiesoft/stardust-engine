@@ -1,225 +1,130 @@
-
 <?php
 // pages/engine-room/corporate/structure.php
-// Corporate Governance & Entity Structure
+// The Corporate Hierarchy (The "Iceberg" Model)
+// Context: Visualizing how a "small indie label" controls a massive asset portfolio.
 
-$pageTitle = "Corporate Structure - Engine Room Records, LLC";
-
-// DYNAMIC AUDIT LOGIC
-// We assume the "Last Audit" is the most recently COMPLETED quarter.
-$currentMonth = (int)date('n');
-$currentYear = (int)date('Y');
-
-// Calculate current quarter (1-4)
-$currentQuarter = ceil($currentMonth / 3);
-
-// Calculate previous quarter
-if ($currentQuarter == 1) {
-    $auditQ = 4;
-    $auditYear = $currentYear - 1;
-} else {
-    $auditQ = $currentQuarter - 1;
-    $auditYear = $currentYear;
-}
-
-$auditString = "Q{$auditQ} {$auditYear}";
+$pageTitle = "Corporate Structure - Engine Room Records";
 ?>
 
+<style>
+    /* WATERLINE (Page Specific) */
+    .waterline {
+        border-top: 2px dashed #0dcaf0;
+        position: relative;
+        margin: 40px 0;
+        text-align: center;
+    }
+    .waterline span {
+        background-color: #000;
+        color: #0dcaf0;
+        padding: 0 15px;
+        position: relative;
+        top: -12px;
+        font-family: monospace;
+        text-transform: uppercase;
+    }
+</style>
+
 <div class="container py-5">
-    
-    <div class="row mb-5 align-items-end">
-        <div class="col-lg-8">
-            <h6 class="text-uppercase text-danger letter-spacing-2 fw-bold mb-2">Governance</h6>
-            <h1 class="display-4 fw-bold text-uppercase" style="font-family: 'Impact', sans-serif;">
-                Entity Structure
+
+    <div class="row justify-content-center mb-5">
+        <div class="col-lg-8 text-center">
+            <h1 class="display-4 fw-bold text-white text-uppercase" style="font-family: 'Impact', sans-serif;">
+                The Governance Structure
             </h1>
-            <p class="lead text-muted font-monospace border-start border-4 border-danger ps-3">
-                Current organization following the 2019 Asset Acquisition of Aethelgard Holdings (f/k/a Omni-Global Media Corp).
+            <p class="lead text-muted font-monospace">
+                "To the public, we are a band. To the bank, we are a conglomerate."
             </p>
-        </div>
-        <div class="col-lg-4 text-lg-end">
-            <div class="badge bg-black text-white p-3 rounded-0 font-monospace border border-secondary shadow-sm">
-                <div class="d-flex align-items-center gap-3">
-                    <div class="text-end">
-                        <div class="text-success small fw-bold text-uppercase" style="font-size: 0.7rem;">Status: CLEAR</div>
-                        <div class="fs-6">Last Audit: <?php echo $auditString; ?></div>
-                    </div>
-                    <i class="fa-solid fa-file-circle-check fa-2x text-success"></i>
-                </div>
-            </div>
         </div>
     </div>
 
-    <div class="card bg-dark text-white border-0 shadow-lg mb-5">
-        <div class="card-header bg-black py-3 border-bottom border-secondary">
-            <div class="row align-items-center">
-                <div class="col-md-6">
-                    <h4 class="mb-0 text-uppercase fw-bold"><i class="fa-solid fa-crown me-2 text-warning"></i>The Parent</h4>
-                </div>
-                <div class="col-md-6 text-md-end font-monospace text-white-50 small">
-                    Engine Room Records, LLC (Delaware)
-                </div>
-            </div>
-        </div>
-        <div class="card-body p-4">
-            <p class="card-text">
-                The primary holding company. Maintains sole ownership of all intellectual property, physical assets, and subsidiary equity. 
-                Functions as the central treasury and legal shield for the ecosystem.
-            </p>
+    <?php
+    // 1. DEFINE PATH TO JSON DATA
+    $jsonFile = ROOT_PATH . '/data/corporate-structure.json';
+
+    // 2. FETCH AND DECODE
+    if (file_exists($jsonFile)) {
+        $jsonData = file_get_contents($jsonFile);
+        $rootNode = json_decode($jsonData, true);
+
+        // Check for JSON errors
+        if (json_last_error() !== JSON_ERROR_NONE) {
+            echo '<div class="alert alert-danger">JSON Decode Error: ' . json_last_error_msg() . '</div>';
+            $rootNode = []; // Empty array to prevent component crash
+        }
+    } else {
+        echo '<div class="alert alert-warning">Data file not found: corporate-structure.json</div>';
+        $rootNode = [];
+    }
+
+    // 3. RENDER THE COMPONENT
+    include ROOT_PATH . '/includes/components/corporate/org-chart.php';
+    ?>
+
+    <div class="row justify-content-center mt-5">
+        <div class="col-lg-10">
             
-            <div class="accordion accordion-flush mb-3" id="entityHistory">
-                <div class="accordion-item bg-transparent">
-                    <h2 class="accordion-header" id="flush-headingOne">
-                        <button class="accordion-button collapsed bg-transparent text-white-50 shadow-none p-0 fst-italic small" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                            <i class="fa-solid fa-history me-2"></i>Entity History: VA (1992) &rarr; DE (2015)
-                        </button>
-                    </h2>
-                    <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#entityHistory">
-                        <div class="accordion-body text-white-50 small ps-0">
-                            <p class="mb-2">
-                                Originally organized as a Virginia LLC in Blacksburg, VA (1992). Holly O'Connell famously resisted moving the entity for two decades, citing "sentimental value" and "unnecessary fees."
+            <div class="waterline">
+                <span>The Public Perception Barrier</span>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="card bg-dark border-secondary h-100">
+                        <div class="card-body">
+                            <h5 class="text-info text-uppercase fw-bold mb-3"><i class="fa-solid fa-eye me-2"></i>Public View</h5>
+                            <p class="text-white-50">
+                                To a casual observer (or a lazy journalist), <strong>Engine Room Records</strong> appears to be a small, boutique independent label run by the band members themselves. It has one office in Blacksburg, VA, and represents a handful of niche artists. It seems "quaint."
                             </p>
-                            <p class="mb-0">
-                                <strong>The Shift (2015):</strong> Ahead of the "Re-Ignition" World Tour, General Counsel Marcus Thorne argued that Virginia law could not sufficiently protect the family's personal assets (specifically the 2012 Lottery Trust) from international liability lawsuits. Holly agreed to the redomestication on one condition: she would take the Delaware Bar Exam herself to ensure she could personally audit the new registered agents. She passed on her first attempt in July 2015.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="card bg-dark border-secondary h-100">
+                        <div class="card-body">
+                            <h5 class="text-danger text-uppercase fw-bold mb-3"><i class="fa-solid fa-eye-slash me-2"></i>Private Reality</h5>
+                            <p class="text-white-50">
+                                Engine Room Records is effectively a <strong>Family Office</strong>. The LLC acts as the centralized management node for the <strong>O'Connell Family Trust</strong>, which holds significant equity in commercial real estate (Pacific Rim) and corporate liquidation assets (Aethelgard). The "Band" is simply the public face of a diversified investment empire.
                             </p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="row g-3 mt-2">
-                <div class="col-md-3">
-                    <div class="p-3 bg-white text-dark rounded-1 text-center">
-                        <div class="h2 fw-bold mb-0">100%</div>
-                        <div class="small text-uppercase fw-bold">Solvent</div>
+            <div class="alert alert-dark border-start border-4 border-danger bg-black text-white p-4 mt-4 shadow-lg">
+                <div class="d-flex align-items-center">
+                    <div class="me-4 d-none d-md-block">
+                        <i class="fa-solid fa-vulture fa-3x text-secondary"></i>
                     </div>
-                </div>
-                <div class="col-md-9">
-                    <div class="p-3 border border-secondary rounded-1 h-100 d-flex align-items-center">
-                        <i class="fa-duotone fa-gavel me-3 fs-4 text-secondary"></i>
-                        <span class="small font-monospace">Authorized by: Holly O'Connell (CEO)<br>Registered Agent: Thorne Legal Group, Wilmington DE</span>
+                    <div>
+                        <h5 class="fw-bold text-uppercase text-white mb-1">Entity Highlight: Aethelgard Holdings</h5>
+                        <p class="mb-0 small text-muted font-monospace">Status: Active // Purpose: Omni-Global Liquidation</p>
+                        <p class="mb-0 mt-2 text-white-50">
+                            Created in late 2018 following the Omni-Global bankruptcy. Aethelgard Holdings was established to purchase the "bones" of the failed media giant (trademarks, catalogs, patents) from the bankruptcy court. It is currently stripping Omni-Global for parts and selling them off to recoup the family's "emotional damages."
+                        </p>
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
-
-    <div class="row g-4 mb-5">
-        
-        <div class="col-lg-4">
-            <div class="card h-100 border-top border-5 border-success shadow-sm">
-                <div class="card-body">
-                    <h5 class="fw-bold text-uppercase text-success mb-3">
-                        <i class="fa-solid fa-building me-2"></i>JMC Management, LLC
-                    </h5>
-                    <p class="small text-muted mb-3">
-                        <strong>Doing Business As:</strong> The Jessica Miller Center
-                    </p>
-                    <ul class="list-group list-group-flush small">
-                        <li class="list-group-item px-0 d-flex justify-content-between">
-                            <span>Role:</span>
-                            <strong>Facilities & Operations</strong>
-                        </li>
-                        <li class="list-group-item px-0 d-flex justify-content-between">
-                            <span>Asset Type:</span>
-                            <strong>Commercial Leasehold</strong>
-                        </li>
-                        <li class="list-group-item px-0">
-                            <strong>Note:</strong> Holds the 20-year lease and exclusive signage rights for 1000 Wilshire Blvd (formerly "Omni Tower"). 
-                            <br><em class="text-danger">We do not own the building; we just put our name on it.</em>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+    
+    <div class="row justify-content-center mt-5 pt-4 border-top border-secondary border-opacity-25 align-items-center">
+        <div class="col-4">
+            <a href="/engine-room/about" class="btn btn-outline-secondary rounded-pill">
+                <i class="fa-solid fa-arrow-left me-2"></i>About Us
+            </a>
         </div>
-
-        <div class="col-lg-4">
-            <div class="card h-100 border-top border-5 border-primary shadow-sm">
-                <div class="card-body">
-                    <h5 class="fw-bold text-uppercase text-primary mb-3">
-                        <i class="fa-solid fa-truck-fast me-2"></i>Engine Room Logistics
-                    </h5>
-                    <p class="small text-muted mb-3">
-                        <strong>The Fleet</strong>
-                    </p>
-                    <ul class="list-group list-group-flush small">
-                        <li class="list-group-item px-0 d-flex justify-content-between">
-                            <span>Role:</span>
-                            <strong>Transport & Security</strong>
-                        </li>
-                        <li class="list-group-item px-0 d-flex justify-content-between">
-                            <span>Assets:</span>
-                            <strong>12 Specialized Vehicles</strong>
-                        </li>
-                        <li class="list-group-item px-0">
-                            <strong>Note:</strong> Acquired from Omni-Global liquidation. Retrofitted for neurodivergent sensory needs.
-                        </li>
-                    </ul>
-                </div>
-            </div>
+        <div class="col-4 text-center">
+            <a href="/engine-room" class="btn btn-outline-primary rounded-pill">
+                <i class="fa-duotone fa-home me-2"></i>Home
+            </a>
         </div>
-
-        <div class="col-lg-4">
-            <div class="card h-100 border-top border-5 border-secondary bg-light opacity-75">
-                <div class="card-body">
-                    <h5 class="fw-bold text-uppercase text-secondary mb-3">
-                        <i class="fa-solid fa-tombstone me-2"></i>Aethelgard Holdings
-                    </h5>
-                    <p class="small text-muted mb-3">
-                        <strong>f/k/a Omni-Global Media Corp.</strong>
-                    </p>
-                    <div class="alert alert-danger py-2 small fw-bold text-center">
-                        <i class="fa-solid fa-ban me-2"></i>NON-OPERATING ENTITY
-                    </div>
-                    <p class="small text-muted mb-0">
-                        The "Bad Bank." This entity exists solely to house the toxic debt and unresolved lawsuits of the former Omni-Global brand. It has no assets, no employees, and no future.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="row justify-content-center">
-        <div class="col-lg-10">
-            <h3 class="h5 fw-bold text-uppercase border-bottom pb-2 mb-4">
-                <i class="fa-duotone fa-scale-unbalanced me-2 text-info"></i>The "Paper Tiger" Comparison (2018)
-            </h3>
-            <div class="table-responsive">
-                <table class="table table-bordered table-hover align-middle">
-                    <thead class="table-dark text-center text-uppercase small">
-                        <tr>
-                            <th width="40%">Metric</th>
-                            <th width="30%" class="bg-danger text-white">Omni-Global Media</th>
-                            <th width="30%" class="bg-success text-white">Engine Room Records</th>
-                        </tr>
-                    </thead>
-                    <tbody class="font-monospace small">
-                        <tr>
-                            <td class="fw-bold">Global Offices</td>
-                            <td class="text-center text-danger">1 (Leased)</td>
-                            <td class="text-center text-success">3 (Owned/Leased)</td>
-                        </tr>
-                        <tr>
-                            <td class="fw-bold">Full-Time Employees</td>
-                            <td class="text-center text-danger">12</td>
-                            <td class="text-center text-success">45</td>
-                        </tr>
-                        <tr>
-                            <td class="fw-bold">Debt-to-Equity Ratio</td>
-                            <td class="text-center text-danger">450% (Insolvent)</td>
-                            <td class="text-center text-success">0% (Debt Free)</td>
-                        </tr>
-                        <tr>
-                            <td class="fw-bold">Building Ownership</td>
-                            <td class="text-center text-danger">Signage Rights Only</td>
-                            <td class="text-center text-muted">N/A</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <p class="text-muted fst-italic small text-center mt-2">
-                *Data retrieved from 2018 Bankruptcy Discovery Documents.
-            </p>
+        <div class="col-4 text-end">
+            <a href="/engine-room/history/nine-figure-refusal" class="btn btn-primary rounded-pill shadow-sm">
+                History <i class="fa-solid fa-arrow-right ms-2"></i>
+            </a>
         </div>
     </div>
 

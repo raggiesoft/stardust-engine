@@ -1,0 +1,110 @@
+{
+  "title": "Engine Room Records, LLC",
+  "role": "The Board of Directors",
+  "icon": "fa-duotone fa-record-vinyl",
+  "color": "primary",
+  "meta": "Managed by The Five",
+  "children": [
+    {
+      "title": "The Stardust Engine",
+      "role": "Operating Entity (Touring/IP)",
+      "icon": "fa-duotone fa-guitar",
+      "color": "warning"
+    },
+    {
+      "title": "O'Connell Family Trust",
+      "role": "Asset Holding Vehicle",
+      "icon": "fa-duotone fa-sack-dollar",
+      "color": "warning",
+      "children": [
+        {
+            "title": "Stardust Studios",
+            "role": "Recording Studio / Production",
+            "icon": "fa-duotone fa-microphone-lines",
+            "color": "danger",
+            "link": "/engine-room/corporate/stardust-studios"
+        },
+        {
+          "title": "Artists First Management, LLC",
+          "role": "Music Publishing",
+          "icon": "fa-duotone fa-book-open",
+          "color": "danger",
+          "link": "/engine-room/corporate/artists-first-management",
+          "children": [
+            {
+              "title": "Mirage",
+              "role": "Artist",
+              "icon": "fa-duotone fa-music",
+              "color": "warning",
+              "meta": "Signed Year: 2000",
+              "children": [
+                {
+                "title": "The Arctic Symphony Project",
+                "role": "Artist Pseudonym",
+                "icon": "fa-duotone fa-music",
+                "color": "warning",
+                "meta": "Holiday Music from Mirage"
+                }
+              ]
+            },
+            {
+              "title": "Origin",
+              "role": "Artist",
+              "icon": "fa-duotone fa-music",
+              "color": "warning",
+              "meta": "Signed Year: 2003"
+            },
+            {
+              "title": "The Winter Palace",
+              "role": "Artist",
+              "icon": "fa-duotone fa-music",
+              "color": "warning",
+              "meta": "Signed Year: 2002"
+            }
+          ]
+        },
+        {
+            "title": "Stardust Properties, LLC",
+            "role": "Real Estate Holding Co.",
+            "icon": "fa-duotone fa-city",
+            "color": "danger",
+            "link": "/engine-room/corporate/stardust-ventures",
+            "meta": "Global Property Portfolio",
+            "children": [
+                {
+                    "title": "Stardust Blacksburg, LLC",
+                    "role": "Residential Portfolio",
+                    "icon": "fa-duotone fa-house-user",
+                    "color": "danger",
+                    "link": "/engine-room/corporate/stardust-blacksburg",
+                    "meta": "Primary Student Housing Provider (Commonwealth Poly)"
+                },
+                {
+                    "title": "Pacific Rim Properties, LLC",
+                    "role": "Commercial Portfolio",
+                    "icon": "fa-duotone fa-building",
+                    "color": "danger",
+                    "link": "/pacific-rim",
+                    "meta": "Class-A Assets (Inc. 2000 Ave of the Stars)"
+                }
+            ]
+        },
+        {
+          "title": "Jessica Miller Center, LLC",
+          "role": "Non-Profit / Philanthropy",
+          "icon": "fa-duotone fa-hands-holding-heart",
+          "color": "danger",
+          "link": "/engine-room/corporate/jessica-miller-center"
+        },
+        {
+          "title": "Aethelgard Holdings",
+          "role": "Distressed Asset Liquidation",
+          "icon": "fa-duotone fa-gavel",
+          "color": "danger",
+          "meta": "Status: Active // Purpose: Omni-Global Liquidation",
+          "link": "/engine-room/corporate/aethelgard"
+        }
+      ]
+    }
+  ]
+}

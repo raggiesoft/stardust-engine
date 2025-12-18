@@ -39,7 +39,7 @@ $defaults = [
 $routes = [];
 $routeOrigins = []; // Tracks which files claimed which route
 
-$routeDirectory = ROOT_PATH . '/routes';
+$routeDirectory = ROOT_PATH . '/data/routes';
 
 if (is_dir($routeDirectory)) {
     $directoryIterator = new RecursiveDirectoryIterator($routeDirectory, RecursiveDirectoryIterator::SKIP_DOTS);
