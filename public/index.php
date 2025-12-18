@@ -1,7 +1,7 @@
 <?php
 ob_start(); 
-// RaggieSoft Elara Router v4.5
-// Updated: Deep Forensic Collision Detection
+// RaggieSoft Elara Router v5.2
+// Updated: Header Map Decoupling (Full Config Driven)
 
 define('ROOT_PATH', dirname(__DIR__));
 $request_uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
@@ -11,33 +11,39 @@ if (strlen($request_uri) > 1) {
     $request_uri = rtrim($request_uri, '/');
 }
 
-// --- 1. GLOBAL DEFAULTS ---
-$siteName = 'The Stardust Engine'; 
-$projectSlug = 'stardust-engine'; 
-$cdnBaseUrl = 'https://assets.raggiesoft.com';
-$defaultTheme = 'stardust-engine'; 
+// --- 1. LOAD GLOBAL SETTINGS ---
+$settingsFile = ROOT_PATH . '/data/settings.json';
 
-$defaults = [
-    'view' => 'errors/404',
+if (!file_exists($settingsFile)) {
+    die('Critical Error: Configuration file (data/settings.json) missing.');
+}
+
+$settings = json_decode(file_get_contents($settingsFile), true);
+
+if (json_last_error() !== JSON_ERROR_NONE) {
+    die('Critical Error: Invalid JSON in settings.json');
+}
+
+// Extract Core Globals
+$siteName = $settings['siteName']; 
+$projectSlug = $settings['projectSlug']; 
+$cdnBaseUrl = $settings['cdnBaseUrl'];
+$defaultTheme = $settings['defaultTheme']; 
+
+// Build Defaults Array
+$defaults = array_merge($settings['defaults'], [
     'title' => $siteName, 
     'theme' => $defaultTheme,
-    'showSidebar' => false, 
-    'sidebar' => 'sidebar-default',
     'site' => $projectSlug,
-    'ogTitle' => 'The Stardust Engine - Official Band Archive',
-    'ogDescription' => "The official archive of the fictional 80s band 'The Stardust Engine.'",
-    'ogImage' => $cdnBaseUrl . "/stardust-engine/images/social-media/stardust-engine-logo-social.jpg",
-    'ogUrl' => "https://thestardustengine.com" . $request_uri,
-    'navbarBrandLogo' => $cdnBaseUrl . "/stardust-engine/images/logos/stardust-engine-logo.png",
-    'navbarBrandText' => '<span class="d-none d-md-inline">The </span>Stardust Engine',
-    'navbarBrandLink' => '/',
-    'navbarBrandAlt'  => 'Stardust Logo',
-    'navbarBrandClass' => 'rounded-circle shadow-glow'
-];
+    // Construct Full URLs
+    'ogImage' => $cdnBaseUrl . $settings['defaults']['ogImage'],
+    'ogUrl' => "https://" . $_SERVER['HTTP_HOST'] . $request_uri,
+    'navbarBrandLogo' => $cdnBaseUrl . $settings['defaults']['navbarBrandLogo']
+]);
 
 // --- 2. ROUTE DISCOVERY (FORENSIC MODE) ---
 $routes = [];
-$routeOrigins = []; // Tracks which files claimed which route
+$routeOrigins = []; 
 
 $routeDirectory = ROOT_PATH . '/data/routes';
 
@@ -53,13 +59,8 @@ if (is_dir($routeDirectory)) {
 
             if (json_last_error() === JSON_ERROR_NONE && is_array($routeData)) {
                 
-                // DATA GATHERING PHASE
                 foreach ($routeData as $path => $config) {
-                    // 1. Store the config (Last loaded wins temporarily)
                     $routes[$path] = $config;
-                    
-                    // 2. Record the source file
-                    // We store the filename in an array for this specific path
                     if (!isset($routeOrigins[$path])) {
                         $routeOrigins[$path] = [];
                     }
@@ -74,23 +75,16 @@ if (is_dir($routeDirectory)) {
 }
 
 // --- 3. COLLISION ANALYSIS ---
-// Now we check the records. If any route has > 1 origin, it is a collision.
-
 foreach ($routeOrigins as $path => $files) {
     if (count($files) > 1) {
-        // COLLISION DETECTED
         $fileList = implode(', ', $files);
-        
-        // Log to server
         error_log("Elara Router Conflict: Route '$path' is defined in multiple files: [$fileList]");
         
-        // Nuke the route config and replace with Error 500
         $routes[$path] = [
             'view' => 'errors/500', 
             'title' => 'Configuration Error: Duplicate Route',
             'site' => 'portfolio',
             'error_type' => 'collision',
-            // Pass the FULL list of files to the error page
             'error_details' => "Route Collision: The path <strong>'$path'</strong> is defined in " . count($files) . " separate files:<br><br><code>" . $fileList . "</code>"
         ];
     }
@@ -120,15 +114,9 @@ if (!isset($pageConfig['view'])) {
 
 // C. Sidebar Intelligence
 if (isset($pageConfig['view'])) {
-    $sidebarMap = [
-        '/story/friction' => 'sidebar-stories',
-        '/story'          => 'sidebar-stories',
-        '/discography'    => 'sidebar-discography',
-        '/albums'         => 'sidebar-discography',
-        '/history'        => 'sidebar-stories',
-        '/band'           => 'sidebar-band',
-        '/about'          => 'sidebar-default',
-    ];
+    
+    // Load Map from JSON Settings
+    $sidebarMap = $settings['sidebarMap'] ?? [];
 
     if (!isset($pageConfig['sidebar'])) {
         foreach ($sidebarMap as $urlStart => $sidebarFile) {
@@ -175,7 +163,7 @@ if (isset($pageConfig['view'])) {
 if (str_starts_with($request_uri, '/discography/') && $request_uri !== '/discography') {
     $albumSlug = basename($request_uri); 
     if (!isset($pageConfig['ogImage'])) {
-        $pageConfig['ogImage'] = "https://assets.raggiesoft.com/stardust-engine/music/" . $albumSlug . "/social-preview.jpg";
+        $pageConfig['ogImage'] = $cdnBaseUrl . "/stardust-engine/music/" . $albumSlug . "/social-preview.jpg";
     }
     if (!isset($pageConfig['ogTitle']) && isset($pageConfig['title'])) {
         $pageConfig['ogTitle'] = $pageConfig['title'];
@@ -187,7 +175,7 @@ if (str_starts_with($request_uri, '/engine-room')) {
     if (!isset($pageConfig['site'])) { $pageConfig['site'] = 'portfolio'; }
     if (!isset($pageConfig['showSidebar'])) { $pageConfig['showSidebar'] = false; }
     if (!isset($pageConfig['navbarBrandLogo'])) {
-        $pageConfig['navbarBrandLogo']  = 'https://assets.raggiesoft.com/engine-room-records/images/logos/engine-room-records-logo.jpg';
+        $pageConfig['navbarBrandLogo']  = $cdnBaseUrl . '/engine-room-records/images/logos/engine-room-records-logo.jpg';
         $pageConfig['navbarBrandText']  = 'Engine Room<span class="d-none d-md-inline"> Records</span>';
         $pageConfig['navbarBrandLink']  = '/engine-room';
         $pageConfig['navbarBrandAlt']   = 'Engine Room Records Official Seal';
@@ -205,6 +193,7 @@ if ($config['view'] === 'errors/500') {
     if (!isset($pageConfig['theme'])) { $config['theme'] = 'ad-astra'; }
 }
 
+// Extract variables for the View
 $pageTitle = $config['title'];
 $currentPageTheme = $config['theme'];
 $showSidebar = $config['showSidebar'];
@@ -220,14 +209,25 @@ $navbarBrandLink  = $config['navbarBrandLink'];
 $navbarBrandAlt   = $config['navbarBrandAlt'];
 $navbarBrandClass = $config['navbarBrandClass'];
 
+// --- HEADER LOGIC (UPDATED) ---
+// 1. Check Route Config Override First
 if (isset($pageConfig['headerMenu'])) {
-    $currentHeaderMenu = ROOT_PATH . '/includes/components/headers/' . $pageConfig['headerMenu'] . '.php';
-} elseif (str_starts_with($request_uri, '/engine-room')) {
-    $currentHeaderMenu = ROOT_PATH . '/includes/components/headers/engine-room/header-engine-room.php';
+    $headerFile = $pageConfig['headerMenu'];
 } else {
-    $currentHeaderMenu = ROOT_PATH . '/includes/components/headers/header-default.php';
-}
+    // 2. Check Global Header Map
+    $headerMap = $settings['headerMap'] ?? [];
+    $headerFile = 'header-default'; // Default fallback
 
+    foreach ($headerMap as $urlStart => $mappedFile) {
+        if (str_starts_with($request_uri, $urlStart)) {
+            $headerFile = $mappedFile;
+            break; // Stop at the first (most specific) match found in JSON
+        }
+    }
+}
+$currentHeaderMenu = ROOT_PATH . '/includes/components/headers/' . $headerFile . '.php';
+
+// Sidebar Logic
 $currentSidebar = ROOT_PATH . '/includes/components/sidebars/' . $config['sidebar'] . '.php';
 
 require_once ROOT_PATH . '/includes/header.php';

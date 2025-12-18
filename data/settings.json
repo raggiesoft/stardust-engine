@@ -1,0 +1,34 @@
+{
+  "siteName": "The Stardust Engine",
+  "projectSlug": "stardust-engine",
+  "cdnBaseUrl": "https://assets.raggiesoft.com",
+  "defaultTheme": "stardust-engine",
+  "defaults": {
+    "view": "errors/404",
+    "showSidebar": false,
+    "sidebar": "sidebar-default",
+    "ogTitle": "The Stardust Engine - Official Band Archive",
+    "ogDescription": "The official archive of the fictional 80s band 'The Stardust Engine.'",
+    "ogImage": "/stardust-engine/images/social-media/stardust-engine-logo-social.jpg",
+    "navbarBrandLogo": "/stardust-engine/images/logos/stardust-engine-logo.png",
+    "navbarBrandText": "<span class=\"d-none d-md-inline\">The </span>Stardust Engine",
+    "navbarBrandLink": "/",
+    "navbarBrandAlt": "Stardust Logo",
+    "navbarBrandClass": "rounded-circle shadow-glow"
+  },
+  "sidebarMap": {
+    "/story/friction": "sidebar-stories",
+    "/story": "sidebar-stories",
+    "/discography": "sidebar-discography",
+    "/albums": "sidebar-discography",
+    "/history": "sidebar-stories",
+    "/band": "sidebar-band",
+    "/about": "sidebar-default"
+  },
+  "headerMap": {
+    "/contact": "header-contact",
+    "/engine-room/jessica-miller-center": "engine-room/jessica-miller-center/header-miller-center",
+    "/engine-room/history/nine-figure-refusal": "engine-room/header-nine-figure-refusal",
+    "/engine-room": "engine-room/header-engine-room"
+  }
+}
