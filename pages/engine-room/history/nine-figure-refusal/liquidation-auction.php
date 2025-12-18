@@ -204,8 +204,8 @@ $pageTitle = "Asset Disposal: Omni-Global Liquidation - Case 18-11492";
             </a>
         </div>
         <div class="col-4 text-end">
-            <a href="/engine-room/history/nine-figure-refusal/the-jessica-miller-center" class="btn btn-primary rounded-pill shadow-sm">
-                Next: The Renovation <i class="fa-solid fa-arrow-right ms-2"></i>
+            <a href="/engine-room/history/nine-figure-refusal/zenith-report/stardust-bus-ride" class="btn btn-primary rounded-pill shadow-sm">
+                Next: The Bus Ride <i class="fa-solid fa-arrow-right ms-2"></i>
             </a>
         </div>
     </div>
