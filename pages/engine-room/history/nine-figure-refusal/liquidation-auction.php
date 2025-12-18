@@ -148,7 +148,7 @@ $pageTitle = "Asset Disposal: Omni-Global Liquidation - Case 18-11492";
                         <div class="col-md-3 text-center position-relative">
                             <div class="sold-stamp">DONATED</div>
                             <div class="small font-monospace text-success mt-2">Tax Write-Off</div>
-                            <div class="tiny text-muted">Recipient: Goodwill Industries</div>
+                            <div class="tiny text-muted">Recipient: Second Chance Community Thrift</div>
                         </div>
                     </div>
                 </div>

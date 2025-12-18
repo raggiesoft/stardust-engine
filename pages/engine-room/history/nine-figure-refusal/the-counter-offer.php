@@ -28,16 +28,27 @@ $pageTitle = "The Counter-Offer (Sept 14, 2018) - Engine Room History";
             <div class="card bg-dark border-start border-4 border-warning shadow-lg mb-5">
                 <div class="card-body p-4">
                     <h5 class="text-warning fw-bold text-uppercase mb-3"><i class="fa-solid fa-circle-info me-2"></i>Narrative Context</h5>
-                    <p class="text-white-50 mb-0 small">
-                        <strong>September 14, 2018 (09:00 AM):</strong> Following the discovery of the "LBO Clause" in the offer letter and the solvency issues in the forensic audit, Holly O'Connell drafts a counter-demand. She knows Jameson Frost is too arrogant to accept it. By rejecting this reasonable offer, Frost unknowingly triggers a clause that requires Holly to report Omni-Global's insolvency to the SEC, legally shielding her from the fallout.
+                    <p class="text-white-50 mb-3 small">
+                        <strong>September 14, 2018 (09:00 AM):</strong> Following the discovery of the "LBO Clause" in the offer letter and the solvency issues in the forensic audit, Holly O'Connell drafts a counter-demand.
                     </p>
+                    <div class="text-white-50 mb-0 small border-top border-secondary pt-2">
+                        <p class="mb-2">
+                            <strong class="text-white">The "Army of One" Bluff:</strong> Note the phrasing <em>"reviewed by our legal and financial teams."</em> Holly uses the corporate plural to project the image of a massive department. In reality, she <strong>is</strong> the legal team (J.D.) and she <strong>is</strong> the financial team (CFA/Cr.FA).
+                        </p>
+                        <p class="mb-0">
+                            The letterhead below confirms this: she explicitly lists her "scary" credentials to prove she doesn't need to hire outside counsel to find their fraud.
+                        </p>
+                    </div>
                 </div>
             </div>
 
             <?php 
                 $letter_date = "September 14, 2018";
-                $letter_to = "Jameson Frost, CEO<br>Omni-Global Media Corp.";
-                $letter_stamp = "REJECTED"; // Visual storytelling: Frost stamped this himself
+                
+                // UPDATED: Addressing Frost by his REAL title (Stripping the "Private Wealth" lie)
+                $letter_to = "Jameson Frost<br>Vice President of Acquisitions<br>Omni-Global Media Corp.";
+                
+                $letter_stamp = "REJECTED"; 
                 $stamp_color = "danger";
                 $letter_rotation = -1.5;
 
@@ -45,11 +56,11 @@ $pageTitle = "The Counter-Offer (Sept 14, 2018) - Engine Room History";
                 $letter_body = '
                 <p>Dear Mr. Frost,</p>
                 
-                <p>We are in receipt of your unsolicted offer to acquire Engine Room Records, LLC for the sum of $150,000,000 (USD).</p>
+                <p>We are in receipt of your unsolicited offer to acquire Engine Room Records, LLC for the sum of $150,000,000 (USD).</p>
 
-                <p>After a thorough review of the proposed Purchase Agreement by our legal and financial teams, we must <strong>reject</strong> your offer in its entirety. We find the structure of the deal—specifically the Leveraged Buyout provisions outlined in Section 4.a—to be incompatible with the long-term stability of our assets.</p>
+                <p>After a thorough review of the proposed Purchase Agreement by <strong>our legal and financial teams</strong>, we must <strong>reject</strong> your offer in its entirety. We find the structure of the deal—specifically the Leveraged Buyout provisions outlined in Section 4.a—to be incompatible with the long-term stability of our assets.</p>
 
-                <p>Furthermore, our due diligence has uncovered significant irregularities in Omni-Global\'s own balance sheet. Specifically, your "Goodwill" valuation appears to be leveraged against projected earnings that do not exist.</p>
+                <p>Furthermore, <strong>our due diligence</strong> has uncovered significant irregularities in Omni-Global\'s own balance sheet. Specifically, your "Goodwill" valuation appears to be leveraged against projected earnings that do not exist.</p>
 
                 <h5 class="fw-bold text-uppercase mt-4 mb-3 text-decoration-underline">Our Counter-Demand</h5>
                 
@@ -58,7 +69,7 @@ $pageTitle = "The Counter-Offer (Sept 14, 2018) - Engine Room History";
                 <ol class="mb-4">
                     <li class="mb-2"><strong>Immediate Withdrawal:</strong> Omni-Global will publicly withdraw its hostile bid by 5:00 PM EST today.</li>
                     <li class="mb-2"><strong>Non-Compete:</strong> Omni-Global will agree to a 10-year moratorium on any future attempts to acquire Engine Room Records or its subsidiaries.</li>
-                    <li><strong>Termination Fee:</strong> Omni-Global will pay a symbolic termination fee of $1.00 to close this matter.</li>
+                    <li><strong>Termination Fee:</strong> Omni-Global will pay a symbolic termination fee of <strong>$1.00</strong> to close this matter.</li>
                 </ol>
 
                 <p>If these terms are not met by the deadline, we will consider this a hostile action. As fiduciaries, we will be legally obligated to report our findings regarding your insolvency to the Securities and Exchange Commission (SEC) to protect our own credit rating.</p>
@@ -68,7 +79,7 @@ $pageTitle = "The Counter-Offer (Sept 14, 2018) - Engine Room History";
                 <p class="mt-4">Regards,</p>
                 ';
 
-                // Load the Letterhead Component
+                // Load the Letterhead Component (This contains the credentials)
                 include ROOT_PATH . '/includes/components/corporate/letterhead.php'; 
             ?>
 
@@ -116,4 +127,4 @@ $pageTitle = "The Counter-Offer (Sept 14, 2018) - Engine Room History";
         </div>
     </div>
 
-</div> 
+</div>

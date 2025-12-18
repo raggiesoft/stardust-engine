@@ -1,7 +1,7 @@
 <?php
 // pages/engine-room/history/nine-figure-refusal/overview.php
 // The "Accidental Empire" Archive
-// V7.1: Added UCC Search Report to Chapter 1
+// V7.2: Added "The Smoking Gun" and "The Counter-Offer" to Chapter 2.
 
 $pageTitle = "The $150M Refusal & Acquisition - Engine Room History";
 $activePage = 'overview';
@@ -110,6 +110,7 @@ $activePage = 'overview';
                 Chapter 2: The Trap
             </h3>
             <div class="row g-4">
+                
                 <div class="col-md-6">
                     <div class="card bg-dark border-primary h-100 shadow-sm">
                         <div class="card-body p-4">
@@ -119,6 +120,17 @@ $activePage = 'overview';
                         </div>
                     </div>
                 </div>
+
+                <div class="col-md-6">
+                    <div class="card bg-white h-100 border-0 shadow-sm" style="transform: rotate(1deg);">
+                        <div class="card-body p-4">
+                            <h5 class="fw-bold text-dark text-uppercase mb-1"><i class="fa-solid fa-envelope-open-text me-2 text-danger"></i>The Smoking Gun</h5>
+                            <p class="small text-muted mb-3">Evidence Item #00-C. The fraudulent prospectus mailed to Tyler Wright that triggered the USPIS investigation.</p>
+                            <a href="/engine-room/history/nine-figure-refusal/the-smoking-gun" class="btn btn-outline-danger btn-sm rounded-pill fw-bold stretched-link">View Evidence</a>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="col-md-6">
                     <div class="card bg-dark border-secondary h-100 shadow-sm">
                         <div class="card-body p-4">
@@ -128,6 +140,17 @@ $activePage = 'overview';
                         </div>
                     </div>
                 </div>
+
+                <div class="col-md-6">
+                    <div class="card bg-dark border-warning h-100 shadow-sm">
+                        <div class="card-body p-4">
+                            <h5 class="fw-bold text-warning text-uppercase mb-1"><i class="fa-solid fa-envelope-circle-check me-2"></i>The Counter-Offer</h5>
+                            <p class="small text-white-50 mb-3">The "Kill Switch." Holly's rejection letter that legally obligated her to report their insolvency.</p>
+                            <a href="/engine-room/history/nine-figure-refusal/the-counter-offer" class="btn btn-outline-warning btn-sm rounded-pill fw-bold stretched-link">Read The Rejection</a>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
@@ -176,7 +199,7 @@ $activePage = 'overview';
                 Chapter 4: The Fallout
             </h3>
             <div class="row g-4">
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <div class="card bg-white h-100 border-0 shadow-sm" style="transform: rotate(1deg);">
                         <div class="card-body p-4">
                             <h5 class="fw-bold text-dark text-uppercase mb-1"><i class="fa-solid fa-newspaper me-2 text-muted"></i>Market Alert: Ch. 11</h5>
@@ -185,7 +208,16 @@ $activePage = 'overview';
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-4">
+                    <div class="card bg-dark border-danger h-100 shadow-sm">
+                        <div class="card-body p-4">
+                            <h5 class="fw-bold text-white text-uppercase mb-1"><i class="fa-solid fa-gavel me-2 text-danger"></i>The Liquidation</h5>
+                            <p class="small text-white-50 mb-3">Asset Auction: Case 18-11492. Selling off the corporate ego.</p>
+                            <a href="/engine-room/history/nine-figure-refusal/liquidation-auction" class="btn btn-outline-danger btn-sm rounded-pill fw-bold stretched-link">View Auction</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
                     <div class="card bg-white h-100 border-0 shadow-sm" style="transform: rotate(-1deg);">
                         <div class="card-body p-4">
                             <h5 class="fw-bold text-dark text-uppercase mb-1"><i class="fa-solid fa-bus me-2 text-danger"></i>The Bus Ride</h5>

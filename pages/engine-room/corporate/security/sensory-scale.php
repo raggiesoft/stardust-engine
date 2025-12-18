@@ -188,7 +188,8 @@ $pageTitle = "Lore: Sensory Distress Protocols - Ironhead Security";
                                 <small class="text-danger text-uppercase fw-bold d-block mb-2">Historical Record:</small>
                                 <p class="small text-white fst-italic mb-2">
                                     <strong>Incident:</strong> Omni-Global Pitch (2018)<br>
-                                    <strong>Trigger:</strong> "The Velocity Edit" Proposal<br>
+                                    <strong>Trigger:</strong> Threat to "Ad Astra" Master<br>
+                                    <strong>Severity:</strong> <span class="text-danger fw-bold">MAXIMUM</span> (Worst Recorded)<br>
                                     <strong>Outcome:</strong> Full extraction via "Ironhead Wall."
                                 </p>
                                 <a href="/engine-room/history/nine-figure-refusal/the-trigger" class="btn btn-outline-danger btn-sm w-100 mt-1">View Incident Report</a>

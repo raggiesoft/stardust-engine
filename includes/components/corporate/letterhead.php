@@ -1,23 +1,54 @@
 <?php
 /**
- * COMPONENT: Engine Room Records Corporate Letterhead
+ * COMPONENT: Corporate Letterhead Generator
  * PATH: /includes/components/corporate/letterhead.php
  * * REQUIRED VARIABLES:
  * $letter_date     (string)  - e.g., "September 14, 2018"
  * $letter_to       (string)  - e.g., "The Board of Directors"
  * $letter_body     (string)  - The HTML content of the letter.
  * * OPTIONAL VARIABLES:
+ * $brand           (string)  - 'engine-room' (default) or 'pacific-rim'
  * $letter_stamp    (string)  - Text for rubber stamp (e.g., "CASE CLOSED").
  * $stamp_color     (string)  - Bootstrap color (success, danger). Default: 'success'.
  * $letter_rotation (float)   - Degrees to rotate the card (e.g., -1, 1.5). Default: 0.
  */
 
 // Default Settings
+$current_brand = $brand ?? 'engine-room';
 $stamp_text = $letter_stamp ?? null;
 $stamp_class = $stamp_color ?? 'success'; 
 $rotation = $letter_rotation ?? 0;
 
-// Build the rotation style string if needed
+// Brand Logic
+if ($current_brand === 'pacific-rim') {
+    // PACIFIC RIM PROPERTIES CONFIGURATION
+    $brand_name = "Pacific Rim Properties, LLC";
+    $brand_font = "'Playfair Display', serif"; // Old Money / Legal
+    $brand_sub = "Asset Management & Real Estate Holdings";
+    $brand_est = "Est. 2012 (DE)";
+    $brand_url = "pacific-rim.oconnelltrust.com";
+    $brand_logo = '<i class="fa-duotone fa-building-columns fa-3x text-secondary"></i>'; // Icon instead of image
+    
+    // Signature: The Lawyer (Updated: Removed specific Bar Number)
+    $sig_title = "Attorney for Landlord";
+    $sig_sub = "State Bar of California"; 
+    $sig_creds = "Representing: The O'Connell Family Revocable Trust";
+    
+} else {
+    // ENGINE ROOM RECORDS CONFIGURATION (Default)
+    $brand_name = "Engine Room Records, LLC";
+    $brand_font = "'Impact', sans-serif"; // Industrial / Bold
+    $brand_sub = "Wilmington, Delaware";
+    $brand_est = "Est. 1992 (VA)";
+    $brand_url = "thestardustengine.com/engine-room";
+    $brand_logo = '<img src="https://assets.raggiesoft.com/engine-room-records/images/logos/engine-room-records-logo.jpg" alt="Official Seal" style="width: 100px; mix-blend-mode: multiply; filter: contrast(120%);">';
+    
+    // Signature: The CEO
+    $sig_title = "Chief Executive Officer & General Counsel";
+    $sig_sub = "J.D. ('94) & LL.M. in Taxation ('98)";
+    $sig_creds = "Bar Admissions: VA, NY, CA, DE &bull; CFA &bull; Cr.FA &bull; CIRA";
+}
+
 $rotation_style = $rotation ? "transform: rotate({$rotation}deg);" : "";
 ?>
 
@@ -28,39 +59,37 @@ $rotation_style = $rotation ? "transform: rotate({$rotation}deg);" : "";
         
         <div class="d-flex justify-content-between align-items-center border-bottom border-dark pb-4 mb-4">
             <div>
-                <h4 class="fw-bold text-uppercase mb-0" style="font-family: 'Impact', sans-serif; letter-spacing: 1px;">
-                    Engine Room Records, LLC
+                <h4 class="fw-bold text-uppercase mb-0" style="font-family: <?php echo $brand_font; ?>; letter-spacing: 1px;">
+                    <?php echo $brand_name; ?>
                 </h4>
                 
                 <div class="text-muted text-uppercase letter-spacing-1 fw-bold d-flex align-items-center gap-2" style="font-size: 0.75rem;">
-                    <span>Wilmington, Delaware</span>
+                    <span><?php echo $brand_sub; ?></span>
                     <i class="fa-solid fa-circle" style="font-size: 4px;"></i>
-                    <span>Est. 1992 (VA)</span>
+                    <span><?php echo $brand_est; ?></span>
                     <i class="fa-solid fa-circle" style="font-size: 4px;"></i>
                     <span>Privately Held</span>
                 </div>
 
                 <div class="text-secondary letter-spacing-1 fw-bold mt-1" style="font-size: 0.75rem;">
                     <i class="fa-solid fa-globe me-1 opacity-50"></i>
-                    <span style="font-family: 'Courier New', monospace; text-transform: lowercase;">thestardustengine.com/engine-room</span>
+                    <span style="font-family: 'Courier New', monospace; text-transform: lowercase;"><?php echo $brand_url; ?></span>
                 </div>
             </div>
 
             <div class="text-end">
-                <img src="https://assets.raggiesoft.com/engine-room-records/images/logos/engine-room-records-logo.jpg" 
-                     alt="Official Seal" 
-                     style="width: 100px; mix-blend-mode: multiply; filter: contrast(120%);">
+                <?php echo $brand_logo; ?>
             </div>
         </div>
 
-        <div style="font-family: 'Times New Roman', serif; font-size: 1.15rem; line-height: 1.6;">
+        <div style="font-family: 'Times New Roman', serif; font-size: 1.1rem; line-height: 1.6;">
             
             <div class="mb-4">
                 <p class="mb-1"><strong>Date:</strong> <?php echo $letter_date; ?></p>
                 <p class="mb-0"><strong>To:</strong> <?php echo $letter_to; ?></p>
             </div>
             
-            <div class="letter-content mb-5">
+            <div class="letter-content mb-5 text-justify">
                 <?php echo $letter_body; ?>
             </div>
 
@@ -72,12 +101,11 @@ $rotation_style = $rotation ? "transform: rotate({$rotation}deg);" : "";
                 
                 <div class="pt-2 position-relative" style="z-index: 1;">
                     <p class="mb-0 fw-bold text-uppercase letter-spacing-1 text-dark">Holly O'Connell, Esq.</p>
-                    <p class="mb-2 small text-secondary fw-bold text-uppercase">Chief Executive Officer & General Counsel</p>
+                    <p class="mb-1 small text-secondary fw-bold text-uppercase"><?php echo $sig_title; ?></p>
                     
                     <div class="text-muted border-top border-secondary pt-1" style="font-size: 0.7rem; line-height: 1.4; font-family: 'Arial', sans-serif;">
-                        <p class="mb-0"><strong>J.D.</strong>, CPI School of Law (Class of 1994)</p>
-                        <p class="mb-0"><strong>Bar Admissions:</strong> Virginia ('94), New York ('98), California ('01), Delaware ('15)</p>
-                        <p class="mb-0 fst-italic">Enrolled Agent (IRS) &bull; CFA Charterholder &bull; Certified Forensic Accountant</p>
+                        <p class="mb-0 fw-bold"><?php echo $sig_sub; ?></p>
+                        <p class="mb-0 fst-italic"><?php echo $sig_creds; ?></p>
                     </div>
                 </div>
             </div>
@@ -87,8 +115,19 @@ $rotation_style = $rotation ? "transform: rotate({$rotation}deg);" : "";
         <?php if ($stamp_text): ?>
         <div class="position-absolute bottom-0 end-0 p-5 opacity-75" 
              style="transform: rotate(-10deg); mix-blend-mode: multiply; pointer-events: none;">
+            
+            <svg style="visibility: hidden; position: absolute;" width="0" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1">
+                <defs>
+                    <filter id="grunge-filter-<?php echo strtolower(str_replace(' ', '', $stamp_text)); ?>">
+                        <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="3" result="noise" />
+                        <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" in="noise" result="coloredNoise" />
+                        <feComposite operator="in" in="coloredNoise" in2="SourceGraphic" result="composite" />
+                    </filter>
+                </defs>
+            </svg>
+
             <div class="border border-4 border-<?php echo $stamp_class; ?> text-<?php echo $stamp_class; ?> p-2 fw-bold text-uppercase fs-1 text-center" 
-                 style="font-family: 'Black Ops One', cursive; line-height: 1; mask-image: url('https://assets.raggiesoft.com/common/images/grunge-texture.png'); -webkit-mask-image: url('https://assets.raggiesoft.com/common/images/grunge-texture.png');">
+                 style="font-family: 'Black Ops One', cursive; line-height: 1; filter: url(#grunge-filter-<?php echo strtolower(str_replace(' ', '', $stamp_text)); ?>);">
                 <?php echo $stamp_text; ?>
             </div>
         </div>

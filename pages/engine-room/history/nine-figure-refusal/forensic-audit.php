@@ -1,9 +1,36 @@
 <?php
 // pages/engine-room/history/nine-figure-refusal/forensic-audit.php
-// EVIDENCE ITEM #00-B: Holly's "Homework" & The SEC Whistleblower Submission
+// EVIDENCE ITEM #00-B: Holly's "Homework" & The Federal "Triple Tap"
+// Context: The moment Holly realized she could drop a nuclear bomb on Omni-Global.
 
 $pageTitle = "Forensic Audit: Omni-Global Media - Engine Room History";
 ?>
+
+<style>
+    /* Force Paper Appearance in Dark Mode */
+    .federal-form {
+        background-color: #ffffff !important;
+        color: #000000 !important;
+        border: 1px solid #ccc;
+    }
+    .federal-form .text-muted {
+        color: #6c757d !important;
+    }
+    .federal-form .bg-dark {
+        background-color: #212529 !important;
+        color: #ffffff !important;
+    }
+    .federal-form .border-dark {
+        border-color: #000000 !important;
+    }
+    
+    /* Rotate stamps slightly for realism */
+    .stamp-rotate {
+        transform: rotate(-12deg);
+        opacity: 0.8;
+        mix-blend-mode: multiply;
+    }
+</style>
 
 <div class="container py-5">
     
@@ -108,127 +135,130 @@ $pageTitle = "Forensic Audit: Omni-Global Media - Engine Room History";
                             </tbody>
                         </table>
                     </div>
-
-                    <div class="p-3 bg-danger text-white border-top border-dark">
-                        <h6 class="fw-bold text-uppercase border-bottom border-white pb-2 mb-0">
-                            <i class="fa-solid fa-mask me-2"></i>The "Shell Game" (Hidden Debt)
-                        </h6>
-                    </div>
-                    
-                    <div class="table-responsive">
-                         <table class="table mb-0" style="font-family: 'Courier New', monospace;">
-                            <thead class="bg-light">
-                                <tr>
-                                    <th class="p-3 small text-muted">Entity Name</th>
-                                    <th class="p-3 small text-muted">What It Does</th>
-                                    <th class="p-3 small text-muted text-end">Hidden Debt</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td class="p-3 fw-bold">OGM Capital Partners IV, LLC</td>
-                                    <td class="p-3 small">A trash can. They move all their losing investments into this company so the main stock price looks good.</td>
-                                    <td class="p-3 text-end text-danger fw-bold">($210,000,000)</td>
-                                </tr>
-                                <tr>
-                                    <td class="p-3 fw-bold">Wilshire Leasehold Trust</td>
-                                    <td class="p-3 small">This shell holds the lease for the HQ. It owes $155M in future rent payments that Omni doesn't have.</td>
-                                    <td class="p-3 text-end text-danger fw-bold">($155,000,000)</td>
-                                </tr>
-                                <tr class="bg-danger text-white border-top border-dark border-3">
-                                    <td class="p-3 fw-bold h5 mb-0" colspan="2">TRUE NET POSITION (INSOLVENT)</td>
-                                    <td class="p-3 text-end fw-bold h5 mb-0">($353,000,000)</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
                 </div>
             </div>
+        </div>
+    </div>
             
-            <div class="position-relative mt-5">
-                <div class="text-center mb-4">
-                    <h2 class="h4 text-white text-uppercase fw-bold border-bottom border-secondary d-inline-block pb-2">
-                        <i class="fa-solid fa-gavel me-2 text-warning"></i>The Weapon
-                    </h2>
-                    <p class="text-white-50 small mt-2">
-                        Holly didn't just find the fraud; she reported it. This is the document that triggered the SEC freeze.
-                    </p>
-                </div>
+    <div class="position-relative mt-5">
+        <div class="text-center mb-5">
+            <h2 class="h4 text-white text-uppercase fw-bold border-bottom border-secondary d-inline-block pb-2">
+                <i class="fa-solid fa-gavel me-2 text-warning"></i>The Triple Tap
+            </h2>
+            <p class="text-white-50 small mt-2 mx-auto" style="max-width: 600px;">
+                Holly knew a lawsuit would take years. So she called the agencies that don't need a warrant to freeze your assets. She submitted three forms at 5:01 PM.
+            </p>
+        </div>
 
-                <div class="card bg-light border-0 shadow-lg mx-auto" style="max-width: 800px; font-family: 'Times New Roman', serif;">
+        <div class="row g-4 justify-content-center">
+            
+            <div class="col-xl-4 col-md-6">
+                <div class="federal-form shadow-lg mx-auto h-100 position-relative" style="font-family: 'Times New Roman', serif;">
                     <div class="card-header bg-white border-bottom border-2 border-dark py-3">
                         <div class="row align-items-center">
                             <div class="col-2">
-                                <i class="fa-solid fa-building-columns fa-3x text-secondary opacity-50"></i>
+                                <i class="fa-solid fa-building-columns fa-2x text-secondary opacity-50"></i>
                             </div>
-                            <div class="col-8 text-center">
-                                <h5 class="fw-bold text-uppercase mb-0">United States Securities and Exchange Commission</h5>
-                                <p class="small text-muted mb-0">Washington, D.C. 20549</p>
-                                <h4 class="fw-bold mt-2">FORM TCR</h4>
-                                <p class="small fw-bold mb-0">TIP, COMPLAINT, OR REFERRAL</p>
-                            </div>
-                            <div class="col-2 text-end font-monospace small text-muted">
-                                OMB No. 3235-0672<br>
-                                Expires: May 31, 2021
+                            <div class="col-10 text-end">
+                                <h5 class="fw-bold text-uppercase mb-0" style="font-size: 0.8rem;">Securities & Exchange Commission</h5>
+                                <h4 class="fw-bold mt-0 mb-0">FORM TCR</h4>
                             </div>
                         </div>
                     </div>
-                    <div class="card-body p-4">
+                    <div class="card-body p-3">
+                        <div class="mb-3">
+                            <h6 class="bg-dark text-white px-2 py-1 small fw-bold text-uppercase">B. Subject of Complaint</h6>
+                            <div class="border-bottom border-secondary pb-1 small">
+                                <span class="fw-bold">Entity:</span> Omni-Global Media Corp.
+                            </div>
+                            <div class="border-bottom border-secondary pb-1 mt-2 small">
+                                <span class="fw-bold">Allegation:</span> <span class="text-danger">Material Misstatement of Financials (Ponzi Scheme)</span>
+                            </div>
+                        </div>
+                        <div class="p-2 border border-secondary bg-white small" style="min-height: 80px;">
+                            <p class="mb-0"><strong>Details:</strong> Registrant is using "OGM Capital Partners IV" (SPV) to conceal $400M in toxic debt from shareholders. Insolvency imminent.</p>
+                        </div>
                         
-                        <div class="mb-4">
-                            <h6 class="bg-dark text-white px-2 py-1 small fw-bold text-uppercase">A. Information about the Individual Submitting this Tip</h6>
-                            <div class="row g-2 small">
-                                <div class="col-md-6 border-bottom border-secondary pb-1">
-                                    <span class="fw-bold">1. Last Name:</span> <span class="bg-black text-black px-1 user-select-none">REDACTED</span>
-                                </div>
-                                <div class="col-md-6 border-bottom border-secondary pb-1">
-                                    <span class="fw-bold">2. First Name:</span> <span class="bg-black text-black px-1 user-select-none">REDACTED</span>
-                                </div>
-                                <div class="col-12 border-bottom border-secondary pb-1 mt-2">
-                                    <span class="fw-bold">3. Occupation:</span> Attorney / Forensic Accountant / Fiduciary
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="mb-4">
-                            <h6 class="bg-dark text-white px-2 py-1 small fw-bold text-uppercase">B. Information about the Entity (Subject of Complaint)</h6>
-                            <div class="row g-2 small">
-                                <div class="col-12 border-bottom border-secondary pb-1">
-                                    <span class="fw-bold">1. Name of Entity:</span> Omni-Global Media Corp. (Ticker: OGMC)
-                                </div>
-                                <div class="col-12 border-bottom border-secondary pb-1 mt-2">
-                                    <span class="fw-bold">2. Type of Allegation:</span> 
-                                    <span class="ms-2"><i class="fa-solid fa-square-check me-1"></i>Material Misstatement of Financials</span>
-                                    <span class="ms-2"><i class="fa-solid fa-square-check me-1"></i>Ponzi Scheme</span>
-                                    <span class="ms-2"><i class="fa-solid fa-square-check me-1"></i>Accounting Fraud</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="mb-4">
-                            <h6 class="bg-dark text-white px-2 py-1 small fw-bold text-uppercase">C. Description of Facts</h6>
-                            <div class="p-3 border border-secondary bg-white small" style="min-height: 150px;">
-                                <p><strong>Details of Allegation:</strong></p>
-                                <p>
-                                    Registrant (Omni-Global) is engaging in systemic accounting fraud to conceal approximately $400,000,000 in debt obligations using off-balance sheet Special Purpose Vehicles (SPVs), specifically "OGM Capital Partners IV." 
-                                </p>
-                                <p>
-                                    Furthermore, Registrant has booked ten years of projected future revenue from syndication deals as current "Accounts Receivable," artificially inflating Earnings Per Share (EPS) to trigger executive stock option vesting events.
-                                </p>
-                                <p>
-                                    Based on the attached internal audit (Exhibit A), the Registrant is currently insolvent and will likely default on its Senior Secured Credit Facility within 7 business days.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="position-absolute bottom-0 end-0 p-4" style="pointer-events: none;">
-                             <div class="border border-4 border-danger text-danger p-2 fw-bold text-uppercase fs-4 text-center rotate-n15" 
-                                  style="font-family: 'Courier New', monospace; opacity: 0.7;">
-                                 RECEIVED<br>SEC ENFORCEMENT<br>SEPT 14 2018
+                        <div class="position-absolute bottom-0 end-0 p-3" style="pointer-events: none;">
+                             <div class="border border-4 border-danger text-danger p-1 fw-bold text-uppercase fs-6 text-center stamp-rotate" 
+                                  style="font-family: 'Courier New', monospace;">
+                                 RECEIVED<br>SEC ENFORCEMENT
                              </div>
                         </div>
+                    </div>
+                </div>
+            </div>
 
+            <div class="col-xl-4 col-md-6">
+                <div class="federal-form shadow-lg mx-auto h-100 position-relative" style="font-family: 'Helvetica', sans-serif;">
+                    <div class="card-header bg-white border-bottom border-2 border-dark py-3">
+                        <div class="row align-items-center">
+                            <div class="col-2">
+                                <i class="fa-solid fa-scale-balanced fa-2x text-secondary opacity-50"></i>
+                            </div>
+                            <div class="col-10 text-end">
+                                <h5 class="fw-bold text-uppercase mb-0" style="font-size: 0.8rem;">Dept of the Treasury - IRS</h5>
+                                <h4 class="fw-bold mt-0 mb-0">FORM 3949-A</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body p-3">
+                        <div class="mb-3">
+                            <h6 class="bg-dark text-white px-2 py-1 small fw-bold text-uppercase">1. Taxpayer Information</h6>
+                            <div class="border-bottom border-secondary pb-1 small">
+                                <span class="fw-bold">Name:</span> Omni-Global Media Corp.
+                            </div>
+                            <div class="border-bottom border-secondary pb-1 mt-2 small">
+                                <span class="fw-bold">Violation:</span> <span class="text-danger">False Documents / Failure to Pay Tax</span>
+                            </div>
+                        </div>
+                        <div class="p-2 border border-secondary bg-white small" style="min-height: 80px;">
+                            <p class="mb-0"><strong>Comments:</strong> Taxpayer has claimed depreciation on assets (Real Estate) they do not legally own. See Lease Agreement "Exhibit B."</p>
+                        </div>
+
+                        <div class="position-absolute bottom-0 end-0 p-3" style="pointer-events: none;">
+                             <div class="border border-4 border-primary text-primary p-1 fw-bold text-uppercase fs-6 text-center stamp-rotate" 
+                                  style="font-family: 'Courier New', monospace;">
+                                 IRS-CI<br>REFERRAL ACTIVE
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-4 col-md-6">
+                <div class="federal-form shadow-lg mx-auto h-100 position-relative" style="font-family: 'Courier New', monospace;">
+                    <div class="card-header bg-white border-bottom border-2 border-dark py-3">
+                        <div class="row align-items-center">
+                            <div class="col-2">
+                                <i class="fa-solid fa-envelopes-bulk fa-2x text-secondary opacity-50"></i>
+                            </div>
+                            <div class="col-10 text-end">
+                                <h5 class="fw-bold text-uppercase mb-0" style="font-size: 0.8rem;">U.S. Postal Inspection Service</h5>
+                                <h4 class="fw-bold mt-0 mb-0">FORM 8165</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body p-3">
+                        <div class="mb-3">
+                            <h6 class="bg-dark text-white px-2 py-1 small fw-bold text-uppercase">Nature of Complaint</h6>
+                            <div class="border-bottom border-secondary pb-1 small">
+                                <span class="fw-bold">Type:</span> 18 U.S.C. § 1341 (Mail Fraud)
+                            </div>
+                            <div class="border-bottom border-secondary pb-1 mt-2 small">
+                                <span class="fw-bold">Method:</span> <span class="text-danger">USPS First Class Mail</span>
+                            </div>
+                        </div>
+                        <div class="p-2 border border-secondary bg-white small" style="min-height: 80px;">
+                            <p class="mb-0"><strong>Narrative:</strong> Subject mailed a Prospectus for "OGM Capital" to my Virginia residence. The document contains proven material lies. Using the US Mail to execute a swindle is a federal felony.</p>
+                        </div>
+
+                        <div class="position-absolute bottom-0 end-0 p-3" style="pointer-events: none;">
+                             <div class="border border-4 border-dark text-dark p-1 fw-bold text-uppercase fs-6 text-center stamp-rotate" 
+                                  style="font-family: 'Courier New', monospace; border-style: double !important;">
+                                 USPIS<br>CASE OPENED
+                             </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -248,8 +278,8 @@ $pageTitle = "Forensic Audit: Omni-Global Media - Engine Room History";
             </a>
         </div>
         <div class="col-4 text-end">
-            <a href="/engine-room/history/nine-figure-refusal/the-offer-letter" class="btn btn-primary rounded-pill shadow-sm">
-                Next: The Offer <i class="fa-solid fa-arrow-right ms-2"></i>
+            <a href="/engine-room/history/nine-figure-refusal/the-smoking-gun" class="btn btn-primary rounded-pill shadow-sm">
+                Next: The Smoking Gun <i class="fa-solid fa-arrow-right ms-2"></i>
             </a>
         </div>
     </div>

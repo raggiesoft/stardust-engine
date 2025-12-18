@@ -27,11 +27,11 @@ $chapters = [
         'title' => 'Ch 2: The Trap',
         'pages' => [
             '/engine-room/history/nine-figure-refusal/forensic-audit' => ['icon' => 'fa-solid fa-magnifying-glass-dollar text-primary', 'label' => 'Holly\'s Homework'],
+            '/engine-room/history/nine-figure-refusal/the-smoking-gun' => ['icon' => 'fa-solid fa-envelope-open-text text-danger', 'label' => 'The Smoking Gun'],
             '/engine-room/history/nine-figure-refusal/the-offer-letter' => ['icon' => 'fa-solid fa-file-contract', 'label' => 'The Offer Letter'],
-            // NEW PAGE INSERTED HERE
             '/engine-room/history/nine-figure-refusal/the-counter-offer' => ['icon' => 'fa-solid fa-envelope-circle-check text-warning', 'label' => 'The Counter-Offer'],
         ]
-    ],  
+    ],
     'ch3' => [
         'title' => 'Ch 3: The Event',
         'pages' => [
@@ -44,6 +44,7 @@ $chapters = [
         'title' => 'Ch 4: The Fallout',
         'pages' => [
             '/engine-room/history/nine-figure-refusal/zenith-report/omni-global-chapter-11' => ['icon' => 'fa-solid fa-newspaper', 'label' => 'Market Alert: Ch. 11'],
+            '/engine-room/history/nine-figure-refusal/liquidation-auction' => ['icon' => 'fa-duotone fa-gavel', 'label' => 'The Liquidation Auction'],
             '/engine-room/history/nine-figure-refusal/zenith-report/stardust-bus-ride' => ['icon' => 'fa-solid fa-bus', 'label' => 'Bus Ride Article'],
         ]
     ],

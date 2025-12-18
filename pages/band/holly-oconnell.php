@@ -67,14 +67,14 @@ $pageTitle = "Holly O'Connell - The Stardust Engine";
                     <div>
                         <h5 class="text-white fw-bold mb-2"><i class="fa-solid fa-chart-line-up me-2 text-success"></i>Financial & Fiduciary Armor</h5>
                         <div class="d-flex flex-wrap gap-2">
-                            <span class="skill-pill" title="1994: The Seal (Witnessing contracts internally)"><i class="fa-solid fa-stamp me-1"></i>Notary Public ('94)</span>
-                            <span class="skill-pill" title="1996: Defense against IRS audit of the War Chest"><i class="fa-solid fa-file-invoice-dollar me-1"></i>Enrolled Agent ('96)</span>
-                            <span class="skill-pill" title="2003: Architect of the Medical Trust"><i class="fa-solid fa-landmark me-1"></i>CTFA ('03)</span>
-                            <span class="skill-pill" title="2005: Managing the surplus wealth"><i class="fa-solid fa-briefcase me-1"></i>CFA Charterholder ('05)</span>
-                            <span class="skill-pill" title="2009: Hedging against the Recession"><i class="fa-solid fa-graduation-cap me-1"></i>M.S. Quant Finance ('09)</span>
-                            <span class="skill-pill" title="2014: Auditing streaming royalties"><i class="fa-solid fa-magnifying-glass-dollar me-1"></i>Forensic Accountant ('14)</span>
-                            <span class="skill-pill" title="2015: Mastering the laws of the new corporate home"><i class="fa-solid fa-gavel me-1"></i>Delaware Bar ('15)</span>
-                            <span class="skill-pill" title="2017: AI and Digital Rights"><i class="fa-brands fa-bitcoin me-1"></i>Blockchain Security ('17)</span>
+                            <span class="skill-pill" title="1994: The Seal"><i class="fa-solid fa-stamp me-1"></i>Notary Public ('94)</span>
+                            <span class="skill-pill" title="1996: Defense against IRS"><i class="fa-solid fa-file-invoice-dollar me-1"></i>Enrolled Agent ('96)</span>
+                            <span class="skill-pill" title="1998: Advanced Tax Law"><i class="fa-solid fa-scale-balanced me-1"></i>LL.M. Taxation ('98)</span>
+                            <span class="skill-pill" title="2003: Architect of the Trust"><i class="fa-solid fa-landmark me-1"></i>CTFA ('03)</span>
+                            <span class="skill-pill" title="2005: Managing the surplus"><i class="fa-solid fa-briefcase me-1"></i>CFA Charterholder ('05)</span>
+                            <span class="skill-pill" title="2009: Hedging against Recession"><i class="fa-solid fa-graduation-cap me-1"></i>M.S. Quant Finance ('09)</span>
+                            <span class="skill-pill" title="2014: Auditing royalties"><i class="fa-solid fa-magnifying-glass-dollar me-1"></i>Cr.FA (Forensic) ('14)</span>
+                            <span class="skill-pill" title="2016: The Bankruptcy Expert"><i class="fa-solid fa-tombstone me-1"></i>CIRA (Insolvency) ('16)</span>
                         </div>
                     </div>
 

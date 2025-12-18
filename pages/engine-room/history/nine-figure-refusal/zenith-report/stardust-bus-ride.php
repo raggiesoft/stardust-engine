@@ -177,7 +177,7 @@ $pageTitle = "The Zenith Report: The $350 Million Bus Ride";
 
     <div class="row justify-content-center mt-5 pt-4 border-top border-secondary border-opacity-25 align-items-center">
         <div class="col-4">
-            <a href="/engine-room/history/nine-figure-refusal/zenith-report/omni-global-chapter-11" class="btn btn-outline-secondary rounded-pill">
+            <a href="/engine-room/history/nine-figure-refusal/liquidation-auction" class="btn btn-outline-secondary rounded-pill">
                 <i class="fa-solid fa-arrow-left me-2"></i>Previous
             </a>
         </div>

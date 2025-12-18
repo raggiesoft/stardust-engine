@@ -2,7 +2,7 @@
 // pages/engine-room/history/nine-figure-refusal/zenith-report/omni-global-chapter-11.php
 // The Fallout: Omni-Global collapses after realizing they tried to buyout a Lottery Winner.
 // Context: "Market Alert: Chapter 11"
-// UPDATED: Added Narrative Navigation & AP Style Naming
+// UPDATED: Added "Landlord Lawsuit" Article
 
 $pageTitle = "The Zenith Report: Omni-Global Files Chapter 11";
 ?>
@@ -83,7 +83,7 @@ $pageTitle = "The Zenith Report: Omni-Global Files Chapter 11";
                     <div class="d-flex justify-content-between align-items-end flex-wrap gap-2">
                         <h2 class="display-6 fw-bold mb-0 text-dark" style="font-family: 'Times New Roman', serif; letter-spacing: -1px;">The Zenith Report</h2>
                         <div class="text-end">
-                            <span class="small font-monospace text-muted d-block">September 12, 2018 &bull; Vol. 88</span>
+                            <span class="small font-monospace text-muted d-block">September 15, 2018 &bull; Vol. 88</span>
                             <span class="small font-monospace text-danger fw-bold text-uppercase">Market Alert</span>
                         </div>
                     </div>
@@ -93,6 +93,7 @@ $pageTitle = "The Zenith Report: Omni-Global Files Chapter 11";
                     <div class="row">
                         
                         <div class="col-md-8 border-end border-secondary-subtle pe-md-5">
+                            
                             <h5 class="text-uppercase fw-bold text-danger letter-spacing-2 small mb-2">Breaking News</h5>
                             
                             <h3 class="display-5 fw-bold mb-3 text-dark" style="font-family: 'Georgia', serif;">
@@ -117,13 +118,29 @@ $pageTitle = "The Zenith Report: Omni-Global Files Chapter 11";
                                 <p>
                                     "Frost didn't do his homework," said one analyst. "He tried to buy a debt-free company with a maxed-out credit card. Holly O'Connell called his bluff, exposed their liquidity crisis in the room, and walked out. The stock tanked 14% before the trading halt."
                                 </p>
+                            </div>
+
+                            <hr class="my-5 border-secondary border-opacity-50">
+
+                            <div class="badge bg-dark text-white text-uppercase mb-2">Exclusive Update</div>
+                            <h3 class="h2 fw-bold mb-3 text-dark" style="font-family: 'Georgia', serif;">
+                                Landlord Files Eviction: The $450,000 Secret
+                            </h3>
+                            <div class="zenith-body">
                                 <p>
-                                    Frost’s fatal error was the "Visual Audit"—assuming the family was cash-poor because they arrived via public transit. He failed to check the public lottery records.
+                                    As if bankruptcy wasn't enough, court records filed this afternoon reveal that Omni-Global's headquarters at 2000 Avenue of the Stars is facing an Unlawful Detainer lawsuit. The plaintiff? <strong>Pacific Rim Properties, LLC</strong>.
                                 </p>
                                 <p>
-                                    <strong>Immediate Fallout:</strong> The Board has terminated the Fall Internship Program effective immediately. All non-essential assets, including the "Sun-Ray" catalog and the Van Nuys physical archive, are slated for immediate Section 363 liquidation sales.
+                                    In a twist of irony that has Century City buzzing, state records confirm that Pacific Rim Properties is a wholly owned subsidiary of the <strong>O'Connell Family Trust</strong>.
+                                </p>
+                                <p>
+                                    "It's almost Shakespearean," said legal analyst Marcus Thorne. "Jameson Frost spent six months planning a hostile takeover of a company that he owed three months of back rent to. He wasn't just negotiating with a target; he was negotiating with his own landlord."
+                                </p>
+                                <p>
+                                    The lawsuit cites $450,000 in unpaid rent for July, August, and September. The eviction notice was reportedly served mere minutes after the failed acquisition meeting ended.
                                 </p>
                             </div>
+
                         </div>
                         
                         <div class="col-md-4 ps-md-4 d-none d-md-block">
@@ -193,8 +210,8 @@ $pageTitle = "The Zenith Report: Omni-Global Files Chapter 11";
             </a>
         </div>
         <div class="col-4 text-end">
-            <a href="/engine-room/history/nine-figure-refusal/zenith-report/stardust-bus-ride" class="btn btn-primary rounded-pill shadow-sm">
-                Next: The Bus Article <i class="fa-solid fa-arrow-right ms-2"></i>
+            <a href="/engine-room/history/nine-figure-refusal/liquidation-auction" class="btn btn-primary rounded-pill shadow-sm">
+                Next: The Liquidation <i class="fa-solid fa-arrow-right ms-2"></i>
             </a>
         </div>
     </div>

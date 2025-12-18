@@ -2,7 +2,7 @@
 // pages/engine-room/history/nine-figure-refusal/the-extraction.php
 // EVIDENCE ITEM #03: The Departure
 // Context: The family executes "Code Carry" and leaves the building.
-// UPDATED: Fixed Phase 2 text contrast & Reverted Image Filename
+// UPDATED: Narrative refined to emphasize the "Worst Ever" severity and public witnessing.
 
 $pageTitle = "The Extraction - Evidence Item #03";
 ?>
@@ -37,13 +37,13 @@ $pageTitle = "The Extraction - Evidence Item #03";
                         Holly stood by the heavy oak door, holding it open. She didn't look back at the screen or the bankrupt executives. She watched her family.
                     </p>
                     <p>
-                        On the floor, Cassidy was rocking violently, her hands clamped over her ears. She was gone—deep in the critical failure of a <strong>Level 5 Meltdown</strong>. She couldn't walk. She couldn't hear. The "mask" was completely shattered.
+                        On the floor, Cassidy was rocking violently, her hands clamped over her ears. She was gone. This wasn't just a bad day; it was the **worst neurological collapse of her entire life.** The "mask" hadn't just cracked; it had disintegrated the moment Jameson Frost threatened to "rip apart" her baby—the 15-minute autobiography <em>Escape Velocity (Ad Astra)</em>.
                     </p>
                     <p>
                         Ryan rolled his wheelchair backward a few inches. "Evan. Tyler," he said softly. "Code Carry."
                     </p>
                     <p>
-                        <strong>Secure Protocol:</strong> Holly knelt briefly, gently removing Cassidy's glasses. "I've got them, Cass," she whispered, slipping the frames into her hard-shell briefcase to prevent them from being flung or broken during the transport.
+                        <strong>Secure Protocol:</strong> Holly knelt briefly, gently removing Cassidy's glasses. "I've got them, Cass," she whispered, slipping the frames into her hard-shell briefcase.
                     </p>
                     <div class="row my-4 align-items-center">
                         <div class="col-md-6">
@@ -55,7 +55,7 @@ $pageTitle = "The Extraction - Evidence Item #03";
                         <div class="col-md-6">
                             <div class="d-flex align-items-center mb-2">
                                 <span class="badge bg-secondary me-2">BASS</span>
-                                <strong class="me-2">Tyler (Right Flank):</strong> Dropped to one knee. Wearing his standard orange CPI tee, he grabbed a foam lumbar cushion from one of the conference chairs to place under her legs.
+                                <strong class="me-2">Tyler (Right Flank):</strong> Dropped to one knee. Wearing his standard orange CPI tee, he grabbed a foam lumbar cushion to support her legs.
                             </div>
                         </div>
                     </div>
@@ -78,7 +78,7 @@ $pageTitle = "The Extraction - Evidence Item #03";
                 <div class="position-relative">
                     <img src="https://assets.raggiesoft.com/engine-room-records/images/omni-global/cassidy-extraction.jpg" 
                          class="img-fluid w-100 opacity-75" 
-                         alt="Security footage of Evan and Tyler carrying a sobbing Cassidy out of the Omni-Global offices, followed by Ryan and Holly."
+                         alt="Security footage: Evan and Tyler carrying a sobbing Cassidy down the hallway toward the camera. Holly and Ryan flank them. The entire office staff can be seen in the background, staring."
                          style="filter: contrast(1.1) sepia(0.2);">
                     
                     <div class="position-absolute top-0 end-0 p-3 font-monospace text-success fw-bold text-shadow-black">
@@ -86,8 +86,14 @@ $pageTitle = "The Extraction - Evidence Item #03";
                     </div>
                     
                     <div class="position-absolute bottom-0 start-0 w-100 p-3 bg-black bg-opacity-75 text-white-50 font-monospace small border-top border-secondary">
-                        <i class="fa-solid fa-triangle-exclamation me-2 text-danger"></i>
-                        <strong>SUBJECT STATUS:</strong> O'Connell, C. (Cargo). Visual indicators confirm <strong>LEVEL 5 DISTRESS</strong> (Active Crying/Non-Verbal). Extraction team maintaining formation.
+                        <div class="d-flex align-items-start">
+                            <i class="fa-solid fa-camera me-3 text-warning fs-4 mt-1"></i>
+                            <div>
+                                <strong class="text-warning text-uppercase">Authorized Release:</strong>
+                                <br>
+                                This footage was released by Engine Room Records with the full consent of <strong>Cassidy O'Connell</strong>. She demanded the world see exactly what corporate greed looks like when it targets a neurodivergent artist.
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -100,13 +106,22 @@ $pageTitle = "The Extraction - Evidence Item #03";
                 </div>
                 <div class="card-body p-5">
                     <p>
-                        The heavy door clicked shut behind them. David, the Junior Associate, walked beside Holly, looking shaken by the raw sound of Cassidy's distress.
+                        The heavy door clicked shut behind them.
+                    </p>
+                    <p>
+                        They turned right, walking straight down the plush carpet of the main executive corridor. The open-plan "Bullpen" was silent. Dozens of analysts, assistants, and junior VPs stood at their cubicles, staring in horror at the sobbing woman being carried by her family.
+                    </p>
+                    <p>
+                        Holly didn't shield Cassidy. She didn't ask them to look away. She walked with her head high, forcing every employee at Omni-Global to witness the human cost of their business model.
+                    </p>
+                    <p>
+                        David, the Junior Associate, walked beside Holly, looking shaken by the raw sound of Cassidy's distress.
                     </p>
                     <p>
                         "Sorry you had to see that," David said, gesturing toward the shouting coming from the Chairman's office.
                     </p>
                     <p>
-                        "Don't be," Holly replied. "It's the sweetest sound I've heard all morning."
+                        "Don't be," Holly replied. "It's the sweetest sound I've heard all morning. It means she's still fighting."
                     </p>
                     <p>
                         They reached the reception desk. <strong>Jessica</strong>, the young intern, was trembling in her manual chair.
