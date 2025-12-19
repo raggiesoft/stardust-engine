@@ -53,6 +53,22 @@ if (isset($customPageAssets) && is_array($customPageAssets)) {
 <!doctype html>
 <html lang="en" class="h-100" <?php echo $force_dark_mode ? 'data-bs-theme="dark"' : ''; ?>>
   <head>
+    <?php 
+    if (
+        isset($settings['analytics']['enabled']) && 
+        $settings['analytics']['enabled'] === true &&
+        !empty($settings['analytics']['trackingId'])
+    ): 
+    ?>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=<?php echo htmlspecialchars($settings['analytics']['trackingId']); ?>"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', '<?php echo htmlspecialchars($settings['analytics']['trackingId']); ?>');
+        </script>
+    <?php endif; ?>
     <?php if (! $force_dark_mode): ?>
     <script>
       (function() {

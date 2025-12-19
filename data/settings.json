@@ -3,6 +3,11 @@
   "projectSlug": "stardust-engine",
   "cdnBaseUrl": "https://assets.raggiesoft.com",
   "defaultTheme": "stardust-engine",
+  "analytics": {
+    "provider": "google",
+    "trackingId": "G-P9RG9JVYB6",
+    "enabled": true
+  },
   "defaults": {
     "view": "errors/404",
     "showSidebar": false,
