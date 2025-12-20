@@ -1,110 +1,118 @@
 {
-  "title": "Engine Room Records, LLC",
-  "role": "The Board of Directors",
-  "icon": "fa-duotone fa-record-vinyl",
+  "title": "The O'Connell Family Revocable Trust",
+  "role": "The Grantors / Beneficial Owners",
+  "icon": "fa-duotone fa-landmark",
   "color": "primary",
-  "meta": "Managed by The Five",
+  "meta": "Est. 2012 | AUM: $2.4B+",
   "children": [
     {
-      "title": "The Stardust Engine",
-      "role": "Operating Entity (Touring/IP)",
-      "icon": "fa-duotone fa-guitar",
-      "color": "warning"
+      "title": "The O'Connell Family, LLC",
+      "role": "Corporate Trustee & Management Co.",
+      "icon": "fa-duotone fa-gavel",
+      "color": "dark", 
+      "meta": "The Governing Body (The 5 Members)",
+      "description": "This entity holds no assets. It holds the Voting Power. It serves as the designated Manager for all subsidiaries below."
     },
     {
-      "title": "O'Connell Family Trust",
-      "role": "Asset Holding Vehicle",
-      "icon": "fa-duotone fa-sack-dollar",
-      "color": "warning",
+      "title": "Engine Room Records, LLC",
+      "role": "IP Holding & Archives",
+      "icon": "fa-duotone fa-record-vinyl",
+      "color": "danger",
+      "link": "/engine-room",
+      "meta": "Manager: The O'Connell Family, LLC",
       "children": [
         {
-            "title": "Stardust Studios",
-            "role": "Recording Studio / Production",
-            "icon": "fa-duotone fa-microphone-lines",
-            "color": "danger",
-            "link": "/engine-room/corporate/stardust-studios"
+          "title": "Stardust Studios",
+          "role": "Recording Studio / Production",
+          "icon": "fa-duotone fa-microphone-lines",
+          "color": "warning",
+          "link": "/engine-room/corporate/stardust-studios"
+        }
+      ]
+    },
+    {
+      "title": "Artists First Management, LLC",
+      "role": "Talent & Touring Operations",
+      "icon": "fa-duotone fa-users-viewfinder",
+      "color": "danger",
+      "link": "/engine-room/corporate/artists-first-management",
+      "meta": "Manager: The O'Connell Family, LLC",
+      "children": [
+        {
+          "title": "The Stardust Engine",
+          "role": "Legacy Artist",
+          "icon": "fa-duotone fa-guitar",
+          "color": "warning",
+          "link": "https://thestardustengine.com"
         },
         {
-          "title": "Artists First Management, LLC",
-          "role": "Music Publishing",
-          "icon": "fa-duotone fa-book-open",
-          "color": "danger",
-          "link": "/engine-room/corporate/artists-first-management",
+          "title": "Mirage",
+          "role": "Artist",
+          "icon": "fa-duotone fa-music",
+          "color": "warning",
+          "meta": "Signed: 2000",
           "children": [
             {
-              "title": "Mirage",
-              "role": "Artist",
-              "icon": "fa-duotone fa-music",
-              "color": "warning",
-              "meta": "Signed Year: 2000",
-              "children": [
-                {
-                "title": "The Arctic Symphony Project",
-                "role": "Artist Pseudonym",
-                "icon": "fa-duotone fa-music",
-                "color": "warning",
-                "meta": "Holiday Music from Mirage"
-                }
-              ]
-            },
-            {
-              "title": "Origin",
-              "role": "Artist",
-              "icon": "fa-duotone fa-music",
-              "color": "warning",
-              "meta": "Signed Year: 2003"
-            },
-            {
-              "title": "The Winter Palace",
-              "role": "Artist",
-              "icon": "fa-duotone fa-music",
-              "color": "warning",
-              "meta": "Signed Year: 2002"
+              "title": "The Arctic Symphony Project",
+              "role": "Artist Pseudonym (DBA)",
+              "icon": "fa-duotone fa-snowflake", 
+              "color": "info",
+              "meta": "Holiday Catalog & IP"
             }
           ]
         },
         {
-            "title": "Stardust Properties, LLC",
-            "role": "Real Estate Holding Co.",
-            "icon": "fa-duotone fa-city",
-            "color": "danger",
-            "link": "/engine-room/corporate/stardust-ventures",
-            "meta": "Global Property Portfolio",
-            "children": [
-                {
-                    "title": "Stardust Blacksburg, LLC",
-                    "role": "Residential Portfolio",
-                    "icon": "fa-duotone fa-house-user",
-                    "color": "danger",
-                    "link": "/engine-room/corporate/stardust-blacksburg",
-                    "meta": "Primary Student Housing Provider (Commonwealth Poly)"
-                },
-                {
-                    "title": "Pacific Rim Properties, LLC",
-                    "role": "Commercial Portfolio",
-                    "icon": "fa-duotone fa-building",
-                    "color": "danger",
-                    "link": "/pacific-rim",
-                    "meta": "Class-A Assets (Inc. 2000 Ave of the Stars)"
-                }
-            ]
+          "title": "Origin",
+          "role": "Artist",
+          "icon": "fa-duotone fa-music",
+          "color": "warning"
         },
         {
-          "title": "Jessica Miller Center, LLC",
-          "role": "Non-Profit / Philanthropy",
-          "icon": "fa-duotone fa-hands-holding-heart",
-          "color": "danger",
-          "link": "/engine-room/corporate/jessica-miller-center"
-        },
-        {
-          "title": "Aethelgard Holdings",
-          "role": "Distressed Asset Liquidation",
-          "icon": "fa-duotone fa-gavel",
-          "color": "danger",
-          "meta": "Status: Active // Purpose: Omni-Global Liquidation",
-          "link": "/engine-room/corporate/aethelgard"
+          "title": "The Winter Palace",
+          "role": "Artist",
+          "icon": "fa-duotone fa-music",
+          "color": "warning"
         }
       ]
+    },
+    {
+      "title": "Stardust Properties, LLC",
+      "role": "Real Estate Holding Co.",
+      "icon": "fa-duotone fa-city",
+      "color": "danger",
+      "link": "/engine-room/corporate/stardust-ventures",
+      "meta": "Manager: The O'Connell Family, LLC",
+      "children": [
+        {
+          "title": "Stardust Blacksburg, LLC",
+          "role": "Residential Portfolio",
+          "icon": "fa-duotone fa-house-user",
+          "color": "warning",
+          "link": "/engine-room/corporate/stardust-blacksburg"
+        },
+        {
+          "title": "Pacific Rim Properties, LLC",
+          "role": "Commercial Portfolio",
+          "icon": "fa-duotone fa-building",
+          "color": "warning",
+          "link": "/pacific-rim"
+        }
+      ]
+    },
+    {
+      "title": "Jessica Miller Center, LLC",
+      "role": "Philanthropy",
+      "icon": "fa-duotone fa-hands-holding-heart",
+      "color": "success",
+      "link": "/engine-room/corporate/jessica-miller-center"
+    },
+    {
+      "title": "Aethelgard Holdings",
+      "role": "Strategic Acquisitions & Legal Enforcement",
+      "icon": "fa-duotone fa-gavel",
+      "color": "secondary",
+      "meta": "Status: Active // Purpose: Asset Protection & Hostile Defense",
+      "description": "Originally formed to liquidate Omni-Global, Aethelgard now serves as the family's 'Iron Hand,' managing high-stakes litigation and acquiring distressed assets that threaten the ecosystem of the Trust."
     }
   ]
 }

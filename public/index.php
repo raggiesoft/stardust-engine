@@ -1,7 +1,7 @@
 <?php
 ob_start(); 
-// RaggieSoft Elara Router v5.2
-// Updated: Header Map Decoupling (Full Config Driven)
+// RaggieSoft Elara Router v5.3
+// Updated: Added Path-Based Inheritance (resolveAsset) for Headers/Sidebars
 
 define('ROOT_PATH', dirname(__DIR__));
 $request_uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
@@ -90,6 +90,34 @@ foreach ($routeOrigins as $path => $files) {
     }
 }
 
+// --- HELPER: RESOLVE ASSET INHERITANCE ---
+function resolveAsset($map, $currentUri) {
+    // 1. Clean the path
+    $path = rtrim(parse_url($currentUri, PHP_URL_PATH), '/');
+    
+    // 2. Walk up the directory tree
+    // Loop continues until we hit the root or an empty path
+    while ($path !== '' && $path !== '.' && $path !== '/') {
+        // Check exact match
+        if (isset($map[$path])) {
+            return $map[$path];
+        }
+        
+        // Move up one level
+        $path = dirname($path);
+        
+        // Windows fix: dirname can return backslashes
+        $path = str_replace('\\', '/', $path);
+    }
+    
+    // 3. Check Root ('/') if defined in map
+    if (isset($map['/'])) {
+        return $map['/'];
+    }
+
+    return null; // Fallback to default
+}
+
 // --- 4. SMART ROUTER LOGIC ---
 
 // A. Check for Explicit Configuration
@@ -118,12 +146,11 @@ if (isset($pageConfig['view'])) {
     // Load Map from JSON Settings
     $sidebarMap = $settings['sidebarMap'] ?? [];
 
+    // Use Inheritance Helper if sidebar not explicitly set
     if (!isset($pageConfig['sidebar'])) {
-        foreach ($sidebarMap as $urlStart => $sidebarFile) {
-            if (str_starts_with($request_uri, $urlStart)) {
-                $pageConfig['sidebar'] = $sidebarFile;
-                break; 
-            }
+        $resolvedSidebar = resolveAsset($sidebarMap, $request_uri);
+        if ($resolvedSidebar) {
+            $pageConfig['sidebar'] = $resolvedSidebar;
         }
     }
 
@@ -214,16 +241,9 @@ $navbarBrandClass = $config['navbarBrandClass'];
 if (isset($pageConfig['headerMenu'])) {
     $headerFile = $pageConfig['headerMenu'];
 } else {
-    // 2. Check Global Header Map
+    // 2. Check Global Header Map using Inheritance Helper
     $headerMap = $settings['headerMap'] ?? [];
-    $headerFile = 'header-default'; // Default fallback
-
-    foreach ($headerMap as $urlStart => $mappedFile) {
-        if (str_starts_with($request_uri, $urlStart)) {
-            $headerFile = $mappedFile;
-            break; // Stop at the first (most specific) match found in JSON
-        }
-    }
+    $headerFile = resolveAsset($headerMap, $request_uri) ?? 'header-default';
 }
 $currentHeaderMenu = ROOT_PATH . '/includes/components/headers/' . $headerFile . '.php';
 

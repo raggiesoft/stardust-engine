@@ -2,15 +2,7 @@
 /**
  * COMPONENT: Corporate Letterhead Generator
  * PATH: /includes/components/corporate/letterhead.php
- * * REQUIRED VARIABLES:
- * $letter_date     (string)  - e.g., "September 14, 2018"
- * $letter_to       (string)  - e.g., "The Board of Directors"
- * $letter_body     (string)  - The HTML content of the letter.
- * * OPTIONAL VARIABLES:
- * $brand           (string)  - 'engine-room' (default) or 'pacific-rim'
- * $letter_stamp    (string)  - Text for rubber stamp (e.g., "CASE CLOSED").
- * $stamp_color     (string)  - Bootstrap color (success, danger). Default: 'success'.
- * $letter_rotation (float)   - Degrees to rotate the card (e.g., -1, 1.5). Default: 0.
+ * Updated: URL Migration to raggiesoft.com/oconnell-trust/
  */
 
 // Default Settings
@@ -26,10 +18,13 @@ if ($current_brand === 'pacific-rim') {
     $brand_font = "'Playfair Display', serif"; // Old Money / Legal
     $brand_sub = "Asset Management & Real Estate Holdings";
     $brand_est = "Est. 2012 (DE)";
-    $brand_url = "pacific-rim.oconnelltrust.com";
-    $brand_logo = '<i class="fa-duotone fa-building-columns fa-3x text-secondary"></i>'; // Icon instead of image
     
-    // Signature: The Lawyer (Updated: Removed specific Bar Number)
+    // UPDATED URL
+    $brand_url = "raggiesoft.com/oconnell-trust/pacific-rim";
+    
+    $brand_logo = '<i class="fa-duotone fa-building-columns fa-3x text-secondary"></i>'; 
+    
+    // Signature: The Lawyer 
     $sig_title = "Attorney for Landlord";
     $sig_sub = "State Bar of California"; 
     $sig_creds = "Representing: The O'Connell Family Revocable Trust";
@@ -40,7 +35,10 @@ if ($current_brand === 'pacific-rim') {
     $brand_font = "'Impact', sans-serif"; // Industrial / Bold
     $brand_sub = "Wilmington, Delaware";
     $brand_est = "Est. 1992 (VA)";
-    $brand_url = "thestardustengine.com/engine-room";
+    
+    // UPDATED URL
+    $brand_url = "raggiesoft.com/oconnell-trust/engine-room";
+    
     $brand_logo = '<img src="https://assets.raggiesoft.com/engine-room-records/images/logos/engine-room-records-logo.jpg" alt="Official Seal" style="width: 100px; mix-blend-mode: multiply; filter: contrast(120%);">';
     
     // Signature: The CEO

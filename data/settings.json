@@ -3,6 +3,7 @@
   "projectSlug": "stardust-engine",
   "cdnBaseUrl": "https://assets.raggiesoft.com",
   "defaultTheme": "stardust-engine",
+  "brandFont": ["Audiowide", "sans-serif"],
   "analytics": {
     "provider": "google",
     "trackingId": "G-P9RG9JVYB6",

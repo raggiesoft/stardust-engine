@@ -3,8 +3,7 @@
  * REUSABLE COMPONENT: Org Chart (The Iceberg Model)
  * -------------------------------------------------
  * Renders a hierarchical tree structure for corporate lore.
- *
- * Input: Expects a variable $rootNode (Associative Array)
+ * Updated: Now supports 'description' field.
  */
 
 // Recursive function to render the tree
@@ -42,6 +41,11 @@ if (!function_exists('renderOrgNode')) {
             if (!empty($node['meta'])) {
                 echo "<div class=\"mt-2 small text-muted border-top border-secondary pt-1\">{$node['meta']}</div>";
             }
+
+            // --- NEW: DESCRIPTION FIELD ---
+            if (!empty($node['description'])) {
+                echo "<div class=\"mt-2 small fst-italic opacity-75\">{$node['description']}</div>";
+            }
             
         echo "</$tag>";
 
@@ -69,8 +73,7 @@ if (!function_exists('renderOrgNode')) {
         justify-content: center;
     }
     
-    /* --- NEW: THE PARENT CONNECTOR --- */
-    /* This draws the vertical line from the Parent Card down to the children's group */
+    /* THE PARENT CONNECTOR (Vertical Line) */
     .org-tree ul ul::before {
         content: '';
         position: absolute; 
@@ -80,7 +83,6 @@ if (!function_exists('renderOrgNode')) {
         width: 0; 
         height: 20px;
     }
-    /* -------------------------------- */
 
     .org-tree li {
         float: left; text-align: center;
@@ -90,7 +92,7 @@ if (!function_exists('renderOrgNode')) {
         transition: all 0.5s;
     }
 
-    /* Sibling Connectors (The Horizontal Bar) */
+    /* Sibling Connectors (Horizontal Bar) */
     .org-tree li::before, .org-tree li::after {
         content: '';
         position: absolute; top: 0; right: 50%;
@@ -121,7 +123,7 @@ if (!function_exists('renderOrgNode')) {
         border-radius: 5px 0 0 0;
     }
 
-    /* THE CARDS - LIGHT MODE DEFAULTS */
+    /* THE CARDS */
     .org-card {
         background: #fff; 
         color: #212529;   
@@ -130,13 +132,15 @@ if (!function_exists('renderOrgNode')) {
         border-radius: 8px;
         display: inline-block;
         min-width: 180px;
+        max-width: 250px; /* Constrain width for long descriptions */
         text-decoration: none;
         transition: all 0.3s;
         box-shadow: 0 4px 6px rgba(0,0,0,0.05);
         border-top-width: 4px;
         border-top-style: solid;
-        z-index: 10; /* Ensure cards sit on top of lines */
+        z-index: 10;
         position: relative;
+        white-space: normal; /* Allow text wrapping for descriptions */
     }
     
     .org-card-title {
@@ -177,21 +181,17 @@ if (!function_exists('renderOrgNode')) {
         color: #fff;
     }
     
-    [data-bs-theme="dark"] .org-card-title {
-        color: #fff;
-    }
-    
-    [data-bs-theme="dark"] .org-card-role {
-        color: #aaa;
-    }
+    [data-bs-theme="dark"] .org-card-title { color: #fff; }
+    [data-bs-theme="dark"] .org-card-role { color: #aaa; }
 
-    /* Dynamic Border Colors */
+    /* Border Colors */
     .border-top-primary { border-top-color: #0d6efd; }
     .border-top-warning { border-top-color: #ffc107; }
     .border-top-danger { border-top-color: #dc3545; }
     .border-top-success { border-top-color: #198754; }
     .border-top-info { border-top-color: #0dcaf0; }
     .border-top-secondary { border-top-color: #6c757d; }
+    .border-top-dark { border-top-color: #212529; }
 </style>
 
 <div class="row justify-content-center overflow-auto">
